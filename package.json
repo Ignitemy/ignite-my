@@ -1,0 +1,48 @@
+{
+  "name": "ignite-my",
+  "version": "0.0.0",
+  "description": "Ignite Malaysia",
+  "author": "Ignite Team",
+  "license": "MIT",
+  "main": "slices/index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "prepublishOnly": "node ./node_modules/sm-commons/scripts/bundle",
+    "slicemachine": "start-slicemachine --port 9999",
+    "storybook": "start-storybook -p 8888",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@prismicio/client": "^4.0.0",
+    "js-cookie": "^2.2.1",
+    "next": "^10.0.8",
+    "next-slicezone": "^0.1.0-alpha.0",
+    "next-transpile-modules": "^6.1.0",
+    "prismic-reactjs": "^1.3.3",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "6.1.21",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-react-require": "^3.1.3",
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.0",
+    "shx": "^0.3.3",
+    "slice-machine-ui": "^0.0.44",
+    "sm-commons": "^0.0.23"
+  }
+}
