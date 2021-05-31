@@ -16,6 +16,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "@prismicio/client": "^4.0.0",
     "firebase": "^8.6.3",
     "js-cookie": "^2.2.1",
