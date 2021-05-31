@@ -1,6 +1,34 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+    @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Light.woff2") format('woff2 supports variations'),
+         url("/fonts/Gotham-Light.woff2") format('woff2-variations');
+    font-style: normal;
+    font-weight: 100 700;
+    font-display: swap;
+    }
+
+    @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Black.woff2") format('woff2 supports variations'),
+         url("/fonts/Gotham-Black.woff2") format('woff2-variations');
+    font-style: bold;
+    font-weight: 100 700;
+    font-display: swap;
+    }
+
+    @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-UltraItalic.woff2") format('woff2 supports variations'),
+         url("/fonts/Gotham-UltraItalic.woff2") format('woff2-variations');
+    font-style: italic;
+    font-weight: 100 700;
+    font-display: swap;
+    }
+
     * {
     -webkit-font-smoothing: antialiased;
     }
@@ -23,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
     */
     body {
     color: #72767b;
-    font-family: "Lato", sans-serif;
+    font-family: "Gotham", sans-serif;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.4px;
@@ -46,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
     h4,
     h5,
     h6 {
-    font-family: "Lato", sans-serif;
+    font-family: "Gotham", sans-serif;
     }
     h1 {
     font-size: 42px;

@@ -9,6 +9,24 @@ const Layout = ({ children, menu, title }) => {
     <>
       <Head>
         <title>{title || "Ignite 2021"}</title>
+        <link
+          rel="preload"
+          href="/fonts/Gotham-Light.woff2"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Gotham-Black.woff2"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Gotham-UltraItalic.woff2"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
