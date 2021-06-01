@@ -1,11 +1,11 @@
 import { Client } from "../prismic-configuration";
 import { useGetStaticProps } from "next-slicezone/hooks";
 import styled from "styled-components";
-
+import React, { useEffect } from 'react';
 // import SliceZone from "next-slicezone";
 // import resolver from "../sm-resolver.js";
 import Layout from "./../components/Layout";
-import Button from "./../components/Button";
+import MuiButton from "./../components/Button";
 
 const Container = styled.div`
   max-width: 1200px;
@@ -15,15 +15,12 @@ const Container = styled.div`
 `;
 
 const Page = (props) => {
-  let buttonProps = {
-    primary: true
-  }
   return (
     <Layout menu={props.menu} title="Ignite 2021 | Homepage">
       {/* <SliceZone {...props} resolver={resolver} /> */}
       <Container>
         <h1>Hello homepage!</h1>
-        <Button primary>Test</Button>
+        <MuiButton black={true} onClick={() => console.log("Pressed!")}>Test</MuiButton>
       </Container>
     </Layout>
   );
