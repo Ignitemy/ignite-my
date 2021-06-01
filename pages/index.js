@@ -20,7 +20,6 @@ const Page = (props) => {
       {/* <SliceZone {...props} resolver={resolver} /> */}
       <Container>
         <h1>Hello homepage!</h1>
-        <MuiButton black={true} onClick={() => console.log("Pressed!")}>Test</MuiButton>
       </Container>
     </Layout>
   );

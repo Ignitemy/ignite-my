@@ -2,10 +2,6 @@ import React, { useEffect } from "react";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
-// const StyledButton = styled.button`
-//   background: '#FF6600'
-// `
-
 const useStyles = makeStyles({
   root: {
     background: (props) => (props.orange ? '#ff6600' : props.white ? '#ffffff' : props.black ? '#000000' : "#ff6600"),
