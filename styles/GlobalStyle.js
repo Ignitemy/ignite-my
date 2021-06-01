@@ -8,28 +8,25 @@ const GlobalStyle = createGlobalStyle`
 
     @font-face {
     font-family: "Gotham";
-    src: url("/fonts/Gotham-Light.woff2") format('woff2 supports variations'),
-         url("/fonts/Gotham-Light.woff2") format('woff2-variations');
+    src: url("/fonts/Gotham-Light.woff2") format('woff2');
     font-style: normal;
-    font-weight: 100 700;
+    font-weight: normal;
     font-display: swap;
     }
 
     @font-face {
     font-family: "Gotham";
-    src: url("/fonts/Gotham-Black.woff2") format('woff2 supports variations'),
-         url("/fonts/Gotham-Black.woff2") format('woff2-variations');
-    font-style: bold;
-    font-weight: 100 700;
+    src: url("/fonts/Gotham-Black.woff2") format('woff2');
+    font-style: normal;
+    font-weight: bold;
     font-display: swap;
     }
 
     @font-face {
     font-family: "Gotham";
-    src: url("/fonts/Gotham-UltraItalic.woff2") format('woff2 supports variations'),
-         url("/fonts/Gotham-UltraItalic.woff2") format('woff2-variations');
+    src: url("/fonts/Gotham-UltraItalic.woff2") format('woff2');
     font-style: italic;
-    font-weight: 100 700;
+    font-weight: normal;
     font-display: swap;
     }
 

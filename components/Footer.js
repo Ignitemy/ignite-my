@@ -60,14 +60,13 @@ const LeftWrapper = styled.div`
   }
 
   li {
-    margin-right: 4rem;
+    margin-right: 6.6rem;
     position: relative;
   }
 
   a {
     color: var(--color-white);
-    font-size: 24px;
-    font-style: normal;
+    font-size: 18px;
     text-decoration: none;
     transition: text-shadow 0.25s;
     position: relative;
