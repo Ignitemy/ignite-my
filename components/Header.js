@@ -5,7 +5,6 @@ import styled from 'styled-components'
 const StyledLink = styled(Link)`
   color: var(--color-white);
   text-decoration: none;
-  transition: text-shadow 0.25s;
   position: relative;
 
   &::before {
@@ -18,8 +17,6 @@ const StyledLink = styled(Link)`
     bottom: 0;
   }
   &:hover {
-    text-shadow: 0 0 0.8px var(--color-white), 0 0 0.8px var(--color-white);
-
     &::before {
       width: 1.6rem;
     }
