@@ -1,46 +1,53 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import FbIcon from '../images/svg/fb'
+import InstaIcon from '../images/svg/insta'
+import YoutubeIcon from '../images/svg/youtube'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
   text-decoration: none;
   transition: text-shadow 0.25s;
   position: relative;
+`
 
-  &::before {
-    content: '';
-    position: absolute;
-    transition: width 0.25s;
-    height: 0.2rem;
-    width: 0;
-    background-color: var(--color-orange);
-    bottom: 0;
-  }
-  &:hover {
-    text-shadow: 0 0 0.8px var(--color-white), 0 0 0.8px var(--color-white);
+const StyledNav = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
 
-    &::before {
-      width: 1.6rem;
-    }
+  @media (max-width: 900px) {
+    display: none;
   }
 `
 
-const StyledHeader = styled.header`
+const StyledFooter = styled.footer`
   width: 100%;
-  height: 120px;
+  height: 420px;
   position: fixed;
-  top: 0;
+  bottom: 0;
   z-index: 100;
   background-color: var(--color-black);
   padding: 0 8rem;
+
+  @media (max-width: 900px) {
+    height: 200px;
+  }
 `
-const StyledNav = styled.nav`
-  position: relative;
-  height: 100%;
+const FooterContainer = styled.div`
+  height: 120px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid var(--color-white);
+
+  @media (max-width: 900px) {
+    border-top: none;
+  }
 `
 const LeftWrapper = styled.div`
   display: flex;
@@ -65,10 +72,6 @@ const LeftWrapper = styled.div`
     transition: text-shadow 0.25s;
     position: relative;
   }
-
-  @media (max-width: 900px) {
-    display: none;
-  }
 `
 
 const WhiteSpan = styled.span`
@@ -78,13 +81,26 @@ const OrangeSpan = styled.span`
   color: var(--color-orange);
 `
 
-const RightWrapper = styled.div`
+const SocialWrapper = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin-top: 4.5rem;
+
+  > svg:nth-child(2) {
+    margin: 0 3.2rem;
+  }
 `
 
-const Header = () => (
-  <StyledHeader>
+const FooterText = styled.div`
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  margin-top: 2.2rem;
+`
+
+const Footer = () => (
+  <StyledFooter>
     <StyledNav>
       <LeftWrapper>
         <ul>
@@ -116,13 +132,16 @@ const Header = () => (
           </li>
         </ul>
       </LeftWrapper>
-      <RightWrapper>
-        <StyledLink href="/register">
-          <button>Register</button>
-        </StyledLink>
-      </RightWrapper>
     </StyledNav>
-  </StyledHeader>
+    <FooterContainer>
+      <SocialWrapper>
+        <FbIcon />
+        <InstaIcon />
+        <YoutubeIcon />
+      </SocialWrapper>
+      <FooterText>Follow us to stay connected</FooterText>
+    </FooterContainer>
+  </StyledFooter>
 )
 
-export default Header
+export default Footer

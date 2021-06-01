@@ -2,9 +2,10 @@ import React from 'react'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import Header from './Header'
+import Footer from './Footer'
 import { GlobalStyle, theme } from '../styles'
 
-const Layout = ({ children, menu, title }) => {
+const Layout = ({ children, title }) => {
   return (
     <>
       <Head>
@@ -33,8 +34,9 @@ const Layout = ({ children, menu, title }) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header menu={menu} />
+        <Header />
         <main>{children}</main>
+        <Footer />
       </ThemeProvider>
     </>
   )
