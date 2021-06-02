@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import Button from './Button'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -114,7 +115,7 @@ const Header = () => (
       </LeftWrapper>
       <RightWrapper>
         <StyledLink href="/register">
-          <button>Register</button>
+          <Button orange>Register</Button>
         </StyledLink>
       </RightWrapper>
     </StyledNav>
