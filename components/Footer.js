@@ -25,11 +25,8 @@ const StyledNav = styled.div`
 `
 
 const StyledFooter = styled.footer`
-  width: 100%;
+  /* width: 100%; */
   height: 420px;
-  position: fixed;
-  bottom: 0;
-  z-index: 100;
   background-color: var(--color-black);
   padding: 0 8rem;
 
@@ -38,8 +35,7 @@ const StyledFooter = styled.footer`
   }
 `
 const FooterContainer = styled.div`
-  height: 120px;
-  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

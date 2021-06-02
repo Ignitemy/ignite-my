@@ -1,8 +1,10 @@
 import React from 'react'
 import NextApp from 'next/app'
+import { ThemeProvider } from 'styled-components'
 import { Client } from '../prismic-configuration'
 import FirebaseContext from '../context/firebase'
 import { firebase, FieldValue } from '../lib/firebase'
+import { GlobalStyle, theme } from '../styles'
 
 export default class MyApp extends NextApp {
   static async getInitialProps(appCtx) {
@@ -19,7 +21,10 @@ export default class MyApp extends NextApp {
     const { Component, pageProps, props } = this.props
     return (
       <FirebaseContext.Provider value={{ firebase, FieldValue }}>
-        <Component {...pageProps} menu={props.menu} />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Component {...pageProps} menu={props.menu} />
+        </ThemeProvider>
       </FirebaseContext.Provider>
     )
   }

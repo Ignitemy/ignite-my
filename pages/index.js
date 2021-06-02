@@ -5,21 +5,12 @@ import styled from 'styled-components'
 // import SliceZone from "next-slicezone";
 // import resolver from "../sm-resolver.js";
 import Layout from './../components/Layout'
+import Banner from './home/_banner'
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-  text-align: center;
-`
-
-const Page = (props) => {
+const Page = () => {
   return (
-    <Layout menu={props.menu} title="Ignite 2021 | Home">
-      {/* <SliceZone {...props} resolver={resolver} /> */}
-      <Container>
-        <h1>Hello homepage!</h1>
-      </Container>
+    <Layout title="Ignite 2021 | Home">
+      <Banner />
     </Layout>
   )
 }

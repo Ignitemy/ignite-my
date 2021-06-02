@@ -1,9 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
-import { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
-import { GlobalStyle, theme } from '../styles'
+
+const StyledMain = styled.main`
+  height: 100%;
+  position: relative;
+  margin-top: 100px;
+`
 
 const Layout = ({ children, title }) => {
   return (
@@ -32,12 +37,9 @@ const Layout = ({ children, title }) => {
           crossOrigin=""
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </ThemeProvider>
+      <Header />
+      <StyledMain>{children}</StyledMain>
+      <Footer />
     </>
   )
 }
