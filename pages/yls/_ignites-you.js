@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Text, Heading, Button } from '../../components'
+import { Heading } from '../../components'
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -18,33 +16,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
-
-const EventWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: ${(props) => props.fd};
-
-  @media (max-width: 1150px) {
-    flex-direction: column;
-  }
-`
-
-const EventContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: ${(props) => props.align};
-  margin-left: ${(props) => props.ml};
-  margin-right: ${(props) => props.mr};
-  max-width: 60rem;
-
-  @media (max-width: 1150px) {
-    margin-top: 4rem;
-  }
-`
-const ButtonWrapper = styled.div`
-  margin-top: 4rem;
 `
 
 const StyledHeading = styled(Heading)`
