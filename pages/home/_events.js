@@ -12,7 +12,7 @@ const SectionContainer = styled.section`
 `
 
 const Container = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -23,6 +23,10 @@ const EventWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: ${(props) => props.fd};
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+  }
 `
 
 const EventContent = styled.div`
@@ -33,6 +37,10 @@ const EventContent = styled.div`
   margin-left: ${(props) => props.ml};
   margin-right: ${(props) => props.mr};
   max-width: 60rem;
+
+  @media (max-width: 1150px) {
+    margin-top: 4rem;
+  }
 `
 const ButtonWrapper = styled.div`
   margin-top: 4rem;
