@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-// import BannerImage from '../../images/jpg/homepage-banner.jpg'
-
-// const BannerWrapper = styled.div`
-//   background-image: url('/images/jpg/homepage-banner.jpg');
-//   width: 100%;
-//   background-repeat: 'no-repeat';
-//   background-size: 'cover';
-// `
+import Link from 'next/link'
+import { Button } from '../../components'
 
 const BannerContainer = styled.div`
   height: 800px;
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 15rem;
+`
+
+const BannerContent = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
 `
 
@@ -22,7 +23,7 @@ const StyledImage = styled(Image)`
   z-index: 0;
 `
 
-const BannerContent = styled.div`
+const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   align-items: center;
@@ -51,6 +52,11 @@ const RightContent = styled.div`
     margin: 2.5rem 0 0;
   }
 `
+
+const ButtonWrapper = styled.div`
+  margin-top: 9rem;
+`
+
 const WhiteHeader = styled.h3`
   font-size: 30px;
   line-height: 40px;
@@ -64,7 +70,6 @@ const OrangeHeader = styled.h3`
   font-style: italic;
   color: var(--color-orange);
 `
-
 const Banner = () => {
   return (
     <BannerContainer>
@@ -76,13 +81,20 @@ const Banner = () => {
         objectPosition="center"
       />
       <BannerContent>
-        <ImageWrapper>
-          <Image src="/images/png/ignite-logo.png" alt="Ignite logo" height={59} width={383} />
-        </ImageWrapper>
-        <RightContent>
-          <WhiteHeader>4th Sept 2021</WhiteHeader>
-          <OrangeHeader>Hall 1, Dream Centre PJ</OrangeHeader>
-        </RightContent>
+        <ContentWrapper>
+          <ImageWrapper>
+            <Image src="/images/png/ignite-logo.png" alt="Ignite logo" height={59} width={383} />
+          </ImageWrapper>
+          <RightContent>
+            <WhiteHeader>4th Sept 2021</WhiteHeader>
+            <OrangeHeader>Hall 1, Dream Centre PJ</OrangeHeader>
+          </RightContent>
+        </ContentWrapper>
+        <ButtonWrapper>
+          <Link href="/register">
+            <Button orange>Register</Button>
+          </Link>
+        </ButtonWrapper>
       </BannerContent>
     </BannerContainer>
   )
