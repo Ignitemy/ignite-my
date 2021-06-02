@@ -42,6 +42,7 @@ export const Heading = styled(({ as = 'h1', children, ...props }) =>
 )`
   ${BaseElement}
   font-weight: ${(props) => props.weight || 'bold'};
+  font-style: ${(props) => props.fstyle || 'normal'};
   font-size: ${(props) => props.size};
   line-height: ${(props) => props.lh};
   width: ${(props) => props.width || '100%'};
