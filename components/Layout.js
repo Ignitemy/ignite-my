@@ -1,14 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import styled from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
-
-const StyledMain = styled.main`
-  height: 100%;
-  position: relative;
-  margin-top: 100px;
-`
 
 const Layout = ({ children, title }) => {
   return (
@@ -38,7 +31,7 @@ const Layout = ({ children, title }) => {
         />
       </Head>
       <Header />
-      <StyledMain>{children}</StyledMain>
+      <main>{children}</main>
       <Footer />
     </>
   )
