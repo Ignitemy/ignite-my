@@ -7,12 +7,14 @@ import styled from 'styled-components'
 import Layout from './../components/Layout'
 import Banner from './home/_banner'
 import Events from './home/_events'
+import Speakers from './home/_speakers'
 
 const Page = () => {
   return (
     <Layout title="Ignite 2021 | Home">
       <Banner />
       <Events />
+      <Speakers />
     </Layout>
   )
 }
