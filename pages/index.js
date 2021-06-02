@@ -6,11 +6,13 @@ import styled from 'styled-components'
 // import resolver from "../sm-resolver.js";
 import Layout from './../components/Layout'
 import Banner from './home/_banner'
+import Events from './home/_events'
 
 const Page = () => {
   return (
     <Layout title="Ignite 2021 | Home">
       <Banner />
+      <Events />
     </Layout>
   )
 }
