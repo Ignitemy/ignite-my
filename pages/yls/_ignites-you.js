@@ -21,6 +21,7 @@ const Container = styled.div`
 const StyledHeading = styled(Heading)`
   -webkit-text-stroke: 0.1px ${(props) => props.stroke}; /* stroke width and color */
   -webkit-font-smoothing: antialiased;
+  color: transparent;
 
   @media (max-width: 900px) {
     font-size: 3.6rem;
