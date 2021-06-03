@@ -29,10 +29,18 @@ const TagLineContent = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 95rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 const TagColumn = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    margin-top: 4rem;
+  }
 `
 
 const Vision = () => {
