@@ -3,6 +3,7 @@ import Banner from './_banner'
 import IgnitesYou from './_ignites-you'
 import Vision from './_vision'
 import Schedule from './_schedule'
+import Speakers from './_speakers'
 
 const YLS = () => {
   return (
@@ -11,6 +12,7 @@ const YLS = () => {
       <IgnitesYou />
       <Vision />
       <Schedule />
+      <Speakers />
     </Layout>
   )
 }
