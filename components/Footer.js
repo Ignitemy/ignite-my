@@ -81,8 +81,18 @@ const SocialWrapper = styled.div`
   justify-content: center;
   margin-top: 4.5rem;
 
-  > svg:nth-child(2) {
-    margin: 0 3.2rem;
+  a {
+    &:hover,
+    &:focus {
+      svg > path {
+        fill: #ff9100;
+        stroke: #ff9100;
+      }
+    }
+
+    &:nth-child(2) {
+      margin: 0 3.2rem;
+    }
   }
 `
 
@@ -130,9 +140,15 @@ const Footer = () => (
     </StyledNav>
     <FooterContainer>
       <SocialWrapper>
-        <FbIcon />
-        <InstaIcon />
-        <YoutubeIcon />
+        <a href="https://facebook.com" target="_blank">
+          <FbIcon />
+        </a>
+        <a href="https://instagram.com/ignitemy______" target="_blank">
+          <InstaIcon />
+        </a>
+        <a href="https://youtube.com" target="_blank">
+          <YoutubeIcon />
+        </a>
       </SocialWrapper>
       <FooterText>Follow us to stay connected</FooterText>
     </FooterContainer>
