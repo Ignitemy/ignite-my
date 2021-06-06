@@ -1,10 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Text, Heading } from '../../components'
+import Image from 'next/image'
+import PropTypes from 'prop-types';
 
 const SpeakerCard = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  border-radius: 2.5rem;
+  align-items: center;
+  min-width: 300px;
 `
 
 const SpeakerContent = styled.div`
@@ -13,25 +19,38 @@ const SpeakerContent = styled.div`
   justify-content: center;
   align-items: center;
   background-color: var(--color-orange);
-  width: 37rem;
+  width: 100%;
+  max-width: 370px;
   padding: 2.4rem;
+  border-radius: 2.5rem;
+  margin-top: -51px;
+  z-index: 1;
+`
+const StyledImage = styled(Image)`
   border-radius: 2.5rem;
 `
 
-const Cards = () => {
+const Cards = (props) => {
+  const { imageSource, name, children } = props
   return (
     <SpeakerCard>
+      <StyledImage src={imageSource ? imageSource : "/images/png/event-2.png"} height={256} width={370}/>
       <SpeakerContent>
         <Heading color="black" size="1.8rem">
-          SPEAKER #1
+          {name}
         </Heading>
         <Text color="white" mt="2rem">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos qui ratione voluptatem.
+          {children}
         </Text>
       </SpeakerContent>
     </SpeakerCard>
   )
 }
+
+Cards.propTypes = {
+  imageSource: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired
+};
 
 export default Cards
