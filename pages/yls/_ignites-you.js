@@ -19,7 +19,7 @@ const Container = styled.div`
 `
 
 const StyledHeading = styled(Heading)`
-  -webkit-text-stroke: 0.1px ${(props) => props.stroke}; /* stroke width and color */
+  -webkit-text-stroke: 1px ${(props) => props.stroke}; /* stroke width and color */
   -webkit-font-smoothing: antialiased;
   color: transparent;
 
