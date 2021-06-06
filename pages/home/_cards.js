@@ -31,10 +31,10 @@ const StyledImage = styled(Image)`
 `
 
 const Cards = (props) => {
-  const { imageSource, name, children } = props
+  const { src, name, children } = props
   return (
     <SpeakerCard>
-      <StyledImage src={imageSource ? imageSource : "/images/png/event-2.png"} height={256} width={370}/>
+      <StyledImage src={src ? src : "/images/png/event-2.png"} height={256} width={370}/>
       <SpeakerContent>
         <Heading color="black" size="1.8rem">
           {name}
@@ -50,7 +50,7 @@ const Cards = (props) => {
 Cards.propTypes = {
   imageSource: PropTypes.string,
   name: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired
 };
 
 export default Cards
