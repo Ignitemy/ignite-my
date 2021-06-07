@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 const MuiButton = (props) => {
   const classes = useStyles(props)
   return (
-    <Button className={classes.root} variant="outlined" onClick={props.onClick}>
+    <Button className={classes.root} variant="outlined" onClick={props.onClick} {...props}>
       {props.children}
     </Button>
   )

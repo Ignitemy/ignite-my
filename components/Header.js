@@ -2,6 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import Button from './Button'
+import { Text } from '../components'
+import { useAuth } from '../helpers/auth'
+// import { Capitalize } from '../helpers/capitalize'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -79,46 +82,53 @@ const RightWrapper = styled.div`
   align-items: center;
 `
 
-const Header = () => (
-  <StyledHeader>
-    <StyledNav>
-      <LeftWrapper>
-        <ul>
-          <li>
-            <StyledLink href="/" as="a">
-              Home
+const Header = () => {
+  const user = useAuth()
+  return (
+    <StyledHeader>
+      <StyledNav>
+        <LeftWrapper>
+          <ul>
+            <li>
+              <StyledLink href="/" as="a">
+                Home
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/yls" as="a">
+                <>
+                  <WhiteSpan>IGNITE</WhiteSpan>
+                  <OrangeSpan>YLS</OrangeSpan>
+                </>
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/rally" as="a">
+                <>
+                  <WhiteSpan>IGNITE</WhiteSpan>
+                  <OrangeSpan>RALLY</OrangeSpan>
+                </>
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/blog" as="a">
+                Blog
+              </StyledLink>
+            </li>
+          </ul>
+        </LeftWrapper>
+        <RightWrapper>
+          {!user ? (
+            <StyledLink href="/register">
+              <Button orange>Register</Button>
             </StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/yls" as="a">
-              <>
-                <WhiteSpan>IGNITE</WhiteSpan>
-                <OrangeSpan>YLS</OrangeSpan>
-              </>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/rally" as="a">
-              <>
-                <WhiteSpan>IGNITE</WhiteSpan>
-                <OrangeSpan>RALLY</OrangeSpan>
-              </>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/blog" as="a">
-              Blog
-            </StyledLink>
-          </li>
-        </ul>
-      </LeftWrapper>
-      <RightWrapper>
-        <StyledLink href="/register">
-          <Button orange>Register</Button>
-        </StyledLink>
-      </RightWrapper>
-    </StyledNav>
-  </StyledHeader>
-)
+          ) : (
+            <Text color="white">Welcome back, {user.displayName}</Text>
+          )}
+        </RightWrapper>
+      </StyledNav>
+    </StyledHeader>
+  )
+}
 
 export default Header

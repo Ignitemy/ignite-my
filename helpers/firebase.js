@@ -1,11 +1,7 @@
 import { firebase } from '../lib/firebase'
 
-export async function doesUsernameExist(username) {
-  const result = await firebase
-    .firestore()
-    .collection('users')
-    .where('username', '==', username)
-    .get()
+export async function doesEmailExist(email) {
+  const result = await firebase.firestore().collection('users').where('email', '==', email).get()
 
   return result.docs.length > 0
 }

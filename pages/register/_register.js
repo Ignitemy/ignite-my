@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import Form from './_form'
 import { Text } from '../../components'
 import CalendarIcon from '../../images/svg/calendar'
 import TimeIcon from '../../images/svg/time'
@@ -23,7 +24,7 @@ const BannerContainer = styled.div`
 const FormContainer = styled.div`
   display: flex;
   width: 50%;
-  background-color: var(--color-black);
+  background-color: var(--color-white);
 `
 
 const BannerContent = styled.div`
@@ -112,7 +113,9 @@ const Register = () => {
           </ContentWrapper>
         </BannerContent>
       </BannerContainer>
-      <FormContainer>Test</FormContainer>
+      <FormContainer>
+        <Form></Form>
+      </FormContainer>
     </RegisterSection>
   )
 }
