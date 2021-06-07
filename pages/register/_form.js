@@ -223,6 +223,7 @@ const RegistrationForm = () => {
               />
             }
             label="I have informed my parent/guardian of the statements"
+            style={{ width: '100%' }}
           />
           <Button orange type="submit">
             Register For Event
