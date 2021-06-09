@@ -90,29 +90,29 @@ const Header = () => {
         <LeftWrapper>
           <ul>
             <li>
-              <StyledLink href="/" as="a">
-                Home
+              <StyledLink href="/">
+                <a>Home</a>
               </StyledLink>
             </li>
             <li>
-              <StyledLink href="/yls" as="a">
-                <>
+              <StyledLink href="/yls">
+                <a>
                   <WhiteSpan>IGNITE</WhiteSpan>
                   <OrangeSpan>YLS</OrangeSpan>
-                </>
+                </a>
               </StyledLink>
             </li>
             <li>
-              <StyledLink href="/rally" as="a">
-                <>
+              <StyledLink href="/rally">
+                <a>
                   <WhiteSpan>IGNITE</WhiteSpan>
                   <OrangeSpan>RALLY</OrangeSpan>
-                </>
+                </a>
               </StyledLink>
             </li>
             <li>
-              <StyledLink href="/blog" as="a">
-                Blog
+              <StyledLink href="/blog">
+                <a>Blog</a>
               </StyledLink>
             </li>
           </ul>
