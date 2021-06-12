@@ -2,12 +2,12 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@/components": ["components/*"],
-            "@/libs": ["libs/*"],
-            "@/hooks": ["hooks/*"],
-            "@/helpers": ["helpers/*"],
-            "@/images": ["images/*"],
-            "@/context": ["context/*"],
+            "@/components/*": ["components/*"],
+            "@/libs/*": ["libs/*"],
+            "@/hooks/*": ["hooks/*"],
+            "@/helpers/*": ["helpers/*"],
+            "@/images/*": ["images/*"],
+            "@/context/*": ["context/*"],
         }
     }
 }
