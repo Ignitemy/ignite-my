@@ -92,7 +92,7 @@ const Banner = () => {
         </ContentWrapper>
         <ButtonWrapper>
           <Link href="/register">
-            <Button orange>Register</Button>
+            <Button orange="true">Register</Button>
           </Link>
         </ButtonWrapper>
       </BannerContent>

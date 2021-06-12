@@ -120,7 +120,7 @@ const Header = () => {
         <RightWrapper>
           {!user ? (
             <StyledLink href="/register">
-              <Button orange>Register</Button>
+              <Button orange="true">Register</Button>
             </StyledLink>
           ) : (
             <Text color="white">Welcome back, {user.displayName}</Text>

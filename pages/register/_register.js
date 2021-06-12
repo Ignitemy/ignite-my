@@ -114,7 +114,7 @@ const Register = () => {
         </BannerContent>
       </BannerContainer>
       <FormContainer>
-        <Form></Form>
+        <Form />
       </FormContainer>
     </RegisterSection>
   )
