@@ -18,25 +18,25 @@ const YoutubeIcon = ({ className }) => (
     <path
       d="M19 16V32"
       stroke="#FF6600"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path d="M33 24L19 32L33 24Z" fill="#FF6600" />
     <path
       d="M33 24L19 32"
       stroke="#FF6600"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path d="M33 24L19 16L33 24Z" fill="#FF6600" />
     <path
       d="M33 24L19 16"
       stroke="#FF6600"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )

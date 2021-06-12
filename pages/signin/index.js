@@ -115,7 +115,7 @@ const SignIn = () => {
               required
             />
             <ButtonWrapper>
-              <Button orange type="submit" disabled={isInvalid}>
+              <Button orange="true" type="submit" disabled={isInvalid}>
                 Sign In
               </Button>
             </ButtonWrapper>
