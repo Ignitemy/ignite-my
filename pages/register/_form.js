@@ -1,18 +1,18 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
+import * as yup from 'yup'
 import { TextField, Checkbox } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles'
-import { useRouter } from 'next/router'
-import FirebaseContext from '../../context/firebase'
-import { doesEmailExist } from '../../helpers/firebase'
-import { Button, Text } from '../../components'
-import { useAuth } from '../../helpers/auth'
-import SuccessIcon from '../../images/svg/success'
-import InstaIcon from '../../images/svg/insta-no-outline'
+import FirebaseContext from '@/context/firebase'
+import { doesEmailExist } from '@/helpers/firebase'
+import { Button, Text } from '@/components'
+import { useAuth } from '@/helpers/auth'
+import SuccessIcon from '@/images/svg/success'
+import InstaIcon from '@/images/svg/insta-no-outline'
 import Modal from './_modal'
-import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
-import * as yup from 'yup'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -176,7 +176,7 @@ const RegistrationForm = () => {
               See you at IGNITEMY
             </Text>
           )}
-          <Button orange>
+          <Button orange="true">
             <StyledInstaIcon />
             <a
               href="https://instagram.com/ignitemy______"
@@ -287,7 +287,7 @@ const RegistrationForm = () => {
 
                 {/* <pre>{JSON.stringify(values, null, 2)}</pre>
               <pre>{JSON.stringify(errors, null, 2)}</pre> */}
-                <Button orange type="submit" disabled={!isValid || !dirty || isSubmitting}>
+                <Button orange="true" type="submit" disabled={!isValid || !dirty || isSubmitting}>
                   Register For Event
                 </Button>
               </StyledForm>
