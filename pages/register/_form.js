@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ff9100'
+      main: '#777777'
     },
     secondary: {
       main: '#333333'
@@ -93,15 +93,84 @@ const StyledErrorMessage = styled(ErrorMessage)`
   color: red;
 `
 
+const ActiveOccupationWrapper = styled.div`
+  display: flex;
+  margin-right: 2rem;
+
+  label {
+    border: ${({ isActive }) =>
+      isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
+    background-color: ${({ isActive }) =>
+      isActive ? 'var(--color-orange)' : 'var(--color-white)'};
+    border-radius: 6px;
+    padding: 1.8rem 8rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    ${Text} {
+      color: ${({ isActive }) => (isActive ? 'var(--color-white)' : 'var(--color-black)')};
+    }
+  }
+`
+
+const OccupationWrapper = styled.div`
+  display: flex;
+
+  label {
+    border: ${({ isActive }) =>
+      isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
+    background-color: ${({ isActive }) =>
+      isActive ? 'var(--color-white)' : 'var(--color-orange)'};
+    border-radius: 6px;
+    padding: 1.8rem 8rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    ${Text} {
+      color: ${({ isActive }) => (isActive ? 'var(--color-black)' : 'var(--color-white)')};
+    }
+  }
+`
+
+const TabWrapper = styled.div`
+  display: flex;
+`
+
 const validationSchema = yup.object({
-  fullName: yup.string().required(),
-  email: yup.string().email().required(),
-  password: yup.string().required(),
-  age: yup.string().max(2, "You can't be that old...").required(),
-  myKad: yup.number().required(),
-  contactNumber: yup.string().max(14).required(),
-  address: yup.string().required(),
-  city: yup.string().required(),
+  fullName: yup.string().required("Please don't forget your full name"),
+  email: yup
+    .string()
+    .email('Your email has got to be in the right format yeah')
+    .required("Please don't forget to include your email address"),
+  password: yup.string().required('Your password is required'),
+  age: yup
+    .string()
+    .max(2, "You can't be that old...")
+    .required("We need this so that we'll know your birthday"),
+  myKad: yup
+    .string()
+    .matches(/^[0-9]+$/, 'Please only include the numbers of your myKad')
+    .required("Please don't forget about your myKad number"),
+  contactNumber: yup
+    .string()
+    .max(14)
+    .required("Don't forget your contact number in case we need to give you a ring."),
+  address: yup.string().required("Don't forget to include your address"),
+  city: yup.string().required("Don't forget to include your city"),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
@@ -113,6 +182,7 @@ const RegistrationForm = () => {
   const [show, setShow] = useState(false)
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
+  const [isActive, setActive] = useState(true)
 
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
@@ -142,6 +212,7 @@ const RegistrationForm = () => {
           contactNumber: values.contactNumber,
           address: values.address,
           city: values.city,
+          occupation: values.occupation,
           dateCreated: Date.now()
         })
         setRegistered(true)
@@ -206,6 +277,7 @@ const RegistrationForm = () => {
               contactNumber: '',
               address: '',
               city: '',
+              occupation: '',
               checked: false
             }}
             validationSchema={validationSchema}
@@ -245,7 +317,7 @@ const RegistrationForm = () => {
                   as={CustomTextField}
                 />
                 <Field
-                  type="number"
+                  type="string"
                   name="myKad"
                   label="MyKad Number"
                   placeholder="Your MyKad number here"
@@ -274,6 +346,20 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
+                <TabWrapper>
+                  <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
+                    <label>
+                      <Field type="radio" name="occupation" value="student" />
+                      <Text>Student</Text>
+                    </label>
+                  </ActiveOccupationWrapper>
+                  <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
+                    <label>
+                      <Field type="radio" name="occupation" value="teacher" />
+                      <Text>Teacher</Text>
+                    </label>
+                  </OccupationWrapper>
+                </TabWrapper>
                 <CheckboxGroup>
                   <Field type="checkbox" name="checked" as={Checkbox} />
                   <label htmlFor="checked">
@@ -286,7 +372,7 @@ const RegistrationForm = () => {
                 <StyledErrorMessage name="checked" component="div" />
 
                 {/* <pre>{JSON.stringify(values, null, 2)}</pre>
-              <pre>{JSON.stringify(errors, null, 2)}</pre> */}
+                <pre>{JSON.stringify(errors, null, 2)}</pre> */}
                 <Button orange="true" type="submit" disabled={!isValid || !dirty || isSubmitting}>
                   Register For Event
                 </Button>
