@@ -72,11 +72,11 @@ const Countdown = () => {
   const [isEventStart, setIsEventStart] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     timeLeft.days === 0 &&
