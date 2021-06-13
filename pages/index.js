@@ -8,6 +8,7 @@ import Layout from './../components/Layout'
 import Banner from './home/_banner'
 import Events from './home/_events'
 import Speakers from './home/_speakers'
+import Countdown from './home/_countdown'
 
 const Page = () => {
   return (
@@ -15,6 +16,7 @@ const Page = () => {
       <Banner />
       <Events />
       <Speakers />
+      <Countdown />
     </Layout>
   )
 }
