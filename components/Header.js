@@ -10,21 +10,6 @@ const StyledLink = styled(Link)`
   color: var(--color-white);
   text-decoration: none;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    transition: width 0.25s;
-    height: 0.2rem;
-    width: 0;
-    background-color: var(--color-orange);
-    bottom: -4px;
-  }
-  &:hover {
-    &::before {
-      width: 1.6rem;
-    }
-  }
 `
 
 const StyledHeader = styled.header`
@@ -55,6 +40,21 @@ const LeftWrapper = styled.div`
   li {
     margin-right: 6.6rem;
     position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      transition: width 0.25s;
+      height: 0.2rem;
+      width: 0;
+      background-color: var(--color-orange);
+      bottom: -4px;
+    }
+    &:hover {
+      &::before {
+        width: 1.6rem;
+      }
+    }
   }
 
   a {
