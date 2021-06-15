@@ -50,10 +50,12 @@ const StyledModalHeader = styled.div`
   position: absolute;
   top: 2.8rem;
   right: 2.8rem;
-  a {
+
+  span {
     color: var(--color-white);
     font-size: 2.4rem;
     text-decoration: none;
+    cursor: pointer;
   }
 `
 
@@ -82,9 +84,7 @@ const Modal = ({ show, closeModal }) => {
     <ModalWrapper onClick={closeModal}>
       <ModalCard onClick={(e) => e.stopPropagation()}>
         <StyledModalHeader>
-          <a href="#" onClick={closeModal}>
-            x
-          </a>
+          <span onClick={closeModal}>x</span>
         </StyledModalHeader>
         <Heading size="2.4rem" mb="2rem" color="orange">
           If you are below 18, your parent/guardian must be informed of the following:
