@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Button from './Button'
 import { Text } from '../components'
 import { useAuth } from '../helpers/auth'
+import FirebaseContext from '../context/firebase'
+import LogoutIcon from '../images/svg/logout'
 // import { Capitalize } from '../helpers/capitalize'
 
 const StyledLink = styled(Link)`
@@ -82,8 +85,19 @@ const RightWrapper = styled.div`
   align-items: center;
 `
 
+const StyledLogout = styled.button`
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 2.4rem;
+`
+
 const Header = () => {
   const user = useAuth()
+  const router = useRouter()
+  const { firebase } = useContext(FirebaseContext)
   return (
     <StyledHeader>
       <StyledNav>
@@ -123,7 +137,25 @@ const Header = () => {
               <Button orange="true">Register</Button>
             </StyledLink>
           ) : (
-            <Text color="white">Welcome back, {user.displayName}</Text>
+            <>
+              <Text color="white">Welcome back, {user.displayName}</Text>
+              <StyledLogout
+                type="button"
+                title="Sign Out"
+                onClick={() => {
+                  firebase.auth().signOut()
+                  router.push('/login')
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter') {
+                    firebase.auth().signOut()
+                    router.push('/login')
+                  }
+                }}
+              >
+                <LogoutIcon />
+              </StyledLogout>
+            </>
           )}
         </RightWrapper>
       </StyledNav>
