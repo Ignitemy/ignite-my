@@ -133,9 +133,16 @@ const Header = () => {
         </LeftWrapper>
         <RightWrapper>
           {!user ? (
-            <StyledLink href="/register">
-              <Button orange="true">Register</Button>
-            </StyledLink>
+            <>
+              <StyledLink href="/login">
+                <Button white="true" style={{ marginRight: '2rem' }}>
+                  Log In
+                </Button>
+              </StyledLink>
+              <StyledLink href="/register">
+                <Button orange="true">Register</Button>
+              </StyledLink>
+            </>
           ) : (
             <>
               <Text color="white">Welcome back, {user.displayName}</Text>
