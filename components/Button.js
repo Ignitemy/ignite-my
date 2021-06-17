@@ -28,6 +28,7 @@ const useStyles = makeStyles({
     borderRadius: '10px',
     fontFamily: 'Gotham',
     fontSize: '18px',
+    lineHeight: '1.35',
     padding: '1rem 4.5rem',
     textTransform: 'capitalize'
   }
