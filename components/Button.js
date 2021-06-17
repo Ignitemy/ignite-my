@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     borderRadius: '10px',
     fontFamily: 'Gotham',
     fontSize: '18px',
-    padding: '1rem 4rem',
+    padding: '1rem 4.5rem',
     textTransform: 'capitalize'
   }
 })
