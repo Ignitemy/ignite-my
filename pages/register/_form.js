@@ -306,9 +306,9 @@ const RegistrationForm = () => {
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
     actions.setSubmitting(true)
-
+    const axios = require('axios');
     const emailExists = await doesEmailExist(values.email)
-    console.log(values)
+    console.log('Axios response: ', values)
     if (!emailExists) {
       try {
         const createdUserResult = await firebase
@@ -322,19 +322,49 @@ const RegistrationForm = () => {
         })
 
         // firebase user collection (create a document)
-        await firebase.firestore().collection('users').add({
-          userId: createdUserResult.user.uid,
-          fullName: values.fullName,
-          email: values.email,
-          age: values.age,
-          myKad: values.myKad,
-          contactNumber: values.contactNumber,
-          address: values.address,
-          city: values.city,
-          occupation: values.occupation,
-          state: values.state,
-          dateCreated: Date.now()
-        })
+        // await firebase.firestore().collection('users').add({
+        //   userId: createdUserResult.user.uid,
+        //   fullName: values.fullName,
+        //   email: values.email,
+        //   age: values.age,
+        //   myKad: values.myKad,
+        //   contactNumber: values.contactNumber,
+        //   address: values.address,
+        //   city: values.city,
+        //   occupation: values.occupation,
+        //   state: values.state,
+        //   dateCreated: Date.now()
+        // })
+
+        // const name = 'entry.542227268'
+        // await axios.post('https://docs.google.com/forms/d/e/1FAIpQLSe898GldSTuIp05FwpMllWdkvJP86p186Z_rC6CvheIIYVnzg/formResponse', {
+        //   [name]: 'Testing from webapp'
+        // },
+        // {headers: {
+        //   'Content-Type': 'application/x-www-form-urlencoded'
+        //   // 'Content-Type': 'application/json',
+        //   // 'Access-Control-Allow-Origin':'*'
+        // }}).then(function (response) {
+        //   console.log(response);
+        // })
+
+        const data = "entry.542227268=Testing from webapp"
+        const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSe898GldSTuIp05FwpMllWdkvJP86p186Z_rC6CvheIIYVnzg/formResponse', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          // mode: 'cors', // no-cors, *cors, same-origin
+          // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          // credentials: 'same-origin', // include, *same-origin, omit
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+            // 'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin':'*'
+          },
+          // redirect: 'follow', // manual, *follow, error
+          // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: data // body data type must match "Content-Type" header
+        });
+        console.log(response)
+
         setRegistered(true)
         actions.setSubmitting(false)
 
