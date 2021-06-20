@@ -82,16 +82,14 @@ const SocialWrapper = styled.div`
   margin-top: 4.5rem;
 
   a {
+    margin: 0 1.6rem;
+
     &:hover,
     &:focus {
       svg > path {
         fill: #ff9100;
         stroke: #ff9100;
       }
-    }
-
-    &:nth-child(2) {
-      margin: 0 3.2rem;
     }
   }
 `
@@ -140,9 +138,6 @@ const Footer = () => (
     </StyledNav>
     <FooterContainer>
       <SocialWrapper>
-        <a href="https://facebook.com" target="_blank">
-          <FbIcon />
-        </a>
         <a href="https://instagram.com/ignitemy______" target="_blank">
           <InstaIcon />
         </a>
