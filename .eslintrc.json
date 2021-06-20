@@ -28,7 +28,7 @@
     "prefer-const": [
       "error",
       {
-        "destructuring": "all"
+        "destructuring": "none"
       }
     ],
     "arrow-body-style": [
