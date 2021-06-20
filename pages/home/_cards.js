@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Text, Heading } from '../../components'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
-import { Text, Heading } from '../../components'
 
 const SpeakerCard = styled.div`
   display: flex;
@@ -40,7 +40,7 @@ const Cards = (props) => {
   const { src, name, children } = props
   return (
     <SpeakerCard>
-      <StyledImage src={src || '/images/png/event-2.png'} height={256} width={370} />
+      <StyledImage src={src ? src : '/images/png/event-2.png'} height={256} width={370} />
       <SpeakerContent>
         <Heading color="black" size="1.8rem">
           {name}
@@ -54,7 +54,7 @@ const Cards = (props) => {
 }
 
 Cards.propTypes = {
-  src: PropTypes.string,
+  imageSource: PropTypes.string,
   name: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired
 }
