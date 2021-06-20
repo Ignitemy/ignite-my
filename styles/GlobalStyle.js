@@ -25,6 +25,17 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Gotham", sans-serif;
         margin: 0;
         padding: 0;
+
+        &.blur {
+            overflow: hidden;
+
+            #content > * {
+                filter: blur(4px) brightness(0.5);
+                transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+                pointer-events: none;
+                user-select: none;
+            }
+        }
     }
 `
 

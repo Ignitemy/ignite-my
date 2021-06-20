@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Button from './Button'
+import SideMenu from './SideMenu'
 import { Text } from '../components'
 import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
@@ -22,6 +23,13 @@ const StyledHeader = styled.header`
   z-index: 100;
   background-color: var(--color-black);
   padding: 0 8rem;
+
+  @media (max-width: 992px) {
+    padding: 0 4rem;
+  }
+  @media (max-width: 900px) {
+    padding: 0 2rem;
+  }
 `
 const StyledNav = styled.nav`
   position: relative;
@@ -41,7 +49,7 @@ const LeftWrapper = styled.div`
   }
 
   li {
-    margin-right: 6.6rem;
+    margin-right: 6rem;
     position: relative;
 
     &::before {
@@ -94,6 +102,12 @@ const StyledLogout = styled.button`
   margin-left: 2.4rem;
 `
 
+const WelcomeText = styled(Text)`
+  @media (max-width: 1150px) {
+    display: none;
+  }
+`
+
 const Header = () => {
   const user = useAuth()
   const router = useRouter()
@@ -124,13 +138,23 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            <li>
-              <StyledLink href="/blog">
-                <a>Blog</a>
-              </StyledLink>
-            </li>
+            {user && (
+              <>
+                <li>
+                  <StyledLink href="/blog">
+                    <a>Blog</a>
+                  </StyledLink>
+                </li>
+                <li>
+                  <StyledLink href="/documents">
+                    <a>Documents</a>
+                  </StyledLink>
+                </li>
+              </>
+            )}
           </ul>
         </LeftWrapper>
+        <SideMenu />
         <RightWrapper>
           {!user ? (
             <>
@@ -145,13 +169,12 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Text color="white">Welcome back, {user.displayName}</Text>
+              <WelcomeText color="white">Welcome back, {user.displayName}</WelcomeText>
               <StyledLogout
                 type="button"
                 title="Sign Out"
                 onClick={() => {
                   firebase.auth().signOut()
-                  router.push('/login')
                 }}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter') {
