@@ -46,13 +46,18 @@ const ButtonWrapper = styled.div`
   margin-top: 4rem;
 `
 
+const StyledImage = styled(Image)`
+  border-radius: 20px;
+  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.05), 0 0 20px 0 rgba(0, 0, 0, 0.05);
+`
+
 const Events = () => {
   return (
     <>
       <SectionContainer>
         <Container>
           <EventWrapper>
-            <Image src="/images/png/event-1.png" height={380} width={642} />
+            <StyledImage src="/images/png/event-1.png" height={380} width={642} />
             <EventContent ml="4.8rem">
               <Heading as="h3" size="2.4rem" color="orange">
                 IGNITE YOUTH LEADERSHIP SUBMIT
@@ -74,7 +79,7 @@ const Events = () => {
       <SectionContainer background="radial-gradient(69.94% 267.87% at 74.91% 49.95%, #9E3F02 16.46%, #582226 40.33%, #421A2A 51.42%, #000000 100%)">
         <Container>
           <EventWrapper fd="row-reverse">
-            <Image src="/images/png/event-2.png" height={380} width={642} />
+            <StyledImage src="/images/png/event-2.png" height={380} width={642} />
             <EventContent align="flex-end" mr="4.8rem">
               <Heading as="h3" size="2.4rem" align="right" color="orange">
                 IGNITE RALLY

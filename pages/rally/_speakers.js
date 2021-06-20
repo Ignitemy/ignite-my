@@ -42,13 +42,18 @@ const SpeakerContent = styled.div`
   }
 `
 
+const StyledImage = styled(Image)`
+  border-radius: 20px;
+  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.05), 0 0 20px 0 rgba(0, 0, 0, 0.05);
+`
+
 const Speakers = () => {
   return (
     <>
       <SectionContainer background="linear-gradient(90deg, #FC6076 0%, #FF9A44 100%)">
         <Container>
           <SpeakerWrapper fd="row-reverse">
-            <Image src="/images/png/event-2.png" height={326} width={588} />
+            <StyledImage src="/images/png/event-2.png" height={326} width={588} />
             <SpeakerContent align="flex-end" mr="10rem">
               <Heading as="h3" size="2.4rem" align="right">
                 SPEAKER
