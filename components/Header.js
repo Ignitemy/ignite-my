@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Button from './Button'
-import { Text } from '../components'
+import SideMenu from './SideMenu'
+import { Text } from './Typography'
 import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
 import LogoutIcon from '../images/svg/logout'
-// import { Capitalize } from '../helpers/capitalize'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -15,18 +14,34 @@ const StyledLink = styled(Link)`
   position: relative;
 `
 
+const RegisterButton = styled(Button)`
+  @media (max-width: 600px) {
+    display: none;
+  }
+`
+
 const StyledHeader = styled.header`
   width: 100%;
   height: 100px;
+  display: flex;
+  justify-content: center;
   top: 0;
   z-index: 100;
   background-color: var(--color-black);
   padding: 0 8rem;
+
+  @media (max-width: 992px) {
+    padding: 0 4rem;
+  }
+  @media (max-width: 900px) {
+    padding: 0 2rem;
+  }
 `
 const StyledNav = styled.nav`
   position: relative;
   height: 100%;
   width: 100%;
+  max-width: 120rem;
   display: flex;
   justify-content: space-between;
 `
@@ -94,9 +109,14 @@ const StyledLogout = styled.button`
   margin-left: 2.4rem;
 `
 
+const WelcomeText = styled(Text)`
+  @media (max-width: 1150px) {
+    display: none;
+  }
+`
+
 const Header = () => {
   const user = useAuth()
-  const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
   return (
     <StyledHeader>
@@ -124,13 +144,23 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            <li>
-              <StyledLink href="/blog">
-                <a>Blog</a>
-              </StyledLink>
-            </li>
+            {user && (
+              <>
+                <li>
+                  <StyledLink href="/blog">
+                    <a>Blog</a>
+                  </StyledLink>
+                </li>
+                <li>
+                  <StyledLink href="/documents">
+                    <a>Documents</a>
+                  </StyledLink>
+                </li>
+              </>
+            )}
           </ul>
         </LeftWrapper>
+        <SideMenu />
         <RightWrapper>
           {!user ? (
             <>
@@ -140,23 +170,21 @@ const Header = () => {
                 </Button>
               </StyledLink>
               <StyledLink href="/register">
-                <Button orange="true">Register</Button>
+                <RegisterButton orange="true">Register</RegisterButton>
               </StyledLink>
             </>
           ) : (
             <>
-              <Text color="white">Welcome back, {user.displayName}</Text>
+              <WelcomeText color="white">Welcome back, {user.displayName}</WelcomeText>
               <StyledLogout
                 type="button"
                 title="Sign Out"
                 onClick={() => {
                   firebase.auth().signOut()
-                  router.push('/login')
                 }}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter') {
                     firebase.auth().signOut()
-                    router.push('/login')
                   }
                 }}
               >
