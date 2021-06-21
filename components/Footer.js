@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import FbIcon from '../images/svg/fb'
 import InstaIcon from '../images/svg/insta'
 import YoutubeIcon from '../images/svg/youtube'
+import { useAuth } from '@/helpers/auth'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -15,6 +15,7 @@ const StyledLink = styled(Link)`
 const StyledNav = styled.div`
   position: relative;
   width: 100%;
+  max-width: 140rem;
   height: 50%;
   display: flex;
   justify-content: space-between;
@@ -25,7 +26,9 @@ const StyledNav = styled.div`
 `
 
 const StyledFooter = styled.footer`
-  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 420px;
   background-color: var(--color-black);
   padding: 0 8rem;
@@ -37,6 +40,8 @@ const StyledFooter = styled.footer`
 const FooterContainer = styled.div`
   height: auto;
   display: flex;
+  width: 100%;
+  max-width: 140rem;
   flex-direction: column;
   justify-content: center;
   border-top: 1px solid var(--color-white);
@@ -82,16 +87,14 @@ const SocialWrapper = styled.div`
   margin-top: 4.5rem;
 
   a {
+    margin: 0 1.6rem;
+
     &:hover,
     &:focus {
       svg > path {
         fill: #ff9100;
         stroke: #ff9100;
       }
-    }
-
-    &:nth-child(2) {
-      margin: 0 3.2rem;
     }
   }
 `
@@ -104,55 +107,64 @@ const FooterText = styled.div`
   margin-top: 2.2rem;
 `
 
-const Footer = () => (
-  <StyledFooter>
-    <StyledNav>
-      <LeftWrapper>
-        <ul>
-          <li>
-            <StyledLink href="/">
-              <a>Home</a>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/yls">
-              <a>
-                <WhiteSpan>IGNITE</WhiteSpan>
-                <OrangeSpan>YLS</OrangeSpan>
-              </a>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/rally">
-              <a>
-                <WhiteSpan>IGNITE</WhiteSpan>
-                <OrangeSpan>RALLY</OrangeSpan>
-              </a>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/blog">
-              <a>Blog</a>
-            </StyledLink>
-          </li>
-        </ul>
-      </LeftWrapper>
-    </StyledNav>
-    <FooterContainer>
-      <SocialWrapper>
-        <a href="https://facebook.com" target="_blank">
-          <FbIcon />
-        </a>
-        <a href="https://instagram.com/ignitemy______" target="_blank">
-          <InstaIcon />
-        </a>
-        <a href="https://youtube.com" target="_blank">
-          <YoutubeIcon />
-        </a>
-      </SocialWrapper>
-      <FooterText>Follow us to stay connected</FooterText>
-    </FooterContainer>
-  </StyledFooter>
-)
+const Footer = () => {
+  const user = useAuth()
+  return (
+    <StyledFooter>
+      <StyledNav>
+        <LeftWrapper>
+          <ul>
+            <li>
+              <StyledLink href="/">
+                <a>Home</a>
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/yls">
+                <a>
+                  <WhiteSpan>IGNITE</WhiteSpan>
+                  <OrangeSpan>YLS</OrangeSpan>
+                </a>
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/rally">
+                <a>
+                  <WhiteSpan>IGNITE</WhiteSpan>
+                  <OrangeSpan>RALLY</OrangeSpan>
+                </a>
+              </StyledLink>
+            </li>
+            {user && (
+              <>
+                <li>
+                  <StyledLink href="/blog">
+                    <a>Blog</a>
+                  </StyledLink>
+                </li>
+                <li>
+                  <StyledLink href="/documents">
+                    <a>Documents</a>
+                  </StyledLink>
+                </li>
+              </>
+            )}
+          </ul>
+        </LeftWrapper>
+      </StyledNav>
+      <FooterContainer>
+        <SocialWrapper>
+          <a href="https://instagram.com/ignitemy______" target="_blank">
+            <InstaIcon />
+          </a>
+          <a href="https://youtube.com" target="_blank">
+            <YoutubeIcon />
+          </a>
+        </SocialWrapper>
+        <FooterText>Follow us to stay connected</FooterText>
+      </FooterContainer>
+    </StyledFooter>
+  )
+}
 
 export default Footer
