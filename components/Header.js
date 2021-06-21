@@ -41,7 +41,7 @@ const StyledNav = styled.nav`
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 120rem;
+  max-width: 140rem;
   display: flex;
   justify-content: space-between;
 `
