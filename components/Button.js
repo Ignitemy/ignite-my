@@ -1,46 +1,63 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
-import { makeStyles } from '@material-ui/core/styles'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const useStyles = makeStyles({
-  root: {
-    background: (props) =>
-      props.orange
-        ? 'var(--color-orange)'
-        : props.white
-        ? 'var(--color-white)'
-        : props.black
-        ? 'var(--color-black)'
-        : 'var(--color-orange)',
-    color: (props) =>
-      props.orange
-        ? 'var(--color-white)'
-        : props.white
-        ? 'var(--color-orange)'
-        : props.black
-        ? 'var(--color-white)'
-        : 'var(--color-black)',
-    '&:hover': {
-      background: (props) =>
-        props.orange ? '#ff9100' : props.white ? '#fff9f5' : props.black ? '#262626' : '#ff9100'
-    },
-    borderColor: (props) => (props.black ? 'var(--color-black)' : 'var(--color-orange)'),
-    borderRadius: '10px',
-    fontFamily: 'Gotham',
-    fontSize: '18px',
-    lineHeight: '1.35',
-    padding: '1rem 4.5rem',
-    textTransform: 'capitalize'
+const StyledButton = styled.button`
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.35;
+  padding: 1rem 4.5rem;
+  text-transform: capitalize;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.8s;
+  border-color: ${(props) => (props.black ? 'var(--color-black)' : 'var(--color-orange)')};
+  background-color: ${(props) => {
+    if (props.orange) return 'var(--color-orange)'
+    if (props.white) return 'transparent'
+    if (props.black) return 'var(--color-black)'
+    return 'var(--color-orange)'
+  }};
+  color: ${(props) => {
+    if (props.orange) return 'var(--color-white)'
+    if (props.white) return 'var(--color-orange)'
+    if (props.black) return 'var(--color-white)'
+    return 'var(--color-orange)'
+  }};
+  &:hover {
+    background-color: ${(props) => {
+      if (props.orange) return '#ff9100'
+      if (props.white) return 'var(--color-orange)'
+      if (props.black) return '#262626'
+      return '#ff9100'
+    }};
+    color: ${(props) => {
+      if (props.orange) return 'var(--color-white)'
+      if (props.white) return 'var(--color-white)'
+      if (props.black) return 'var(--color-white)'
+      return 'var(--color-orange)'
+    }};
   }
-})
+  &:active {
+    transform: scale(0.95);
+    background-color: #ff9999;
+    background-size: 100%;
+    transition: background-color 0s;
+  }
+`
 
-const MuiButton = (props) => {
-  const classes = useStyles(props)
-  return (
-    <Button className={classes.root} variant="outlined" onClick={props.onClick} {...props}>
-      {props.children}
-    </Button>
-  )
+const Button = (props) => (
+  <StyledButton onClick={props.onClick} {...props}>
+    {props.children}
+  </StyledButton>
+)
+
+export default Button
+
+Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func
 }
-
-export default MuiButton
