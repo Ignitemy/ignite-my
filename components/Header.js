@@ -180,11 +180,11 @@ const Header = () => {
                 type="button"
                 title="Sign Out"
                 onClick={() => {
-                  firebase.auth().signOut()
+                  setTimeout(() => firebase.auth().signOut(), 500)
                 }}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter') {
-                    firebase.auth().signOut()
+                    setTimeout(() => firebase.auth().signOut(), 500)
                   }
                 }}
               >

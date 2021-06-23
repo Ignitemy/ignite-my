@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Gotham", sans-serif;
         margin: 0;
         padding: 0;
+
+        .MuiMenuItem-root {
+            font-size: 1.4rem;
+        }
     }
 `
 

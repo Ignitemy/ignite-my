@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FF6600'
+      main: '#ff9999'
     }
   },
   typography: {
@@ -43,6 +43,10 @@ const Container = styled.div`
   flex-direction: column;
   padding: 4rem 8rem;
   background-color: var(--color-black);
+
+  @media (max-width: 1200px) {
+    padding: 4rem 4rem;
+  }
 `
 
 const FlexCenter = styled.div`
@@ -52,17 +56,17 @@ const FlexCenter = styled.div`
   align-items: center;
 `
 
-const RegisteredContainer = styled(Container)`
-  background-color: var(--color-black);
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  padding: 10rem 0;
-`
+// const RegisteredContainer = styled(Container)`
+//   background-color: var(--color-black);
+//   width: 100%;
+//   height: 100%;
+//   align-items: center;
+//   padding: 10rem 0;
+// `
 
-const StyledInstaIcon = styled(InstaIcon)`
-  margin-right: 1.8rem;
-`
+// const StyledInstaIcon = styled(InstaIcon)`
+//   margin-right: 1.8rem;
+// `
 
 const StyledForm = styled(Form)`
   width: 100%;
@@ -80,9 +84,9 @@ const StyledTextField = styled(TextField)`
   margin: 1.2rem 0 !important;
 
   > label {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--color-white);
-    top: -5px;
+    top: -6px;
   }
 
   > div {
@@ -93,11 +97,16 @@ const StyledTextField = styled(TextField)`
     input {
       padding: 0.8rem 1.2rem;
       height: 36px;
+      font-size: 1.6rem;
     }
   }
 
   > p {
     font-size: 1.2rem;
+  }
+
+  .MuiFormHelperText-root.Mui-error {
+    font-size: 1.4rem;
   }
 `
 
@@ -117,38 +126,6 @@ const CustomTextField = ({ ...props }) => {
   )
 }
 
-// const CheckboxGroup = styled.div`
-//   display: flex;
-//   align-items: center;
-
-//   .MuiCheckbox-root {
-//     color: var(--color-white);
-//   }
-
-//   .MuiCheckbox-colorSecondary.Mui-checked {
-//     color: var(--color-orange);
-//   }
-
-//   label {
-//     font-size: 1.6rem;
-
-//     span {
-//       cursor: pointer;
-//       text-decoration: none;
-//       color: var(--color-orange);
-//     }
-//     span:hover {
-//       text-decoration: underline;
-//       text-underline-offset: 2px;
-//     }
-//   }
-// `
-
-// const StyledErrorMessage = styled(ErrorMessage)`
-//   color: red;
-//   font-size: 1.4rem;
-// `
-
 const ButtonWrapper = styled.div`
   margin-top: 2.4rem;
 `
@@ -161,7 +138,7 @@ const FlexEnd = styled.div`
   a {
     color: var(--color-orange);
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 `
 
@@ -173,7 +150,7 @@ const validationSchema = yup.object({
   password: yup.string().required('Your password is required')
 })
 
-const RegistrationForm = () => {
+const LoginForm = () => {
   const classes = useStyles()
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
@@ -236,16 +213,6 @@ const RegistrationForm = () => {
                   <a>Forget password?</a>
                 </Link>
               </FlexEnd>
-              {/* <CheckboxGroup>
-                  <Field type="checkbox" name="checked" as={Checkbox} />
-                  <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                    I have read the <span onClick={() => setShow(true)}>terms & conditions</span>
-                  </label>
-                </CheckboxGroup>
-                <StyledErrorMessage name="checked" component="div" /> */}
-
-              {/* <pre style={{ color: 'white' }}>{JSON.stringify(values, null, 2)}</pre>
-                <pre style={{ color: 'white' }}>{JSON.stringify(errors, null, 2)}</pre> */}
               <ButtonWrapper>
                 <Button orange="true" type="submit" disabled={!isValid || !dirty || isSubmitting}>
                   Log In
@@ -259,4 +226,4 @@ const RegistrationForm = () => {
   )
 }
 
-export default RegistrationForm
+export default LoginForm

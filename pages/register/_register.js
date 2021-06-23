@@ -10,6 +10,10 @@ import LocationIcon from '../../images/svg/location'
 const RegisterSection = styled.section`
   width: 100%;
   display: flex;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 const BannerContainer = styled.div`
@@ -19,12 +23,21 @@ const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 10rem;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: 600px;
+  }
 `
 
 const FormContainer = styled.div`
   display: flex;
   width: 50%;
   background-color: var(--color-white);
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `
 
 const BannerContent = styled.div`
