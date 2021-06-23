@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 
 const StyledButton = styled.button`
@@ -47,6 +47,22 @@ const StyledButton = styled.button`
     background-size: 100%;
     transition: background-color 0s;
   }
+
+  ${(props) => {
+    if (props.disabled)
+      return css`
+        pointer-events: none;
+        opacity: 0.32;
+      `
+    if (props.loading)
+      return css`
+        width: 8rem;
+        height: 8rem;
+        border: 10 px solid var(--color-black);
+        border-radius: 50%;
+        animation: sweep 1s linear alternate infinite, rotates 0.8s linear infinite;
+      `
+  }}
 `
 
 const Button = (props) => (
