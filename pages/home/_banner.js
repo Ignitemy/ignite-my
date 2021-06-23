@@ -75,7 +75,7 @@ const Banner = () => {
       <StyledImage
         src="/images/png/homepage-banner.png
         "
-        alt="A girl holding fairy lights in her palm"
+        alt="Fire patterns"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
