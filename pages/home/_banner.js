@@ -9,8 +9,7 @@ const BannerContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 15rem;
+  align-items: center;
 `
 
 const BannerContent = styled.div`
@@ -26,6 +25,7 @@ const StyledImage = styled(Image)`
 const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   @media (max-width: 900px) {
@@ -35,15 +35,14 @@ const ContentWrapper = styled.div`
 
 const ImageWrapper = styled.div`
   height: 59px;
-  margin-right: 2.5rem;
 
   @media (max-width: 900px) {
     margin: 0 0 2.5rem;
   }
 `
 
-const RightContent = styled.div`
-  margin-left: 2.5rem;
+const Details = styled.div`
+  margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +53,7 @@ const RightContent = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-  margin-top: 9rem;
+  margin-top: 6.4rem;
 `
 
 const WhiteHeader = styled.h3`
@@ -74,7 +73,8 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/jpg/homepage-banner.jpg"
+        src="/images/png/homepage-banner.png
+        "
         alt="A girl holding fairy lights in her palm"
         layout="fill"
         objectFit="cover"
@@ -85,10 +85,10 @@ const Banner = () => {
           <ImageWrapper>
             <Image src="/images/png/ignite-logo.png" alt="Ignite logo" height={59} width={383} />
           </ImageWrapper>
-          <RightContent>
+          <Details>
             <WhiteHeader>4th Sept 2021</WhiteHeader>
-            <OrangeHeader>Hall 1, Dream Centre PJ</OrangeHeader>
-          </RightContent>
+            <OrangeHeader>STREAMING LIVE</OrangeHeader>
+          </Details>
         </ContentWrapper>
         <ButtonWrapper>
           <Link href="/register">
