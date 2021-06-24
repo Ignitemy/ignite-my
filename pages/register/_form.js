@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
     },
 
     '.MuiMenuItem-root': {
-      fontSize: '1.2rem'
+      fontSize: '1.4rem'
     }
   }
 }))
@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FF6600'
+      main: '#ff9999'
     }
   },
   typography: {
@@ -44,6 +44,10 @@ const Container = styled.div`
   flex-direction: column;
   padding: 4rem 8rem;
   background-color: var(--color-black);
+
+  @media (max-width: 1200px) {
+    padding: 4rem 4rem;
+  }
 `
 
 const FlexCenter = styled.div`
@@ -81,9 +85,9 @@ const StyledTextField = styled(TextField)`
   margin: 1.2rem 0 !important;
 
   > label {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--color-white);
-    top: -5px;
+    top: -6px;
   }
 
   > div {
@@ -94,7 +98,12 @@ const StyledTextField = styled(TextField)`
     input {
       padding: 0.8rem 1.2rem;
       height: 36px;
+      font-size: 1.6rem;
     }
+  }
+
+  .MuiFormHelperText-root.Mui-error {
+    font-size: 1.4rem;
   }
 
   > p {
@@ -109,7 +118,7 @@ const StyledSelect = styled(Select)`
   margin: 1.2rem 0;
 
   div {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
     display: flex;
     height: 100%;
@@ -159,6 +168,11 @@ const CheckboxGroup = styled.div`
     color: var(--color-orange);
   }
 
+  .MuiSvgIcon-root {
+    width: 1.4em;
+    height: 1.4em;
+  }
+
   label {
     font-size: 1.6rem;
 
@@ -177,6 +191,7 @@ const CheckboxGroup = styled.div`
 const StyledErrorMessage = styled(ErrorMessage)`
   color: red;
   font-size: 1.4rem;
+  padding-left: 1rem;
 `
 
 const ActiveOccupationWrapper = styled.div`
@@ -206,12 +221,12 @@ const ActiveOccupationWrapper = styled.div`
     @media (max-width: 1120px) {
       padding: 1.8rem 4rem;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 480px) {
       width: 100%;
       margin-right: 0;
     }
   }
-  @media (max-width: 900px) {
+  @media (max-width: 480px) {
     margin-right: 0;
   }
 `
@@ -243,7 +258,7 @@ const OccupationWrapper = styled.div`
     @media (max-width: 1120px) {
       padding: 1.8rem 4rem;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 480px) {
       width: 100%;
       margin-top: 2rem;
     }
@@ -252,15 +267,16 @@ const OccupationWrapper = styled.div`
 
 const StyledLabel = styled(InputLabel)`
   color: var(--color-white) !important;
-  font-size: 1.2rem !important;
+  font-size: 1.6rem !important;
   margin-top: 1.2rem;
+  margin-bottom: -6px;
 `
 
 const TabWrapper = styled.div`
   display: flex;
   margin: 1.2rem 0;
 
-  @media (max-width: 900px) {
+  @media (max-width: 480px) {
     flex-direction: column;
   }
 `

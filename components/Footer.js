@@ -5,6 +5,19 @@ import InstaIcon from '../images/svg/insta'
 import YoutubeIcon from '../images/svg/youtube'
 import { useAuth } from '@/helpers/auth'
 
+const StyledYoutubeIcon = styled(YoutubeIcon)`
+  @media (max-width: 900px) {
+    height: 36px;
+    width: 36px;
+  }
+`
+const StyledInstaIcon = styled(InstaIcon)`
+  @media (max-width: 900px) {
+    height: 36px;
+    width: 36px;
+  }
+`
+
 const StyledLink = styled(Link)`
   color: var(--color-white);
   text-decoration: none;
@@ -105,6 +118,10 @@ const FooterText = styled.div`
   justify-content: center;
   font-size: 2.4rem;
   margin-top: 2.2rem;
+
+  @media (max-width: 900px) {
+    font-size: 14px;
+  }
 `
 
 const Footer = () => {
@@ -155,10 +172,10 @@ const Footer = () => {
       <FooterContainer>
         <SocialWrapper>
           <a href="https://instagram.com/ignitemy______" target="_blank">
-            <InstaIcon />
+            <StyledInstaIcon />
           </a>
           <a href="https://youtube.com" target="_blank">
-            <YoutubeIcon />
+            <StyledYoutubeIcon />
           </a>
         </SocialWrapper>
         <FooterText>Follow us to stay connected</FooterText>
