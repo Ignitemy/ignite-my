@@ -11,6 +11,7 @@ const SpeakerCard = styled.div`
   border-radius: 2.5rem;
   align-items: center;
   min-width: 300px;
+  margin-top: 2.4rem;
 
   transition: transform 0.3s;
 

@@ -35,21 +35,36 @@ const CardContainer = styled.div`
   }
 `
 
+const StyledHeading = styled(Heading)`
+  @media (max-width: 900px) {
+    font-size: 4.8rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 3.2rem;
+  }
+`
+
 const Speakers = () => {
   return (
     <SectionContainer bgcolor="var(--color-black)">
       <Container>
-        <Heading color="white" size="6.4rem" align="center">
+        <StyledHeading color="white" size="6.4rem" align="center">
           INTRODUCING
-        </Heading>
+        </StyledHeading>
       </Container>
       <CardContainer>
-        <Cards name="#SPEAKER 1">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-        consequuntur magni dolores eos qui ratione voluptatem.</Cards>
-        <Cards name="#SPEAKER 2">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-        consequuntur magni dolores eos qui ratione voluptatem.</Cards>
-        <Cards name="#SPEAKER 3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-        consequuntur magni dolores eos qui ratione voluptatem.</Cards>
+        <Cards name="#SPEAKER 1">
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos qui ratione voluptatem.
+        </Cards>
+        <Cards name="#SPEAKER 2">
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos qui ratione voluptatem.
+        </Cards>
+        <Cards name="#SPEAKER 3">
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos qui ratione voluptatem.
+        </Cards>
       </CardContainer>
     </SectionContainer>
   )
