@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Heading } from '../../components'
 
 const BannerContainer = styled.div`
-  height: 1250px;
+  height: 88rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -25,6 +25,7 @@ const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media (max-width: 900px) {
     align-items: center;
@@ -33,24 +34,14 @@ const ContentWrapper = styled.div`
 
 const LogoWrapper = styled.div`
   height: 173px;
-  margin-right: 4.5rem;
   display: flex;
-  justify-content: flex-end;
-
-  @media (max-width: 900px) {
-    margin: 0 0 2.5rem;
-  }
+  justify-content: center;
 `
 
 const EventDetails = styled.div`
-  margin-left: calc(100% - 72rem);
   margin-top: 7.6rem;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 900px) {
-    margin-left: 0;
-  }
 `
 const StreamingLive = styled.div`
   display: flex;
@@ -62,11 +53,12 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/jpg/rally-banner.jpg"
+        src="/images/png/rally-banner.png"
         alt="Campfire"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        priority="true"
       />
       <BannerContent>
         <ContentWrapper>
@@ -76,16 +68,17 @@ const Banner = () => {
               alt="Ignite youth leadership summit logo"
               height={202}
               width={526}
+              priority="true"
             />
           </LogoWrapper>
           <EventDetails>
-            <Heading as="span" size="3.6rem" align="left" color="white" fstyle="italic" lh="4rem">
+            <Heading as="span" size="3.6rem" align="center" color="white" fstyle="italic" lh="4rem">
               4th Sept 2021
             </Heading>
             <Heading
               as="span"
               size="3.6rem"
-              align="left"
+              align="center"
               color="white"
               fstyle="italic"
               mt="2.4rem"
@@ -97,7 +90,7 @@ const Banner = () => {
               <Heading
                 as="span"
                 size="3.6rem"
-                align="left"
+                align="center"
                 color="orange"
                 fstyle="italic"
                 mt="2.4rem"
@@ -109,7 +102,7 @@ const Banner = () => {
               <Heading
                 as="span"
                 size="3.6rem"
-                align="left"
+                align="center"
                 color="white"
                 fstyle="italic"
                 mt="2.4rem"

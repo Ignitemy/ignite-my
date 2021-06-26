@@ -46,4 +46,5 @@ export const Heading = styled(({ as = 'h1', children, ...props }) =>
   font-size: ${(props) => props.size};
   line-height: ${(props) => props.lh};
   width: ${(props) => props.width || '100%'};
+  letter-spacing: ${(props) => props.ls};
 `

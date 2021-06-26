@@ -92,6 +92,7 @@ const Register = () => {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          priority="true"
         />
         <BannerContent>
           <ContentWrapper>
@@ -119,7 +120,7 @@ const Register = () => {
               <Row>
                 <LocationIcon />
                 <Text size="3rem" color="white" ml="1.5rem">
-                  Hall 1, Dream Centre PJ
+                  STREAMING LIVE
                 </Text>
               </Row>
             </EventDetails>

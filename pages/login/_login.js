@@ -93,6 +93,7 @@ const LoginSection = () => {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          priority="true"
         />
         <BannerContent>
           <ContentWrapper>
@@ -107,20 +108,20 @@ const LoginSection = () => {
             <EventDetails>
               <Row>
                 <CalendarIcon />
-                <Text size="3rem" color="white" ml="1.5rem">
+                <Text size="3rem" color="white" ml="1.5rem" weight="bold">
                   4th September 2021
                 </Text>
               </Row>
               <Row>
                 <TimeIcon />
-                <Text size="3rem" color="white" ml="1.5rem">
+                <Text size="3rem" color="white" ml="1.5rem" weight="bold">
                   10am - 3.20pm
                 </Text>
               </Row>
               <Row>
                 <LocationIcon />
-                <Text size="3rem" color="white" ml="1.5rem">
-                  Hall 1, Dream Centre PJ
+                <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                  STREAMING LIVE
                 </Text>
               </Row>
             </EventDetails>

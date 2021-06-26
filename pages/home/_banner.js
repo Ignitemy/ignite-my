@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAuth } from '@/helpers/auth'
 import { Button } from '../../components'
 
 const BannerContainer = styled.div`
@@ -70,6 +71,7 @@ const OrangeHeader = styled.h3`
   color: var(--color-orange);
 `
 const Banner = () => {
+  const user = useAuth()
   return (
     <BannerContainer>
       <StyledImage
@@ -78,22 +80,31 @@ const Banner = () => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        priority="true"
       />
       <BannerContent>
         <ContentWrapper>
           <ImageWrapper>
-            <Image src="/images/png/ignite-logo.png" alt="Ignite logo" height={59} width={383} />
+            <Image
+              src="/images/png/ignite-logo.png"
+              alt="Ignite logo"
+              height={59}
+              width={383}
+              priority="true"
+            />
           </ImageWrapper>
           <Details>
             <WhiteHeader>4th Sept 2021</WhiteHeader>
             <OrangeHeader>STREAMING LIVE</OrangeHeader>
           </Details>
         </ContentWrapper>
-        <ButtonWrapper>
-          <Link href="/register">
-            <Button orange="true">Register</Button>
-          </Link>
-        </ButtonWrapper>
+        {!user && (
+          <ButtonWrapper>
+            <Link href="/register">
+              <Button orange="true">Register</Button>
+            </Link>
+          </ButtonWrapper>
+        )}
       </BannerContent>
     </BannerContainer>
   )

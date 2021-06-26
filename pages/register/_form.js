@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import Image from 'next/image'
 import { TextField, Checkbox, Select, MenuItem, InputLabel } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
-import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import FirebaseContext from '@/context/firebase'
 import { doesEmailExist } from '@/helpers/firebase'
 import { Button, Text } from '@/components/index'
@@ -14,18 +14,6 @@ import { useAuth } from '@/helpers/auth'
 import SuccessIcon from '@/images/svg/success'
 import InstaIcon from '@/images/svg/insta-no-outline'
 import Modal from './_modal'
-
-const useStyles = makeStyles(() => ({
-  root: {
-    '& > *': {
-      // margin: theme.spacing(1)
-    },
-
-    '.MuiMenuItem-root': {
-      fontSize: '1.4rem'
-    }
-  }
-}))
 
 const theme = createMuiTheme({
   palette: {
@@ -310,7 +298,6 @@ const validationSchema = yup.object({
 })
 
 const RegistrationForm = () => {
-  const classes = useStyles()
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
@@ -420,7 +407,7 @@ const RegistrationForm = () => {
             onSubmit={(values, actions) => handleSignUp(values, actions)}
           >
             {({ resetForm, resetErrors, values, errors, isSubmitting, dirty, isValid }) => (
-              <StyledForm className={classes.root}>
+              <StyledForm>
                 {!registered && error && (
                   <StyledAlert severity="error">
                     <Text size="1.2rem">{error}</Text>

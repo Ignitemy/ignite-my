@@ -45,15 +45,15 @@ const SpeakerContent = styled.div`
 const Speakers = () => {
   return (
     <>
-      <SectionContainer>
+      <SectionContainer bgcolor="var(--color-black)">
         <Container>
           <SpeakerWrapper>
             <Image src="/images/png/event-2.png" height={326} width={588} />
             <SpeakerContent ml="10rem">
-              <Heading as="h3" size="2.4rem">
+              <Heading as="h3" size="2.4rem" color="white">
                 SPEAKER #1
               </Heading>
-              <Text size="1.8rem" mt="3.2rem">
+              <Text size="1.8rem" mt="3.2rem" color="white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
                 Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}
@@ -67,10 +67,10 @@ const Speakers = () => {
           <SpeakerWrapper fd="row-reverse">
             <Image src="/images/png/event-1.png" height={326} width={588} />
             <SpeakerContent align="flex-end" mr="10rem">
-              <Heading as="h3" size="2.4rem" align="right">
+              <Heading as="h3" size="2.4rem" align="right" color="white">
                 SPEAKER #2
               </Heading>
-              <Text size="1.8rem" align="right" mt="3.2rem">
+              <Text size="1.8rem" align="right" mt="3.2rem" color="white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
                 Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}

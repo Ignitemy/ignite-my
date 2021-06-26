@@ -7,6 +7,7 @@ const SectionContainer = styled.section`
   padding: 8rem 0;
   background-color: ${(props) => props.bgcolor || 'var(--color-white)'};
   background: ${(props) => props.background};
+  margin-bottom: -5px;
 `
 
 const Container = styled.div`
@@ -22,6 +23,7 @@ const StyledHeading = styled(Heading)`
   -webkit-text-stroke: 1px ${(props) => props.stroke}; /* stroke width and color */
   -webkit-font-smoothing: antialiased;
   color: transparent;
+  letter-spacing: 5px;
 
   @media (max-width: 900px) {
     font-size: 3.6rem;

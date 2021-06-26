@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAuth } from '@/helpers/auth'
 import { Button } from '../../components'
 
 const BannerContainer = styled.div`
@@ -29,6 +30,7 @@ const StyledIFrame = styled.iframe`
 `
 
 const Video = () => {
+  const user = useAuth()
   return (
     <BannerContainer>
       <StyledImage
@@ -48,11 +50,13 @@ const Video = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></StyledIFrame>
-      <ButtonWrapper>
-        <Link href="/register" as="a">
-          <Button orange="true">Register</Button>
-        </Link>
-      </ButtonWrapper>
+      {!user && (
+        <ButtonWrapper>
+          <Link href="/register" as="a">
+            <Button orange="true">Register</Button>
+          </Link>
+        </ButtonWrapper>
+      )}
     </BannerContainer>
   )
 }

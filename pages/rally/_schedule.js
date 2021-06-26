@@ -23,6 +23,13 @@ const StyledHeading = styled(Heading)`
   -webkit-text-stroke: 3px ${(props) => props.stroke}; /* stroke width and color */
   -webkit-font-smoothing: antialiased;
   color: transparent;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  text-align: center;
+  width: auto;
+  padding: 0.4rem;
+  border-top: 4px solid var(--color-white);
+  border-bottom: 4px solid var(--color-white);
 
   @media (max-width: 900px) {
     font-size: 4.8rem;

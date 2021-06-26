@@ -5,17 +5,24 @@ import Link from 'next/link'
 import { Button, Heading } from '../../components'
 
 const BannerContainer = styled.div`
-  height: 800px;
+  height: 80rem;
   position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 15rem;
+  padding: 15rem 8rem 0 8rem;
+
+  @media (min-width: 1980px) {
+    height: 140rem;
+    padding-top: 24rem;
+  }
 `
 
 const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 100rem;
 `
 
 const StyledImage = styled(Image)`
@@ -26,6 +33,8 @@ const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 
   @media (max-width: 900px) {
     flex-direction: column;
@@ -71,10 +80,11 @@ const Banner = () => {
     <BannerContainer>
       <StyledImage
         src="/images/jpg/yls-banner.jpg"
-        alt="A girl holding fairy lights in her palm"
+        alt="Flame pattern"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        priority="true"
       />
       <BannerContent>
         <ContentWrapper>
@@ -84,6 +94,7 @@ const Banner = () => {
               alt="Ignite youth leadership summit logo"
               height={173}
               width={356}
+              priority="true"
             />
           </ImageWrapper>
           <RightContent>
@@ -110,7 +121,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              Hall 1, Dream Centre PJ
+              STREAMING LIVE
             </Heading>
           </RightContent>
         </ContentWrapper>

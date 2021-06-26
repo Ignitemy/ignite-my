@@ -2,29 +2,15 @@ import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
+import { Formik, Form, Field, useField } from 'formik'
 import * as yup from 'yup'
 import Image from 'next/image'
-import { TextField, Checkbox, Select } from '@material-ui/core'
+import { TextField } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
-import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import FirebaseContext from '@/context/firebase'
 import { Button, Text } from '@/components/index'
 import { useAuth } from '@/helpers/auth'
-import SuccessIcon from '@/images/svg/success'
-import InstaIcon from '@/images/svg/insta-no-outline'
-
-const useStyles = makeStyles(() => ({
-  root: {
-    '& > *': {
-      // margin: theme.spacing(1)
-    },
-
-    '.MuiMenuItem-root': {
-      fontSize: '1.2rem'
-    }
-  }
-}))
 
 const theme = createMuiTheme({
   palette: {
@@ -55,18 +41,6 @@ const FlexCenter = styled.div`
   justify-content: center;
   align-items: center;
 `
-
-// const RegisteredContainer = styled(Container)`
-//   background-color: var(--color-black);
-//   width: 100%;
-//   height: 100%;
-//   align-items: center;
-//   padding: 10rem 0;
-// `
-
-// const StyledInstaIcon = styled(InstaIcon)`
-//   margin-right: 1.8rem;
-// `
 
 const StyledForm = styled(Form)`
   width: 100%;
@@ -151,21 +125,19 @@ const validationSchema = yup.object({
 })
 
 const LoginForm = () => {
-  const classes = useStyles()
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
   const [error, setError] = useState('')
-  const [registered, setRegistered] = useState(false)
 
   const handleLogin = async (values, actions) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
       router.push('/yls')
     } catch (error) {
+      setError(error.message)
       actions.resetErrors()
       actions.resetForm()
-      setError(error.message)
     }
   }
 
@@ -186,8 +158,8 @@ const LoginForm = () => {
           onSubmit={(values, actions) => handleLogin(values, actions)}
         >
           {({ isSubmitting, dirty, isValid }) => (
-            <StyledForm className={classes.root}>
-              {!registered && error && (
+            <StyledForm>
+              {error && (
                 <StyledAlert severity="error">
                   <Text size="1.2rem">{error}</Text>
                 </StyledAlert>
