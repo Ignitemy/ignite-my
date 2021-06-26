@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Form from './_form'
-import { Text } from '../../components'
-import CalendarIcon from '../../images/svg/calendar'
-import TimeIcon from '../../images/svg/time'
-import LocationIcon from '../../images/svg/location'
+import { Text, Heading } from '../../components'
 
 const RegisterSection = styled.section`
   width: 100%;
@@ -17,16 +14,17 @@ const RegisterSection = styled.section`
 `
 
 const BannerContainer = styled.div`
-  height: 1380px;
+  height: 1376px;
   width: 50%;
   position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 10rem;
+  padding: 6.4rem 8rem;
 
   @media (max-width: 900px) {
     width: 100%;
-    height: 600px;
+    height: auto;
+    padding: 3.2rem 4rem;
   }
 `
 
@@ -60,17 +58,12 @@ const ContentWrapper = styled.div`
   }
 `
 
-const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
 const EventDetails = styled.div`
-  margin-top: 4rem;
+  margin-top: 4.8rem;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   > div:not(:last-child) {
     margin-bottom: 2rem;
@@ -78,8 +71,20 @@ const EventDetails = styled.div`
 `
 const Row = styled.div`
   display: flex;
-  width: 40.2rem;
-  justify-content: flex-start;
+`
+
+const InfoText = styled(Text)`
+  a {
+    color: var(--color-orange);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  span {
+    color: var(--color-orange);
+  }
 `
 
 const Register = () => {
@@ -87,7 +92,7 @@ const Register = () => {
     <RegisterSection>
       <BannerContainer>
         <StyledImage
-          src="/images/jpg/form-banner.jpg"
+          src="/images/png/form-banner.png"
           alt="Sunset"
           layout="fill"
           objectFit="cover"
@@ -96,34 +101,56 @@ const Register = () => {
         />
         <BannerContent>
           <ContentWrapper>
-            <LogoWrapper>
-              <Image
-                src="/images/png/ignite-yls-logo.png"
-                alt="Ignite youth leadership summit logo"
-                height={166}
-                width={345}
-              />
-            </LogoWrapper>
+            <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
+              Hello!
+            </Heading>
+            <Text color="white" size="1.8rem" mt="2.4rem">
+              Welcome to the IGNITEMY2021 Summit! This one-day summit, organised by DUMC NextGen
+              Teens in collaboration with Scripture Union, seeks to inspire Christian students to be
+              catalysts of change in their schools.
+              <br />
+              <br />
+              Below are some important details about the summit that you should be taking note of
+              before you sign up:
+            </Text>
             <EventDetails>
               <Row>
-                <CalendarIcon />
-                <Text size="3rem" color="white" ml="1.5rem">
+                <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
+                <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
                   4th September 2021
                 </Text>
               </Row>
               <Row>
-                <TimeIcon />
-                <Text size="3rem" color="white" ml="1.5rem">
+                <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
+                <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
                   10am - 3.20pm
                 </Text>
               </Row>
               <Row>
-                <LocationIcon />
-                <Text size="3rem" color="white" ml="1.5rem">
+                <Image src="/images/svg/location.svg" alt="location pin" height={36} width={36} />
+                <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
                   STREAMING LIVE
                 </Text>
               </Row>
             </EventDetails>
+            <InfoText color="white" size="1.8rem" mt="4.8rem">
+              Registration is free.
+              <br />
+              <br />
+              For further enquiries, please contact{' '}
+              <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
+              <br />
+              <br />
+              An exclusive access to the Summit will be sent to you via email closer to the date!
+              <br />
+              <br />
+              Participants who register from <span>1 August 2021</span> onwards are still invited to
+              join the online summit. However, you WILL NOT be allocated into discussion groups and
+              WILL NOT receive the summit kit.
+              <br />
+              <br />
+              An exclusive access to the Summit will be sent to you via email closer to the date!
+            </InfoText>
           </ContentWrapper>
         </BannerContent>
       </BannerContainer>
