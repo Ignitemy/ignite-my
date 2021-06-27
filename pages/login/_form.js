@@ -110,6 +110,7 @@ const CustomTextField = ({ ...props }) => {
 
 const ButtonWrapper = styled.div`
   margin-top: 2.4rem;
+  width: 100%;
 `
 
 const FlexEnd = styled.div`
@@ -121,6 +122,16 @@ const FlexEnd = styled.div`
     color: var(--color-orange);
     text-decoration: none;
     font-size: 1.6rem;
+  }
+`
+
+const StyledText = styled(Text)`
+  a {
+    color: var(--color-orange);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 `
 
@@ -194,10 +205,21 @@ const LoginForm = () => {
                 </Link>
               </FlexEnd>
               <ButtonWrapper>
-                <Button orange="true" type="submit" disabled={!isValid || !dirty || isSubmitting}>
+                <Button
+                  style={{ width: '100%' }}
+                  orange="true"
+                  type="submit"
+                  disabled={!isValid || !dirty || isSubmitting}
+                >
                   Log In
                 </Button>
               </ButtonWrapper>
+              <StyledText color="white" mt="2rem">
+                Not registered?{' '}
+                <Link href="/register" as="a">
+                  <a>Register for an account</a>
+                </Link>
+              </StyledText>
             </StyledForm>
           )}
         </Formik>
