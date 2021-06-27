@@ -22,6 +22,7 @@ const Container = styled.div`
 
 const CardContainer = styled.div`
   width: 90%;
+  max-width: 144rem;
   margin: 0 auto;
   margin-top: 3.4375rem;
   display: flex;
