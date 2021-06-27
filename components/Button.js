@@ -65,11 +65,13 @@ const StyledButton = styled.button`
   }}
 `
 
-const Button = (props) => (
-  <StyledButton onClick={props.onClick} {...props}>
-    {props.children}
-  </StyledButton>
-)
+const Button = React.forwardRef((props, ref) => {
+  return(
+    <StyledButton onClick={props.onClick} {...props}>
+      {props.children}
+    </StyledButton>
+  )
+})
 
 export default Button
 
