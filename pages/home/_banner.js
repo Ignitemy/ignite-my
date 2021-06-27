@@ -11,6 +11,12 @@ const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 480px) {
+    height: 580px;
+    padding-top: 6.4rem;
+    align-items: flex-start;
+  }
 `
 
 const BannerContent = styled.div`
