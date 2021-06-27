@@ -36,9 +36,11 @@ const ModalCard = styled.div`
     padding: 6rem 8rem;
     width: 80%;
   }
-
   @media (max-width: 650px) {
-    padding: 4rem;
+    padding: 4rem 2rem 2rem;
+  }
+  @media (max-width: 425px) {
+    width: 95%;
   }
 
   img {
@@ -51,11 +53,33 @@ const StyledModalHeader = styled.div`
   top: 2.8rem;
   right: 2.8rem;
 
+  @media (max-width: 650px) {
+    top: 1.2rem;
+    right: 1.2rem;
+  }
+
   span {
     color: var(--color-white);
     font-size: 2.4rem;
     text-decoration: none;
     cursor: pointer;
+  }
+`
+
+const StyledHeading = styled(Heading)`
+  @media (max-width: 650px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 1.6rem;
+  }
+`
+const StyledText = styled(Text)`
+  @media (max-width: 650px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 1.2rem;
   }
 `
 
@@ -86,10 +110,10 @@ const Modal = ({ show, closeModal }) => {
         <StyledModalHeader>
           <span onClick={closeModal}>x</span>
         </StyledModalHeader>
-        <Heading size="2.4rem" mb="2rem" color="orange">
+        <StyledHeading size="2.4rem" mb="2rem" color="orange">
           If you are below 18, your parent/guardian must be informed of the following:
-        </Heading>
-        <Text mb="2.4rem" color="white">
+        </StyledHeading>
+        <StyledText mb="2.4rem" color="white">
           1. That the participant is attending an online hybrid event hosted by DUMC NextGen and
           Scripture Union Peninsular Malaysia
           <br />
@@ -104,7 +128,7 @@ const Modal = ({ show, closeModal }) => {
           <br />
           4. The parent/guardian understands that if the participants fails to adhere to the rules
           and instructions set, he/she would be denied participantion in the online hybrid event
-        </Text>
+        </StyledText>
       </ModalCard>
     </ModalWrapper>
   ) : null
