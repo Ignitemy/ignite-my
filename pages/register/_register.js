@@ -4,7 +4,15 @@ import Image from 'next/image'
 import Form from './_form'
 import { Text, Heading } from '../../components'
 
-const RegisterSection = styled.section`
+const SectionContainer = styled.section`
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  max-width: 160rem;
+  margin: 0 auto;
+`
+
+const RegisterSection = styled.div`
   width: 100%;
   display: flex;
 
@@ -14,12 +22,16 @@ const RegisterSection = styled.section`
 `
 
 const BannerContainer = styled.div`
-  height: 1376px;
+  height: 148rem;
   width: 50%;
   position: relative;
   display: flex;
   justify-content: center;
   padding: 6.4rem 8rem;
+
+  @media (max-width: 1200px) {
+    padding: 4rem 6rem;
+  }
 
   @media (max-width: 900px) {
     width: 100%;
@@ -89,75 +101,77 @@ const InfoText = styled(Text)`
 
 const Register = () => {
   return (
-    <RegisterSection>
-      <BannerContainer>
-        <StyledImage
-          src="/images/png/form-banner.png"
-          alt="Sunset"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          priority="true"
-        />
-        <BannerContent>
-          <ContentWrapper>
-            <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
-              Hello!
-            </Heading>
-            <Text color="white" size="1.8rem" mt="2.4rem">
-              Welcome to the IGNITEMY2021 Summit! This one-day summit, organised by DUMC NextGen
-              Teens in collaboration with Scripture Union, seeks to inspire Christian students to be
-              catalysts of change in their schools.
-              <br />
-              <br />
-              Below are some important details about the summit that you should be taking note of
-              before you sign up:
-            </Text>
-            <EventDetails>
-              <Row>
-                <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
-                <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                  4th September 2021
-                </Text>
-              </Row>
-              <Row>
-                <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
-                <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                  10am - 3.20pm
-                </Text>
-              </Row>
-              <Row>
-                <Image src="/images/svg/location.svg" alt="location pin" height={36} width={36} />
-                <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                  STREAMING LIVE
-                </Text>
-              </Row>
-            </EventDetails>
-            <InfoText color="white" size="1.8rem" mt="4.8rem">
-              Registration is free.
-              <br />
-              <br />
-              For further enquiries, please contact{' '}
-              <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
-              <br />
-              <br />
-              An exclusive access to the Summit will be sent to you via email closer to the date!
-              <br />
-              <br />
-              Participants who register from <span>1 August 2021</span> onwards are still invited to
-              join the online summit. However, you WILL NOT be allocated into discussion groups and
-              WILL NOT receive the summit kit.
-              <br />
-              <br />
-              An exclusive access to the Summit will be sent to you via email closer to the date!
-            </InfoText>
-          </ContentWrapper>
-        </BannerContent>
-      </BannerContainer>
-      <FormContainer>
-        <Form />
-      </FormContainer>
-    </RegisterSection>
+    <SectionContainer>
+      <RegisterSection>
+        <BannerContainer>
+          <StyledImage
+            src="/images/png/form-banner.png"
+            alt="Sunset"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority="true"
+          />
+          <BannerContent>
+            <ContentWrapper>
+              <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
+                Hello!
+              </Heading>
+              <Text color="white" size="1.8rem" mt="2.4rem">
+                Welcome to the IGNITEMY2021 Summit! This one-day summit, organised by DUMC NextGen
+                Teens in collaboration with Scripture Union, seeks to inspire Christian students to
+                be catalysts of change in their schools.
+                <br />
+                <br />
+                Below are some important details about the summit that you should be taking note of
+                before you sign up:
+              </Text>
+              <EventDetails>
+                <Row>
+                  <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
+                  <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
+                    4th September 2021
+                  </Text>
+                </Row>
+                <Row>
+                  <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
+                  <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
+                    10am - 3.20pm
+                  </Text>
+                </Row>
+                <Row>
+                  <Image src="/images/svg/location.svg" alt="location pin" height={36} width={36} />
+                  <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
+                    STREAMING LIVE
+                  </Text>
+                </Row>
+              </EventDetails>
+              <InfoText color="white" size="1.8rem" mt="4.8rem">
+                Registration is free.
+                <br />
+                <br />
+                For further enquiries, please contact{' '}
+                <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
+                <br />
+                <br />
+                An exclusive access to the Summit will be sent to you via email closer to the date!
+                <br />
+                <br />
+                Participants who register from <span>1 August 2021</span> onwards are still invited
+                to join the online summit. However, you WILL NOT be allocated into discussion groups
+                and WILL NOT receive the summit kit.
+                <br />
+                <br />
+                An exclusive access to the Summit will be sent to you via email closer to the date!
+              </InfoText>
+            </ContentWrapper>
+          </BannerContent>
+        </BannerContainer>
+        <FormContainer>
+          <Form />
+        </FormContainer>
+      </RegisterSection>
+    </SectionContainer>
   )
 }
 

@@ -273,6 +273,11 @@ const ButtonWrapper = styled.div`
   margin-top: 2rem;
 `
 
+const TwoColumnRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
 const validationSchema = yup.object({
   fullName: yup.string().required("Please don't forget your full name"),
   email: yup
@@ -293,7 +298,9 @@ const validationSchema = yup.object({
     .max(14)
     .required("Don't forget your contact number in case we need to give you a ring."),
   address: yup.string().required("Don't forget to include your address"),
-  city: yup.string().required("Don't forget to include your city"),
+  city: yup.string().required('Your city is required'),
+  postcode: yup.string().required('Your postcode is required'),
+  school: yup.string().required("Don't forget to include your school"),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
@@ -334,8 +341,11 @@ const RegistrationForm = () => {
           contactNumber: values.contactNumber,
           address: values.address,
           city: values.city,
-          occupation: values.occupation,
+          postcode: values.postcode,
           state: values.state,
+          school: values.school,
+          remarks: values.remarks,
+          occupation: values.occupation,
           dateCreated: Date.now()
         })
         setRegistered(true)
@@ -345,7 +355,6 @@ const RegistrationForm = () => {
           router.push('/')
         }, 8000)
       } catch (error) {
-        actions.resetForm()
         setError(error.message)
       }
     } else {
@@ -415,8 +424,8 @@ const RegistrationForm = () => {
                 )}
                 <Field
                   name="fullName"
-                  label="Full Name"
-                  placeholder="Your full name here"
+                  label="Full Name (as per NRIC)"
+                  placeholder="e.g. ignite team"
                   required
                   as={CustomTextField}
                 />
@@ -424,15 +433,15 @@ const RegistrationForm = () => {
                   type="email"
                   name="email"
                   label="Email Address"
-                  placeholder="Your email address here"
+                  placeholder="e.g. ignite@example.com"
                   required
                   as={CustomTextField}
                 />
                 <Field
                   type="password"
                   name="password"
-                  label="Password"
-                  placeholder="Your password here"
+                  label="Password (more than 6 characters)"
+                  placeholder="ignite123"
                   required
                   as={CustomTextField}
                 />
@@ -440,42 +449,53 @@ const RegistrationForm = () => {
                   type="number"
                   name="age"
                   label="Age"
-                  placeholder="Your age name here"
+                  placeholder="e.g. 17"
                   required
                   as={CustomTextField}
                 />
                 <Field
                   type="string"
                   name="myKad"
-                  label="MyKad Number"
-                  placeholder="Your MyKad number here"
+                  label="NRIC Number (without dashes)"
+                  placeholder="e.g. 901230064089"
                   required
                   as={CustomTextField}
                 />
                 <Field
                   type="tel"
                   name="contactNumber"
-                  label="Contact Number"
-                  placeholder="Your contact number here"
+                  label="Contact Number (without dashes)"
+                  placeholder="e.g. 0123456789"
                   required
                   as={CustomTextField}
                 />
                 <Field
                   name="address"
-                  label="Address"
+                  label="House Unit Number & Street Address"
                   placeholder="Your address here"
                   required
                   as={CustomTextField}
                 />
-                <Field
-                  name="city"
-                  label="City"
-                  placeholder="Your city here"
-                  required
-                  as={CustomTextField}
-                />
+                <TwoColumnRow>
+                  <Field
+                    name="city"
+                    label="City"
+                    placeholder="e.g. Petaling Jaya"
+                    required
+                    as={CustomTextField}
+                    style={{ width: '48%' }}
+                  />
+                  <Field
+                    name="postcode"
+                    label="Postcode"
+                    placeholder="e.g. 48100"
+                    required
+                    as={CustomTextField}
+                    style={{ width: '48%' }}
+                  />
+                </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>
-                <Field name="state" label="State" place="State" required as={CustomSelect}>
+                <Field name="state" label="State" required as={CustomSelect}>
                   <MenuItem value="Johor">Johor</MenuItem>
                   <MenuItem value="Kedah">Kedah</MenuItem>
                   <MenuItem value="Kelantan">Kelantan</MenuItem>
@@ -493,6 +513,19 @@ const RegistrationForm = () => {
                   <MenuItem value="Selangor">Selangor</MenuItem>
                   <MenuItem value="Terengganu">Terengganu</MenuItem>
                 </Field>
+                <Field
+                  name="school"
+                  label="School"
+                  placeholder="e.g. SMK Damansara Jaya"
+                  required
+                  as={CustomTextField}
+                />
+                <Field
+                  name="remarks"
+                  label="Remarks (if any)"
+                  placeholder="e.g. So excited for IGNITEMY!"
+                  as={CustomTextField}
+                />
                 <TabWrapper>
                   <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
                     <label>

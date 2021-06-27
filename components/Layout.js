@@ -1,7 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
+
+const StyledMain = styled.main`
+  background-color: var(--color-black);
+`
 
 const Layout = ({ children, title }) => {
   return (
@@ -31,7 +36,7 @@ const Layout = ({ children, title }) => {
         />
       </Head>
       <Header />
-      <main>{children}</main>
+      <StyledMain>{children}</StyledMain>
       <Footer />
     </>
   )

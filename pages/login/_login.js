@@ -7,7 +7,15 @@ import CalendarIcon from '../../images/svg/calendar'
 import TimeIcon from '../../images/svg/time'
 import LocationIcon from '../../images/svg/location'
 
-const RegisterSection = styled.section`
+const SectionContainer = styled.section`
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  max-width: 160rem;
+  margin: 0 auto;
+`
+
+const RegisterSection = styled.div`
   width: 100%;
   display: flex;
   background-color: var(--color-black);
@@ -85,53 +93,55 @@ const Row = styled.div`
 
 const LoginSection = () => {
   return (
-    <RegisterSection>
-      <BannerContainer>
-        <StyledImage
-          src="/images/png/form-banner.png"
-          alt="Sunset"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          priority="true"
-        />
-        <BannerContent>
-          <ContentWrapper>
-            <LogoWrapper>
-              <Image
-                src="/images/png/ignite-yls-logo.png"
-                alt="Ignite youth leadership summit logo"
-                height={166}
-                width={345}
-              />
-            </LogoWrapper>
-            <EventDetails>
-              <Row>
-                <CalendarIcon />
-                <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                  4th September 2021
-                </Text>
-              </Row>
-              <Row>
-                <TimeIcon />
-                <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                  10am - 3.20pm
-                </Text>
-              </Row>
-              <Row>
-                <LocationIcon />
-                <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                  STREAMING LIVE
-                </Text>
-              </Row>
-            </EventDetails>
-          </ContentWrapper>
-        </BannerContent>
-      </BannerContainer>
-      <FormContainer>
-        <Form />
-      </FormContainer>
-    </RegisterSection>
+    <SectionContainer>
+      <RegisterSection>
+        <BannerContainer>
+          <StyledImage
+            src="/images/png/form-banner.png"
+            alt="Sunset"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority="true"
+          />
+          <BannerContent>
+            <ContentWrapper>
+              <LogoWrapper>
+                <Image
+                  src="/images/png/ignite-yls-logo.png"
+                  alt="Ignite youth leadership summit logo"
+                  height={166}
+                  width={345}
+                />
+              </LogoWrapper>
+              <EventDetails>
+                <Row>
+                  <CalendarIcon />
+                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                    4th September 2021
+                  </Text>
+                </Row>
+                <Row>
+                  <TimeIcon />
+                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                    10am - 3.20pm
+                  </Text>
+                </Row>
+                <Row>
+                  <LocationIcon />
+                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                    STREAMING LIVE
+                  </Text>
+                </Row>
+              </EventDetails>
+            </ContentWrapper>
+          </BannerContent>
+        </BannerContainer>
+        <FormContainer>
+          <Form />
+        </FormContainer>
+      </RegisterSection>
+    </SectionContainer>
   )
 }
 
