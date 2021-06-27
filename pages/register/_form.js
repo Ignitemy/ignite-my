@@ -76,6 +76,10 @@ const StyledTextField = styled(TextField)`
     font-size: 2rem;
     color: var(--color-white);
     top: -6px;
+
+    @media (max-width: 480px) {
+      font-size: 1.6rem;
+    }
   }
 
   > div {
@@ -87,6 +91,10 @@ const StyledTextField = styled(TextField)`
       padding: 0.8rem 1.2rem;
       height: 36px;
       font-size: 1.6rem;
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -276,6 +284,18 @@ const ButtonWrapper = styled.div`
 const TwoColumnRow = styled.div`
   display: flex;
   justify-content: space-between;
+
+  .MuiTextField-root {
+    width: 48%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 
 const validationSchema = yup.object({
@@ -440,7 +460,7 @@ const RegistrationForm = () => {
                 <Field
                   type="password"
                   name="password"
-                  label="Password (more than 6 characters)"
+                  label="Password"
                   placeholder="ignite123"
                   required
                   as={CustomTextField}
@@ -483,7 +503,6 @@ const RegistrationForm = () => {
                     placeholder="e.g. Petaling Jaya"
                     required
                     as={CustomTextField}
-                    style={{ width: '48%' }}
                   />
                   <Field
                     name="postcode"
@@ -491,7 +510,6 @@ const RegistrationForm = () => {
                     placeholder="e.g. 48100"
                     required
                     as={CustomTextField}
-                    style={{ width: '48%' }}
                   />
                 </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>

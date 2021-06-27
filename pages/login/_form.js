@@ -61,6 +61,10 @@ const StyledTextField = styled(TextField)`
     font-size: 2rem;
     color: var(--color-white);
     top: -6px;
+
+    @media (max-width: 480px) {
+      font-size: 1.6rem;
+    }
   }
 
   > div {
@@ -72,6 +76,10 @@ const StyledTextField = styled(TextField)`
       padding: 0.8rem 1.2rem;
       height: 36px;
       font-size: 1.6rem;
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+      }
     }
   }
 
