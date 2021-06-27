@@ -36,6 +36,9 @@ const Container = styled.div`
   @media (max-width: 1200px) {
     padding: 4rem 4rem;
   }
+  @media (max-width: 480px) {
+    padding: 4rem 2.4rem;
+  }
 `
 
 const FlexCenter = styled.div`
@@ -428,8 +431,11 @@ const RegistrationForm = () => {
               contactNumber: '',
               address: '',
               city: '',
-              occupation: '',
+              postcode: '',
               state: '',
+              school: '',
+              remarks: '',
+              occupation: '',
               checked: false
             }}
             validationSchema={validationSchema}
