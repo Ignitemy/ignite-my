@@ -64,7 +64,9 @@ const Events = () => {
               </Text>
               <ButtonWrapper>
                 <Link href="/yls">
+                  <>
                   <Button white="true">More info</Button>
+                  </>
                 </Link>
               </ButtonWrapper>
             </EventContent>
@@ -86,7 +88,9 @@ const Events = () => {
               </Text>
               <ButtonWrapper>
                 <Link href="/rally">
+                  <>
                   <Button orange="true">More info</Button>
+                  </>
                 </Link>
               </ButtonWrapper>
             </EventContent>
