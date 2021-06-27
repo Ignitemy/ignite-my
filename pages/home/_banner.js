@@ -107,9 +107,7 @@ const Banner = () => {
         {!user && (
           <ButtonWrapper>
             <Link href="/register">
-              <>
               <Button orange="true">Register</Button>
-              </>
             </Link>
           </ButtonWrapper>
         )}

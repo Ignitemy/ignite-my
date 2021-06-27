@@ -53,9 +53,7 @@ const Video = () => {
       {!user && (
         <ButtonWrapper>
           <Link href="/register" as="a">
-            <>
             <Button orange="true">Register</Button>
-            </>
           </Link>
         </ButtonWrapper>
       )}

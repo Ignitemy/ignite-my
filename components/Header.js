@@ -165,16 +165,12 @@ const Header = () => {
           {!user ? (
             <>
               <StyledLink href="/login">
-                <>
                 <Button white="true" style={{ marginRight: '2rem' }}>
                   Log In
                 </Button>
-                </>
               </StyledLink>
               <StyledLink href="/register">
-                <>
                 <RegisterButton orange="true">Register</RegisterButton>
-                </>
               </StyledLink>
             </>
           ) : (
