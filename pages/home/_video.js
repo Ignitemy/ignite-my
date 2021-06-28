@@ -34,8 +34,7 @@ const Video = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/png/video-bg.png
-        "
+        src="/images/png/video-bg.png"
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"

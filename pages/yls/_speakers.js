@@ -79,15 +79,15 @@ const Speakers = () => {
           </SpeakerWrapper>
         </Container>
       </SectionContainer>
-      <SectionContainer bgcolor="var(--color-black)">
+      <SectionContainer bgcolor="var(--color-white)">
         <Container>
           <SpeakerWrapper>
             <Image src="/images/png/event-2.png" height={326} width={588} />
             <SpeakerContent ml="10rem">
-              <Heading as="h3" size="2.4rem" color="white">
+              <Heading as="h3" size="2.4rem" color="black">
                 SPEAKER #3
               </Heading>
-              <Text size="1.8rem" mt="3.2rem" color="white">
+              <Text size="1.8rem" mt="3.2rem" color="black">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
                 Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}
