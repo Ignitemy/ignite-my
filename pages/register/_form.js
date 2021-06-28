@@ -68,7 +68,7 @@ const StyledForm = styled(Form)`
 `
 
 const StyledAlert = styled(Alert)`
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 `
 
 const StyledTextField = styled(TextField)`
@@ -305,7 +305,7 @@ const validationSchema = yup.object({
   fullName: yup.string().required("Please don't forget your full name"),
   email: yup
     .string()
-    .email('Your email has got to be in the right format yeah')
+    .email('Your email has got to be in the right format')
     .required("Please don't forget to include your email address"),
   password: yup.string().required('Your password is required'),
   age: yup
@@ -336,12 +336,21 @@ const RegistrationForm = () => {
   const [registered, setRegistered] = useState(false)
   const [isActive, setActive] = useState(true)
 
+  const scrollTop = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behaviour: 'smooth'
+      })
+    }
+  }
+
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
     actions.setSubmitting(true)
 
     const emailExists = await doesEmailExist(values.email)
-    console.log(values)
     if (!emailExists) {
       try {
         const createdUserResult = await firebase
@@ -371,7 +380,31 @@ const RegistrationForm = () => {
           occupation: values.occupation,
           dateCreated: Date.now()
         })
+        await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_END_POINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify([
+            [
+              values.fullName,
+              values.email,
+              values.age,
+              values.myKad,
+              values.contactNumber,
+              values.address,
+              values.city,
+              values.postcode,
+              values.state,
+              values.school,
+              values.occupation,
+              values.remarks,
+              new Date().toLocaleString()
+            ]
+          ])
+        })
         setRegistered(true)
+        scrollTop()
         actions.setSubmitting(false)
 
         setTimeout(() => {
@@ -441,13 +474,8 @@ const RegistrationForm = () => {
             validationSchema={validationSchema}
             onSubmit={(values, actions) => handleSignUp(values, actions)}
           >
-            {({ resetForm, resetErrors, values, errors, isSubmitting, dirty, isValid }) => (
+            {({ isSubmitting, dirty, isValid }) => (
               <StyledForm>
-                {!registered && error && (
-                  <StyledAlert severity="error">
-                    <Text size="1.2rem">{error}</Text>
-                  </StyledAlert>
-                )}
                 <Field
                   name="fullName"
                   label="Full Name (as per NRIC)"
@@ -467,7 +495,7 @@ const RegistrationForm = () => {
                   type="password"
                   name="password"
                   label="Password"
-                  placeholder="ignite123"
+                  placeholder="e.g. ignite123"
                   required
                   as={CustomTextField}
                 />
@@ -498,7 +526,7 @@ const RegistrationForm = () => {
                 <Field
                   name="address"
                   label="House Unit Number & Street Address"
-                  placeholder="Your address here"
+                  placeholder="e.g. Dream Centre 2 Jalan 13/1, Seksyen 13"
                   required
                   as={CustomTextField}
                 />
@@ -571,9 +599,11 @@ const RegistrationForm = () => {
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="checked" component="div" />
-
-                {/* <pre style={{ color: 'white' }}>{JSON.stringify(values, null, 2)}</pre>
-                <pre style={{ color: 'white' }}>{JSON.stringify(errors, null, 2)}</pre> */}
+                {!registered && error && (
+                  <StyledAlert severity="error">
+                    <Text size="1.2rem">{error}</Text>
+                  </StyledAlert>
+                )}
                 <ButtonWrapper>
                   <Button orange="true" type="submit" disabled={!isValid || !dirty || isSubmitting}>
                     Register For Event
