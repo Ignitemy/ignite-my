@@ -387,19 +387,19 @@ const RegistrationForm = () => {
           },
           body: JSON.stringify([
             [
+              new Date().toLocaleString(),
               values.fullName,
-              values.email,
               values.age,
               values.myKad,
               values.contactNumber,
+              values.email,
               values.address,
               values.city,
               values.postcode,
               values.state,
               values.school,
               values.occupation,
-              values.remarks,
-              new Date().toLocaleString()
+              values.remarks
             ]
           ])
         })
