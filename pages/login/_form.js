@@ -10,7 +10,7 @@ import { Alert } from '@material-ui/lab'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import FirebaseContext from '@/context/firebase'
 import { Button, Text } from '@/components/index'
-import { useAuth } from '@/helpers/auth'
+// import { useAuth } from '@/helpers/auth'
 
 const theme = createMuiTheme({
   palette: {
