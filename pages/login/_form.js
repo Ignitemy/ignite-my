@@ -138,8 +138,8 @@ const StyledText = styled(Text)`
 const validationSchema = yup.object({
   email: yup
     .string()
-    .email('Your email has got to be in the right format yeah')
-    .required("Please don't forget to include your email address"),
+    .email('Your email has to be in the right format')
+    .required("Don't forget to include your email address"),
   password: yup.string().required('Your password is required')
 })
 

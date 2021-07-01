@@ -302,27 +302,32 @@ const TwoColumnRow = styled.div`
 `
 
 const validationSchema = yup.object({
-  fullName: yup.string().required("Please don't forget your full name"),
+  fullName: yup.string().required("Don't forget to include your full name"),
   email: yup
     .string()
-    .email('Your email has got to be in the right format')
-    .required("Please don't forget to include your email address"),
-  password: yup.string().required('Your password is required'),
-  age: yup
+    .email('Your email has to be in the right format')
+    .required("Don't forget to include your email address"),
+  password: yup
     .string()
-    .max(2, "You can't be that old...")
-    .required("We need this so that we'll know your birthday"),
+    .min(6, 'Your password must be at least 6 characters long')
+    .required("Don't forget to include your password"),
+  age: yup.string().max(2, "You can't be that old...").required("Don't forget to include your age"),
   myKad: yup
     .string()
-    .matches(/^[0-9]+$/, 'Please only include the numbers of your myKad')
-    .required("Please don't forget about your myKad number"),
+    .matches(/^[0-9]+$/, 'Please only include the numbers of your NRIC')
+    .required("Don't forget to include your NRIC number"),
   contactNumber: yup
     .string()
+    .matches(/^[0-9]+$/, 'Please only include the numbers of your contact number')
     .max(14)
     .required("Don't forget your contact number in case we need to give you a ring."),
   address: yup.string().required("Don't forget to include your address"),
-  city: yup.string().required('Your city is required'),
-  postcode: yup.string().required('Your postcode is required'),
+  city: yup.string().required("Don't forget your city"),
+  postcode: yup
+    .string()
+    .max(6, 'Your password must be no longer than 6 characters')
+    .required("Don't forget your postcode"),
+  state: yup.string().required("Don't forget to include your state"),
   school: yup.string().required("Don't forget to include your school"),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
