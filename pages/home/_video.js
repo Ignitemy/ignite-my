@@ -43,7 +43,7 @@ const Video = () => {
       <StyledIFrame
         width="70%"
         height="65%"
-        src="https://www.youtube.com/embed/TaNlWl0PqWU"
+        src="https://www.youtube.com/embed/nkc6K-aAqmU"
         title="Ignite 2021 Teaser"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
