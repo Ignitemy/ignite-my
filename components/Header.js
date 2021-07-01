@@ -144,7 +144,7 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            {user && (
+            {/* {user && (
               <>
                 <li>
                   <StyledLink href="/blog">
@@ -157,7 +157,7 @@ const Header = () => {
                   </StyledLink>
                 </li>
               </>
-            )}
+            )} */}
           </ul>
         </LeftWrapper>
         <SideMenu />

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import InstaIcon from '../images/svg/insta'
 import YoutubeIcon from '../images/svg/youtube'
-import { useAuth } from '@/helpers/auth'
+// import { useAuth } from '@/helpers/auth'
 
 const StyledYoutubeIcon = styled(YoutubeIcon)`
   @media (max-width: 900px) {
@@ -125,7 +125,7 @@ const FooterText = styled.div`
 `
 
 const Footer = () => {
-  const user = useAuth()
+  // const user = useAuth()
   return (
     <StyledFooter>
       <StyledNav>
@@ -152,7 +152,7 @@ const Footer = () => {
                 </a>
               </StyledLink>
             </li>
-            {user && (
+            {/* {user && (
               <>
                 <li>
                   <StyledLink href="/blog">
@@ -165,7 +165,7 @@ const Footer = () => {
                   </StyledLink>
                 </li>
               </>
-            )}
+            )} */}
           </ul>
         </LeftWrapper>
       </StyledNav>
@@ -174,7 +174,7 @@ const Footer = () => {
           <a href="https://instagram.com/ignitemy______" target="_blank">
             <StyledInstaIcon />
           </a>
-          <a href="https://youtube.com" target="_blank">
+          <a href="https://www.youtube.com/channel/UCgTtGiGKU43TWPu09a_nF5A" target="_blank">
             <StyledYoutubeIcon />
           </a>
         </SocialWrapper>

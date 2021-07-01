@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import KEY_CODES from '@/helpers/keycodes'
-import { useAuth } from '@/helpers/auth'
+// import { useAuth } from '@/helpers/auth'
 import useOnClickOutside from '@/hooks/useOnClickOutside'
 
 const StyledMenu = styled.div`
@@ -192,7 +192,7 @@ const OrangeSpan = styled.span`
 
 const SideMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const user = useAuth()
+  // const user = useAuth()
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
@@ -308,7 +308,7 @@ const SideMenu = () => {
                   </a>
                 </StyledLink>
               </li>
-              {user && (
+              {/* {user && (
                 <>
                   <li>
                     <StyledLink href="/blog">
@@ -321,7 +321,7 @@ const SideMenu = () => {
                     </StyledLink>
                   </li>
                 </>
-              )}
+              )} */}
             </ul>
           </StyledNav>
         </StyledSidebar>
