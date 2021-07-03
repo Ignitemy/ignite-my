@@ -268,6 +268,10 @@ const SideMenu = () => {
     }
   }, [])
 
+  useEffect(() => {
+    menuOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+  }, [menuOpen])
+
   const wrapperRef = useRef()
   useOnClickOutside(wrapperRef, () => setMenuOpen(false))
 
