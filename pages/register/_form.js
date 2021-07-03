@@ -301,6 +301,11 @@ const TwoColumnRow = styled.div`
   }
 `
 
+const FollowButton = styled(Button)`
+  display: inline-flex;
+  align-items: center;
+`
+
 const validationSchema = yup.object({
   fullName: yup.string().required("Don't forget to include your full name"),
   email: yup
@@ -440,7 +445,7 @@ const RegistrationForm = () => {
               See you at IGNITEMY
             </Text>
           )}
-          <Button orange="true">
+          <FollowButton orange="true">
             <StyledInstaIcon />
             <a
               href="https://instagram.com/ignitemy______"
@@ -450,7 +455,7 @@ const RegistrationForm = () => {
             >
               Follow us for more updates
             </a>
-          </Button>
+          </FollowButton>
           <Text color="white" size="2rem" align="center" m="4.5rem 0">
             Redirecting you back to the homepage...
           </Text>
