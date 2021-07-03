@@ -136,7 +136,7 @@ const Register = () => {
                 <Row>
                   <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
                   <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                    10am - 3.20pm
+                    10.00am - 3.20pm
                   </Text>
                 </Row>
                 <Row>

@@ -124,7 +124,7 @@ const ResetPasswordSection = () => {
                 <Row>
                   <TimeIcon />
                   <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                    10am - 3.20pm
+                    10.00am - 3.20pm
                   </Text>
                 </Row>
                 <Row>

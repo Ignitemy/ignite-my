@@ -110,7 +110,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              10am - 3.20pm
+              10.00am - 3.20pm
             </Heading>
             <Heading
               as="h3"
