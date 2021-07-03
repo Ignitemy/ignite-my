@@ -91,8 +91,7 @@ const StyledHamburgerButton = styled.button`
 
 const StyledSidebar = styled.aside`
   display: none;
-  /* pointer-events: none;
-  user-select: none; */
+
   @media (max-width: 900px) {
     display: flex;
     justify-content: center;
@@ -277,10 +276,6 @@ const SideMenu = () => {
 
   return (
     <StyledMenu>
-      {/* <Head> */}
-      {/* <body className={menuOpen ? 'blur' : ''} /> */}
-      {/* </Head> */}
-
       <div ref={wrapperRef}>
         <StyledHamburgerButton onClick={toggleMenu} menuOpen={menuOpen} ref={buttonRef}>
           <div className="ham-box">
