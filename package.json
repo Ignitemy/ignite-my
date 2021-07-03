@@ -21,6 +21,7 @@
     "@prismicio/client": "^4.0.0",
     "firebase": "^8.6.3",
     "formik": "^2.2.9",
+    "framer-motion": "^4.1.17",
     "js-cookie": "^2.2.1",
     "next": "^10.0.8",
     "next-slicezone": "^0.1.0-alpha.0",

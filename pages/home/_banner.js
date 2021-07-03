@@ -2,8 +2,69 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { useAuth } from '@/helpers/auth'
 import { Button } from '../../components'
+
+// Variants
+const logo = {
+  initial: {
+    opacity: 0,
+    y: 200
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6
+    }
+  }
+}
+
+const date = {
+  initial: {
+    opacity: 0,
+    y: 200
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
+      delay: 0.8
+    }
+  }
+}
+
+const stream = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 1.4
+    }
+  }
+}
+const live = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 2.4
+    }
+  }
+}
+
+const letterAni = {
+  initial: { y: 200 },
+  animate: {
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 0.6
+    }
+  }
+}
 
 const BannerContainer = styled.div`
   height: 800px;
@@ -40,11 +101,15 @@ const ContentWrapper = styled.div`
   }
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   height: 59px;
 
   @media (max-width: 900px) {
     margin: 0 0 2.5rem;
+  }
+  @media (max-width: 500px) {
+    height: 75%;
+    width: 75%;
   }
 `
 
@@ -63,19 +128,32 @@ const ButtonWrapper = styled.div`
   margin-top: 6.4rem;
 `
 
-const WhiteHeader = styled.h3`
+const Row = styled(motion.div)`
+  display: flex;
+  overflow: hidden;
+`
+
+const WhiteHeader = styled(motion.h3)`
   font-size: 30px;
   line-height: 40px;
   font-style: italic;
   color: var(--color-white);
   margin-bottom: 0.5rem;
 `
-const OrangeHeader = styled.h3`
+const OrangeHeader = styled(motion.h3)`
   font-size: 30px;
   line-height: 40px;
   font-style: italic;
   color: var(--color-orange);
 `
+const AnimatedLetters = ({ title, variants, disabled }) => (
+  <Row variants={variants} initial="initial" animate="animate">
+    {[...title].map((letter) => (
+      <OrangeHeader variants={disabled ? null : letterAni}>{letter}</OrangeHeader>
+    ))}
+  </Row>
+)
+
 const Banner = () => {
   const user = useAuth()
   return (
@@ -90,7 +168,7 @@ const Banner = () => {
       />
       <BannerContent>
         <ContentWrapper>
-          <ImageWrapper>
+          <ImageWrapper initial="initial" animate="animate" variants={logo}>
             <Image
               src="/images/png/ignite-logo.png"
               alt="Ignite logo"
@@ -100,8 +178,11 @@ const Banner = () => {
             />
           </ImageWrapper>
           <Details>
-            <WhiteHeader>4th Sept 2021</WhiteHeader>
-            <OrangeHeader>STREAMING LIVE</OrangeHeader>
+            <WhiteHeader initial="initial" animate="animate" variants={date}>
+              4th Sept 2021
+            </WhiteHeader>
+            <AnimatedLetters title="STREAMING" variants={stream} />
+            <AnimatedLetters title="LIVE" variants={live} />
           </Details>
         </ContentWrapper>
         {!user && (
