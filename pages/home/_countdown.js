@@ -12,20 +12,25 @@ const SectionContainer = styled.section`
 const CountdownContainer = styled.div`
   width: 70%;
   max-width: 144rem;
-  padding-top: 8.6rem;
-  padding-bottom: 8rem;
+  padding: 8rem 0;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
   background-color: #000000;
-  border: 2rem;
-  border-color: #ffffff;
-  border-style: solid;
+  border: 2rem solid var(--color-white);
   border-radius: 1rem;
   color: #ffffff;
 
-  @media (max-width: 640px) {
+  @media (max-width: 900px) {
+    border: 0.5rem solid var(--color-white);
+  }
+
+  @media (max-width: 750px) {
     width: 90%;
+  }
+  @media (max-width: 560px) {
+    width: 95%;
+    padding: 4rem 0;
   }
 `
 
@@ -37,6 +42,15 @@ const StyledContainer = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-size: 2.4rem;
+
+  @media (max-width: 560px) {
+    font-size: 2rem;
+
+    img {
+      width: 187px;
+      height: 32px;
+    }
+  }
 `
 
 const SharedStyles = css`
@@ -56,6 +70,16 @@ const Number = styled.div`
     font-size: 4.8rem;
     margin: 0 0.2rem;
   }
+  @media (max-width: 560px) {
+    font-size: 3.6rem;
+    margin: 0;
+    width: 5rem;
+  }
+  @media (max-width: 375px) {
+    font-size: 3.2rem;
+    margin: 0;
+    width: 4rem;
+  }
 `
 const Colon = styled.div`
   ${SharedStyles}
@@ -68,6 +92,11 @@ const Colon = styled.div`
   @media (max-width: 700px) {
     width: 2rem;
   }
+  @media (max-width: 560px) {
+    width: auto;
+    margin: 0 0.4rem;
+    font-size: 2.4rem;
+  }
 `
 const Unit = styled.div`
   ${SharedStyles}
@@ -76,18 +105,48 @@ const Unit = styled.div`
     font-size: 1.6rem;
     margin: 0 0.2rem;
   }
+  @media (max-width: 560px) {
+    font-size: 1.4rem;
+    margin: 0;
+    width: auto;
+  }
+  @media (max-width: 375px) {
+    font-size: 1.2rem;
+  }
 `
 const GifWrapper = styled.div`
   margin: 0 4rem;
 
   @media (max-width: 1120px) {
     margin: 0 2.4rem;
+
+    div {
+      height: 60px;
+      width: 60px;
+    }
   }
   @media (max-width: 1020px) {
-    margin: 0 4rem;
+    div {
+      height: 50px;
+      width: 50px;
+    }
   }
   @media (max-width: 900px) {
-    display: none;
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+  @media (max-width: 560px) {
+    padding: 1.2rem 0;
+    div {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  @media (max-width: 375px) {
+    div {
+      height: 32px;
+      width: 32px;
+    }
   }
 `
 
@@ -178,8 +237,6 @@ const Countdown = () => {
   ]
 
   const eventStart = [<span>Time's up!</span>]
-
-  const test = {}
 
   return (
     <>

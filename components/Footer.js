@@ -48,6 +48,7 @@ const StyledFooter = styled.footer`
 
   @media (max-width: 900px) {
     height: 200px;
+    padding: 0 4rem;
   }
 `
 const FooterContainer = styled.div`

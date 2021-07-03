@@ -13,6 +13,15 @@ const BannerContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: 760px;
+    padding: 2.4rem 0;
+  }
+  @media (max-width: 560px) {
+    height: 600px;
+    padding: 1.2rem 0;
+  }
 `
 
 const StyledImage = styled(Image)`
@@ -27,6 +36,15 @@ const StyledIFrame = styled.iframe`
   max-width: 144rem;
   border: solid 2px white;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 460px;
+  }
+  @media (max-width: 560px) {
+    width: 95%;
+    height: 320px;
+  }
 `
 
 const Video = () => {
@@ -48,7 +66,7 @@ const Video = () => {
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-      ></StyledIFrame>
+      />
       {!user && (
         <ButtonWrapper>
           <Link href="/register" as="a">
