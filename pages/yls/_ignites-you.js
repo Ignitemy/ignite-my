@@ -29,6 +29,14 @@ const StyledHeading = styled(Heading)`
     font-size: 3.6rem;
     line-height: 3.6rem;
   }
+  @media (max-width: 580px) {
+    letter-spacing: 1px;
+    font-size: 3.2rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
 `
 
 const IgnitesYou = () => {

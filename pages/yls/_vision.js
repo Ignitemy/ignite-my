@@ -28,6 +28,26 @@ const QuoteContent = styled.div`
   max-width: 128rem;
   border: 5px solid var(--color-white);
   padding: 6rem 4rem;
+
+  @media (max-width: 580px) {
+    padding: 4rem 2rem;
+    grid-template-columns: 40px 1fr;
+    border: 3px solid var(--color-white);
+
+    h4:first-child {
+      font-size: 8rem;
+      margin-top: -3.2rem;
+    }
+    h4:nth-child(2) {
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+  }
+  @media (max-width: 400px) {
+    h4:nth-child(2) {
+      font-size: 2.8rem;
+    }
+  }
 `
 const TagLineContent = styled.div`
   display: flex;
@@ -39,6 +59,9 @@ const TagLineContent = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
   }
+  @media (max-width: 580px) {
+    margin-top: 6rem;
+  }
 `
 const TagColumn = styled.div`
   display: flex;
@@ -46,6 +69,12 @@ const TagColumn = styled.div`
 
   @media (max-width: 900px) {
     margin-top: 4rem;
+  }
+  @media (max-width: 580px) {
+    h4 {
+      font-size: 3.6rem;
+      line-height: 4rem;
+    }
   }
 `
 
