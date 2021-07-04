@@ -33,7 +33,13 @@ const StyledHeading = styled(Heading)`
 
   @media (max-width: 900px) {
     font-size: 4.8rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 3.2rem;
     line-height: 3.6rem;
+    border-top: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-black);
+    -webkit-text-stroke: 2px ${(props) => props.stroke};
   }
 `
 
