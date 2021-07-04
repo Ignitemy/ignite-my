@@ -35,7 +35,7 @@ const SpeakerContent = styled.div`
   padding: 2.4rem;
   border-radius: 2.5rem;
   z-index: 1;
-  transition: all 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
 
   :hover {
     max-height: 100%;
@@ -47,6 +47,9 @@ const SpeakerContent = styled.div`
     @media (max-width: 600px) {
       overflow-y: scroll;
     }
+  }
+  @media (max-width: 480px) {
+    max-width: 370px;
   }
 `
 const StyledImage = styled(Image)`
