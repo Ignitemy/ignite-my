@@ -148,8 +148,10 @@ const OrangeHeader = styled(motion.h3)`
 `
 const AnimatedLetters = ({ title, variants, disabled }) => (
   <Row variants={variants} initial="initial" animate="animate">
-    {[...title].map((letter) => (
-      <OrangeHeader variants={disabled ? null : letterAni}>{letter}</OrangeHeader>
+    {[...title].map((letter, idx) => (
+      <OrangeHeader variants={disabled ? null : letterAni} key={idx}>
+        {letter}
+      </OrangeHeader>
     ))}
   </Row>
 )
