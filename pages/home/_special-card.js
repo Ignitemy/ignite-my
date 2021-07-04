@@ -78,10 +78,20 @@ const SpecialCard = (props) => {
   return (
     <SpeakerCard>
       <ImageWrapper>
-        <StyledImage src={src ? src : '/images/png/event-2.png'} height={450} width={596} />
+        <StyledImage
+          src={src ? src : '/images/png/event-2.png'}
+          height={450}
+          width={596}
+          alt={name}
+        />
       </ImageWrapper>
       <MobileImageWrapper>
-        <StyledImage src={src ? src : '/images/png/event-2.png'} height={407} width={370} />
+        <StyledImage
+          src={src ? src : '/images/png/event-2.png'}
+          height={407}
+          width={370}
+          alt={name}
+        />
       </MobileImageWrapper>
       <SpeakerContent>
         <Heading color="black" size="1.8rem">

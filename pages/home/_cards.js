@@ -60,7 +60,12 @@ const Cards = (props) => {
   const { src, name, children } = props
   return (
     <SpeakerCard>
-      <StyledImage src={src ? src : '/images/png/event-2.png'} height={407} width={370} />
+      <StyledImage
+        src={src ? src : '/images/png/event-2.png'}
+        height={407}
+        width={370}
+        alt={name}
+      />
       <SpeakerContent>
         <Heading color="black" size="1.8rem">
           {name}
