@@ -66,6 +66,13 @@ const StyledHeading = styled(Heading)`
   }
   @media (max-width: 480px) {
     font-size: 3.2rem;
+    letter-spacing: 4px;
+  }
+`
+
+const SpecialItemHeading = styled(Heading)`
+  @media (max-width: 480px) {
+    letter-spacing: 2px;
   }
 `
 
@@ -110,9 +117,9 @@ const Speakers = () => {
         <Heading color="white" size="6.4rem" align="center">
           &
         </Heading>
-        <Heading color="white" size="3.6rem" align="center" ls="8px" mb="3.6rem">
+        <SpecialItemHeading color="white" size="3.6rem" align="center" ls="8px" mb="3.6rem">
           SPECIAL ITEM
-        </Heading>
+        </SpecialItemHeading>
         <SpecialCard name="Juwita Suwito" src="/images/jpg/juwita.jpg">
           Juwita is a sought-after singer-songwriter, vocal coach, performer and podcaster with a
           heart for worship. She has released four studio and live albums, and has also been

@@ -41,6 +41,9 @@ const EventContent = styled.div`
   @media (max-width: 1150px) {
     margin-top: 4rem;
   }
+  @media (max-width: 700px) {
+    margin: 4rem 0 0;
+  }
 `
 const ButtonWrapper = styled.div`
   margin-top: 4rem;

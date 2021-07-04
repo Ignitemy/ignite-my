@@ -10,7 +10,6 @@ const SpeakerCard = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 2.5rem;
-  min-width: 300px;
   margin-top: 2.4rem;
   transition: transform 0.3s;
 
