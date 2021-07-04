@@ -85,7 +85,7 @@ const Speakers = () => {
         <Container>
           <SpeakerWrapper>
             <StyledImage
-              src="/images/png/event-2.png"
+              src="/images/jpg/john.jpg"
               height={400}
               width={328}
               objectFit="cover"
@@ -138,7 +138,7 @@ const Speakers = () => {
         <Container>
           <SpeakerWrapper>
             <StyledImage
-              src="/images/png/event-2.png"
+              src="/images/jpg/john.jpg"
               height={400}
               width={328}
               objectFit="cover"
