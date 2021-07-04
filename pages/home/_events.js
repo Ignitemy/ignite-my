@@ -60,6 +60,7 @@ const Events = () => {
               src="/images/png/event-1.png"
               height={380}
               width={642}
+              alt="Lit match stick"
               objectFit="cover"
               objectPosition="center"
             />
@@ -89,6 +90,7 @@ const Events = () => {
               src="/images/png/event-2.png"
               height={382}
               width={642}
+              alt="Praise and worship session with a large crowd"
               objectFit="cover"
               objectPosition="center"
             />

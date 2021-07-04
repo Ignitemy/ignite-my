@@ -187,7 +187,7 @@ const Countdown = () => {
   const timerComponents = [
     <>
       <GifWrapper>
-        <Image src="/images/gif/ignite-loading.gif" height={80} width={80} />
+        <Image src="/images/gif/ignite-loading.gif" height={80} width={80} alt="Ignite loading" />
       </GifWrapper>
       <div>
         <Number color="var(--color-orange)" fontSize="6.4rem">
@@ -231,7 +231,7 @@ const Countdown = () => {
         </Unit>
       </div>
       <GifWrapper>
-        <Image src="/images/gif/ignite-loading.gif" height={80} width={80} />
+        <Image src="/images/gif/ignite-loading.gif" height={80} width={80} alt="Ignite loading" />
       </GifWrapper>
     </>
   ]
@@ -245,7 +245,7 @@ const Countdown = () => {
           <StyledContainer>{isEventStart ? eventStart : timerComponents}</StyledContainer>
           <StyledContainer>UNTIL</StyledContainer>
           <StyledContainer>
-            <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} />
+            <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} alt="Ignite logo" />
           </StyledContainer>
         </CountdownContainer>
       </SectionContainer>

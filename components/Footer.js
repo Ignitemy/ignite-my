@@ -172,13 +172,19 @@ const Footer = () => {
       </StyledNav>
       <FooterContainer>
         <SocialWrapper>
-          <a href="https://instagram.com/ignitemy______" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com/ignitemy______"
+            target="_blank"
+            rel="noopener noreferrer"
+            alt="Instagram"
+          >
             <StyledInstaIcon />
           </a>
           <a
             href="https://www.youtube.com/channel/UCgTtGiGKU43TWPu09a_nF5A"
             target="_blank"
             rel="noopener noreferrer"
+            alt="Youtube"
           >
             <StyledYoutubeIcon />
           </a>
