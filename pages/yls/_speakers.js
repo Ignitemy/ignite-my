@@ -54,12 +54,16 @@ const StyledImage = styled(Image)`
 `
 const SpecialItemContainer = styled.div`
   width: 100%;
-  padding: 8rem 0;
+  padding: 6rem 0 8rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 480px) {
+    padding: 2rem 0 6rem 0;
+  }
 `
 
 const BgImage = styled(Image)`
@@ -76,6 +80,12 @@ const SpecialItemContent = styled.div`
   justify-content: center;
   position: relative;
   z-index: 1;
+`
+
+const SpecialItemHeading = styled(Heading)`
+  @media (max-width: 480px) {
+    letter-spacing: 2px;
+  }
 `
 
 const Speakers = () => {
@@ -170,9 +180,9 @@ const Speakers = () => {
             <Heading color="white" size="6.4rem" align="center">
               &
             </Heading>
-            <Heading color="white" size="3.6rem" align="center" ls="8px" mb="3.6rem">
+            <SpecialItemHeading color="white" size="3.6rem" align="center" ls="8px" mb="3.6rem">
               SPECIAL ITEM
-            </Heading>
+            </SpecialItemHeading>
             <SpecialCard name="Juwita Suwito" src="/images/jpg/juwita.jpg">
               Juwita is a sought-after singer-songwriter, vocal coach, performer and podcaster with
               a heart for worship. She has released four studio and live albums, and has also been
