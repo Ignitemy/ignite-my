@@ -85,7 +85,7 @@ const Speakers = () => {
         </StyledHeading>
       </Container>
       <CardContainer>
-        <Cards name="Eddryll Teo">
+        <Cards name="Eddryll Teo" src="/images/jpg/john.jpg">
           Eddyrll is currently the Head of MPU unit in MCKL. He has the burden to disciple the young
           generation of Malaysians to know Jesus as their Lord and saviour. He founded Malaysian
           Christian Memes and Malaysian Christian Talks as means to disciple alongside with his
@@ -101,7 +101,7 @@ const Speakers = () => {
           has been his lifelong passion to do his small part in bringing the reality of God to the
           world outside the church, particularly the entertainment industry.
         </Cards>
-        <Cards name="Agnel Raj">
+        <Cards name="Agnel Raj" src="/images/jpg/john.jpg">
           Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
           consequuntur magni dolores eos qui ratione voluptatem.
         </Cards>
