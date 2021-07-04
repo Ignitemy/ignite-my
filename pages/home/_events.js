@@ -55,12 +55,13 @@ const Events = () => {
             <Image src="/images/png/event-1.png" height={380} width={642} />
             <EventContent ml="4.8rem">
               <Heading as="h3" size="2.4rem" color="orange">
-                IGNITE YOUTH LEADERSHIP SUBMIT
+                IGNITE YOUTH LEADERSHIP SUMMIT
               </Heading>
               <Text size="18px" mt="2rem">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
-                Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}
+                IGNITE Youth Leadership Summit is a collaboration between NextGen, the Youth
+                Ministry of Damansara Utama Methodist Church, and Scripture Union Peninsular
+                Malaysia. Much like its name, IGNITE seeks to inspire Christian students to be
+                catalysts of change in their schools by sparking influence among Malaysian youths.
               </Text>
               <ButtonWrapper>
                 <Link href="/yls">
@@ -80,9 +81,10 @@ const Events = () => {
                 IGNITE RALLY
               </Heading>
               <Text size="18px" color="white" align="right" mt="2rem">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
-                Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}
+                Night Rally is an opportunity for you to invite your friends to experience Jesus!
+                Not only will the NextGen worship team be teaming up with Joshua Jesudasan to lead a
+                powerful time of worship, ____ will also be sharing with us what God has laid upon
+                his heart for the youth of today.
               </Text>
               <ButtonWrapper>
                 <Link href="/rally">
