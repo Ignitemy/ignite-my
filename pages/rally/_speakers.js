@@ -23,7 +23,7 @@ const SpeakerWrapper = styled.div`
   align-items: center;
   flex-direction: ${(props) => props.fd};
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1090px) {
     flex-direction: column;
   }
 `
@@ -37,8 +37,18 @@ const SpeakerContent = styled.div`
   margin-right: ${(props) => props.mr};
   max-width: 60rem;
 
-  @media (max-width: 1150px) {
-    margin-top: 4rem;
+  @media (max-width: 1090px) {
+    margin: 4rem 0 0;
+  }
+`
+
+const StyledImage = styled(Image)`
+  border-radius: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in;
+
+  :hover {
+    filter: none;
   }
 `
 
@@ -47,13 +57,19 @@ const Speakers = () => {
     <>
       <SectionContainer background="linear-gradient(90deg, #FC6076 0%, #FF9A44 100%)">
         <Container>
-          <SpeakerWrapper fd="row-reverse">
-            <Image src="/images/png/event-2.png" height={326} width={588} />
-            <SpeakerContent align="flex-end" mr="10rem">
-              <Heading as="h3" size="2.4rem" align="right">
+          <SpeakerWrapper>
+            <StyledImage
+              src="/images/jpg/john.jpg"
+              height={400}
+              width={328}
+              objectFit="cover"
+              objectPosition="center"
+            />
+            <SpeakerContent align="flex-end" ml="10rem">
+              <Heading as="h3" size="2.4rem" align="left">
                 SPEAKER
               </Heading>
-              <Text size="1.8rem" align="right" mt="3.2rem">
+              <Text size="1.8rem" align="left" mt="3.2rem">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
                 Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}

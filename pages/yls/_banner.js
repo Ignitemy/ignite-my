@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import Link from 'next/link'
-import { Button, Heading } from '../../components'
+import { Heading } from '../../components'
 
 const BannerContainer = styled.div`
   height: 80rem;
@@ -14,6 +13,9 @@ const BannerContainer = styled.div`
   @media (min-width: 1980px) {
     height: 140rem;
     padding-top: 24rem;
+  }
+  @media (max-width: 480px) {
+    padding: 8rem 1.6rem;
   }
 `
 
@@ -60,20 +62,11 @@ const RightContent = styled.div`
     margin: 2.5rem 0 0;
   }
 `
-
-// const WhiteHeader = styled.h3`
-//   font-size: 30px;
-//   line-height: 40px;
-//   font-style: italic;
-//   color: var(--color-white);
-//   margin-bottom: 0.5rem;
-// `
-// const OrangeHeader = styled.h3`
-//   font-size: 30px;
-//   line-height: 40px;
-//   font-style: italic;
-//   color: var(--color-orange);
-// `
+const StyledHeading = styled(Heading)`
+  @media (max-width: 480px) {
+    font-size: 2.8rem;
+  }
+`
 
 const Banner = () => {
   return (
@@ -98,10 +91,17 @@ const Banner = () => {
             />
           </ImageWrapper>
           <RightContent>
-            <Heading as="h3" size="3.6rem" align="center" color="white" fstyle="italic" lh="4rem">
+            <StyledHeading
+              as="h3"
+              size="3.6rem"
+              align="center"
+              color="white"
+              fstyle="italic"
+              lh="4rem"
+            >
               4th Sept 2021
-            </Heading>
-            <Heading
+            </StyledHeading>
+            <StyledHeading
               as="h3"
               size="3.6rem"
               align="center"
@@ -111,7 +111,7 @@ const Banner = () => {
               lh="4rem"
             >
               10.00am - 3.20pm
-            </Heading>
+            </StyledHeading>
             <Heading
               as="h3"
               size="3.6rem"

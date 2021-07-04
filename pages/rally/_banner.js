@@ -9,6 +9,11 @@ const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 26rem;
+
+  @media (max-width: 480px) {
+    padding-top: 16rem;
+    height: 68rem;
+  }
 `
 
 const BannerContent = styled.div`
@@ -36,12 +41,23 @@ const LogoWrapper = styled.div`
   height: 173px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 480px) {
+    width: 320px;
+    height: 110px;
+  }
 `
 
 const EventDetails = styled.div`
   margin-top: 7.6rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 480px) {
+    span {
+      font-size: 2.8rem;
+    }
+  }
 `
 const StreamingLive = styled.div`
   display: flex;

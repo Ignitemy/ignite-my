@@ -71,12 +71,22 @@ const RallyWrapper = styled.div`
 const DateWrapper = styled.div`
   display: flex;
   margin-top: 4.8rem;
+
+  @media (max-width: 480px) {
+    h4 {
+      font-size: 3.2rem;
+    }
+  }
 `
 
 const LeftDate = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 2rem;
+
+  @media (max-width: 480px) {
+    margin-right: 1.2rem;
+  }
 `
 const RightDate = styled.div`
   display: flex;
