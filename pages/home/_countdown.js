@@ -16,10 +16,10 @@ const CountdownContainer = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  background-color: #000000;
+  background-color: var(--color-black);
   border: 2rem solid var(--color-white);
   border-radius: 1rem;
-  color: #ffffff;
+  color: var(--color-white);
 
   @media (max-width: 900px) {
     border: 0.5rem solid var(--color-white);
@@ -190,43 +190,43 @@ const Countdown = () => {
         <Image src="/images/gif/ignite-loading.gif" height={80} width={80} />
       </GifWrapper>
       <div>
-        <Number color="#ff6600" fontSize="6.4rem">
+        <Number color="var(--color-orange)" fontSize="6.4rem">
           {timeLeft.days.toString().padStart(2, '0')}
         </Number>
-        <Unit color="#ffffff" fontSize="2.4rem">
+        <Unit color="var(--color-white)" fontSize="2.4rem">
           DAYS
         </Unit>
       </div>
-      <Colon color="#ffffff" fontSize="4.8rem">
+      <Colon color="var(--color-white)" fontSize="4.8rem">
         :
       </Colon>
       <div>
-        <Number color="#ff6600" fontSize="6.4rem">
+        <Number color="var(--color-orange)" fontSize="6.4rem">
           {timeLeft.hours.toString().padStart(2, '0')}
         </Number>
-        <Unit color="#ffffff" fontSize="2.4rem">
+        <Unit color="var(--color-white)" fontSize="2.4rem">
           HOURS
         </Unit>
       </div>
-      <Colon color="#ffffff" fontSize="4.8rem">
+      <Colon color="var(--color-white)" fontSize="4.8rem">
         :
       </Colon>
       <div>
-        <Number color="#ff6600" fontSize="6.4rem">
+        <Number color="var(--color-orange)" fontSize="6.4rem">
           {timeLeft.minutes.toString().padStart(2, '0')}
         </Number>
-        <Unit color="#ffffff" fontSize="2.4rem">
+        <Unit color="var(--color-white)" fontSize="2.4rem">
           MINS
         </Unit>
       </div>
-      <Colon color="#ffffff" fontSize="4.8rem">
+      <Colon color="var(--color-white)" fontSize="4.8rem">
         :
       </Colon>
       <div>
-        <Number color="#ff6600" fontSize="6.4rem">
+        <Number color="var(--color-orange)" fontSize="6.4rem">
           {timeLeft.seconds.toString().padStart(2, '0')}
         </Number>
-        <Unit color="#ffffff" fontSize="2.4rem">
+        <Unit color="var(--color-white)" fontSize="2.4rem">
           SECS
         </Unit>
       </div>
