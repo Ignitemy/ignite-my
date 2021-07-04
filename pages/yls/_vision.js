@@ -100,7 +100,7 @@ const Vision = () => {
                 color="orange"
                 lh="6rem"
                 fstyle="italic"
-                align="center"
+                align="left"
                 ls="5px"
               >
                 CHANGE
@@ -148,7 +148,7 @@ const Vision = () => {
                 color="orange"
                 lh="6rem"
                 fstyle="italic"
-                align="center"
+                align="right"
                 ls="5px"
               >
                 ABLAZE
