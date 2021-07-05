@@ -15,6 +15,18 @@ const SpeakerCard = styled.div`
 
   &:hover {
     transform: translateY(-1.1rem) scale(1.02);
+
+    div {
+      max-height: 100%;
+
+      p {
+        display: unset;
+      }
+
+      @media (max-width: 600px) {
+        overflow-y: scroll;
+      }
+    }
   }
 `
 
@@ -35,21 +47,6 @@ const SpeakerContent = styled.div`
   border-radius: 2.5rem;
   z-index: 1;
   transition: max-height 0.5s ease-in;
-
-  :hover {
-    max-height: 100%;
-
-    p {
-      display: unset;
-    }
-
-    @media (max-width: 600px) {
-      overflow-y: scroll;
-    }
-  }
-  @media (max-width: 480px) {
-    max-width: 370px;
-  }
 `
 const StyledImage = styled(Image)`
   border-radius: 2.5rem;
