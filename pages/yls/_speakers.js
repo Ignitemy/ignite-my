@@ -117,7 +117,7 @@ const Speakers = () => {
           </SpeakerWrapper>
         </Container>
       </SectionContainer>
-      <SectionContainer bgcolor="var(--color-orange)">
+      <SectionContainer background="linear-gradient(90deg, #FC6076 0%, #FF9A44 100%)">
         <Container>
           <SpeakerWrapper fd="row-reverse">
             <StyledImage

@@ -66,10 +66,10 @@ const Speakers = () => {
               objectPosition="center"
             />
             <SpeakerContent align="flex-end" ml="10rem">
-              <Heading as="h3" size="2.4rem" align="left">
+              <Heading as="h3" size="2.4rem" color="white" align="left">
                 SPEAKER
               </Heading>
-              <Text size="1.8rem" align="left" mt="3.2rem">
+              <Text size="1.8rem" color="white" align="left" mt="3.2rem">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget.
                 Purus semper eget duis at. Viverra accumsan in nisl nisi.{' '}
