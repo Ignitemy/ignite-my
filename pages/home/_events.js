@@ -104,8 +104,8 @@ const Events = () => {
               <Text size="18px" color="white" align="right" mt="2rem">
                 Night Rally is an opportunity for you to invite your friends to experience Jesus!
                 Not only will the NextGen worship team be teaming up with Joshua Jesudasan to lead a
-                powerful time of worship, ____ will also be sharing with us what God has laid upon
-                his heart for the youth of today.
+                powerful time of worship, Pr Sam Surendan will also be sharing with us what God has
+                laid upon his heart for the youth of today.
               </Text>
               <ButtonWrapper>
                 <Link href="/rally">

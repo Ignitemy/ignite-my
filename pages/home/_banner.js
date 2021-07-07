@@ -181,7 +181,7 @@ const Banner = () => {
           </ImageWrapper>
           <Details>
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-              4th Sept 2021
+              4TH SEPT 2021
             </WhiteHeader>
             <AnimatedLetters title="STREAMING" variants={stream} />
             <AnimatedLetters title="LIVE" variants={live} />

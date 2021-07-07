@@ -99,7 +99,7 @@ const Banner = () => {
               fstyle="italic"
               lh="4rem"
             >
-              4th Sept 2021
+              4TH SEPT 2021
             </StyledHeading>
             <StyledHeading
               as="h3"
@@ -110,7 +110,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              10.00am - 3.20pm
+              10.00AM - 3.30PM
             </StyledHeading>
             <Heading
               as="h3"

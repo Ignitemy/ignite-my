@@ -130,13 +130,13 @@ const Register = () => {
                 <Row>
                   <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
                   <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                    4th September 2021
+                    4TH SEPT 2021
                   </Text>
                 </Row>
                 <Row>
                   <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
                   <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                    10.00am - 3.20pm
+                    10.00AM - 3.30PM
                   </Text>
                 </Row>
                 <Row>

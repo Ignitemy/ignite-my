@@ -118,13 +118,13 @@ const LoginSection = () => {
                 <Row>
                   <CalendarIcon />
                   <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                    4th September 2021
+                    4TH SEPT 2021
                   </Text>
                 </Row>
                 <Row>
                   <TimeIcon />
                   <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                    10.00am - 3.20pm
+                    10.00AM - 3.30PM
                   </Text>
                 </Row>
                 <Row>

@@ -94,7 +94,7 @@ const Speakers = () => {
       <CardContainer>
         <Cards name="Eddryll Teo" src="/images/jpg/john.jpg">
           Eddyrll is currently the Head of MPU unit in MCKL. He has the burden to disciple the young
-          generation of Malaysians to know Jesus as their Lord and saviour. He founded Malaysian
+          generation of Malaysians to know Jesus as their Lord and Saviour. He founded Malaysian
           Christian Memes and Malaysian Christian Talks as means to disciple alongside with his
           team. He is currently focusing on practical and pastoral theology and has a desire to grow
           Christians who are sound in faith and to train them to be disciple makers themselves as

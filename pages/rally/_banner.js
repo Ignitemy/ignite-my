@@ -89,7 +89,7 @@ const Banner = () => {
           </LogoWrapper>
           <EventDetails>
             <Heading as="span" size="3.6rem" align="center" color="white" fstyle="italic" lh="4rem">
-              4th Sept 2021
+              4TH SEPT 2021
             </Heading>
             <Heading
               as="span"
@@ -100,7 +100,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              7:50pm - 10.00pm
+              8:00PM - 10.00PM
             </Heading>
             <StreamingLive>
               <Heading
