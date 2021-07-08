@@ -72,10 +72,11 @@ const Events = () => {
                 IGNITE YOUTH LEADERSHIP SUMMIT
               </Heading>
               <Text size="18px" mt="2rem">
-                IGNITE Youth Leadership Summit is a collaboration between NextGen, the Youth
-                Ministry of Damansara Utama Methodist Church, and Scripture Union Peninsular
-                Malaysia. Much like its name, IGNITE seeks to inspire Christian students to be
-                catalysts of change in their schools by sparking influence among Malaysian youths.
+                IGNITE YLS features three speakers who will be sharing their insights on different
+                aspects of leadership. Which aims to provide a space for you to learn new skills, to
+                relate to other leaders and to grow together as a community! To top it all off,
+                SUMMIT UP is a chance for you to brainstorm with fellow leaders to think big, build
+                deep and start small in bringing change and transformation within your communities.
               </Text>
               <ButtonWrapper>
                 <Link href="/yls">
