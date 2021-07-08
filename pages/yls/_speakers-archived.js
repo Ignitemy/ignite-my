@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import SpecialCard from '../home/_special-card'
+import SpecialCard from './_special-card'
 import { Text, Heading } from '../../components'
 
 const SectionContainer = styled.section`
