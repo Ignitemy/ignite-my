@@ -35,7 +35,7 @@ const StyledIFrame = styled.iframe`
   z-index: 2;
   max-width: 144rem;
   border: solid 2px white;
-  border-radius: 8px;
+  border-radius: 10px;
 
   @media (max-width: 768px) {
     width: 90%;
