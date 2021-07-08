@@ -6,7 +6,7 @@ import { useGetStaticProps } from 'next-slicezone/hooks'
 import Layout from './../components/Layout'
 import Banner from './home/_banner'
 import Events from './home/_events'
-import Speakers from './home/_speakers'
+// import Speakers from './home/_speakers'
 import Countdown from './home/_countdown'
 import Video from './home/_video'
 
@@ -15,7 +15,7 @@ const Page = () => {
     <Layout title="IGNITEMY2021 | Home">
       <Banner />
       <Events />
-      <Speakers />
+      {/* <Speakers /> */}
       <Countdown />
       <Video />
     </Layout>
