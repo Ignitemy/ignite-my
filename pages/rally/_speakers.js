@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
 import { Heading } from '../../components'
-import Cards from '@/components/cards'
+import { Cards } from '@/components/index'
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -10,10 +9,6 @@ const SectionContainer = styled.section`
   position: relative;
   background-color: ${(props) => props.bgcolor || 'var(--color-white)'};
   background: ${(props) => props.background};
-`
-
-const StyledImage = styled(Image)`
-  z-index: 0;
 `
 
 const Container = styled.div`
@@ -43,18 +38,6 @@ const CardContainer = styled.div`
   }
 `
 
-const SpecialItemContainer = styled.div`
-  width: 90%;
-  max-width: 144rem;
-  margin: 0 auto;
-  margin-top: 3.4375rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-`
-
 const StyledHeading = styled(Heading)`
   border-top: 4px solid var(--color-black);
   border-bottom: 4px solid var(--color-black);
@@ -66,12 +49,6 @@ const StyledHeading = styled(Heading)`
   @media (max-width: 480px) {
     font-size: 3.2rem;
     letter-spacing: 4px;
-  }
-`
-
-const SpecialItemHeading = styled(Heading)`
-  @media (max-width: 480px) {
-    letter-spacing: 2px;
   }
 `
 

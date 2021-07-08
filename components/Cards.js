@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Text, Heading } from '@/components/index'
+import { Text, Heading } from './Typography'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
