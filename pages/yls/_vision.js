@@ -103,7 +103,7 @@ const Vision = () => {
               “
             </Heading>
             <Heading size="3.6rem" as="h4" color="white">
-              IGNITE seeks to inspire Christian students to be catalysts of change in their school
+              IGNITE seeks to inspire Christian students to be catalysts of change in their schools
               by sparking influnce among Malaysian youths.
             </Heading>
             {/* <Heading size="14.4rem" as="h4" pt="2rem">

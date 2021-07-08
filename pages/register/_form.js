@@ -330,7 +330,7 @@ const validationSchema = yup.object({
   city: yup.string().required("Don't forget your city"),
   postcode: yup
     .string()
-    .max(6, 'Your password must be no longer than 6 characters')
+    .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
   school: yup.string().required("Don't forget to include your school"),

@@ -12,7 +12,7 @@ const Layout = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>{title || 'Ignite 2021'}</title>
+        <title>{title || 'IGNITEMY2021'}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"

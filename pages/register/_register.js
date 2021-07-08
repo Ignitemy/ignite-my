@@ -118,13 +118,12 @@ const Register = () => {
                 Hello!
               </Heading>
               <Text color="white" size="1.8rem" mt="2.4rem">
-                Welcome to the IGNITEMY2021 Summit! This one-day summit, organised by DUMC NextGen
+                Welcome to IGNITEMY2021! This one-day Summit, organised by DUMC NextGen
                 Teens in collaboration with Scripture Union, seeks to inspire Christian students to
                 be catalysts of change in their schools.
                 <br />
                 <br />
-                Below are some important details about the summit that you should be taking note of
-                before you sign up:
+                Below are some important details about the Summit that you should take note of before signing up:
               </Text>
               <EventDetails>
                 <Row>
@@ -158,8 +157,8 @@ const Register = () => {
                 <br />
                 <br />
                 Participants who register from <span>1 August 2021</span> onwards are still invited
-                to join the online summit. However, you WILL NOT be allocated into discussion groups
-                and WILL NOT receive the summit kit.
+                to join the online Summit. However, you WILL NOT be allocated into discussion groups
+                and WILL NOT receive the Summit kit.
                 <br />
                 <br />
                 An exclusive access to the Summit will be sent to you via email closer to the date!

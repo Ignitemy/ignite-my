@@ -13,7 +13,7 @@ const Login = () => {
   }, [user])
 
   return (
-    <Layout title="Ignite 2021 | Login">
+    <Layout title="IGNITEMY2021 | Login">
       <LoginSection />
     </Layout>
   )

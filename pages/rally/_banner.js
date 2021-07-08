@@ -100,7 +100,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              8:00PM - 10.00PM
+              8.00PM - 10.00PM
             </Heading>
             <StreamingLive>
               <Heading

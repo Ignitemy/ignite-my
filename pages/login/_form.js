@@ -201,7 +201,7 @@ const LoginForm = () => {
               />
               <FlexEnd>
                 <Link href="/reset-password">
-                  <a>Forget password?</a>
+                  <a>Forgot password?</a>
                 </Link>
               </FlexEnd>
               <ButtonWrapper>

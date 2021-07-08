@@ -62,7 +62,7 @@ const Video = () => {
         width="70%"
         height="65%"
         src="https://www.youtube.com/embed/nkc6K-aAqmU"
-        title="Ignite 2021 Teaser"
+        title="IGNITEMY2021 Teaser"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
