@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { Heading } from '../../components'
-import Cards from './_cards'
+import Cards from '@/components/cards'
 import SpecialCard from './_special-card'
 
 const SectionContainer = styled.section`
