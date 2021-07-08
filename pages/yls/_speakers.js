@@ -92,7 +92,7 @@ const Speakers = () => {
         </StyledHeading>
       </Container>
       <CardContainer>
-        <Cards name="Eddryll Teo" src="/images/jpg/john.jpg">
+        <Cards name="Eddryll Teo" src="/images/jpg/eddryll.jpg">
           Eddyrll is currently the Head of MPU unit in MCKL. He has the burden to disciple the young
           generation of Malaysians to know Jesus as their Lord and Saviour. He founded Malaysian
           Christian Memes and Malaysian Christian Talks as means to disciple alongside with his
@@ -108,7 +108,7 @@ const Speakers = () => {
           has been his lifelong passion to do his small part in bringing the reality of God to the
           world outside the church, particularly the entertainment industry.
         </Cards>
-        <Cards name="Agnel Raj" src="/images/jpg/john.jpg">
+        <Cards name="Agnel Raj" src="/images/jpg/agnel.jpg">
           Agnel is currently leading the Culture & Transformation team in Maxis Malaysia. Prior to
           this, he was the HR Business Partner for the sales and service division of Maxis & spent
           almost 8 years as a Principal Consultant in one of the largest HR consulting firms in

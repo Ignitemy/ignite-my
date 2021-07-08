@@ -57,7 +57,6 @@ const SpeakerContent = styled.div`
 const StyledImage = styled(Image)`
   border-radius: 2.5rem;
   object-fit: cover;
-  filter: grayscale(100%);
 `
 
 const HoverText = styled(Text)`
