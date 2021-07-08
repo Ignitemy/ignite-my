@@ -12,7 +12,7 @@ import Video from './home/_video'
 
 const Page = () => {
   return (
-    <Layout title="Ignite 2021 | Home">
+    <Layout title="IGNITEMY2021 | Home">
       <Banner />
       <WhatIsIgnite />
       <Events />

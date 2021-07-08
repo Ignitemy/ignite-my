@@ -13,7 +13,7 @@ const Login = () => {
   }, [user])
 
   return (
-    <Layout title="Ignite 2021 | Reset Password">
+    <Layout title="IGNITEMY2021 | Reset Password">
       <ResetPasswordSection />
     </Layout>
   )

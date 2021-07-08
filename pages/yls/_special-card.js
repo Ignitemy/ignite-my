@@ -40,7 +40,7 @@ const SpeakerContent = styled.div`
   max-height: 76px;
   max-width: 596px;
   overflow: hidden;
-  height: auto;
+  height: 100%;
   background-color: var(--color-orange);
   width: 100%;
   padding: 2.4rem;

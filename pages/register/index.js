@@ -3,7 +3,7 @@ import RegisterSection from './_register'
 
 const Register = () => {
   return (
-    <Layout title="Ignite 2021 | Register">
+    <Layout title="IGNITEMY2021 | Register">
       <RegisterSection />
     </Layout>
   )

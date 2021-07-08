@@ -118,10 +118,10 @@ const IgnitesYou = () => {
           <DateWrapper>
             <LeftDate>
               <Heading color="white" as="h4" size="4.8rem" lh="5rem" align="right">
-                4th
+                4TH
               </Heading>
               <Heading color="white" as="h4" size="4.8rem" lh="5rem" align="right">
-                Sept
+                SEPT
               </Heading>
             </LeftDate>
             <RightDate>

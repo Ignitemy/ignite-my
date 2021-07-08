@@ -94,7 +94,7 @@ const Banner = () => {
             <StyledHeading
               as="h3"
               size="3.6rem"
-              align="center"
+              align="right"
               color="white"
               fstyle="italic"
               lh="4rem"
@@ -104,7 +104,7 @@ const Banner = () => {
             <StyledHeading
               as="h3"
               size="3.6rem"
-              align="center"
+              align="right"
               color="white"
               fstyle="italic"
               mt="2.4rem"
@@ -115,7 +115,7 @@ const Banner = () => {
             <Heading
               as="h3"
               size="3.6rem"
-              align="center"
+              align="right"
               color="orange"
               fstyle="italic"
               mt="2.4rem"

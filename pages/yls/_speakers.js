@@ -7,7 +7,7 @@ import SpecialCard from './_special-card'
 
 const SectionContainer = styled.section`
   width: 100%;
-  padding: 6rem 0;
+  padding: 8rem 0;
   position: relative;
   background-color: ${(props) => props.bgcolor || 'var(--color-white)'};
   background: ${(props) => props.background};
@@ -109,8 +109,13 @@ const Speakers = () => {
           world outside the church, particularly the entertainment industry.
         </Cards>
         <Cards name="Agnel Raj" src="/images/jpg/john.jpg">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos qui ratione voluptatem.
+          Agnel is currently leading the Culture & Transformation team in Maxis Malaysia. Prior to
+          this, he was the HR Business Partner for the sales and service division of Maxis & spent
+          almost 8 years as a Principal Consultant in one of the largest HR consulting firms in
+          Asia. Agnel has worked on various business turnaround projects with the likes of UEM, Bank
+          Negara and DRB-Hicom. He believes that change is good and there are no limitations to what
+          can be achieved when embracing new challenges. All work is no fun and his list of passions
+          include playing the drums and cycling.
         </Cards>
       </CardContainer>
       <SpecialItemContainer>
@@ -118,7 +123,7 @@ const Speakers = () => {
           &
         </Heading>
         <SpecialItemHeading color="white" size="3.6rem" align="center" ls="8px" mb="3.6rem">
-          SPECIAL ITEM
+          SPECIAL PERFORMANCE
         </SpecialItemHeading>
         <SpecialCard name="Juwita Suwito" src="/images/jpg/juwita.jpg">
           Juwita is a sought-after singer-songwriter, vocal coach, performer and podcaster with a

@@ -35,7 +35,7 @@ const StyledIFrame = styled.iframe`
   z-index: 2;
   max-width: 144rem;
   border: solid 2px white;
-  border-radius: 8px;
+  border-radius: 10px;
 
   @media (max-width: 768px) {
     width: 90%;
@@ -62,7 +62,7 @@ const Video = () => {
         width="70%"
         height="65%"
         src="https://www.youtube.com/embed/mQWBvqyyZ5w"
-        title="Ignite 2021 Teaser"
+        title="IGNITEMY2021 Promo Video"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen

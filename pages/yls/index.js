@@ -7,7 +7,7 @@ import Speakers from './_speakers'
 
 const YLS = () => {
   return (
-    <Layout title="Ignite 2021 | Youth Leadership Summit">
+    <Layout title="IGNITEMY2021 | Youth Leadership Summit">
       <Banner />
       <IgnitesYou />
       <Vision />
