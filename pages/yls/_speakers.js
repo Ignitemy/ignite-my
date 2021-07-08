@@ -118,7 +118,7 @@ const Speakers = () => {
           &
         </Heading>
         <SpecialItemHeading color="white" size="3.6rem" align="center" ls="8px" mb="3.6rem">
-          SPECIAL ITEM
+          SPECIAL PERFORMANCE
         </SpecialItemHeading>
         <SpecialCard name="Juwita Suwito" src="/images/jpg/juwita.jpg">
           Juwita is a sought-after singer-songwriter, vocal coach, performer and podcaster with a

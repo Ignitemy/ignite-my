@@ -16,6 +16,7 @@ const SpeakerCard = styled.div`
 
   &:hover {
     transform: translateY(-1.1rem) scale(1.02);
+    
 
     div {
       max-height: 407px;
@@ -41,14 +42,14 @@ const SpeakerContent = styled.div`
   bottom: 0;
   max-height: 76px;
   overflow: hidden;
-  height: auto;
+  height: 100%;
   background-color: var(--color-orange);
   width: 100%;
   max-width: 370px;
   padding: 2.4rem;
   border-radius: 2.5rem;
   z-index: 1;
-  transition: all 0.5s ease-in;
+  transition: all 0.6s ease-in-out;
 `
 const StyledImage = styled(Image)`
   border-radius: 2.5rem;
