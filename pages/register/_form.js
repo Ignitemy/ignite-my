@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
@@ -199,9 +199,9 @@ const ActiveOccupationWrapper = styled.div`
 
   label {
     border: ${({ isActive }) =>
-    isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
+      isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
     background-color: ${({ isActive }) =>
-    isActive ? 'var(--color-orange)' : 'var(--color-white)'};
+      isActive ? 'var(--color-orange)' : 'var(--color-white)'};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
@@ -235,9 +235,9 @@ const OccupationWrapper = styled.div`
 
   label {
     border: ${({ isActive }) =>
-    isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
+      isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
     background-color: ${({ isActive }) =>
-    isActive ? 'var(--color-white)' : 'var(--color-orange)'};
+      isActive ? 'var(--color-white)' : 'var(--color-orange)'};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
@@ -346,6 +346,10 @@ const RegistrationForm = () => {
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
   const [isActive, setActive] = useState(true)
+
+  useEffect(() => {
+    show ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+  }, [show])
 
   const scrollTop = () => {
     if (typeof window !== 'undefined') {
