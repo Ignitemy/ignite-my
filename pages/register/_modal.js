@@ -114,7 +114,7 @@ const Modal = ({ show, closeModal }) => {
           If you are below 18, your parent/guardian must be informed of the following:
         </StyledHeading>
         <StyledText mb="2.4rem" color="white">
-          1. That the participant is attending an online hybrid event hosted by DUMC NextGen and
+          1. That the participant is attending an online event hosted by DUMC NextGen and
           Scripture Union Peninsular Malaysia.
           <br />
           <br />
@@ -127,7 +127,7 @@ const Modal = ({ show, closeModal }) => {
           <br />
           <br />
           4. The parent/guardian understands that if the participants fails to adhere to the rules
-          and instructions set, he/she would be denied participation in the online hybrid event.
+          and instructions set, he/she would be denied participation in the online event.
         </StyledText>
       </ModalCard>
     </ModalWrapper>

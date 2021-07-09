@@ -161,9 +161,6 @@ const Register = () => {
                 Participants who register from <span>1st August 2021</span> onwards are still invited
                 to join the online Summit. However, you WILL NOT be allocated into discussion groups
                 and WILL NOT receive the Summit kit.
-                <br />
-                <br />
-                An exclusive access to the Summit will be sent to you via email closer to the date!
               </InfoText>
             </ContentWrapper>
           </BannerContent>

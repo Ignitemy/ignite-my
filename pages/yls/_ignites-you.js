@@ -31,7 +31,7 @@ const StyledHeading = styled(Heading)`
   }
   @media (max-width: 580px) {
     letter-spacing: 1px;
-    font-size: 3.2rem;
+    font-size: 3.0rem;
   }
   @media (max-width: 400px) {
     font-size: 2.4rem;
