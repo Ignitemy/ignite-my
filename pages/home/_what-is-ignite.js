@@ -5,15 +5,14 @@ import { Text } from '@/components/index'
 
 const BannerContainer = styled.div`
   height: 580px;
+  padding: 1.6rem;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 480px) {
-    height: 580px;
-    padding-top: 6.4rem;
-    align-items: flex-start;
+    height: 700px;
   }
 `
 
@@ -62,6 +61,12 @@ const Details = styled.div`
   }
 `
 
+const StyledText = styled(Text)`
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+  }
+`
+
 const WhatIsIgnite = () => {
   return (
     <BannerContainer>
@@ -84,7 +89,7 @@ const WhatIsIgnite = () => {
             />
           </ImageWrapper>
           <Details>
-            <Text color="white" size="18px" lh="24px" align="center">
+            <StyledText color="white" size="1.8rem" lh="24px" align="center">
               IGNITE Youth Leadership Summit is a collaboration between NextGen, the Youth Ministry
               of Damansara Utama Methodist Church, and Scripture Union Peninsular Malaysia. Much
               like its name, IGNITE seeks to inspire Christian students to be catalysts of change in
@@ -96,7 +101,7 @@ const WhatIsIgnite = () => {
               they are, whether it is in schools, in churches or even at home. As leadership is
               marked by servanthood, to lead is ultimately to serve. So, if you have a heart on fire
               for change amongst the youth, IGNITE is for you!
-            </Text>
+            </StyledText>
           </Details>
         </ContentWrapper>
       </BannerContent>
