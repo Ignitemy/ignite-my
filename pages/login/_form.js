@@ -177,7 +177,7 @@ const LoginForm = () => {
           onSubmit={(values, actions) => handleLogin(values, actions)}
         >
           {({ isSubmitting, dirty, isValid }) => (
-            <StyledForm>
+            <StyledForm autoComplete="off">
               {error && (
                 <StyledAlert severity="error">
                   <Text size="1.2rem">{error}</Text>

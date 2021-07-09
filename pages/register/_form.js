@@ -485,7 +485,7 @@ const RegistrationForm = () => {
             onSubmit={(values, actions) => handleSignUp(values, actions)}
           >
             {({ isSubmitting, dirty, isValid }) => (
-              <StyledForm>
+              <StyledForm autoComplete="off">
                 <Field
                   name="fullName"
                   label="Full Name (as per NRIC)"

@@ -146,8 +146,8 @@ const ResetPassword = () => {
           validationSchema={validationSchema}
           onSubmit={(values, actions) => handleReset(values, actions)}
         >
-          {({ isSubmitting, dirty, isValid }) => (
-            <StyledForm>
+          {({ dirty, isValid }) => (
+            <StyledForm autoComplete="off">
               {success && (
                 <Alert severity="success" style={{ marginBottom: '1.2rem' }}>
                   <Text size="1.2rem">
