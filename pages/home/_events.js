@@ -73,7 +73,7 @@ const Events = () => {
               </Heading>
               <Text size="18px" mt="2rem">
                 IGNITE YLS features three speakers who will be sharing their insights on different
-                aspects of leadership. Which aims to provide a space for you to learn new skills, to
+                aspects of leadership. The aim is to provide a space for you to learn new skills, to
                 relate to other leaders and to grow together as a community! To top it all off,
                 SUMMIT UP is a chance for you to brainstorm with fellow leaders to think big, build
                 deep and start small in bringing change and transformation within your communities.
@@ -105,7 +105,7 @@ const Events = () => {
               <Text size="18px" color="white" align="right" mt="2rem">
                 Night Rally is an opportunity for you to invite your friends to experience Jesus!
                 Not only will the NextGen worship team be teaming up with Joshua Jesudasan to lead a
-                powerful time of worship, Pr Sam Surendan will also be sharing with us what God has
+                powerful time of worship, Pr Sam Surendran will also be sharing with us what God has
                 laid upon his heart for the youth of today.
               </Text>
               <ButtonWrapper>

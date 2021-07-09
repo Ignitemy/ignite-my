@@ -34,7 +34,7 @@ const StyledHeading = styled(Heading)`
     font-size: 3.2rem;
   }
   @media (max-width: 400px) {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     line-height: 3.2rem;
   }
 `
