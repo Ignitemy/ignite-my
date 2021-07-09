@@ -199,9 +199,9 @@ const ActiveOccupationWrapper = styled.div`
 
   label {
     border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
+    isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
     background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-orange)' : 'var(--color-white)'};
+    isActive ? 'var(--color-orange)' : 'var(--color-white)'};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
@@ -235,9 +235,9 @@ const OccupationWrapper = styled.div`
 
   label {
     border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
+    isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
     background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-white)' : 'var(--color-orange)'};
+    isActive ? 'var(--color-white)' : 'var(--color-orange)'};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
@@ -319,12 +319,13 @@ const validationSchema = yup.object({
   age: yup.string().max(2, "You can't be that old...").required("Don't forget to include your age"),
   myKad: yup
     .string()
+    .min(12, 'Your NRIC should be at least 12 characters long')
     .matches(/^[0-9]+$/, 'Please only include the numbers of your NRIC')
     .required("Don't forget to include your NRIC number"),
   contactNumber: yup
     .string()
     .matches(/^[0-9]+$/, 'Please only include the numbers of your contact number')
-    .max(14)
+    .max(14, 'Contact Number must be at most 14 characters')
     .required("Don't forget your contact number in case we need to give you a ring."),
   address: yup.string().required("Don't forget to include your address"),
   city: yup.string().required("Don't forget your city"),
