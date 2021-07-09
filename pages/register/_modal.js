@@ -93,15 +93,12 @@ const Modal = ({ show, closeModal }) => {
   }
 
   useEffect(() => {
+    setIsBrowser(true)
     document.addEventListener('keydown', handleEscape, false)
 
     return () => {
       document.removeEventListener('keydown', handleEscape, false)
     }
-  }, [])
-
-  useEffect(() => {
-    setIsBrowser(true)
   }, [])
 
   const ModalContent = show ? (
@@ -114,8 +111,8 @@ const Modal = ({ show, closeModal }) => {
           If you are below 18, your parent/guardian must be informed of the following:
         </StyledHeading>
         <StyledText mb="2.4rem" color="white">
-          1. That the participant is attending an online event hosted by DUMC NextGen and
-          Scripture Union Peninsular Malaysia.
+          1. That the participant is attending an online event hosted by DUMC NextGen and Scripture
+          Union Peninsular Malaysia.
           <br />
           <br />
           2. DUMC NextGen and Scripture Union Peninsular Malaysia will take every precaution to
