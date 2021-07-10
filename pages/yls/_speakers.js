@@ -92,14 +92,6 @@ const Speakers = () => {
         </StyledHeading>
       </Container>
       <CardContainer>
-        <Cards name="Eddryll Teo" src="/images/jpg/eddryll.jpg">
-          Eddyrll is currently the Head of MPU unit in MCKL. He has the burden to disciple the young
-          generation of Malaysians to know Jesus as their Lord and Saviour. He founded Malaysian
-          Christian Memes and Malaysian Christian Talks as means to disciple alongside with his
-          team. He is currently focusing on practical and pastoral theology and has a desire to grow
-          Christians who are sound in faith and to train them to be disciple makers themselves as
-          commanded in Matthew 28.
-        </Cards>
         <Cards name="John Oomen" src="/images/jpg/john.jpg">
           Best known as the former frontman of Malaysian pop band Paperplane Pursuit, John O has a
           decade and a half of experience in the music industry as an award-winning songwriter,
@@ -116,6 +108,14 @@ const Speakers = () => {
           Negara and DRB-Hicom. He believes that change is good and there are no limitations to what
           can be achieved when embracing new challenges. All work is no fun and his list of passions
           include playing the drums and cycling.
+        </Cards>
+        <Cards name="Eddryll Teo" src="/images/jpg/eddryll.jpg">
+          Eddyrll is currently the Head of MPU unit in MCKL. He has the burden to disciple the young
+          generation of Malaysians to know Jesus as their Lord and Saviour. He founded Malaysian
+          Christian Memes and Malaysian Christian Talks as means to disciple alongside with his
+          team. He is currently focusing on practical and pastoral theology and has a desire to grow
+          Christians who are sound in faith and to train them to be disciple makers themselves as
+          commanded in Matthew 28.
         </Cards>
       </CardContainer>
       <SpecialItemContainer>
