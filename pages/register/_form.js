@@ -530,7 +530,7 @@ const RegistrationForm = () => {
               state: '',
               school: '',
               remarks: '',
-              occupation: '',
+              occupation: 'student',
               checked: false
             }}
             validationSchema={validationSchema}
