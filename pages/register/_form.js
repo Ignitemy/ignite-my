@@ -4,9 +4,19 @@ import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import Image from 'next/image'
-import { TextField, Checkbox, Select, MenuItem, InputLabel } from '@material-ui/core'
+import {
+  TextField,
+  Checkbox,
+  Select,
+  MenuItem,
+  InputLabel,
+  InputAdornment,
+  IconButton
+} from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { doesEmailExist } from '@/helpers/firebase'
 import { Button, Text } from '@/components/index'
@@ -147,7 +157,7 @@ const CustomTextField = ({ ...props }) => {
 }
 
 const CustomSelect = ({ ...props }) => {
-  const [field, meta] = useField(props)
+  const [field] = useField(props)
   return (
     <StyledSelect {...props} {...field}>
       {props.children}
@@ -342,14 +352,15 @@ const RegistrationForm = () => {
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
-  const [show, setShow] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
   const [isActive, setActive] = useState(true)
 
   useEffect(() => {
-    show ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
-  }, [show])
+    showModal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+  }, [showModal])
 
   const scrollTop = () => {
     if (typeof window !== 'undefined') {
@@ -360,6 +371,9 @@ const RegistrationForm = () => {
       })
     }
   }
+
+  const handleClickShowPassword = () => setShowPassword(!showPassword)
+  const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
@@ -402,7 +416,10 @@ const RegistrationForm = () => {
           },
           body: JSON.stringify([
             [
-              new Date().toLocaleString(),
+              new Date().toLocaleString('en-MY', {
+                timeZone: 'Asia/Kuala_Lumpur',
+                hour12: false
+              }),
               values.fullName,
               values.age,
               values.myKad,
@@ -432,6 +449,36 @@ const RegistrationForm = () => {
       values.email = ''
       setError('That email is already taken, please try another.')
     }
+  }
+
+  const CustomPasswordField = ({ ...props }) => {
+    const [field, meta] = useField(props)
+    const errorText = meta.error && meta.touched ? meta.error : ''
+    return (
+      <StyledTextField
+        InputLabelProps={{
+          shrink: true
+        }}
+        {...props}
+        {...field}
+        helperText={errorText}
+        error={!!errorText}
+        type={showPassword ? 'text' : 'password'}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          )
+        }}
+      />
+    )
   }
 
   const user = useAuth()
@@ -507,12 +554,11 @@ const RegistrationForm = () => {
                   as={CustomTextField}
                 />
                 <Field
-                  type="password"
                   name="password"
                   label="Password"
                   placeholder="e.g. ignite123"
                   required
-                  as={CustomTextField}
+                  as={CustomPasswordField}
                 />
                 <Field
                   type="number"
@@ -610,7 +656,8 @@ const RegistrationForm = () => {
                 <CheckboxGroup>
                   <Field type="checkbox" name="checked" as={Checkbox} />
                   <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                    I have read the <span onClick={() => setShow(true)}>terms & conditions</span>
+                    I have read the{' '}
+                    <span onClick={() => setShowModal(true)}>terms & conditions</span>
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="checked" component="div" />
@@ -629,7 +676,7 @@ const RegistrationForm = () => {
           </Formik>
         </Container>
       )}
-      <Modal show={show} closeModal={() => setShow(false)} />
+      <Modal showModal={showModal} closeModal={() => setShowModal(false)} />
     </ThemeProvider>
   )
 }

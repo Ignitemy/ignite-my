@@ -83,7 +83,7 @@ const StyledText = styled(Text)`
   }
 `
 
-const Modal = ({ show, closeModal }) => {
+const Modal = ({ showModal, closeModal }) => {
   const [isBrowser, setIsBrowser] = useState(false)
 
   const handleEscape = (e) => {
@@ -101,7 +101,7 @@ const Modal = ({ show, closeModal }) => {
     }
   }, [])
 
-  const ModalContent = show ? (
+  const ModalContent = showModal ? (
     <ModalWrapper onClick={closeModal}>
       <ModalCard onClick={(e) => e.stopPropagation()}>
         <StyledModalHeader>
@@ -139,7 +139,7 @@ const Modal = ({ show, closeModal }) => {
 
 Modal.propTypes = {
   closeModal: PropTypes.func,
-  show: PropTypes.bool.isRequired
+  showModal: PropTypes.bool.isRequired
 }
 
 export default Modal
