@@ -5,9 +5,11 @@ import Link from 'next/link'
 import { Formik, Form, Field, useField } from 'formik'
 import * as yup from 'yup'
 import Image from 'next/image'
-import { TextField } from '@material-ui/core'
+import { TextField, InputAdornment, IconButton } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { Button, Text } from '@/components/index'
 // import { useAuth } from '@/helpers/auth'
@@ -144,10 +146,44 @@ const validationSchema = yup.object({
 })
 
 const LoginForm = () => {
+  const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState('')
+
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
-  const [error, setError] = useState('')
+  const CustomPasswordField = ({ ...props }) => {
+    const [field, meta] = useField(props)
+    const errorText = meta.error && meta.touched ? meta.error : ''
+    return (
+      <StyledTextField
+        InputLabelProps={{
+          shrink: true
+        }}
+        {...props}
+        {...field}
+        helperText={errorText}
+        error={!!errorText}
+        type={showPassword ? 'text' : 'password'}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          )
+        }}
+      />
+    )
+  }
+
+  const handleClickShowPassword = () => setShowPassword(!showPassword)
+  const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
   const handleLogin = async (values, actions) => {
     try {
@@ -192,12 +228,11 @@ const LoginForm = () => {
                 as={CustomTextField}
               />
               <Field
-                type="password"
                 name="password"
                 label="Password"
                 placeholder="Your password here"
                 required
-                as={CustomTextField}
+                as={CustomPasswordField}
               />
               <FlexEnd>
                 <Link href="/reset-password">
