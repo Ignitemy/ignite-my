@@ -72,7 +72,7 @@ const StyledHeading = styled(Heading)`
 
 const SpecialItemHeading = styled(Heading)`
   @media (max-width: 480px) {
-    letter-spacing: 2px;
+    letter-spacing: 0;
   }
 `
 

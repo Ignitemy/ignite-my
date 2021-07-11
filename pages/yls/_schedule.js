@@ -7,6 +7,7 @@ import { Heading, Text } from '../../components'
 const SectionContainer = styled.section`
   width: 100%;
   padding: 8rem 0;
+  overflow-x: hidden;
   background-color: ${(props) => props.bgcolor || 'var(--color-white)'};
   background: ${(props) => props.background};
 `
@@ -135,21 +136,21 @@ const IgnitesYou = () => {
   return (
     <>
       <SectionContainer bgcolor="var(--color-white)">
+        <Marquee>
+          <MarqueeTextMotion
+            animate={{
+              x: ['-50.28%', '0%']
+            }}
+            transition={{
+              ease: 'linear',
+              duration: 18,
+              repeat: Infinity
+            }}
+          >
+            {marqueeText}
+          </MarqueeTextMotion>
+        </Marquee>
         <Container>
-          <Marquee>
-            <MarqueeTextMotion
-              animate={{
-                x: ['-50.28%', '0%']
-              }}
-              transition={{
-                ease: 'linear',
-                duration: 18,
-                repeat: Infinity
-              }}
-            >
-              {marqueeText}
-            </MarqueeTextMotion>
-          </Marquee>
           {/* <StyledHeading
             size="6.4rem"
             align="center"
