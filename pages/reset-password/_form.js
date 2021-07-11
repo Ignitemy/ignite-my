@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 import { Formik, Form, Field, useField } from 'formik'
 import * as yup from 'yup'
 import { TextField } from '@material-ui/core'
@@ -105,6 +106,17 @@ const ButtonWrapper = styled.div`
   width: 100%;
 `
 
+const FlexStart = styled.div`
+  display: flex;
+  margin-top: 2.5rem;
+
+  a {
+    color: var(--color-orange);
+    text-decoration: none;
+    font-size: 1.6rem;
+  }
+`
+
 const validationSchema = yup.object({
   email: yup
     .string()
@@ -178,6 +190,11 @@ const ResetPassword = () => {
                   Reset Password
                 </Button>
               </ButtonWrapper>
+              <FlexStart>
+                <Link href="/login">
+                  <a>&larr; Back to login</a>
+                </Link>
+              </FlexStart>
             </StyledForm>
           )}
         </Formik>
