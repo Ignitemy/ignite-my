@@ -114,8 +114,7 @@ export const MarqueeText = styled(Text)`
   border-top: 3px solid var(--color-black);
   border-bottom: 3px solid var(--color-black);
   will-change: transform !important;
-  margin-top: 6%;
-  margin-bottom: 6%;
+  margin: 2.4rem 0;
   -webkit-text-fill-color: var(--color-white);
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--color-black);
