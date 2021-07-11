@@ -30,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
             font-size: 1.4rem;
         }
     }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
 `
 
 export default GlobalStyle
