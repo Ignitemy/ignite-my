@@ -11,6 +11,7 @@ const SpeakerCard = styled.div`
   align-items: center;
   border-radius: 2.5rem;
   margin-top: 2.4rem;
+  position: relative;
   transition: transform 0.3s;
 
   &:hover {
