@@ -416,7 +416,7 @@ const RegistrationForm = () => {
           },
           body: JSON.stringify([
             [
-              new Date().toLocaleString('en-MY', {
+              new Date().toLocaleString('en-GB', {
                 timeZone: 'Asia/Kuala_Lumpur',
                 hour12: false
               }),
