@@ -92,7 +92,7 @@ const Speakers = () => {
         </StyledHeading>
       </Container>
       <CardContainer>
-        <Cards name="John Oomen" src="/images/jpg/john.jpg">
+        <Cards name="John Oommen" src="/images/jpg/john.jpg">
           Best known as the former frontman of Malaysian pop band Paperplane Pursuit, John O has a
           decade and a half of experience in the music industry as an award-winning songwriter,
           producer and performer. He recently kicked off a new phase of his career as a solo artist,

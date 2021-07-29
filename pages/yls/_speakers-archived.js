@@ -129,7 +129,7 @@ const Speakers = () => {
             />
             <SpeakerContent align="flex-end" mr="10rem">
               <Heading as="h3" size="2.4rem" align="right" color="white">
-                John Oomen
+                John Oommen
               </Heading>
               <Text size="1.8rem" align="right" mt="3.2rem" color="white">
                 Best known as the former frontman of Malaysian pop band Paperplane Pursuit, John O
