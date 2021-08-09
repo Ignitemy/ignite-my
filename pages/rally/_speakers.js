@@ -54,7 +54,7 @@ const Speakers = () => {
           <StyledHeading color="w" size="4.8rem" align="center" ls="8px">
             INTRODUCING
           </StyledHeading>
-          <SpecialCard name="Sam Surendran" src="/images/jpg/sam.jpg">
+          <SpecialCard name="Sam Surendran" src="/images/jpg/sam_rally.jpg">
             Pastor Sam has been in fulltime Christian ministry for 34 years, serving in youth, worship, BM and church pastoral leadership positions. He was a lecturer in Kolej Damansara Utama (Penang), a position which he held while pioneering Excel Point Community Church (EPCC). Starting the work in faith with only 3 members in 1997, EPCC has now grown to over 1600 members. Pastor Sam is a Bachelor of Science graduate from Southwestern Assemblies of God University (Texas) and he attained his Practical Theology Diploma and Advance Diploma in Christ For the Nations Institute (Dallas, Texas), USA. He also completed his Master of Arts in Pastoral Leadership Studies at Malaysia Baptist Theological Seminary (Penang). He authored a book entitled “Found in Christ” and has written 9 other Bible based Devotional books and two Discipleship Manuals. He is married to his wife of 28 years, Susie Tan, and they have two children, Jeremy Sean and Ashley May.
           </SpecialCard>
         </SpecialItemContainer>
