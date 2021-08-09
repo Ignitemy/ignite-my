@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Heading } from '../../components'
-import { Cards } from '@/components/index'
+import SpecialCard from './_special-card'
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -21,28 +21,22 @@ const Container = styled.div`
   z-index: 1;
 `
 
-const CardContainer = styled.div`
+const SpecialItemContainer = styled.div`
   width: 90%;
-  position: relative;
   max-width: 144rem;
   margin: 0 auto;
   margin-top: 3.4375rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.1875rem;
-  flex-wrap: wrap;
-  > * {
-    width: 100%;
-    flex: 1 1 370px;
-  }
+  position: relative;
 `
-
 const StyledHeading = styled(Heading)`
   border-top: 4px solid var(--color-black);
   border-bottom: 4px solid var(--color-black);
   width: auto;
-
+  margin-bottom: 3.4375rem;
   @media (max-width: 900px) {
     font-size: 4.8rem;
   }
@@ -56,20 +50,15 @@ const Speakers = () => {
   return (
     <SectionContainer background="linear-gradient(90deg, #FF7519 0%, #4D4BC2 100%)">
       <Container>
-        <StyledHeading color="black" size="4.8rem" align="center" ls="8px">
-          INTRODUCING
-        </StyledHeading>
+        <SpecialItemContainer>
+          <StyledHeading color="w" size="4.8rem" align="center" ls="8px">
+            INTRODUCING
+          </StyledHeading>
+          <SpecialCard name="Sam Surendran" src="/images/jpg/sam.jpg">
+            Pastor Sam has been in fulltime Christian ministry for 34 years, serving in youth, worship, BM and church pastoral leadership positions. He was a lecturer in Kolej Damansara Utama (Penang), a position which he held while pioneering Excel Point Community Church (EPCC). Starting the work in faith with only 3 members in 1997, EPCC has now grown to over 1600 members. Pastor Sam is a Bachelor of Science graduate from Southwestern Assemblies of God University (Texas) and he attained his Practical Theology Diploma and Advance Diploma in Christ For the Nations Institute (Dallas, Texas), USA. He also completed his Master of Arts in Pastoral Leadership Studies at Malaysia Baptist Theological Seminary (Penang). He authored a book entitled “Found in Christ” and has written 9 other Bible based Devotional books and two Discipleship Manuals. He is married to his wife of 28 years, Susie Tan, and they have two children, Jeremy Sean and Ashley May.
+          </SpecialCard>
+        </SpecialItemContainer>
       </Container>
-      <CardContainer>
-        <Cards name="COMING SOON" src="/images/png/coming-soon.png" color="black" disabled={true}>
-          Eddyrll is currently the Head of MPU unit in MCKL. He has the burden to disciple the young
-          generation of Malaysians to know Jesus as their Lord and Saviour. He founded Malaysian
-          Christian Memes and Malaysian Christian Talks as means to disciple alongside with his
-          team. He is currently focusing on practical and pastoral theology and has a desire to grow
-          Christians who are sound in faith and to train them to be disciple makers themselves as
-          commanded in Matthew 28.
-        </Cards>
-      </CardContainer>
     </SectionContainer>
   )
 }
