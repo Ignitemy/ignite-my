@@ -5,13 +5,11 @@ import PropTypes from 'prop-types'
 const StyledButton = styled.button`
   border-radius: 10px;
   width: 35rem;
-  height: 10rem;
   display: flex;
   justify-content: space-between;
   position: relative;
   font-size: 14px;
   font-weight: bold;
-  line-height: 150%;
   padding: 3.75rem 1.75rem;
   text-transform: capitalize;
   overflow: hidden;
@@ -20,24 +18,8 @@ const StyledButton = styled.button`
   transition: all 0.8s;
   border-color: var(--color-black);
   background-image: ${(props) => {
-    if (props.orange) return 'linear-gradient(90deg, #FC6076 0%, #FF9A44 100%);'
-    if (props.blue) return 'linear-gradient(270deg, #4D4BC2 18.1%, #FF7519 61.39%);'
+    return props.bgcolor
   }};
-  background-color: var(--color-orange);
-  /* &:hover {
-    background-color: ${(props) => {
-      if (props.orange) return '#ff9100'
-      if (props.white) return 'var(--color-orange)'
-      if (props.black) return '#262626'
-      return '#ff9100'
-    }};
-    color: ${(props) => {
-      if (props.orange) return 'var(--color-white)'
-      if (props.white) return 'var(--color-white)'
-      if (props.black) return 'var(--color-white)'
-      return 'var(--color-orange)'
-    }}; */
-  }
   &:active {
     transform: scale(0.95);
     background-color: #ff9999;
