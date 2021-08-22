@@ -151,13 +151,14 @@ const Header = () => {
                     <a>Blog</a>
                   </StyledLink>
                 </li>
-                <li>
-                  <StyledLink href="/documents">
-                    <a>Documents</a>
-                  </StyledLink>
-                </li>
+
               </>
             )} */}
+            <li>
+              <StyledLink href="/resources">
+                <a>Resources</a>
+              </StyledLink>
+            </li>
           </ul>
         </LeftWrapper>
         <SideMenu />
