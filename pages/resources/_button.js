@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const StyledButton = styled.button`
   border-radius: 10px;
-  width: 35rem;
+  width: 38rem;
   display: flex;
   justify-content: space-between;
   position: relative;

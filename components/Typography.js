@@ -35,7 +35,8 @@ export const Text = styled.p`
   font-weight: ${(props) => props.weight || 'normal'};
   font-size: ${(props) => props.size || '1.6rem'};
   width: ${(props) => props.width || 'auto'};
-`
+  span {text-decoration:underline;}
+  `
 
 export const Heading = styled(({ as = 'h1', children, ...props }) =>
   createElement(as, props, children)
