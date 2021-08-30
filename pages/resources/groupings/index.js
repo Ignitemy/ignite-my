@@ -190,7 +190,7 @@ const Card = styled.div`
   background-color: #2d2d2d;
   border-radius: 40px;
   padding: 2.4rem 1.2rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   ${Text}:not(:last-child) {
     margin-bottom: 1.8rem;
   }
@@ -237,12 +237,12 @@ const Groupings = () => {
                 </CardHeader>
                 {item.facilitators.map((facilitator) => (
                   <Text color="white" align="center" size="14px">
-                    {facilitator} [C]
+                    {facilitator.toLowerCase()} [C]
                   </Text>
                 ))}
                 {item.members.map((member) => (
                   <Text color="white" align="center" size="14px">
-                    {member}
+                    {member.toLowerCase()}
                   </Text>
                 ))}
               </Card>
@@ -259,12 +259,12 @@ const Groupings = () => {
                   </CardHeader>
                   {item.facilitators.map((facilitator) => (
                     <Text color="white" align="center" size="14px">
-                      {facilitator} [C]
+                      {facilitator.toLowerCase()} [C]
                     </Text>
                   ))}
                   {item.members.map((member) => (
                     <Text color={member === logged_in_user ? 'orange' : 'white'} align="center" size="14px">
-                      {member}
+                      {member.toLowerCase()}
                     </Text>
                   ))}
                 </Card>
