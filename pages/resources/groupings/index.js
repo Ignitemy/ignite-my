@@ -51,7 +51,7 @@ const data = [
   {
     group: 'Group 9',
     facilitators: ['Ling Ying Phoebe'],
-    members: ['Chin Kai Yi ', 'Chung Shen Lin', 'Erica Chiew Hui Ying ', 'Esther Liew Yue Shi', 'JEFFERSON JUNIOR SHIM HUAN CONG', 'Keith Young', 'Lai En Qi', 'Leticia Lee ', 'Marsha Chin Shiuan', 'Megan Wong ', 'Quek Yuen Hang']
+    members: ['Chin Kai Yi ', 'Chung Shen Lin', 'Erica Chiew Hui Ying ', 'Esther Liew Yue Shi', 'JEFFERSON JUNIOR SHIM HUAN CONG', 'Joy Young Mei Yue', 'Keith Young', 'Lai En Qi', 'Leticia Lee ', 'Marsha Chin Shiuan', 'Megan Wong ', 'Quek Yuen Hang']
   },
   {
     group: 'Group 10',
@@ -136,7 +136,7 @@ const data = [
   {
     group: 'Group 26',
     facilitators: ['Victor Yeow Sheng Rueng'],
-    members: ['Joey Jee Vv Roseyannilly binti Bairi@Johnny', 'Joy Young Mei Yue', 'Keith Lim', 'Leong Deng Fu', 'Olivia Lian Yu-Qi', 'SOH HAN YANG-JOSHUA DRE DHARAN']
+    members: ['Joey Jee Vv Roseyannilly binti Bairi@Johnny', 'Keith Lim', 'Leong Deng Fu', 'Olivia Lian Yu-Qi', 'SOH HAN YANG-JOSHUA DRE DHARAN']
   }
 ]
 
