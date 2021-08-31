@@ -22,7 +22,6 @@ const ButtonContainer = styled.a`
   padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +47,7 @@ const ResourceComponent = (props) => {
       </ButtonContainer>
       <ButtonContainer target="_blank" href="https://drive.google.com/file/d/1_9zD-ErDOwcIcGqewq_6rbgHe-rk2pYr/view?usp=sharing" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
         <Button bgcolor='linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);' onClick={props.handleZoomBackgrounds}>
-        IGNITEMY2021 Zoom Background
+          IGNITEMY2021 Zoom Background
           <VideoIcon />
         </Button>
       </ButtonContainer>
