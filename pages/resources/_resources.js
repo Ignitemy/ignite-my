@@ -46,9 +46,9 @@ const ResourceComponent = (props) => {
           <LinkIcon />
         </Button>
       </ButtonContainer>
-      <ButtonContainer>
+      <ButtonContainer target="_blank" href="https://drive.google.com/file/d/1_9zD-ErDOwcIcGqewq_6rbgHe-rk2pYr/view?usp=sharing" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
         <Button bgcolor='linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);' onClick={props.handleZoomBackgrounds}>
-        IGNITEMY2021 Zoom Backgrounds
+        IGNITEMY2021 Zoom Background
           <VideoIcon />
         </Button>
       </ButtonContainer>
