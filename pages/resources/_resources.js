@@ -25,6 +25,9 @@ const ButtonContainer = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 650px) {
+    width:100%;
+  }
 `
 
 const ResourceComponent = (props) => {
