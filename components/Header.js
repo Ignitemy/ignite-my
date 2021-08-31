@@ -144,21 +144,20 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            {/* {user && (
+            {user && (
               <>
-                <li>
+                {/* <li>
                   <StyledLink href="/blog">
                     <a>Blog</a>
                   </StyledLink>
+                </li> */}
+                <li>
+                  <StyledLink href="/resources">
+                    <a>Resources</a>
+                  </StyledLink>
                 </li>
-
               </>
-            )} */}
-            <li>
-              <StyledLink href="/resources">
-                <a>Resources</a>
-              </StyledLink>
-            </li>
+            )}
           </ul>
         </LeftWrapper>
         <SideMenu />
