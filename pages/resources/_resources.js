@@ -16,7 +16,7 @@ const ImageContainer = styled.div`
   justify-content: center;
 `
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.a`
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -33,13 +33,11 @@ const ResourceComponent = (props) => {
       <ImageContainer>
         <Image src="/images/png/resources-for-you.png" width={268} height={65} />
       </ImageContainer>
-      <ButtonContainer>
-        <a target="_blank" href="https://drive.google.com/file/d/1dKJrsWLLrgFKIGc8cjkMs_EzsmTspz5I/view?usp=sharing" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-          <Button bgcolor='linear-gradient(90deg, #FC6176 0%, #FFFFFF 100%);'>
-            IGNITE2021 Participant's Booklet
-            <DownloadIcon />
-          </Button>
-        </a>
+      <ButtonContainer target="_blank" href="https://drive.google.com/file/d/1dKJrsWLLrgFKIGc8cjkMs_EzsmTspz5I/view?usp=sharing" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+        <Button bgcolor='linear-gradient(90deg, #FC6176 0%, #FFFFFF 100%);'>
+          IGNITE2021 Participant's Booklet
+          <DownloadIcon />
+        </Button>
       </ButtonContainer>
       <ButtonContainer>
         <Button bgcolor='linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);' onClick={props.handleZoomBackgrounds}>
