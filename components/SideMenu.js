@@ -321,20 +321,20 @@ const SideMenu = () => {
                   </li>
                 </>
               )}
-              {/* {user && (
+              {user && (
                 <>
-                  <li>
+                  {/* <li>
                     <StyledLink href="/blog">
                       <a>Blog</a>
                     </StyledLink>
-                  </li>
+                  </li> */}
                   <li>
-                    <StyledLink href="/documents">
-                      <a>Documents</a>
+                    <StyledLink href="/resources">
+                      <a>Resources</a>
                     </StyledLink>
                   </li>
                 </>
-              )} */}
+              )}
             </ul>
           </StyledNav>
         </StyledSidebar>
