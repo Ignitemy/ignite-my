@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
+import { Button } from '../../components'
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -149,12 +150,24 @@ const GifWrapper = styled.div`
     }
   }
 `
+const ButtonWrapper = styled.div`
+  margin-top: 4.2rem;
+  @media (max-width: 900px) {
+      margin-top: 0.2rem;
+  }
+`
+
+const StyledExtLink = styled.a`
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+`
 
 const Countdown = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
     // Date format MM/DD/YYYY
-    let difference = new Date(`09/04/${year}`) - new Date()
+    let difference = new Date(`09/04/${year} 10:00`) - new Date()
     let timeLeft = {}
 
     if (difference > 0) {
@@ -163,6 +176,13 @@ const Countdown = () => {
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60)
+      }
+    } else {
+      timeLeft = {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
       }
     }
     return timeLeft
@@ -236,16 +256,44 @@ const Countdown = () => {
     </>
   ]
 
-  const eventStart = [<span>Time's up!</span>]
+  const eventStart = [
+    <>
+    <GifWrapper>
+        <Image src="/images/gif/ignite-loading.gif" height={80} width={80} alt="Ignite loading" />
+      </GifWrapper>
+    <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} alt="Ignite logo" />
+    <GifWrapper>
+        <Image src="/images/gif/ignite-loading.gif" height={80} width={80} alt="Ignite loading" />
+      </GifWrapper>
+      {/* [<span>Time's up!</span>] */}
+    </>
+  ]
+
+  const btnStart = [
+    <>
+      <ButtonWrapper>
+        <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+          <Button orange="true">Streaming Live</Button>
+        </StyledExtLink>
+      </ButtonWrapper>
+    </>
+  ]
+
+  const blankText = [""]
 
   return (
     <>
       <SectionContainer background="linear-gradient(90deg, #FC6076 0%, #FF9A44 100%);">
         <CountdownContainer>
           <StyledContainer>{isEventStart ? eventStart : timerComponents}</StyledContainer>
-          <StyledContainer>UNTIL</StyledContainer>
+          
+          {isEventStart ? blankText : <StyledContainer>UNTIL</StyledContainer>}
+          
           <StyledContainer>
-            <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} alt="Ignite logo" />
+            {isEventStart
+              ? btnStart
+              : <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} alt="Ignite logo" />}
+
           </StyledContainer>
         </CountdownContainer>
       </SectionContainer>

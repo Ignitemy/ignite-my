@@ -47,6 +47,12 @@ const StyledIFrame = styled.iframe`
   }
 `
 
+const StyledExtLink = styled.a`
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+`
+
 const Video = () => {
   const user = useAuth()
   return (
@@ -67,13 +73,11 @@ const Video = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
-      {!user && (
-        <ButtonWrapper>
-          <Link href="/register" as="a">
-            <Button orange="true">Register</Button>
-          </Link>
-        </ButtonWrapper>
-      )}
+      <ButtonWrapper>
+        <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+          <Button orange="true">Streaming Live</Button>
+        </StyledExtLink>
+      </ButtonWrapper>
     </BannerContainer>
   )
 }

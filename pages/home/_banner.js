@@ -146,6 +146,12 @@ const OrangeHeader = styled(motion.h3)`
   font-style: italic;
   color: var(--color-orange);
 `
+const StyledExtLink = styled.a`
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+`
+
 const AnimatedLetters = ({ title, variants, disabled }) => (
   <Row variants={variants} initial="initial" animate="animate">
     {[...title].map((letter, idx) => (
@@ -183,17 +189,15 @@ const Banner = () => {
             <WhiteHeader initial="initial" animate="animate" variants={date}>
               4TH SEPT 2021
             </WhiteHeader>
-            <AnimatedLetters title="STREAMING" variants={stream} />
-            <AnimatedLetters title="LIVE" variants={live} />
+            {/* <AnimatedLetters title="STREAMING" variants={stream} />
+            <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>
         </ContentWrapper>
-        {!user && (
           <ButtonWrapper>
-            <Link href="/register">
-              <Button orange="true">Register</Button>
-            </Link>
+            <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+              <Button orange="true">Streaming Live</Button>
+            </StyledExtLink>
           </ButtonWrapper>
-        )}
       </BannerContent>
     </BannerContainer>
   )
