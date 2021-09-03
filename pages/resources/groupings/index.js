@@ -130,13 +130,8 @@ const data = [
   },
   {
     group: 'Group 25',
-    facilitators: ['Marianne Liaw Sook Huei'],
-    members: ['Adelyn Lai Wan Yen', 'Allison Choy Suet Mun', 'Chat Dong Xuan', 'Janice Lim Wei Ling', 'Lee Ai Lin ', 'Lim Kok Tien', 'Miracle Wong']
-  },
-  {
-    group: 'Group 26',
-    facilitators: ['Victor Yeow Sheng Rueng'],
-    members: ['Joey Jee Vv Roseyannilly binti Bairi@Johnny', 'Keith Lim', 'Leong Deng Fu', 'Olivia Lian Yu-Qi', 'SOH HAN YANG-JOSHUA DRE DHARAN']
+    facilitators: ['Marianne Liaw Sook Huei', 'Victor Yeow Sheng Rueng'],
+    members: ['Adelyn Lai Wan Yen', 'Allison Choy Suet Mun', 'Chat Dong Xuan', 'Janice Lim Wei Ling', 'Joey Jee Vv Roseyannilly binti Bairi@Johnny',  'Lee Ai Lin ', 'Lim Kok Tien', 'Miracle Wong', 'Olivia Lian Yu-Qi', 'SOH HAN YANG-JOSHUA DRE DHARAN']
   }
 ]
 

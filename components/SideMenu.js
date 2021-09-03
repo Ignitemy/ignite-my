@@ -181,6 +181,12 @@ const StyledLink = styled(Link)`
   position: relative;
   width: 100%;
 `
+const StyledExtLink = styled.a`
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+`
 
 const WhiteSpan = styled.span`
   color: var(--color-white);
@@ -307,6 +313,11 @@ const SideMenu = () => {
                   </a>
                 </StyledLink>
               </li>
+              <li>
+                <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+                  Streaming Live
+                </StyledExtLink>
+              </li>
               {!user && (
                 <>
                   <li>
@@ -314,11 +325,12 @@ const SideMenu = () => {
                       <a>Login</a>
                     </StyledLink>
                   </li>
-                  <li>
+                  {/* <li>
                     <StyledLink href="/register">
                       <a>Register</a>
                     </StyledLink>
-                  </li>
+                  </li> */}
+                  
                 </>
               )}
               {user && (

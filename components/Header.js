@@ -8,7 +8,13 @@ import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
 import LogoutIcon from '../images/svg/logout'
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)` 
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+`
+
+const StyledExtLink = styled.a`
   color: var(--color-white);
   text-decoration: none;
   position: relative;
@@ -169,9 +175,12 @@ const Header = () => {
                   Log In
                 </Button>
               </StyledLink>
-              <StyledLink href="/register">
+              {/* <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink>
+              </StyledLink> */}
+              <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+                <RegisterButton orange="true">Streaming Live</RegisterButton>
+              </StyledExtLink>
             </>
           ) : (
             <>
