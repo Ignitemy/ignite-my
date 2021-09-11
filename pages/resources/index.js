@@ -20,7 +20,7 @@ const Resources = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (!user) router.push('/login')
+    if (!user) router.push('/login?action=login')
   }, [user])
 
   const handleZoomBackgrounds = () => {

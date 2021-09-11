@@ -2,6 +2,9 @@ import Layout from '@/components/Layout'
 import styled from 'styled-components'
 import Image from 'next/image'
 import SubmitBlogForm from './_form'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { useAuth } from '@/helpers/auth'
 
 const BannerContainer = styled.div`
   height: 800px;
@@ -21,6 +24,13 @@ const StyledImage = styled(Image)`
 `
 
 const Blog = () => {
+  const user = useAuth()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!user) router.push('/login?action=login')
+  }, [user])
+
   return (
     <Layout title="IGNITEMY2021 | Submit A Blog Post">
       <BannerContainer>

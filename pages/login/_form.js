@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -11,7 +11,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
-import { Button, Text } from '@/components/index'
+import { Button, Text, Heading } from '@/components/index'
 // import { useAuth } from '@/helpers/auth'
 
 const theme = createMuiTheme({
@@ -148,6 +148,7 @@ const validationSchema = yup.object({
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
+  const [action, setAction] = useState(null)
 
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
@@ -155,6 +156,14 @@ const LoginForm = () => {
   const CustomPasswordField = ({ ...props }) => {
     const [field, meta] = useField(props)
     const errorText = meta.error && meta.touched ? meta.error : ''
+
+    useEffect(() => {
+      const { query } = router
+      if (query.action) {
+        setAction(query.action)
+      }
+    }, [])
+
     return (
       <StyledTextField
         InputLabelProps={{
@@ -202,7 +211,13 @@ const LoginForm = () => {
     <ThemeProvider theme={theme}>
       <Container>
         <FlexCenter>
-          <Image src="/images/png/login-for.png" height={82} width={461} />
+          {!action ? (
+            <Image src="/images/png/login-for.png" height={82} width={461} />
+          ) : (
+            <Heading size="3.6rem" fstyle="italic" color="white" align="center">
+              PLEASE LOG IN TO VIEW PAGE
+            </Heading>
+          )}
         </FlexCenter>
         <Formik
           initialValues={{
