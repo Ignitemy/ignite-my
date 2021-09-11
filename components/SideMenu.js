@@ -313,10 +313,25 @@ const SideMenu = () => {
                   </a>
                 </StyledLink>
               </li>
-              <li>
-                <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+              {/* <li>
+                <StyledExtLink
+                  href="https://ignitemy.online.church/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Streaming Live
                 </StyledExtLink>
+              </li> */}
+
+              <li>
+                <StyledLink href="/blog/submit">
+                  <a>Blog</a>
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink href="/resources">
+                  <a>Resources</a>
+                </StyledLink>
               </li>
               {!user && (
                 <>
@@ -330,21 +345,6 @@ const SideMenu = () => {
                       <a>Register</a>
                     </StyledLink>
                   </li> */}
-                  
-                </>
-              )}
-              {user && (
-                <>
-                  {/* <li>
-                    <StyledLink href="/blog">
-                      <a>Blog</a>
-                    </StyledLink>
-                  </li> */}
-                  <li>
-                    <StyledLink href="/resources">
-                      <a>Resources</a>
-                    </StyledLink>
-                  </li>
                 </>
               )}
             </ul>
