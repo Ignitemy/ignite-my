@@ -16,7 +16,7 @@ const Page = () => {
       <Banner />
       <WhatIsIgnite />
       <Events />
-      <Countdown />
+      {/* <Countdown /> */}
       <Video />
     </Layout>
   )

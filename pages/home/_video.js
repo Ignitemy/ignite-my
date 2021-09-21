@@ -73,11 +73,11 @@ const Video = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
-      <ButtonWrapper>
+      {/* <ButtonWrapper>
         <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
           <Button orange="true">Streaming Live</Button>
         </StyledExtLink>
-      </ButtonWrapper>
+      </ButtonWrapper> */}
     </BannerContainer>
   )
 }
