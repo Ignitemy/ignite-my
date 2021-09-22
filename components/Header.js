@@ -8,7 +8,7 @@ import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
 import LogoutIcon from '../images/svg/logout'
 
-const StyledLink = styled(Link)` 
+const StyledLink = styled(Link)`
   color: var(--color-white);
   text-decoration: none;
   position: relative;
@@ -150,20 +150,16 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            {user && (
-              <>
-                {/* <li>
-                  <StyledLink href="/blog">
-                    <a>Blog</a>
-                  </StyledLink>
-                </li> */}
-                <li>
-                  <StyledLink href="/resources">
-                    <a>Resources</a>
-                  </StyledLink>
-                </li>
-              </>
-            )}
+            <li>
+              <StyledLink href="/blog/submit">
+                <a>Blog</a>
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/resources">
+                <a>Resources</a>
+              </StyledLink>
+            </li>
           </ul>
         </LeftWrapper>
         <SideMenu />
@@ -178,9 +174,13 @@ const Header = () => {
               {/* <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
               </StyledLink> */}
-              <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
+              {/* <StyledExtLink
+                href="https://ignitemy.online.church/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
             </>
           ) : (
             <>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -11,8 +11,8 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
-import { Button, Text } from '@/components/index'
-// import { useAuth } from '@/helpers/auth'
+import { Button, Text, Heading } from '@/components/index'
+import { useAuth } from '@/helpers/auth'
 
 const theme = createMuiTheme({
   palette: {
@@ -151,10 +151,20 @@ const LoginForm = () => {
 
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
+  const user = useAuth()
+
+  const { query } = router
+  const action = query.action ? decodeURI(query.action) : null
+  const redirect = query.redirect ? decodeURI(query.redirect) : ''
+
+  useEffect(() => {
+    if (redirect === '' && action === null && user) router.push('/')
+  }, [user])
 
   const CustomPasswordField = ({ ...props }) => {
     const [field, meta] = useField(props)
     const errorText = meta.error && meta.touched ? meta.error : ''
+
     return (
       <StyledTextField
         InputLabelProps={{
@@ -188,7 +198,7 @@ const LoginForm = () => {
   const handleLogin = async (values, actions) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-      router.push('/yls')
+      router.push(`/${redirect}`)
     } catch (error) {
       setError(error.message)
       actions.resetErrors()
@@ -196,13 +206,17 @@ const LoginForm = () => {
     }
   }
 
-  // const user = useAuth()
-
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <FlexCenter>
-          <Image src="/images/png/login-for.png" height={82} width={461} />
+          {!action ? (
+            <Image src="/images/png/login-for.png" height={82} width={461} />
+          ) : (
+            <Heading size="3.6rem" fstyle="italic" color="white" align="center">
+              PLEASE LOG IN TO VIEW PAGE
+            </Heading>
+          )}
         </FlexCenter>
         <Formik
           initialValues={{
