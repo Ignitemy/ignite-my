@@ -9,7 +9,7 @@ const Blog = () => {
 
   useEffect(() => {
     if (!user) {
-      router.push('/login?action=login&redirect=blog')
+      router.push(encodeURI('/login?action=login&redirect=blog/submit'))
     }
   }, [user])
 

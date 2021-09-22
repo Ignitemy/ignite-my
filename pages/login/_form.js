@@ -154,8 +154,8 @@ const LoginForm = () => {
   const user = useAuth()
 
   const { query } = router
-  const action = query.action ? query.action : null
-  const redirect = query.redirect ? query.redirect : ''
+  const action = query.action ? decodeURI(query.action) : null
+  const redirect = query.redirect ? decodeURI(query.redirect) : ''
 
   useEffect(() => {
     if (redirect === '' && action === null && user) router.push('/')
