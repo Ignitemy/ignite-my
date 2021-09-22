@@ -27,13 +27,13 @@ const Resources = () => {
     console.log('Put zoom background link here')
   }
 
-  return (
+  return user ? (
     <Layout title="IGNITEMY2021 | Resources">
       <SectionContainer bgcolor="var(--color-black)">
         <ResourceComponent handleZoomBackgrounds={handleZoomBackgrounds} />
       </SectionContainer>
     </Layout>
-  )
+  ) : null
 }
 
 export default Resources
