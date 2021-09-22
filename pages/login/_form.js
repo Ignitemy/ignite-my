@@ -12,7 +12,7 @@ import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { Button, Text, Heading } from '@/components/index'
-// import { useAuth } from '@/helpers/auth'
+import { useAuth } from '@/helpers/auth'
 
 const theme = createMuiTheme({
   palette: {
@@ -148,21 +148,22 @@ const validationSchema = yup.object({
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
-  const [action, setAction] = useState(null)
 
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
+  const user = useAuth()
+
+  const { query } = router
+  const action = query.action ? query.action : null
+  const redirect = query.redirect ? query.redirect : ''
+
+  useEffect(() => {
+    if (redirect === '' && action === null && user) router.push('/')
+  }, [user])
 
   const CustomPasswordField = ({ ...props }) => {
     const [field, meta] = useField(props)
     const errorText = meta.error && meta.touched ? meta.error : ''
-
-    useEffect(() => {
-      const { query } = router
-      if (query.action) {
-        setAction(query.action)
-      }
-    }, [])
 
     return (
       <StyledTextField
@@ -197,15 +198,13 @@ const LoginForm = () => {
   const handleLogin = async (values, actions) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-      router.push('/yls')
+      router.push(`/${redirect}`)
     } catch (error) {
       setError(error.message)
       actions.resetErrors()
       actions.resetForm()
     }
   }
-
-  // const user = useAuth()
 
   return (
     <ThemeProvider theme={theme}>

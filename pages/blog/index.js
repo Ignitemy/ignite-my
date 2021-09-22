@@ -9,7 +9,7 @@ const Blog = () => {
 
   useEffect(() => {
     if (!user) {
-      router.push('/login?action=login')
+      router.push('/login?action=login&redirect=blog')
     }
   }, [user])
 

@@ -28,7 +28,7 @@ const Blog = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (!user) router.push('/login?action=login')
+    if (!user) router.push('/login?action=login&redirect=blog')
   }, [user])
 
   return (
