@@ -146,24 +146,24 @@ const SubmitBlogForm = () => {
         <StyledInput
           id="fullName"
           type="text"
-          placeholder="e.g. Ignite team"
+          placeholder="e.g. IGNITEMY team"
           onChange={({ target }) => setFullName(target.value)}
           value={fullName}
         />
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Blog Title</label>
         <StyledInput
           id="title"
           type="text"
-          placeholder="e.g. Ignite was awesome!"
+          placeholder="e.g. IGNITEMY was awesome!"
           onChange={({ target }) => setTitle(target.value)}
           value={title}
         />
-        <label htmlFor="body">Body</label>
+        <label htmlFor="body">Blog Story</label>
         <StyledTextArea
           id="body"
           name="body"
           rows="20"
-          placeholder="e.g. I learned from Ignite that..."
+          placeholder="e.g. I learned from IGNITEMY that..."
           onChange={({ target }) => setBody(target.value)}
           value={body}
         />
