@@ -1,5 +1,5 @@
 {
-  "apiEndpoint": "https://ignitemy.cdn.prismic.io/api/v2",
+  "apiEndpoint": "https://ignite-my.cdn.prismic.io/api/v2",
   "libraries": [
     "@/slices"
   ],
