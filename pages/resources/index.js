@@ -30,7 +30,7 @@ const Resources = () => {
   return (
     <Layout title="IGNITEMY2021 | Resources">
       <SectionContainer bgcolor="var(--color-black)">
-        <ResourceComponent handleZoomBackgrounds={handleZoomBackgrounds} />
+        <ResourceComponent />
       </SectionContainer>
     </Layout>
   )
