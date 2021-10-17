@@ -23,10 +23,6 @@ const Resources = () => {
     if (!user) router.push('/login?action=login')
   }, [user])
 
-  const handleZoomBackgrounds = () => {
-    console.log('Put zoom background link here')
-  }
-
   return (
     <Layout title="IGNITEMY2021 | Resources">
       <SectionContainer bgcolor="var(--color-black)">
