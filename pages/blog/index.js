@@ -1,12 +1,10 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import Layout from '../../components/Layout'
-import { useAuth } from '@/helpers/auth'
-import { useRouter } from 'next/router'
-import { Button, Text, Heading } from '@/components/index'
+import ReactPaginate from 'react-paginate'
+import Layout from '@/components/Layout'
+import { Heading } from '@/components/index'
 import { Client } from '../../prismic-configuration'
-import Prismic from '@prismicio/client'
 import BlogCards from './_blog-cards'
 
 const Container = styled.div`
@@ -18,6 +16,7 @@ const Container = styled.div`
   padding: 3.2rem 0;
   max-width: 1440px;
   margin: 0 auto;
+  min-height: 80vh;
 `
 
 const BannerContainer = styled.div`
@@ -44,9 +43,41 @@ const Grid = styled.div`
   column-gap: 4.8rem;
   padding: 0 3.2rem;
 
+  .paginationBttns {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: var(--color-orange);
+    display: flex;
+    margin-top: 4rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+    }
+
+    li {
+      margin: 0 1.2rem;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        margin: 0 1rem;
+      }
+    }
+    li:hover {
+      color: var(--color-white);
+    }
+  }
+
+  .paginationActive {
+    color: var(--color-white);
+  }
+
   @media (max-width: 1280px) {
     grid-template-columns: 1fr;
     padding: 0 8rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 2.4rem;
   }
 `
 
@@ -60,19 +91,36 @@ const RightPanel = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  min-height: 105rem;
   padding-top: 3.2rem;
+
+  @media (max-width: 1280px) {
+    min-height: 92rem;
+  }
+  @media (max-width: 768px) {
+    min-height: unset;
+  }
+`
+
+const AllCards = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 `
 
 const Blog = ({ data }) => {
-  console.log(data)
-  const user = useAuth()
-  const router = useRouter()
+  const [posts] = useState(data || [])
+  const [pageNumber, setPageNumber] = useState(0)
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     router.push('/login?action=login')
-  //   }
-  // }, [user])
+  const postsPerPage = 3
+  const pagesVisited = pageNumber * postsPerPage
+  const pageCount = Math.ceil(posts.length / postsPerPage)
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+  }
 
   return (
     <Layout title="IGNITEMY2021 | Blog">
@@ -97,7 +145,25 @@ const Blog = ({ data }) => {
             </BannerContainer>
           </LeftPanel>
           <RightPanel>
-            {data && data.map((item, index) => <BlogCards key={index} data={item} />)}
+            <AllCards>
+              {data &&
+                data
+                  .slice(pagesVisited, pagesVisited + postsPerPage)
+                  .map((item, index) => <BlogCards key={index} data={item} />)}
+            </AllCards>
+            <ReactPaginate
+              previousLabel={'<'}
+              breakLabel={'...'}
+              nextLabel={'>'}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={'paginationBttns'}
+              previousLinkClassName={'previousBttn'}
+              breakClassName={'breakBttn'}
+              nextLinkClassName={'nextBttn'}
+              disabledClassName={'paginationDisabled'}
+              activeClassName={'paginationActive'}
+            />
           </RightPanel>
         </Grid>
       </Container>

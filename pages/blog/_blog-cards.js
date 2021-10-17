@@ -14,6 +14,25 @@ const CardWrapper = styled.div`
   column-gap: 3.2rem; */
   cursor: pointer;
 `
+const StyledHeading = styled(Heading)`
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 2rem;
+    text-align: left;
+  }
+`
+
+const StyledText = styled(Text)`
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 425px) {
+    margin-top: 1.2rem;
+  }
+`
+
 const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,9 +43,14 @@ const RightWrapper = styled.div`
   flex-direction: column;
 `
 
-const Row = styled.div`
+const TitleBar = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 `
 
 const BlogCards = ({ data, index }) => {
@@ -52,20 +76,20 @@ const BlogCards = ({ data, index }) => {
             {convertDate(data.data.date)}
           </Heading>
         </LeftWrapper> */}
-        <Row>
-          <Heading as="h2" color="orange" size="3.2rem" fstyle="italic">
+        <TitleBar>
+          <StyledHeading as="h2" color="orange" size="3.2rem" fstyle="italic">
             {data.data.title[0].text.toUpperCase()}
-          </Heading>
-          <Heading as="h3" align="right" color="orange" size="3.2rem" fstyle="italic">
+          </StyledHeading>
+          <StyledHeading as="h3" align="right" color="orange" size="3.2rem" fstyle="italic">
             {convertDate(data.data.date)}
-          </Heading>
-        </Row>
-        <Text color="white" size="1.6rem" mt="2.4rem">
+          </StyledHeading>
+        </TitleBar>
+        <StyledText color="white" size="1.6rem" mt="2.4rem">
           {truncateString(data.data.content[0].text, 400)}
-        </Text>
-        <Text color="white" size="1.6rem" mt="2.4rem">
+        </StyledText>
+        <StyledText color="white" size="1.6rem" mt="2.4rem">
           {`Read more by ${data.data.author[0].text} >`}
-        </Text>
+        </StyledText>
       </CardWrapper>
     </Link>
   )
