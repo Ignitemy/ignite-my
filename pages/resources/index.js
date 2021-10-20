@@ -23,17 +23,13 @@ const Resources = () => {
     if (!user) router.push('/login?action=login&redirect=resources')
   }, [user])
 
-  const handleZoomBackgrounds = () => {
-    console.log('Put zoom background link here')
-  }
-
-  return user ? (
+  return (
     <Layout title="IGNITEMY2021 | Resources">
       <SectionContainer bgcolor="var(--color-black)">
-        <ResourceComponent handleZoomBackgrounds={handleZoomBackgrounds} />
+        <ResourceComponent />
       </SectionContainer>
     </Layout>
-  ) : null
+  )
 }
 
 export default Resources

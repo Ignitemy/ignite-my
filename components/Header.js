@@ -62,8 +62,12 @@ const LeftWrapper = styled.div`
   }
 
   li {
-    margin-right: 6.6rem;
+    margin-right: 6rem;
     position: relative;
+
+    @media (max-width: 1050px) {
+      margin-right: 4.8rem;
+    }
 
     &::before {
       content: '';
@@ -151,7 +155,7 @@ const Header = () => {
               </StyledLink>
             </li>
             <li>
-              <StyledLink href="/blog/submit">
+              <StyledLink href="/blog">
                 <a>Blog</a>
               </StyledLink>
             </li>
