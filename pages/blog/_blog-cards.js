@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { Button, Text, Heading } from '@/components/index'
+import { Text, Heading } from '@/components/index'
 import { truncateString } from '@/helpers/utility'
 
 const CardWrapper = styled.div`
@@ -33,16 +33,6 @@ const StyledText = styled(Text)`
   }
 `
 
-const LeftWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`
-const RightWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
 const TitleBar = styled.div`
   display: flex;
   justify-content: space-between;
@@ -65,17 +55,9 @@ const BlogCards = ({ data, index }) => {
     )
   }
 
-  return (
-    <Link href={`/blog/${data.slugs[0]}`} key={index}>
+  return data ? (
+    <Link href={`/blog/${data?.uid}`} key={index}>
       <CardWrapper>
-        {/* <LeftWrapper>
-          <Heading as="h3" color="white" size="2.4rem">
-            {data.data.author[0].text}
-          </Heading>
-          <Heading as="h3" color="white" size="1.6rem" mt="1rem">
-            {convertDate(data.data.date)}
-          </Heading>
-        </LeftWrapper> */}
         <TitleBar>
           <StyledHeading as="h2" color="orange" size="3.2rem" fstyle="italic">
             {data.data.title[0].text.toUpperCase()}
@@ -92,6 +74,8 @@ const BlogCards = ({ data, index }) => {
         </StyledText>
       </CardWrapper>
     </Link>
+  ) : (
+    <></>
   )
 }
 

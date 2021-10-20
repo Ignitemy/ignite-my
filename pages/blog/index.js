@@ -171,9 +171,9 @@ const Blog = ({ data }) => {
                 SHARE THE SPARK.
               </StyledHeading>
               <ButtonWrapper>
-                <Button orange="true">
-                  <Link href="/blog/submit">Share Your Story</Link>
-                </Button>
+                <Link href="/blog/submit">
+                  <Button orange="true">Share Your Story</Button>
+                </Link>
               </ButtonWrapper>
             </BannerContainer>
           </LeftPanel>
