@@ -13,6 +13,8 @@ const BannerContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3.2rem 0;
+  margin: 0 auto;
+  max-width: 140rem;
 
   @media (max-width: 480px) {
     height: auto;
