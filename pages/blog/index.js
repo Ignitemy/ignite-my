@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useAuth } from '@/helpers/auth'
 import ReactPaginate from 'react-paginate'
 import Layout from '@/components/Layout'
-import { Heading } from '@/components/index'
+import { Button, Heading } from '@/components/index'
 import { Client } from '../../prismic-configuration'
 import BlogCards from './_blog-cards'
 
@@ -13,7 +16,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3.2rem 0;
   max-width: 1440px;
   margin: 0 auto;
   min-height: 80vh;
@@ -110,9 +112,21 @@ const AllCards = styled.div`
   justify-content: flex-start;
 `
 
+const ButtonWrapper = styled.div`
+  display: inline-flex;
+  justify-content: center;
+`
+
 const Blog = ({ data }) => {
   const [posts] = useState(data || [])
   const [pageNumber, setPageNumber] = useState(0)
+
+  const user = useAuth()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!user) router.push('/login?action=login')
+  }, [user])
 
   const postsPerPage = 3
   const pagesVisited = pageNumber * postsPerPage
@@ -136,12 +150,31 @@ const Blog = ({ data }) => {
                 objectPosition="center"
                 priority="true"
               />
-              <StyledHeading as="h1" color="orange" size="3rem" fstyle="italic" align="center">
+              <StyledHeading
+                as="h1"
+                color="orange"
+                size="3rem"
+                fstyle="italic"
+                align="center"
+                mt="4rem"
+              >
                 SHARE YOUR STORY.
               </StyledHeading>
-              <StyledHeading as="h1" color="orange" size="3rem" fstyle="italic" align="center">
+              <StyledHeading
+                as="h1"
+                color="orange"
+                size="3rem"
+                fstyle="italic"
+                align="center"
+                mb="4rem"
+              >
                 SHARE THE SPARK.
               </StyledHeading>
+              <ButtonWrapper>
+                <Button orange="true">
+                  <Link href="/blog/submit">Share Your Story</Link>
+                </Button>
+              </ButtonWrapper>
             </BannerContainer>
           </LeftPanel>
           <RightPanel>
