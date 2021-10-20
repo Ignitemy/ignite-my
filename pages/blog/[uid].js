@@ -1,16 +1,16 @@
-import { useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { Button, Text, Heading } from '@/components/index'
+import { Text, Heading } from '@/components/index'
 import { Client } from '../../prismic-configuration'
 
 const Container = styled.div`
   height: auto;
+  min-height: calc(100vh - 300px);
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding: 3.2rem 8rem;
   max-width: 1440px;
@@ -60,6 +60,12 @@ const Author = styled(Heading)`
   }
 `
 
+const Paragraph = styled(Text)`
+  @media (max-width: 575px) {
+    font-size: 1.6rem;
+  }
+`
+
 const BreadCrumbs = styled.span`
   color: var(--color-white);
   font-size: 1.6rem;
@@ -96,12 +102,9 @@ const Blog = (props) => {
           <Author color="white" size="3.6rem" mt="2rem">
             {`by ${data.author[0].text}`}
           </Author>
-          {/* <Heading align="center" color="white" size="3.6rem">
-            {data.author[0].text}
-          </Heading> */}
-          <Text color="white" size="1.6rem" mt="2.4rem">
+          <Paragraph color="white" size="1.8rem" mt="2.4rem" lh="2">
             {data.content[0].text}
-          </Text>
+          </Paragraph>
         </ContentContainer>
       </Container>
     </Layout>
