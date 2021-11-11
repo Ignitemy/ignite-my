@@ -98,14 +98,21 @@ const FlexCenter = styled.div`
   align-items: center;
 `
 
+const StyledHeading = styled(Heading)`
+  @media (max-width: 768px) {
+    font-size: 3.2rem;
+    margin: 2.4rem 0;
+  }
+`
+
 const Gallery = () => {
   const dragToScrollRef = useRef(null)
   const { onMouseDown } = useDraggableScroll(dragToScrollRef, { direction: 'horizontal' })
   return (
     <FlexCenter>
-      <Heading size="4.8rem" color="white" fstyle="italic" align="center" mb="4rem">
+      <StyledHeading size="4.8rem" color="white" fstyle="italic" align="center" mb="4rem">
         PHOTO GALLERY
-      </Heading>
+      </StyledHeading>
       <ImageContainer ref={dragToScrollRef} onMouseDown={onMouseDown}>
         <SRLWrapper>
           <ImageRow>
