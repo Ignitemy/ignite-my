@@ -6,56 +6,116 @@ import { Heading } from '@/components/typography'
 
 const ROW1 = [
   {
-    src: '/images/png/event-1.png',
-    thumbnail: '/images/png/event-1.png',
+    src: '/images/jpg/Gallery-1.jpg',
+    thumbnail: '/images/jpg/Gallery-1.jpg',
     caption: 'Image 1'
   },
   {
-    src: '/images/png/event-2.png',
-    thumbnail: '/images/png/event-2.png',
+    src: '/images/jpg/Gallery-2.jpg',
+    thumbnail: '/images/jpg/Gallery-2.jpg',
     caption: 'Image 2'
   },
   {
-    src: '/images/png/rally-banner.png',
-    thumbnail: '/images/png/event-1.png',
+    src: '/images/jpg/Gallery-3.jpg',
+    thumbnail: '/images/jpg/Gallery-3.jpg',
     caption: 'Image 3'
   },
   {
-    src: '/images/png/ignite-rally.png',
-    thumbnail: '/images/png/event-2.png',
+    src: '/images/jpg/Gallery-4.jpg',
+    thumbnail: '/images/jpg/Gallery-4.jpg',
     caption: 'Image 4'
   },
   {
-    src: '/images/png/event-1.png',
-    thumbnail: '/images/png/event-1.png',
+    src: '/images/jpg/Gallery-5.jpg',
+    thumbnail: '/images/jpg/Gallery-5.jpg',
     caption: 'Image 5'
+  },
+  {
+    src: '/images/jpg/Gallery-6.jpg',
+    thumbnail: '/images/jpg/Gallery-6.jpg',
+    caption: 'Image 6'
+  },
+  {
+    src: '/images/jpg/Gallery-7.jpg',
+    thumbnail: '/images/jpg/Gallery-7.jpg',
+    caption: 'Image 7'
+  },
+  {
+    src: '/images/jpg/Gallery-8.jpg',
+    thumbnail: '/images/jpg/Gallery-8.jpg',
+    caption: 'Image 8'
+  },
+  {
+    src: '/images/jpg/Gallery-9.jpg',
+    thumbnail: '/images/jpg/Gallery-9.jpg',
+    caption: 'Image 9'
+  },
+  {
+    src: '/images/jpg/Gallery-10.jpg',
+    thumbnail: '/images/jpg/Gallery-10.jpg',
+    caption: 'Image 10'
+  },
+  {
+    src: '/images/jpg/Gallery-11.jpg',
+    thumbnail: '/images/jpg/Gallery-11.jpg',
+    caption: 'Image 11'
+  },
+  {
+    src: '/images/jpg/Gallery-11-1.jpg',
+    thumbnail: '/images/jpg/Gallery-11-1.jpg',
+    caption: 'Image 11-1'
   }
 ]
 const ROW2 = [
   {
-    src: '/images/png/ignite-rally.png',
-    thumbnail: '/images/png/event-1.png',
-    caption: 'Image 1'
+    src: '/images/jpg/Gallery-12.jpg',
+    thumbnail: '/images/jpg/Gallery-12.jpg',
+    caption: 'Image 12'
   },
   {
-    src: '/images/png/event-2.png',
-    thumbnail: '/images/png/event-2.png',
-    caption: 'Image 2'
+    src: '/images/jpg/Gallery-13.jpg',
+    thumbnail: '/images/jpg/Gallery-13.jpg',
+    caption: 'Image 13'
   },
   {
-    src: '/images/png/event-1.png',
-    thumbnail: '/images/png/event-1.png',
-    caption: 'Image 3'
+    src: '/images/jpg/Gallery-14.jpg',
+    thumbnail: '/images/jpg/Gallery-14.jpg',
+    caption: 'Image 14'
   },
   {
-    src: '/images/png/paper-bg.png',
-    thumbnail: '/images/png/event-2.png',
-    caption: 'Image 4'
+    src: '/images/jpg/Gallery-15.jpg',
+    thumbnail: '/images/jpg/Gallery-15.jpg',
+    caption: 'Image 15'
   },
   {
-    src: '/images/png/event-1.png',
-    thumbnail: '/images/png/event-1.png',
-    caption: 'Image 5'
+    src: '/images/jpg/Gallery-16.jpg',
+    thumbnail: '/images/jpg/Gallery-16.jpg',
+    caption: 'Image 16'
+  },
+  {
+    src: '/images/jpg/Gallery-17.jpg',
+    thumbnail: '/images/jpg/Gallery-17.jpg',
+    caption: 'Image 17'
+  },
+  {
+    src: '/images/jpg/Gallery-18.jpg',
+    thumbnail: '/images/jpg/Gallery-18.jpg',
+    caption: 'Image 18'
+  },
+  {
+    src: '/images/jpg/Gallery-19.jpg',
+    thumbnail: '/images/jpg/Gallery-19.jpg',
+    caption: 'Image 19'
+  },
+  {
+    src: '/images/jpg/Gallery-20.jpg',
+    thumbnail: '/images/jpg/Gallery-20.jpg',
+    caption: 'Image 10'
+  },
+  {
+    src: '/images/jpg/Gallery-21.jpg',
+    thumbnail: '/images/jpg/Gallery-21.jpg',
+    caption: 'Image 21'
   }
 ]
 
@@ -96,6 +156,7 @@ const FlexCenter = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 4rem;
 `
 
 const StyledHeading = styled(Heading)`
