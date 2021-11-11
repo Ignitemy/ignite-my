@@ -1,18 +1,15 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Image from 'next/image'
-
 
 const SectionContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
-
 `
 const ImageWrapper = styled.div`
   margin: 5rem;
-
 `
 const Logo = () => {
   return (
@@ -36,7 +33,6 @@ const Logo = () => {
         />
       </ImageWrapper>
     </SectionContainer>
-
   )
 }
 
