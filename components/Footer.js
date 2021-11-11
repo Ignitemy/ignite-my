@@ -153,20 +153,17 @@ const Footer = () => {
                 </a>
               </StyledLink>
             </li>
-            {/* {user && (
-              <>
-                <li>
-                  <StyledLink href="/blog">
-                    <a>Blog</a>
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink href="/documents">
-                    <a>Documents</a>
-                  </StyledLink>
-                </li>
-              </>
-            )} */}
+
+            <li>
+              <StyledLink href="/blog/submit">
+                <a>Blog</a>
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink href="/highlights">
+                <a>Highlights</a>
+              </StyledLink>
+            </li>
           </ul>
         </LeftWrapper>
       </StyledNav>
