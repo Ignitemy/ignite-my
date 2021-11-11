@@ -68,7 +68,7 @@ const Blog = () => {
   //   if (!user) router.push(encodeURI('/login?action=login&redirect=blog/submit'))
   // }, [user])
 
-  return user ? (
+  return (
     <Layout title="IGNITEMY2021 | Submit A Blog Post">
       <BannerContainer>
         <StyledImage
@@ -91,7 +91,7 @@ const Blog = () => {
         </FormContainer>
       </BannerContainer>
     </Layout>
-  ) : null
+  )
 }
 
 export default Blog
