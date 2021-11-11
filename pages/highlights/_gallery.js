@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import styled from 'styled-components'
 import { SRLWrapper } from 'simple-react-lightbox'
 import useDraggableScroll from 'use-draggable-scroll'
-import { Heading } from '@/components/typography'
+import { Heading } from '@/components/Typography'
 
 const ROW1 = [
   {
