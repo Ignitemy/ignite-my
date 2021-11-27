@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useAuth } from '@/helpers/auth'
+// import { useAuth } from '@/helpers/auth'
 import ReactPaginate from 'react-paginate'
 import Layout from '@/components/Layout'
 import { Button, Heading } from '@/components/index'
@@ -121,14 +121,19 @@ const Blog = ({ data }) => {
   const [posts] = useState(data || [])
   const [pageNumber, setPageNumber] = useState(0)
 
-  const user = useAuth()
+  // const user = useAuth()
   const router = useRouter()
 
   useEffect(() => {
-    if (!user) {
-      router.push(encodeURI('/login?action=login&redirect=blog'))
-    }
-  }, [user])
+    router.push('/')
+  }, [])
+
+  // TODO: Enable when blog page is ready for release
+  // useEffect(() => {
+  //   if (!user) {
+  //     router.push(encodeURI('/login?action=login&redirect=blog'))
+  //   }
+  // }, [user])
 
   const postsPerPage = 3
   const pagesVisited = pageNumber * postsPerPage
@@ -140,7 +145,8 @@ const Blog = ({ data }) => {
 
   return (
     <Layout title="IGNITEMY2021 | Blog">
-      <Container>
+      {/* TODO: Enable when blog page is ready for release */}
+      {/* <Container>
         <Grid>
           <LeftPanel>
             <BannerContainer>
@@ -201,7 +207,7 @@ const Blog = ({ data }) => {
             />
           </RightPanel>
         </Grid>
-      </Container>
+      </Container> */}
     </Layout>
   )
 }
