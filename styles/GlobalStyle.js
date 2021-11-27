@@ -29,6 +29,11 @@ const GlobalStyle = createGlobalStyle`
         .MuiMenuItem-root {
             font-size: 1.4rem;
         }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     ::-webkit-scrollbar {

@@ -1,9 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
+import Image from 'next/image'
 import styled from 'styled-components'
 import InstaIcon from '../images/svg/insta'
 import YoutubeIcon from '../images/svg/youtube'
-// import { useAuth } from '@/helpers/auth'
+import { Text } from '@/components/Typography'
 
 const StyledYoutubeIcon = styled(YoutubeIcon)`
   @media (max-width: 900px) {
@@ -17,91 +17,50 @@ const StyledInstaIcon = styled(InstaIcon)`
     width: 36px;
   }
 `
-
-const StyledLink = styled(Link)`
-  color: var(--color-white);
-  text-decoration: none;
-  transition: text-shadow 0.25s;
-  position: relative;
-`
-
-const StyledNav = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 140rem;
-  height: 50%;
-  display: flex;
-  justify-content: space-between;
-
-  @media (max-width: 900px) {
-    display: none;
+const StyledImage = styled(Image)`
+  @media (max-width: 768px) {
+    height: 48px;
+    width: 48px;
   }
 `
 
 const StyledFooter = styled.footer`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 420px;
+  width: 100%;
+  justify-content: center;
   background-color: var(--color-black);
   padding: 0 8rem;
 
   @media (max-width: 900px) {
-    height: 200px;
     padding: 0 4rem;
   }
+  @media (max-width: 768px) {
+    padding: 4rem 1.6rem;
+  }
 `
-const FooterContainer = styled.div`
-  height: auto;
+const FooterContents = styled.div`
   display: flex;
+  height: 9rem;
   width: 100%;
   max-width: 140rem;
-  flex-direction: column;
-  justify-content: center;
-  border-top: 1px solid var(--color-white);
+  justify-content: space-between;
 
-  @media (max-width: 900px) {
-    border-top: none;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
   }
 `
-const LeftWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-  }
-
-  li {
-    margin-right: 6.6rem;
-    position: relative;
-  }
-
-  a {
-    color: var(--color-white);
-    font-size: 18px;
-    text-decoration: none;
-    transition: text-shadow 0.25s;
-    position: relative;
-  }
-`
-
-const WhiteSpan = styled.span`
-  color: var(--color-white);
-`
-const OrangeSpan = styled.span`
-  color: var(--color-orange);
-`
-
 const SocialWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 4.5rem;
+  align-items: center;
+  width: 100%;
 
   a {
     margin: 0 1.6rem;
+
+    @media (max-width: 768px) {
+      margin: 0 0.8rem;
+    }
 
     &:hover,
     &:focus {
@@ -111,67 +70,43 @@ const SocialWrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+`
+
+const HashTags = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `
 
 const FooterText = styled.div`
   color: var(--color-white);
   display: flex;
   justify-content: center;
-  font-size: 2.4rem;
-  margin-top: 2.2rem;
+  font-size: 1.6rem;
+  margin: 0 3.8rem 0 1.6rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     font-size: 14px;
+    margin: 0 1.6rem;
   }
 `
 
 const Footer = () => {
-  // const user = useAuth()
   return (
     <StyledFooter>
-      <StyledNav>
-        <LeftWrapper>
-          <ul>
-            <li>
-              <StyledLink href="/">
-                <a>Home</a>
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink href="/yls">
-                <a>
-                  <WhiteSpan>IGNITE</WhiteSpan>
-                  <OrangeSpan>YLS</OrangeSpan>
-                </a>
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink href="/rally">
-                <a>
-                  <WhiteSpan>IGNITE</WhiteSpan>
-                  <OrangeSpan>RALLY</OrangeSpan>
-                </a>
-              </StyledLink>
-            </li>
-            {/* {user && (
-              <>
-                <li>
-                  <StyledLink href="/blog">
-                    <a>Blog</a>
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink href="/documents">
-                    <a>Documents</a>
-                  </StyledLink>
-                </li>
-              </>
-            )} */}
-          </ul>
-        </LeftWrapper>
-      </StyledNav>
-      <FooterContainer>
+      <FooterContents>
         <SocialWrapper>
+          <StyledImage src="/images/png/blinks.png" height={60} width={60} alt="ignite logo" />
+          <FooterText>Follow us to stay connected</FooterText>
           <a
             href="https://instagram.com/ignitemy______"
             target="_blank"
@@ -189,8 +124,15 @@ const Footer = () => {
             <StyledYoutubeIcon />
           </a>
         </SocialWrapper>
-        <FooterText>Follow us to stay connected</FooterText>
-      </FooterContainer>
+        <HashTags>
+          <Text size="1.8rem" color="white">
+            #igniteMY2021
+          </Text>
+          <Text size="1.8rem" color="white" ml="0.6rem">
+            #dumcnxg
+          </Text>
+        </HashTags>
+      </FooterContents>
     </StyledFooter>
   )
 }

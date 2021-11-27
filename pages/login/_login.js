@@ -27,7 +27,7 @@ const RegisterSection = styled.div`
 `
 
 const BannerContainer = styled.div`
-  height: 600px;
+  height: calc(100vh - 190px);
   width: 50%;
   position: relative;
   display: flex;

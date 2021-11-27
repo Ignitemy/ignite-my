@@ -6,6 +6,7 @@ import Footer from './Footer'
 
 const StyledMain = styled.main`
   background-color: var(--color-black);
+  min-height: calc(100vh - 190px);
 `
 
 const Layout = ({ children, title }) => {

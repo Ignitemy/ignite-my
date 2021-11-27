@@ -329,8 +329,8 @@ const SideMenu = () => {
                 </StyledLink>
               </li>
               <li>
-                <StyledLink href="/resources">
-                  <a>Resources</a>
+                <StyledLink href="/highlights">
+                  <a>Highlights</a>
                 </StyledLink>
               </li>
               {!user && (

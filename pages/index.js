@@ -1,4 +1,3 @@
-import { Client } from '../prismic-configuration'
 import { useGetStaticProps } from 'next-slicezone/hooks'
 
 // import SliceZone from "next-slicezone";
@@ -23,11 +22,14 @@ const Page = () => {
 }
 
 // Fetch content from prismic
-export const getStaticProps = useGetStaticProps({
-  client: Client(),
-  apiParams: {
-    uid: 'home'
-  }
-})
+// export const getStaticProps = useGetStaticProps({
+//   client: Client(),
+//   type: 'blog_post',
+//   apiParams({ params }) {
+//     return {
+//       uid: params.uid
+//     }
+//   }
+// })
 
 export default Page

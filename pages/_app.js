@@ -1,6 +1,7 @@
 import React from 'react'
 // import NextApp from 'next/app'
 import { ThemeProvider } from 'styled-components'
+import SimpleReactLightbox from 'simple-react-lightbox'
 // import { Client } from '../prismic-configuration'
 import FirebaseContext from '../context/firebase'
 import { firebase, FieldValue } from '../lib/firebase'
@@ -13,7 +14,9 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <AuthProvider>
-          <Component {...pageProps} />
+          <SimpleReactLightbox>
+            <Component {...pageProps} />
+          </SimpleReactLightbox>
         </AuthProvider>
       </ThemeProvider>
     </FirebaseContext.Provider>
