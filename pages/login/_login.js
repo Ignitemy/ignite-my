@@ -116,23 +116,23 @@ const LoginSection = () => {
               </LogoWrapper>
               <EventDetails>
                 <Row>
-                  <CalendarIcon />
-                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                    4TH SEPT 2021
-                  </Text>
-                </Row>
-                <Row>
-                  <TimeIcon />
-                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                    10.00AM - 3.30PM
-                  </Text>
-                </Row>
-                <Row>
-                  <LocationIcon />
-                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                    STREAMING LIVE
-                  </Text>
-                </Row>
+                    <CalendarIcon />
+                    <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                      24TH SEPT 2022
+                    </Text>
+                  </Row>
+                  {/* <Row>
+                    <TimeIcon />
+                    <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                      10.00AM - 3.30PM
+                    </Text>
+                  </Row> */}
+                  <Row>
+                    <LocationIcon />
+                    <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                      IN-PERSON / ONLINE
+                    </Text>
+                  </Row>
               </EventDetails>
             </ContentWrapper>
           </BannerContent>

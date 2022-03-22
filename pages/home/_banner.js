@@ -74,8 +74,8 @@ const BannerContainer = styled.div`
   align-items: center;
 
   @media (max-width: 480px) {
-    height: 580px;
-    padding-top: 6.4rem;
+    height: 400px;
+    padding-top: 12rem;
     align-items: flex-start;
   }
 `
@@ -114,7 +114,7 @@ const ImageWrapper = styled(motion.div)`
 `
 
 const Details = styled.div`
-  margin-top: 2.4rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +125,7 @@ const Details = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-  margin-top: 6.4rem;
+  margin-top: 1.2rem;
 `
 
 const Row = styled(motion.div)`
@@ -167,7 +167,8 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/png/homepage-banner.png"
+        // src="/images/png/homepage-banner.png"
+        src="/images/png/ignite2022-coming-soon-dark.png"
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"
@@ -187,10 +188,12 @@ const Banner = () => {
           </ImageWrapper>
           <Details>
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-              4TH SEPT 2021
+               24.09.2022
             </WhiteHeader>
-            {/* <AnimatedLetters title="STREAMING" variants={stream} />
-            <AnimatedLetters title="LIVE" variants={live} /> */}
+            <ButtonWrapper>
+              <AnimatedLetters title="SAVE.    THE.    DATE." variants={stream} />
+            </ButtonWrapper>
+            {/* <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>
         </ContentWrapper>
           {/* <ButtonWrapper>

@@ -138,7 +138,7 @@ const Header = () => {
                 <a>Home</a>
               </StyledLink>
             </li>
-            <li>
+            {/* <li>
               <StyledLink href="/yls">
                 <a>
                   <WhiteSpan>IGNITE</WhiteSpan>
@@ -153,7 +153,7 @@ const Header = () => {
                   <OrangeSpan>RALLY</OrangeSpan>
                 </a>
               </StyledLink>
-            </li>
+            </li> */}
             <li>
               <StyledLink href="/blog/submit">
                 <a>Blog</a>
@@ -170,11 +170,11 @@ const Header = () => {
         <RightWrapper>
           {!user ? (
             <>
-              <StyledLink href="/login">
+              {/* <StyledLink href="/login">
                 <Button white="true" style={{ marginRight: '2rem' }}>
                   Log In
                 </Button>
-              </StyledLink>
+              </StyledLink> */}
               {/* <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
               </StyledLink> */}
@@ -188,7 +188,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <WelcomeText color="white">Welcome back, {user.displayName}</WelcomeText>
+              {/* <WelcomeText color="white">Welcome back, {user.displayName}</WelcomeText>
               <StyledLogout
                 type="button"
                 title="Sign Out"
@@ -202,7 +202,7 @@ const Header = () => {
                 }}
               >
                 <LogoutIcon />
-              </StyledLogout>
+              </StyledLogout> */}
             </>
           )}
         </RightWrapper>
