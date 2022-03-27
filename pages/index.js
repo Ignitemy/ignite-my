@@ -13,10 +13,10 @@ const Page = () => {
   return (
     <Layout title="IGNITEMY2022 | Home">
       <Banner />
-      <WhatIsIgnite />
-      <Events />
+      {/* <WhatIsIgnite /> */}
+      {/* <Events /> */}
       {/* <Countdown /> */}
-      <Video />
+      {/* <Video /> */}
     </Layout>
   )
 }
