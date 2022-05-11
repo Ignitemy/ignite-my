@@ -22,21 +22,21 @@ const logo = {
   }
 }
 
-const date = {
-  initial: {
-    opacity: 0,
-    y: 200
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
-      duration: 1.6,
-      delay: 0.8
-    }
-  }
-}
+// const date = {
+//   initial: {
+//     opacity: 0,
+//     y: 200
+//   },
+//   animate: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       ease: [0.6, 0.01, -0.05, 0.95],
+//       duration: 1.6,
+//       delay: 0.8
+//     }
+//   }
+// }
 
 const stream = {
   animate: {
@@ -46,14 +46,14 @@ const stream = {
     }
   }
 }
-const live = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 2.4
-    }
-  }
-}
+// const live = {
+//   animate: {
+//     transition: {
+//       staggerChildren: 0.1,
+//       delayChildren: 2.4
+//     }
+//   }
+// }
 
 const letterAni = {
   initial: { y: 200 },
@@ -67,16 +67,21 @@ const letterAni = {
 }
 
 const BannerContainer = styled.div`
-  height: 800px;
+//   height: 800px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 480px) {
-    height: 400px;
+    // height: 400px;
     padding-top: 12rem;
     align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+      min-width: 50vw;
+      padding: 24rem 0;
   }
 `
 
@@ -102,19 +107,19 @@ const ContentWrapper = styled.div`
 `
 
 const ImageWrapper = styled(motion.div)`
-  height: 59px;
+  height: 173px;
 
-  @media (max-width: 900px) {
-    margin: 0 0 2.5rem;
-  }
-  @media (max-width: 500px) {
-    height: 75%;
-    width: 75%;
-  }
+  // @media (max-width: 900px) {
+  //   margin: 0 0 2.5rem;
+  // }
+  // @media (max-width: 500px) {
+  //   height: 75%;
+  //   width: 75%;
+  // }
 `
 
 const Details = styled.div`
-  margin-top: 5rem;
+  margin-top: 4.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,37 +143,37 @@ const WhiteHeader = styled(motion.h3)`
   line-height: 40px;
   font-style: italic;
   color: var(--color-white);
-  margin-bottom: 0.5rem;
+  // margin-bottom: 0.5rem;
 `
-const OrangeHeader = styled(motion.h3)`
-  font-size: 30px;
-  line-height: 40px;
-  font-style: italic;
-  color: var(--color-orange);
-`
-const StyledExtLink = styled.a`
-  color: var(--color-white);
-  text-decoration: none;
-  position: relative;
-`
+// const OrangeHeader = styled(motion.h3)`
+//   font-size: 30px;
+//   line-height: 40px;
+//   font-style: italic;
+//   color: var(--color-orange);
+// `
+// const StyledExtLink = styled.a`
+//   color: var(--color-white);
+//   text-decoration: none;
+//   position: relative;
+// `
 
 const AnimatedLetters = ({ title, variants, disabled }) => (
   <Row variants={variants} initial="initial" animate="animate">
     {[...title].map((letter, idx) => (
-      <OrangeHeader variants={disabled ? null : letterAni} key={idx}>
+      <WhiteHeader variants={disabled ? null : letterAni} key={idx}>
         {letter}
-      </OrangeHeader>
+      </WhiteHeader>
     ))}
   </Row>
 )
 
-const Banner = () => {
+const Banner = ({ imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => {
   const user = useAuth()
   return (
     <BannerContainer>
       <StyledImage
         // src="/images/png/homepage-banner.png"
-        src="/images/png/ignite2022-coming-soon-dark.png"
+        src={imgSrc}
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"
@@ -179,33 +184,20 @@ const Banner = () => {
         <ContentWrapper>
           <ImageWrapper initial="initial" animate="animate" variants={logo}>
             <Image
-              src="/images/png/ignite-logo.png"
+              src={imgTitle}
               alt="Ignite logo"
-              height={59}
-              width={383}
+              height={imgHeight}
+              width={imgWidth}
               priority="true"
             />
           </ImageWrapper>
           <Details>
-            <WhiteHeader initial="initial" animate="animate" variants={date}>
-               24.09.2022
-            </WhiteHeader>
             <ButtonWrapper>
-              <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
+              <AnimatedLetters title={subTitle} variants={stream} />
             </ButtonWrapper>
             {/* <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>
         </ContentWrapper>
-          {/* <ButtonWrapper>
-            <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
-              <Button orange="true">Streaming Live</Button>
-            </StyledExtLink>
-          </ButtonWrapper> */}
-          <ButtonWrapper>
-            <StyledExtLink href="#" target="_blank" rel="noopener noreferrer" >
-              <Button orange="true">Register</Button>
-            </StyledExtLink>
-          </ButtonWrapper>
       </BannerContent>
     </BannerContainer>
   )

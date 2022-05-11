@@ -8,6 +8,16 @@ import WhatIsIgnite from './home/_what-is-ignite'
 import Events from './home/_events'
 import Countdown from './home/_countdown'
 import Video from './home/_video'
+import MiniBanner from './home/_mini-banner'
+import styled from 'styled-components'
+
+const MiniBannerContainer = styled.div`
+  height: auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`
 
 const Page = () => {
   return (
@@ -15,7 +25,23 @@ const Page = () => {
       <Banner />
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
-      {/* <Countdown /> */}
+      <MiniBannerContainer>
+        <MiniBanner
+          imgSrc="/images/jpg/ignite-yls-banner-bg-2022.jpg"
+          imgTitle="/images/png/ignite-yls-logo.png"
+          imgHeight='173'
+          imgWidth='356'
+          subTitle="IN-PERSON.    ONLINE."
+        />
+        <MiniBanner
+          imgSrc="/images/jpg/ignite-rally-banner-bg-2022.jpg"
+          imgTitle="/images/png/ignite-rally.png"
+          imgHeight='135'
+          imgWidth='351'
+          subTitle="IN-PERSON."
+        />
+      </MiniBannerContainer>
+      <Countdown />
       {/* <Video /> */}
     </Layout>
   )
