@@ -76,13 +76,19 @@ const BannerContainer = styled.div`
   @media (max-width: 480px) {
     // height: 400px;
     padding-top: 12rem;
+    padding-bottom: 12rem;
     align-items: flex-start;
   }
 
   @media (min-width: 768px) {
       min-width: 50vw;
-      padding: 24rem 0;
+      padding: 14rem 0;
   }
+
+  @media (min-width: 1024px) {
+    min-width: 50vw;
+    padding: 20rem 0;
+}
 `
 
 const BannerContent = styled.div`
@@ -108,7 +114,7 @@ const ContentWrapper = styled.div`
 
 const ImageWrapper = styled(motion.div)`
   height: 173px;
-
+  
   // @media (max-width: 900px) {
   //   margin: 0 0 2.5rem;
   // }

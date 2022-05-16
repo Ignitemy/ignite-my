@@ -67,17 +67,17 @@ const letterAni = {
 }
 
 const BannerContainer = styled.div`
-  height: 800px;
+  height: calc(100vh - 100px);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 480px) {
-    height: 400px;
-    padding-top: 12rem;
-    align-items: flex-start;
-  }
+  // @media (max-width: 480px) {
+  //   height: 400px;
+  //   padding-top: 12rem;
+  //   align-items: flex-start;
+  // }
 `
 
 const BannerContent = styled.div`
