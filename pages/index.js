@@ -1,4 +1,4 @@
-import { useGetStaticProps } from 'next-slicezone/hooks'
+// import { useGetStaticProps } from 'next-slicezone/hooks'
 
 // import SliceZone from "next-slicezone";
 // import resolver from "../sm-resolver.js";
@@ -10,6 +10,7 @@ import Countdown from './home/_countdown'
 import Video from './home/_video'
 import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
+import Location from './home/_location'
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -29,20 +30,21 @@ const Page = () => {
         <MiniBanner
           imgSrc="/images/jpg/ignite-yls-banner-bg-2022.jpg"
           imgTitle="/images/png/ignite-yls-logo.png"
-          imgHeight='173'
-          imgWidth='356'
+          imgHeight="173"
+          imgWidth="356"
           subTitle="IN-PERSON.    ONLINE."
         />
         <MiniBanner
           imgSrc="/images/jpg/ignite-rally-banner-bg-2022.jpg"
           imgTitle="/images/png/ignite-rally.png"
-          imgHeight='135'
-          imgWidth='351'
+          imgHeight="135"
+          imgWidth="351"
           subTitle="IN-PERSON."
         />
       </MiniBannerContainer>
       <Countdown />
       {/* <Video /> */}
+      <Location />
     </Layout>
   )
 }

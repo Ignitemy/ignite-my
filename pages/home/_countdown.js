@@ -12,7 +12,7 @@ const SectionContainer = styled.section`
 `
 
 const CountdownContainer = styled.div`
-  width: 70%;
+  width: 85%;
   max-width: 144rem;
   // padding: 8rem 0;
   padding: 10rem 2rem;
