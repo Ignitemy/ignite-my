@@ -4,13 +4,14 @@
 // import resolver from "../sm-resolver.js";
 import Layout from './../components/Layout'
 import Banner from './home/_banner'
-import WhatIsIgnite from './home/_what-is-ignite'
-import Events from './home/_events'
+// import WhatIsIgnite from './home/_what-is-ignite'
+// import Events from './home/_events'
 import Countdown from './home/_countdown'
-import Video from './home/_video'
+// import Video from './home/_video'
 import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
+import Faq from "./home/_faq"
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -45,6 +46,7 @@ const Page = () => {
       <Countdown />
       {/* <Video /> */}
       <Location />
+      <Faq />
     </Layout>
   )
 }

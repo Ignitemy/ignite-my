@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
-import Link from 'next/link'
 
 const SectionWrapper = styled.div`
   display: block;
@@ -20,6 +18,10 @@ const SectionWrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     padding: 5rem 11rem;
+  }
+
+  @media screen and (min-width: 1750px) {
+    padding: 7rem 24rem;
   }
 `
 
