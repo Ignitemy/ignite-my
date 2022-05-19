@@ -7,7 +7,7 @@ import Banner from './home/_banner'
 // import WhatIsIgnite from './home/_what-is-ignite'
 // import Events from './home/_events'
 import Countdown from './home/_countdown'
-// import Video from './home/_video'
+import Video from './home/_video'
 import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
@@ -44,7 +44,7 @@ const Page = () => {
         />
       </MiniBannerContainer>
       <Countdown />
-      {/* <Video /> */}
+      <Video />
       <Location />
       <Faq />
     </Layout>
