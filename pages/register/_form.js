@@ -24,6 +24,7 @@ import { useAuth } from '@/helpers/auth'
 import SuccessIcon from '@/images/svg/success'
 import InstaIcon from '@/images/svg/insta-no-outline'
 import Modal from './_modal'
+import AlreadyRegisteredModal from './_already-registered-modal'
 
 const theme = createMuiTheme({
   palette: {
@@ -209,9 +210,9 @@ const ActiveOccupationWrapper = styled.div`
 
   label {
     border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
+    isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
     background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-orange)' : 'var(--color-white)'};
+    isActive ? 'var(--color-orange)' : 'var(--color-white)'};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
@@ -245,9 +246,9 @@ const OccupationWrapper = styled.div`
 
   label {
     border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
+    isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
     background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-white)' : 'var(--color-orange)'};
+    isActive ? 'var(--color-white)' : 'var(--color-orange)'};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
@@ -357,10 +358,12 @@ const RegistrationForm = () => {
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
   const [isActive, setActive] = useState(true)
+  // Once we check that the user has already had an account, we can set this to true
+  const [alreadyRegistered, setAlreadyRegistered] = useState(false)
 
   useEffect(() => {
-    showModal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
-  }, [showModal])
+    (showModal || alreadyRegistered) ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+  }, [showModal, alreadyRegistered])
 
   const scrollTop = () => {
     if (typeof window !== 'undefined') {
@@ -677,6 +680,7 @@ const RegistrationForm = () => {
         </Container>
       )}
       <Modal showModal={showModal} closeModal={() => setShowModal(false)} />
+      <AlreadyRegisteredModal alreadyRegistered={alreadyRegistered} />
     </ThemeProvider>
   )
 }
