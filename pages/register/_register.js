@@ -5,11 +5,17 @@ import Form from './_form'
 import { Text, Heading } from '../../components'
 
 const SectionContainer = styled.section`
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
+  background: url("/images/jpg/registration-bg.jpg");
   display: flex;
   justify-content: center;
   max-width: 160rem;
   margin: 0 auto;
+
+  /* will need to check with team whether to maintain this */
+  @media (min-width: 1600px) {
+    max-width: none;
+  }
 `
 
 const RegisterSection = styled.div`
@@ -22,15 +28,17 @@ const RegisterSection = styled.div`
 `
 
 const BannerContainer = styled.div`
-  height: 148rem;
+  /* height: 148rem; */
   width: 50%;
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 6.4rem 8rem;
+  /* padding: 6.4rem 8rem; */
+  padding: 2.5rem 8rem;
 
   @media (max-width: 1200px) {
-    padding: 4rem 6rem;
+    /* padding: 4rem 6rem; */
+    padding: 2.5rem 6rem;
   }
 
   @media (max-width: 900px) {
@@ -43,7 +51,7 @@ const BannerContainer = styled.div`
 const FormContainer = styled.div`
   display: flex;
   width: 50%;
-  background-color: var(--color-white);
+  /* background-color: var(--color-white); */
 
   @media (max-width: 900px) {
     width: 100%;
@@ -56,8 +64,17 @@ const BannerContent = styled.div`
   flex-direction: column;
 `
 
-const StyledImage = styled(Image)`
+// const StyledImage = styled(Image)`
+//   z-index: 0;
+// `
+const SemiTranparentBackground = styled.div`
   z-index: 0;
+  position: absolute;
+  top: 0;
+  background-color: #000000;
+  opacity: 0.6;
+  height: 100%;
+  width: 100%;
 `
 
 const ContentWrapper = styled.div`
@@ -94,29 +111,40 @@ const InfoText = styled(Text)`
   a:hover {
     text-decoration: underline;
   }
-  span {
-    // color: var(--color-orange);
-    text-decoration:underline;
+  span#date {
+    color: var(--color-orange);
+    text-decoration: none;
   }
+`
+
+const FlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7rem 0;
 `
 
 const Register = () => {
   return (
     <SectionContainer>
       <RegisterSection>
+        <FormContainer>
+          <Form />
+        </FormContainer>
         <BannerContainer>
-          <StyledImage
+          {/* <StyledImage
             src="/images/png/form-banner.png"
             alt="Sunset"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
             priority="true"
-          />
+          /> */}
+          <SemiTranparentBackground />
           <BannerContent>
             <ContentWrapper>
               <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
-                Hello!
+                <span style={{textShadow: "3px 1px 0 #FF6600"}}>Hello!</span>
               </Heading>
               <Text color="white" size="1.8rem" mt="2.4rem">
                 Welcome to IGNITEMY2021! This one-day Summit, organised by DUMC NextGen Teens in
@@ -130,20 +158,20 @@ const Register = () => {
               <EventDetails>
                 <Row>
                   <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
-                  <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                    4TH SEPT 2021
+                  <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
+                    28TH SEPT 2022 
                   </Text>
                 </Row>
                 <Row>
                   <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
-                  <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
+                  <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
                     10.00AM - 3.30PM
                   </Text>
                 </Row>
                 <Row>
                   <Image src="/images/svg/location.svg" alt="location pin" height={36} width={36} />
-                  <Text size="2.4rem" weight="bold" color="white" ml="1.5rem">
-                    STREAMING LIVE
+                  <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
+                    IN PERSON. ONLINE.
                   </Text>
                 </Row>
               </EventDetails>
@@ -158,16 +186,19 @@ const Register = () => {
                 An exclusive access to the Summit will be sent to you via email closer to the date!
                 <br />
                 <br />
-                Participants who register <span>from 1st August 2021</span> onwards are still invited
+                Participants who register from <span id='date'>1st August 2022</span> onwards are still invited
                 to join the online Summit. However, you WILL NOT be allocated into discussion groups
                 and WILL NOT receive the Summit kit.
+                <br />
+                <br />
+                An exclusive access to the Summit will be sent to you via email closer to the date!
               </InfoText>
+              <FlexCenter>
+                <Image src='/images/png/registration-step.png' width={343} height={224} />
+              </FlexCenter>
             </ContentWrapper>
           </BannerContent>
         </BannerContainer>
-        <FormContainer>
-          <Form />
-        </FormContainer>
       </RegisterSection>
     </SectionContainer>
   )

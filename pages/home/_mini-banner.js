@@ -199,7 +199,7 @@ const Banner = ({ imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => {
           </ImageWrapper>
           <Details>
             <ButtonWrapper>
-              <AnimatedLetters title={subTitle} variants={stream} />
+              <AnimatedLetters title={subTitle || "IN-PERSON."} variants={stream} />
             </ButtonWrapper>
             {/* <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>

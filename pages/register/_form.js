@@ -42,7 +42,8 @@ const Container = styled.div`
   width: 100%;
   flex-direction: column;
   padding: 4rem 8rem;
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
+  /* background-color: transparent; */
 
   @media (max-width: 1200px) {
     padding: 4rem 4rem;
@@ -52,11 +53,19 @@ const Container = styled.div`
   }
 `
 
-const FlexCenter = styled.div`
-  display: flex;
-  flex-direction: ${(props) => props.fd};
-  justify-content: center;
-  align-items: center;
+// const FlexStart = styled.div`
+//   display: flex;
+//   flex-direction: ${(props) => props.fd};
+//   justify-content: flex-start;
+//   align-items: center;
+// `
+const FormHeading = styled.div`
+  font-size: 18px;
+  color: var(--color-white);
+
+  > p {
+    margin-top: 7px;
+  }
 `
 
 const RegisteredContainer = styled(Container)`
@@ -206,9 +215,11 @@ const StyledErrorMessage = styled(ErrorMessage)`
 
 const ActiveOccupationWrapper = styled.div`
   display: flex;
-  margin-right: 2rem;
+  width: calc(50% - 9px);
+  /* margin-right: 2rem; */
 
   label {
+    width: 100%;
     border: ${({ isActive }) =>
     isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
     background-color: ${({ isActive }) =>
@@ -243,8 +254,10 @@ const ActiveOccupationWrapper = styled.div`
 
 const OccupationWrapper = styled.div`
   display: flex;
+  width: calc(50% - 9px);
 
   label {
+    width: 100%;
     border: ${({ isActive }) =>
     isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
     background-color: ${({ isActive }) =>
@@ -270,7 +283,6 @@ const OccupationWrapper = styled.div`
     }
     @media (max-width: 480px) {
       width: 100%;
-      margin-top: 2rem;
     }
   }
 `
@@ -284,11 +296,9 @@ const StyledLabel = styled(InputLabel)`
 
 const TabWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 1.2rem 0;
-
-  @media (max-width: 480px) {
-    flex-direction: column;
-  }
 `
 
 const ButtonWrapper = styled.div`
@@ -301,6 +311,31 @@ const TwoColumnRow = styled.div`
 
   .MuiTextField-root {
     width: 48%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+`
+
+const FourColumnRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+
+  div:first-child {
+    width: 20%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+  div:last-child {
+    width: 100%;
 
     @media (max-width: 480px) {
       width: 100%;
@@ -346,7 +381,8 @@ const validationSchema = yup.object({
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
   school: yup.string().required("Don't forget to include your school"),
-  checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
+  checked: yup.bool().oneOf([true], 'You have to check this to prcoeed'),
+  registerChecked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
 const RegistrationForm = () => {
@@ -517,9 +553,10 @@ const RegistrationForm = () => {
         </RegisteredContainer>
       ) : (
         <Container>
-          <FlexCenter>
-            <Image src="/images/png/sign-me-up.png" height={82} width={461} />
-          </FlexCenter>
+          <FormHeading>
+            <Image src="/images/png/register.png" height={45} width={230} />
+            <p>Submit the form to join IGNITEMY2022!</p>
+          </FormHeading>
           <Formik
             initialValues={{
               fullName: '',
@@ -534,7 +571,9 @@ const RegistrationForm = () => {
               school: '',
               remarks: '',
               occupation: 'student',
-              checked: false
+              attendance: 'online',
+              checked: false,
+              registerChecked: false
             }}
             validationSchema={validationSchema}
             onSubmit={(values, actions) => handleSignUp(values, actions)}
@@ -563,22 +602,24 @@ const RegistrationForm = () => {
                   required
                   as={CustomPasswordField}
                 />
-                <Field
-                  type="number"
-                  name="age"
-                  label="Age"
-                  placeholder="e.g. 17"
-                  required
-                  as={CustomTextField}
-                />
-                <Field
-                  type="string"
-                  name="myKad"
-                  label="NRIC Number (without dashes)"
-                  placeholder="e.g. 901230064089"
-                  required
-                  as={CustomTextField}
-                />
+                <FourColumnRow>
+                  <Field
+                    type="number"
+                    name="age"
+                    label="Age"
+                    placeholder="e.g. 17"
+                    required
+                    as={CustomTextField}
+                  />
+                  <Field
+                    type="string"
+                    name="myKad"
+                    label="NRIC Number (without dashes)"
+                    placeholder="e.g. 901230064089"
+                    required
+                    as={CustomTextField}
+                  />
+                </FourColumnRow>
                 <Field
                   type="tel"
                   name="contactNumber"
@@ -636,34 +677,61 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
+                <div>
+                  <Text color="white">Student or Teacher?*</Text>
+                  <TabWrapper>
+                    <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
+                      <label>
+                        <Field type="radio" name="occupation" value="student" />
+                        <Text>Student</Text>
+                      </label>
+                    </ActiveOccupationWrapper>
+                    <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
+                      <label>
+                        <Field type="radio" name="occupation" value="teacher" />
+                        <Text>Teacher</Text>
+                      </label>
+                    </OccupationWrapper>
+                  </TabWrapper>
+                </div>
+                <div>
+                  <Text color="white">Online or In-Person?*</Text>
+                  <TabWrapper>
+                    <ActiveOccupationWrapper isActive={isActive} onClick={(e) => setSelectedOption(e)}>
+                      <label>
+                        <Field type="radio" name="attendance" value="online" />
+                        <Text>Online</Text>
+                      </label>
+                    </ActiveOccupationWrapper>
+                    <OccupationWrapper isActive={isActive} onClick={(e) => setSelectedOption(e)}>
+                      <label>
+                        <Field type="radio" name="attendance" value="in-person" />
+                        <Text>In-Person</Text>
+                      </label>
+                    </OccupationWrapper>
+                  </TabWrapper>
+                </div>
                 <Field
                   name="remarks"
                   label="Remarks (if any)"
                   placeholder="e.g. So excited for IGNITEMY!"
                   as={CustomTextField}
                 />
-                <TabWrapper>
-                  <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
-                    <label>
-                      <Field type="radio" name="occupation" value="student" />
-                      <Text>Student</Text>
-                    </label>
-                  </ActiveOccupationWrapper>
-                  <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
-                    <label>
-                      <Field type="radio" name="occupation" value="teacher" />
-                      <Text>Teacher</Text>
-                    </label>
-                  </OccupationWrapper>
-                </TabWrapper>
                 <CheckboxGroup>
                   <Field type="checkbox" name="checked" as={Checkbox} />
                   <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                    I have read the{' '}
-                    <span onClick={() => setShowModal(true)}>terms & conditions</span>
+                    I have informed my parent/guardian of the{' '}
+                    <span onClick={() => setShowModal(true)}>statements</span>
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="checked" component="div" />
+                <CheckboxGroup>
+                  <Field type="checkbox" name="registerChecked" as={Checkbox} />
+                  <label htmlFor="registerChecked" style={{ color: 'var(--color-white)' }}>
+                    I am registering for IGNITEMY2022
+                  </label>
+                </CheckboxGroup>
+                <StyledErrorMessage name="registerChecked" component="div" />
                 {!registered && error && (
                   <StyledAlert severity="error">
                     <Text size="1.2rem">{error}</Text>
@@ -686,3 +754,12 @@ const RegistrationForm = () => {
 }
 
 export default RegistrationForm
+
+// TODO checklist:
+//// - update validation schema
+// - fix radio button control
+// - add additional fields into handleSignup function (handles form submission) [need to discuss with Sean]
+//    firebase create new document
+//// - add new fields in the initialValues in Formik
+//// - change background and make the Hello section bg to semi transparent
+//// - make Hello! to have text shadow

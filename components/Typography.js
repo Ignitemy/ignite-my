@@ -34,6 +34,7 @@ export const Text = styled.p`
   ${BaseElement}
   font-weight: ${(props) => props.weight || 'normal'};
   font-size: ${(props) => props.size || '1.6rem'};
+  font-style: ${(props) => props.fontStyle || 'normal'};
   width: ${(props) => props.width || 'auto'};
   span {text-decoration:underline;}
   `
