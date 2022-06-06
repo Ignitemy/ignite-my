@@ -25,6 +25,7 @@ import SuccessIcon from '@/images/svg/success'
 import InstaIcon from '@/images/svg/insta-no-outline'
 import Modal from './_modal'
 import AlreadyRegisteredModal from './_already-registered-modal'
+import RadioButton from '@/components/RadioButton'
 
 const theme = createMuiTheme({
   palette: {
@@ -53,12 +54,6 @@ const Container = styled.div`
   }
 `
 
-// const FlexStart = styled.div`
-//   display: flex;
-//   flex-direction: ${(props) => props.fd};
-//   justify-content: flex-start;
-//   align-items: center;
-// `
 const FormHeading = styled.div`
   font-size: 18px;
   color: var(--color-white);
@@ -213,92 +208,11 @@ const StyledErrorMessage = styled(ErrorMessage)`
   padding-left: 1rem;
 `
 
-const ActiveOccupationWrapper = styled.div`
-  display: flex;
-  width: calc(50% - 9px);
-  /* margin-right: 2rem; */
-
-  label {
-    width: 100%;
-    border: ${({ isActive }) =>
-    isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
-    background-color: ${({ isActive }) =>
-    isActive ? 'var(--color-orange)' : 'var(--color-white)'};
-    border-radius: 6px;
-    padding: 1.8rem 6.6rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    input {
-      display: none;
-    }
-
-    ${Text} {
-      color: ${({ isActive }) => (isActive ? 'var(--color-white)' : 'var(--color-black)')};
-    }
-    @media (max-width: 1120px) {
-      padding: 1.8rem 4rem;
-    }
-    @media (max-width: 480px) {
-      width: 100%;
-      margin-right: 0;
-    }
-  }
-  @media (max-width: 480px) {
-    margin-right: 0;
-  }
-`
-
-const OccupationWrapper = styled.div`
-  display: flex;
-  width: calc(50% - 9px);
-
-  label {
-    width: 100%;
-    border: ${({ isActive }) =>
-    isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
-    background-color: ${({ isActive }) =>
-    isActive ? 'var(--color-white)' : 'var(--color-orange)'};
-    border-radius: 6px;
-    padding: 1.8rem 6.6rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    input {
-      display: none;
-    }
-
-    ${Text} {
-      color: ${({ isActive }) => (isActive ? 'var(--color-black)' : 'var(--color-white)')};
-    }
-
-    @media (max-width: 1120px) {
-      padding: 1.8rem 4rem;
-    }
-    @media (max-width: 480px) {
-      width: 100%;
-    }
-  }
-`
-
 const StyledLabel = styled(InputLabel)`
   color: var(--color-white) !important;
   font-size: 1.6rem !important;
   margin-top: 1.2rem;
   margin-bottom: -6px;
-`
-
-const TabWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1.2rem 0;
 `
 
 const ButtonWrapper = styled.div`
@@ -352,6 +266,36 @@ const FollowButton = styled(Button)`
   align-items: center;
 `
 
+const firstRadioButtonQuestion = {
+  question: 'Student or Teacher?*',
+  options: {
+    firstOption: {
+      value: 'student',
+      label: 'Student'
+    },
+    secondOption: {
+      value: 'teacher',
+      label: 'Teacher'
+    }
+  },
+  name: 'occupation'
+}
+
+const secondRadioButtonQuestion = {
+  question: 'Online or In-Person?*',
+  options: {
+    firstOption: {
+      value: 'online',
+      label: 'Online'
+    },
+    secondOption: {
+      value: 'in-person',
+      label: 'In-Person'
+    }
+  },
+  name: 'attendance'
+}
+
 const validationSchema = yup.object({
   fullName: yup.string().required("Don't forget to include your full name"),
   email: yup
@@ -393,12 +337,14 @@ const RegistrationForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
-  const [isActive, setActive] = useState(true)
+  // const [isActive, setActive] = useState(true)
   // Once we check that the user has already had an account, we can set this to true
   const [alreadyRegistered, setAlreadyRegistered] = useState(false)
 
   useEffect(() => {
-    (showModal || alreadyRegistered) ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+    showModal || alreadyRegistered
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'unset')
   }, [showModal, alreadyRegistered])
 
   const scrollTop = () => {
@@ -446,34 +392,38 @@ const RegistrationForm = () => {
           school: values.school,
           remarks: values.remarks,
           occupation: values.occupation,
+          attendance: values.attendance,
+          ignite2022: true,
           dateCreated: Date.now()
         })
-        await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_END_POINT, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify([
-            [
-              new Date().toLocaleString('en-GB', {
-                timeZone: 'Asia/Kuala_Lumpur',
-                hour12: false
-              }),
-              values.fullName,
-              values.age,
-              values.myKad,
-              values.contactNumber,
-              values.email,
-              values.address,
-              values.city,
-              values.postcode,
-              values.state,
-              values.school,
-              values.occupation,
-              values.remarks
-            ]
-          ])
-        })
+        //! tmeporary comment out for testing purpose
+        // await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_END_POINT, {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: JSON.stringify([
+        //     [
+        //       new Date().toLocaleString('en-GB', {
+        //         timeZone: 'Asia/Kuala_Lumpur',
+        //         hour12: false
+        //       }),
+        //       values.fullName,
+        //       values.age,
+        //       values.myKad,
+        //       values.contactNumber,
+        //       values.email,
+        //       values.address,
+        //       values.city,
+        //       values.postcode,
+        //       values.state,
+        //       values.school,
+        //       values.occupation,
+        //       values.attendance,
+        //       values.remarks
+        //     ]
+        //   ])
+        // })
         setRegistered(true)
         scrollTop()
         actions.setSubmitting(false)
@@ -485,8 +435,9 @@ const RegistrationForm = () => {
         setError(error.message)
       }
     } else {
-      values.email = ''
-      setError('That email is already taken, please try another.')
+      // values.email = ''
+      // setError('That email is already taken, please try another.')
+      setAlreadyRegistered(true)
     }
   }
 
@@ -677,40 +628,16 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
-                <div>
-                  <Text color="white">Student or Teacher?*</Text>
-                  <TabWrapper>
-                    <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
-                      <label>
-                        <Field type="radio" name="occupation" value="student" />
-                        <Text>Student</Text>
-                      </label>
-                    </ActiveOccupationWrapper>
-                    <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
-                      <label>
-                        <Field type="radio" name="occupation" value="teacher" />
-                        <Text>Teacher</Text>
-                      </label>
-                    </OccupationWrapper>
-                  </TabWrapper>
-                </div>
-                <div>
-                  <Text color="white">Online or In-Person?*</Text>
-                  <TabWrapper>
-                    <ActiveOccupationWrapper isActive={isActive} onClick={(e) => setSelectedOption(e)}>
-                      <label>
-                        <Field type="radio" name="attendance" value="online" />
-                        <Text>Online</Text>
-                      </label>
-                    </ActiveOccupationWrapper>
-                    <OccupationWrapper isActive={isActive} onClick={(e) => setSelectedOption(e)}>
-                      <label>
-                        <Field type="radio" name="attendance" value="in-person" />
-                        <Text>In-Person</Text>
-                      </label>
-                    </OccupationWrapper>
-                  </TabWrapper>
-                </div>
+                <RadioButton
+                  question={firstRadioButtonQuestion.question}
+                  options={firstRadioButtonQuestion.options}
+                  name={firstRadioButtonQuestion.name}
+                />
+                <RadioButton
+                  question={secondRadioButtonQuestion.question}
+                  options={secondRadioButtonQuestion.options}
+                  name={secondRadioButtonQuestion.name}
+                />
                 <Field
                   name="remarks"
                   label="Remarks (if any)"
@@ -754,12 +681,3 @@ const RegistrationForm = () => {
 }
 
 export default RegistrationForm
-
-// TODO checklist:
-//// - update validation schema
-// - fix radio button control
-// - add additional fields into handleSignup function (handles form submission) [need to discuss with Sean]
-//    firebase create new document
-//// - add new fields in the initialValues in Formik
-//// - change background and make the Hello section bg to semi transparent
-//// - make Hello! to have text shadow

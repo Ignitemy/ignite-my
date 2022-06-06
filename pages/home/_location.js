@@ -108,7 +108,7 @@ const Location = () => {
         <div>
           <SubheaderWrapper>Location</SubheaderWrapper>
           {address.map((addressLine) => (
-            <TextContainer>{addressLine}</TextContainer>
+            <TextContainer key={addressLine}>{addressLine}</TextContainer>
           ))}
         </div>
         <div>

@@ -67,16 +67,16 @@ const AnswerWrapper = styled.p`
 const Faq = () => {
   const faqList = [
     {
-      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli',
+      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli1',
       answer: 'A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet.'
     },
     {
-      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli',
+      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli2',
       answer:
         'A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet.'
     },
     {
-      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli',
+      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli3',
       answer:
         'A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet.'
     }
@@ -85,7 +85,7 @@ const Faq = () => {
     <SectionWrapper>
       <HeaderWrapper src="/images/png/faq.png" alt="faq" loading="lazy" />
       {faqList.map((faq) => (
-        <DetailWrapper>
+        <DetailWrapper key={faq.question}>
           <StyledSummary>{faq.question}</StyledSummary>
           <AnswerWrapper>{faq.answer}</AnswerWrapper>
         </DetailWrapper>
