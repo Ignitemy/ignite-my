@@ -396,34 +396,34 @@ const RegistrationForm = () => {
           ignite2022: true,
           dateCreated: Date.now()
         })
-        //! tmeporary comment out for testing purpose
-        // await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_END_POINT, {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify([
-        //     [
-        //       new Date().toLocaleString('en-GB', {
-        //         timeZone: 'Asia/Kuala_Lumpur',
-        //         hour12: false
-        //       }),
-        //       values.fullName,
-        //       values.age,
-        //       values.myKad,
-        //       values.contactNumber,
-        //       values.email,
-        //       values.address,
-        //       values.city,
-        //       values.postcode,
-        //       values.state,
-        //       values.school,
-        //       values.occupation,
-        //       values.attendance,
-        //       values.remarks
-        //     ]
-        //   ])
-        // })
+
+        await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_END_POINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify([
+            [
+              new Date().toLocaleString('en-GB', {
+                timeZone: 'Asia/Kuala_Lumpur',
+                hour12: false
+              }),
+              values.fullName,
+              values.age,
+              values.myKad,
+              values.contactNumber,
+              values.email,
+              values.address,
+              values.city,
+              values.postcode,
+              values.state,
+              values.school,
+              values.occupation,
+              values.attendance,
+              values.remarks
+            ]
+          ])
+        })
         setRegistered(true)
         scrollTop()
         actions.setSubmitting(false)
