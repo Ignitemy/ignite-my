@@ -103,7 +103,7 @@ const RegistrationModal = ({ showModal, closeModal }) => {
           <span onClick={closeModal}>x</span>
         </StyledModalHeader>
         <StyledText mb="2.4rem" color="white">
-          <HeadingShadow mb="2.4rem" size="3rem">For existing accounts</HeadingShadow>
+          <HeadingShadow mb="2.4rem">For existing accounts</HeadingShadow>
           Please <StyledLink href="/login" as="a">log in</StyledLink> to confirm your registration for IGNITEMY2022.
         </StyledText>
       </ModalCard>
