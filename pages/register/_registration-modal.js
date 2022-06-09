@@ -71,13 +71,7 @@ const SubheaderWrapper = styled.p`
 `
 
 const StyledText = styled(Text)`
-font-size: 1.8rem;
-  @media (max-width: 650px) {
-    font-size: 1.6rem;
-  }
-  @media (max-width: 425px) {
-    font-size: 1.2rem;
-  }
+  font-size: 1.8rem;
 `
 
 const StyledLink = styled(Link)`

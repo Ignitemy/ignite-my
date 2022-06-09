@@ -60,7 +60,9 @@ export const HeadingShadow = styled.p`
   text-shadow: 3px 1px 0px #FF6600;
   letter-spacing: 0.2rem;
   @media (max-width: 900px) {
-  font-size: ${(props) => props.size || '3.4rem'};
+  font-size: ${(props) => props.size || '2.8rem'};
+  letter-spacing: 0.1rem;
+
   }
 }
   `

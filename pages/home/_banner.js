@@ -202,9 +202,9 @@ const Banner = () => {
             </StyledExtLink>
           </ButtonWrapper> */}
           <ButtonWrapper>
-            <StyledExtLink href="#" target="_blank" rel="noopener noreferrer" >
+            <Link href="/register">
               <Button orange="true">Register</Button>
-            </StyledExtLink>
+            </Link>
           </ButtonWrapper>
       </BannerContent>
     </BannerContainer>
