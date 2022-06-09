@@ -33,37 +33,27 @@ const DetailWrapper = styled.details`
 `
 
 const StyledSummary = styled.summary`
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--color-orange);
-  line-height: 35px;
+  line-height: 3rem;
   font-weight: 600;
   cursor:pointer;
-  @media screen and (min-width: 1024px) {
-    font-size: 18px;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
   }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 24px;
-    line-height: 40px;
-  }
-`
+  `
 
 
 const AnswerWrapper = styled.p`
-  font-size: 16px;
+  font-size: 1.4rem;
   color: var(--color-white);
   padding: 0.5rem 0;
-  line-height: 35px;
+  line-height: 2.6rem;
   text-align: justify;
-
-  @media screen and (min-width: 1024px) {
-    font-size: 18px;
+  @media screen and (min-width: 768px) {
+    font-size: 1.8rem;
   }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 24px;
-    line-height: 40px;
-  }
+ 
 `
 
 const Faq = () => {

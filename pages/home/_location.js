@@ -38,7 +38,7 @@ const SectionWrapper = styled.div`
 
 const SubheaderWrapper = styled.p`
   color: var(--color-orange);
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 800;
   font-style: italic;
   padding-top: 3rem;
@@ -66,11 +66,14 @@ const RightSection = styled.div`
 `
 
 const TextContainer = styled.p`
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: var(--color-white);
   padding: 0.5rem 0;
   line-height: 3.6rem;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
   }
+
 `
 const StyledIframe = styled.iframe`
   width: 100%;
