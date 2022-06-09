@@ -44,7 +44,7 @@ const BannerContainer = styled.div`
   @media (max-width: 900px) {
     width: 100%;
     height: auto;
-    padding: 3.2rem 4rem;
+    padding: 3.2rem 3rem;
   }
 `
 
@@ -122,6 +122,9 @@ const FlexCenter = styled.div`
   justify-content: center;
   align-items: center;
   margin: 7rem 0;
+  @media (max-width: 900px) {
+    display:none;
+  }
 `
 
 const Register = () => {
