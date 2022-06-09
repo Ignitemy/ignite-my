@@ -40,7 +40,7 @@ const Page = () => {
           imgTitle="/images/png/ignite-rally.png"
           imgHeight="135"
           imgWidth="351"
-          subTitle="IN-PERSON."
+          subTitle="IN-PERSON.    ONLINE."
         />
       </MiniBannerContainer>
       <Countdown />

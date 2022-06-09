@@ -12,7 +12,7 @@ const ExtRegister = () => {
   }, [user])
 
   return (
-    <Layout title="IGNITEMY2021 | Register">
+    <Layout title="IGNITEMY2022 | Register">
       <ShortRegistrationForm />
     </Layout>
   )

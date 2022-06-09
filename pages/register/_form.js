@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { HeadingShadow } from '../../components'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import * as yup from 'yup'
@@ -505,7 +506,8 @@ const RegistrationForm = () => {
       ) : (
         <Container>
           <FormHeading>
-            <Image src="/images/png/register.png" height={45} width={230} />
+            {/* <Image src="/images/png/register.png" height={45} width={230} /> */}
+            <HeadingShadow>Register</HeadingShadow>
             <p>Submit the form to join IGNITEMY2022!</p>
           </FormHeading>
           <Formik

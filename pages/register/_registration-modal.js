@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Text, Heading } from '../../components/Typography'
+import { Text, HeadingShadow } from '../../components/Typography'
 import Link from 'next/link'
 
 const ModalWrapper = styled.div`
@@ -22,21 +22,16 @@ const ModalCard = styled.div`
   background-color: var(--color-black);
   border-radius: 20px;
   border: solid 2px var(--color-orange);
-  padding: 8rem 16.4rem;
+  padding: 6rem 8rem;
   z-index: 210;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: auto;
-  max-width: 83rem;
+  max-width: 78rem;
 
-  @media (max-width: 900px) {
-    max-width: 68rem;
-    padding: 6rem 8rem;
-    width: 80%;
-  }
   @media (max-width: 650px) {
     padding: 4rem 2rem 2rem;
   }
@@ -67,15 +62,16 @@ const StyledModalHeader = styled.div`
   }
 `
 
-const StyledHeading = styled(Heading)`
-  @media (max-width: 650px) {
-    font-size: 1.8rem;
-  }
-  @media (max-width: 425px) {
-    font-size: 1.6rem;
-  }
+const SubheaderWrapper = styled.p`
+  color: var(--color-white);
+  font-size: 3rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 1.5rem;
 `
+
 const StyledText = styled(Text)`
+font-size: 1.8rem;
   @media (max-width: 650px) {
     font-size: 1.6rem;
   }
@@ -113,8 +109,8 @@ const RegistrationModal = ({ showModal, closeModal }) => {
           <span onClick={closeModal}>x</span>
         </StyledModalHeader>
         <StyledText mb="2.4rem" color="white">
-          For existing accounts. please <StyledLink href="/login" as="a">log in</StyledLink> to register and click on your <StyledLink href="/profile" as="a">Profile</StyledLink>{" "}
-          to double check your details and confirm your registration for <StyledLink href="/" as="a">IGNITEMY2022</StyledLink>.
+          <HeadingShadow mb="2.4rem" size="3rem">For existing accounts</HeadingShadow>
+          Please <StyledLink href="/login" as="a">log in</StyledLink> to confirm your registration for IGNITEMY2022.
         </StyledText>
       </ModalCard>
     </ModalWrapper>

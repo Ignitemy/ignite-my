@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {HeadingShadow } from '../../components'
 
 const SectionWrapper = styled.div`
   display: block;
@@ -25,22 +26,22 @@ const SectionWrapper = styled.div`
   }
 `
 
-const HeaderWrapper = styled.img`
-  width: 300px;
-  height: auto;
-  padding-bottom: 2rem;
+// const HeaderWrapper2 = styled.img`
+//   width: 300px;
+//   height: auto;
+//   padding-bottom: 2rem;
 
-  @media screen and (min-width: 768px) {
-    width: 358px;
-  }
-`
+//   @media screen and (min-width: 768px) {
+//     width: 358px;
+//   }
+// `
 
 const SubheaderWrapper = styled.p`
   color: var(--color-orange);
   font-size: 3rem;
   font-weight: 800;
   font-style: italic;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 `
 
@@ -65,18 +66,10 @@ const RightSection = styled.div`
 `
 
 const TextContainer = styled.p`
-  font-size: 16px;
+  font-size: 2.2rem;
   color: var(--color-white);
   padding: 0.5rem 0;
-  line-height: 35px;
-
-  @media screen and (min-width: 1024px) {
-    font-size: 18px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 24px;
-    line-height: 40px;
+  line-height: 3.6rem;
   }
 `
 const StyledIframe = styled.iframe`
@@ -96,7 +89,7 @@ const StyledIframe = styled.iframe`
 
 const Location = () => {
   const address = [
-    'Damansara Utama Methodist Church or Dream Centre',
+    'Damansara Utama Methodist Church or Dream Center',
     '2 Jalan 13/1, Seksyen 13,',
     '46200 Petaling Jaya',
     'Selangor, Malaysia'
@@ -104,7 +97,8 @@ const Location = () => {
   return (
     <SectionWrapper>
       <LeftSection>
-        <HeaderWrapper src="/images/png/getting-there.png" alt="getting there" loading="lazy" />
+        {/* <HeaderWrapper2 src="/images/png/getting-there.png" alt="getting there" loading="lazy" /> */}
+        <HeadingShadow>Getting there</HeadingShadow>
         <div>
           <SubheaderWrapper>Location</SubheaderWrapper>
           {address.map((addressLine) => (
@@ -114,8 +108,7 @@ const Location = () => {
         <div>
           <SubheaderWrapper>Parking spots</SubheaderWrapper>
           <TextContainer>
-            There are available parking lots in Dream Center, alternatively you may park at PJ33 or
-            Symphony Square
+            There are available parking lots in Dream Center, alternatively you may park at PJ33 or Symphony Square
           </TextContainer>
         </div>
       </LeftSection>

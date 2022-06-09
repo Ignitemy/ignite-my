@@ -11,7 +11,7 @@ const Register = () => {
   }, [showModal])
 
   return (
-    <Layout title="IGNITEMY2021 | Register">
+    <Layout title="IGNITEMY2022 | Register">
       <RegisterSection />
       <RegistrationModal showModal={showModal} closeModal={() => setShowModal(false)} />
     </Layout>

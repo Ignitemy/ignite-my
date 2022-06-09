@@ -5,7 +5,7 @@ import Speakers from './_speakers'
 
 const Rally = () => {
   return (
-    <Layout title="IGNITEMY2021 | Rally">
+    <Layout title="IGNITEMY2022 | Rally">
       <Banner />
       <Schedule />
       <Speakers />

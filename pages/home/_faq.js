@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {HeadingShadow } from '../../components'
 
 const SectionWrapper = styled.div`
   padding: 5rem 2rem;
@@ -21,11 +22,11 @@ const SectionWrapper = styled.div`
   }
 `
 
-const HeaderWrapper = styled.img`
-  width: 159px;
-  height: auto;
-  padding-bottom: 2rem;
-`
+// const HeaderWrapper = styled.img`
+//   width: 159px;
+//   height: auto;
+//   padding-bottom: 2rem;
+// `
 
 const DetailWrapper = styled.details`
   padding: 2rem 0;
@@ -36,7 +37,7 @@ const StyledSummary = styled.summary`
   color: var(--color-orange);
   line-height: 35px;
   font-weight: 600;
-
+  cursor:pointer;
   @media screen and (min-width: 1024px) {
     font-size: 18px;
   }
@@ -46,6 +47,7 @@ const StyledSummary = styled.summary`
     line-height: 40px;
   }
 `
+
 
 const AnswerWrapper = styled.p`
   font-size: 16px;
@@ -83,7 +85,8 @@ const Faq = () => {
   ]
   return (
     <SectionWrapper>
-      <HeaderWrapper src="/images/png/faq.png" alt="faq" loading="lazy" />
+      <HeadingShadow>F.A.Q</HeadingShadow>
+      {/* <HeaderWrapper src="/images/png/faq.png" alt="faq" loading="lazy" /> */}
       {faqList.map((faq) => (
         <DetailWrapper key={faq.question}>
           <StyledSummary>{faq.question}</StyledSummary>

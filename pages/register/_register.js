@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Form from './_form'
-import { Text, Heading } from '../../components'
+import { Text, Heading, HeadingShadow } from '../../components'
 
 const SectionContainer = styled.section`
   /* background-color: var(--color-black); */
@@ -23,7 +23,7 @@ const RegisterSection = styled.div`
   display: flex;
 
   @media (max-width: 900px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
@@ -81,14 +81,14 @@ const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-
+  
   @media (max-width: 900px) {
     align-items: center;
   }
 `
 
 const EventDetails = styled.div`
-  margin-top: 4.8rem;
+  margin-top: 4rem;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -144,10 +144,10 @@ const Register = () => {
           <BannerContent>
             <ContentWrapper>
               <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
-                <span style={{textShadow: "3px 1px 0 #FF6600"}}>Hello!</span>
+                <HeadingShadow>Hello!</HeadingShadow>
               </Heading>
               <Text color="white" size="1.8rem" mt="2.4rem">
-                Welcome to IGNITEMY2021! This one-day Summit, organised by DUMC NextGen Teens in
+                Welcome to IGNITEMY2022! This one-day Summit, organised by DUMC NextGen Teens in
                 collaboration with Scripture Union, seeks to inspire Christian students to be
                 catalysts of change in their schools.
                 <br />
