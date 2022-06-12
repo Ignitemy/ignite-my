@@ -85,7 +85,7 @@ const OccupationWrapper = styled.div`
   }
 `
 
-const RadioButton = ({ question, options, name }) => {
+const RadioButton = ({ question, options, name, func }) => {
   const [isActive, setActive] = useState(true)
   return (
     <div>
@@ -93,13 +93,13 @@ const RadioButton = ({ question, options, name }) => {
       <TabWrapper>
         <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
           <label>
-            <Field type="radio" name={name} value={options.firstOption.value} />
+            <Field type="radio" name={name} value={options.firstOption.value} onClick={func} />
             <Text>{options.firstOption.label}</Text>
           </label>
         </ActiveOccupationWrapper>
         <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
           <label>
-            <Field type="radio" name={name} value={options.secondOption.value} />
+            <Field type="radio" name={name} value={options.secondOption.value} onClick={func} />
             <Text>{options.secondOption.label}</Text>
           </label>
         </OccupationWrapper>
@@ -112,6 +112,7 @@ RadioButton.prototype = {
   question: PropTypes.string.isRequired,
   options: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
+  func: PropTypes.func,
 }
 
 export default RadioButton
