@@ -72,7 +72,15 @@ const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 28rem;
+
+  @media (max-width: 1440px) {
+    gap: 14rem;
+  }
+
+  @media (max-width: 1280px) {
+    gap: 10rem;
+  }
 
   @media (max-width: 900px) {
     flex-direction: column;
@@ -168,11 +176,12 @@ const OrangeHeader = styled(motion.h3)`
 
 const StyledIframe = styled.iframe`
   z-index: 2;
-  max-width: 50rem;
+  max-width: 60rem;
   border: solid 2px white;
-  height: 450px;
+  height: 380px;
 
   @media (max-width: 1440px) {
+    max-width: 50rem;
     height: 320px;
   }
   @media (max-width: 1024px) {
