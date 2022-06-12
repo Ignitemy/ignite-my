@@ -36,6 +36,10 @@ const StyledHeader = styled.header`
   background-color: var(--color-black);
   padding: 0 8rem;
 
+  @media (max-width: 1280px) {
+    padding: 0 2rem;
+  }
+
   @media (max-width: 992px) {
     padding: 0 4rem;
   }

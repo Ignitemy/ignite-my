@@ -72,18 +72,24 @@ const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10rem;
 
-  // @media (max-width: 480px) {
-  //   height: 400px;
-  //   padding-top: 12rem;
-  //   align-items: flex-start;
-  // }
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 5rem;
+    height: auto;
+    padding: 5rem 0 7rem 0;
+  }
 `
 
 const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+
+  @media (max-width: 900px) {
+    align-items: center;
+  }
 `
 
 const StyledImage = styled(Image)`
@@ -94,10 +100,9 @@ const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  @media (max-width: 900px) {
-    flex-direction: column;
+  @media (max-width: 500px) {
+    align-items: center;
   }
 `
 
@@ -115,12 +120,13 @@ const ImageWrapper = styled(motion.div)`
 
 const Details = styled.div`
   margin-top: 5rem;
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   @media (max-width: 900px) {
-    margin: 2.5rem 0 0;
+    margin: 0;
+    align-items: center;
   }
 `
 
@@ -131,6 +137,14 @@ const ButtonWrapper = styled.div`
 const Row = styled(motion.div)`
   display: flex;
   overflow: hidden;
+`
+
+const ShortDetailWrapper = styled.div`
+  display: block;
+
+  @media (min-width: 500px) {
+    display: flex;
+  }
 `
 
 const WhiteHeader = styled(motion.h3)`
@@ -146,10 +160,33 @@ const OrangeHeader = styled(motion.h3)`
   font-style: italic;
   color: var(--color-orange);
 `
-const StyledExtLink = styled.a`
-  color: var(--color-white);
-  text-decoration: none;
-  position: relative;
+// const StyledExtLink = styled.a`
+//   color: var(--color-white);
+//   text-decoration: none;
+//   position: relative;
+// `
+
+const StyledIframe = styled.iframe`
+  z-index: 2;
+  max-width: 50rem;
+  border: solid 2px white;
+  height: 450px;
+
+  @media (max-width: 1440px) {
+    height: 320px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 40rem;
+    height: 250px;
+  }
+  @media (max-width: 768px) {
+    max-width: 50rem;
+    height: 350px;
+  }
+  @media (max-width: 560px) {
+    width: 90%;
+    height: 250px;
+  }
 `
 
 const AnimatedLetters = ({ title, variants, disabled }) => (
@@ -188,25 +225,42 @@ const Banner = () => {
           </ImageWrapper>
           <Details>
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-               24.09.2022
+              24.09.2022
             </WhiteHeader>
+            <ShortDetailWrapper>
+              <WhiteHeader initial="initial" animate="animate" variants={date}>
+                DAY SUMMIT.&nbsp;
+              </WhiteHeader>
+              <WhiteHeader initial="initial" animate="animate" variants={date}>
+                NIGHT RALLY.
+              </WhiteHeader>
+            </ShortDetailWrapper>
             <ButtonWrapper>
               <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
             </ButtonWrapper>
             {/* <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>
         </ContentWrapper>
-          {/* <ButtonWrapper>
+        {/* <ButtonWrapper>
             <StyledExtLink href="https://ignitemy.online.church/" target="_blank" rel="noopener noreferrer" >
               <Button orange="true">Streaming Live</Button>
             </StyledExtLink>
           </ButtonWrapper> */}
-          <ButtonWrapper>
-            <Link href="/register">
-              <Button orange="true">Register</Button>
-            </Link>
-          </ButtonWrapper>
+        <ButtonWrapper>
+          <Link href="/register">
+            <Button orange="true">Register</Button>
+          </Link>
+        </ButtonWrapper>
       </BannerContent>
+      <StyledIframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/mQWBvqyyZ5w"
+        title="IGNITEMY2021 Promo Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
     </BannerContainer>
   )
 }

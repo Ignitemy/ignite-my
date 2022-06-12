@@ -71,7 +71,7 @@ const SubheaderWrapper = styled.p`
 `
 
 const StyledText = styled(Text)`
-  font-size: 1.4rem;
+  font-size: var(--text-size-xs);
 `
 
 const StyledLink = styled(Link)`

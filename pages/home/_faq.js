@@ -22,18 +22,12 @@ const SectionWrapper = styled.div`
   }
 `
 
-// const HeaderWrapper = styled.img`
-//   width: 159px;
-//   height: auto;
-//   padding-bottom: 2rem;
-// `
-
 const DetailWrapper = styled.details`
   padding: 2rem 0;
 `
 
 const StyledSummary = styled.summary`
-  font-size: 1.6rem;
+  font-size: var(--text-size-s);
   color: var(--color-orange);
   line-height: 3rem;
   font-weight: 600;
@@ -45,15 +39,14 @@ const StyledSummary = styled.summary`
 
 
 const AnswerWrapper = styled.p`
-  font-size: 1.4rem;
+  font-size: var(--text-size-xs);
   color: var(--color-white);
-  padding: 0.5rem 0;
-  line-height: 2.6rem;
+  padding: 1rem 2.2rem;
+  line-height: 3rem;
   text-align: justify;
   @media screen and (min-width: 768px) {
     font-size: 1.8rem;
   }
- 
 `
 
 const Faq = () => {
@@ -76,7 +69,6 @@ const Faq = () => {
   return (
     <SectionWrapper>
       <HeadingShadow>F.A.Q</HeadingShadow>
-      {/* <HeaderWrapper src="/images/png/faq.png" alt="faq" loading="lazy" /> */}
       {faqList.map((faq) => (
         <DetailWrapper key={faq.question}>
           <StyledSummary>{faq.question}</StyledSummary>
