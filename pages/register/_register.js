@@ -162,7 +162,7 @@ const Register = () => {
                 <Row>
                   <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
                   <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
-                    28TH SEPT 2022 
+                    24TH SEPT 2022 
                   </Text>
                 </Row>
                 <Row>
