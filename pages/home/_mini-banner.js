@@ -107,6 +107,10 @@ const StyledImage = styled(Image)`
   z-index: 0;
 `
 
+const LinkTo = styled.a`
+`
+
+
 const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
@@ -193,25 +197,25 @@ const Banner = ({ linkTo, imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => 
           priority="true"
         />
         <BannerContent>
-          <Link href={linkTo}>
-          <ContentWrapper>
-            <ImageWrapper initial="initial" animate="animate" variants={logo}>
-              <Image
-                src={imgTitle}
-                alt="Ignite logo"
-                height={imgHeight}
-                width={imgWidth}
-                priority="true"
-              />
-            </ImageWrapper>
-            <Details>
-              <ButtonWrapper>
-                <AnimatedLetters title={subTitle || "IN-PERSON."} variants={stream} />
-              </ButtonWrapper>
-              {/* <AnimatedLetters title="LIVE" variants={live} /> */}
-            </Details>
-          </ContentWrapper>
-          </Link>
+          <LinkTo href={linkTo}>
+            <ContentWrapper>
+              <ImageWrapper initial="initial" animate="animate" variants={logo}>
+                <Image
+                  src={imgTitle}
+                  alt="Ignite logo"
+                  height={imgHeight}
+                  width={imgWidth}
+                  priority="true"
+                />
+              </ImageWrapper>
+              <Details>
+                <ButtonWrapper>
+                  <AnimatedLetters title={subTitle || "IN-PERSON."} variants={stream} />
+                </ButtonWrapper>
+                {/* <AnimatedLetters title="LIVE" variants={live} /> */}
+              </Details>
+            </ContentWrapper>
+          </LinkTo>
         </BannerContent>
       </BannerContainer>
   )
