@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useAuth } from '@/helpers/auth'
-import { Button } from '../../components'
+// import { useAuth } from '@/helpers/auth'
+// import { Button } from '../../components'
 
 // Variants
 const logo = {
@@ -180,7 +180,7 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
 )
 
 const Banner = ({ linkTo, imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => {
-  const user = useAuth()
+  // const user = useAuth()
   return (
       <BannerContainer>
         <StyledImage
