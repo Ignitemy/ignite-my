@@ -26,16 +26,6 @@ const SectionWrapper = styled.div`
   }
 `
 
-// const HeaderWrapper2 = styled.img`
-//   width: 300px;
-//   height: auto;
-//   padding-bottom: 2rem;
-
-//   @media screen and (min-width: 768px) {
-//     width: 358px;
-//   }
-// `
-
 const SubheaderWrapper = styled.p`
   color: var(--color-orange);
   font-size: 2.4rem;
@@ -100,7 +90,6 @@ const Location = () => {
   return (
     <SectionWrapper>
       <LeftSection>
-        {/* <HeaderWrapper2 src="/images/png/getting-there.png" alt="getting there" loading="lazy" /> */}
         <HeadingShadow>Getting there</HeadingShadow>
         <div>
           <SubheaderWrapper>Location</SubheaderWrapper>
