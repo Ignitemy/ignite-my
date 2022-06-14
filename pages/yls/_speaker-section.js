@@ -10,13 +10,13 @@ const SectionContainer = styled.section`
   background: ${(props) => props.background};
 
   @media (min-width: 768px) {
-    padding: 12rem;
+    padding: 12rem 6rem;
   }
   @media (min-width: 1024px) {
-    padding: 9rem;
+    padding: 9rem 7rem;
   }
   @media (min-width: 1440px) {
-    padding: 12rem 23rem;
+    padding: 12rem 16rem;
   }
   @media (min-width: 1700px) {
     padding: 12rem 34rem;
