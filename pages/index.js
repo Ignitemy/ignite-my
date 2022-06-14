@@ -29,6 +29,7 @@ const Page = () => {
       {/* <Events /> */}
       <MiniBannerContainer>
         <MiniBanner
+          linkTo="/yls"
           imgSrc="/images/jpg/ignite-yls-banner-bg-2022.jpg"
           imgTitle="/images/png/ignite-yls-logo.png"
           imgHeight="173"
@@ -36,6 +37,7 @@ const Page = () => {
           subTitle="IN-PERSON.    ONLINE."
         />
         <MiniBanner
+          linkTo="/rally"
           imgSrc="/images/jpg/ignite-rally-banner-bg-2022.jpg"
           imgTitle="/images/png/ignite-rally.png"
           imgHeight="135"
