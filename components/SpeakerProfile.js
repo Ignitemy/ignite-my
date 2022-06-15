@@ -39,14 +39,17 @@ const DetailsWrapper = styled.div`
 `
 
 const SpeakerName = styled.p`
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 40px;
-  font-style: italic;
   margin-bottom: 0.5rem;
+`
+const OrangeSpan = styled.span`
+  color: var(--color-orange);
+  font-style: italic;
 `
 
 const SpeakerDetails = styled.p`
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 30px;
 `
 
@@ -57,7 +60,7 @@ const SpeakerProfile = ({ speaker }) => {
         <Image src={speaker.imgSrc} alt={speaker.alt} height={250} width={250} />
       </StyledImage>
       <DetailsWrapper>
-        <SpeakerName>{speaker.name}</SpeakerName>
+        <SpeakerName><OrangeSpan>{speaker.name}</OrangeSpan> of {speaker.founder}</SpeakerName>
         <SpeakerDetails>{speaker.details}</SpeakerDetails>
       </DetailsWrapper>
     </SpeakerProfileContainer>

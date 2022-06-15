@@ -25,7 +25,8 @@ const SectionContainer = styled.section`
 const specialItemBy = {
   imgSrc: '/images/png/dummy-image.png',
   alt: 'dummy image',
-  name: 'Speaker name',
+  name: 'Pr Ben Raj',
+  founder: 'World Harvest Church',
   details:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
 }

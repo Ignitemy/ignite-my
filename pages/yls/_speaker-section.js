@@ -31,21 +31,24 @@ const speakerSectionDetails = [
   {
     imgSrc: '/images/png/dummy-image.png',
     alt: 'dummy image',
-    name: 'Speaker name',
+    name: 'Rev Alexa Ho',
+    founder: 'PJEFC',
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
   },
   {
     imgSrc: '/images/png/dummy-image.png',
     alt: 'dummy image',
-    name: 'Speaker name',
+    name: 'Pr Daniel Tan',
+    founder: 'Generasi Gemilang',
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
   },
   {
     imgSrc: '/images/png/dummy-image.png',
     alt: 'dummy image',
-    name: 'Speaker name',
+    name: 'Daryll Tan',
+    founder: 'Open Minds',
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
   }
@@ -55,6 +58,7 @@ const specialItemBy = {
   imgSrc: '/images/png/dummy-image.png',
   alt: 'dummy image',
   name: 'Speaker name',
+  founder: 'Founder',
   details:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
 }
