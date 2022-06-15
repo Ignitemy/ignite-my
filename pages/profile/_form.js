@@ -233,17 +233,19 @@ const Profile = () => {
   const db = firebase.firestore()
 
   useEffect(() => {
-    const subscriber = db.collection('users').onSnapshot((snapshot) => {
-      snapshot.forEach((doc) => {
-        const data = doc.data()
-        if (data.email === user.email) {
-          setUserData(data)
-          return
-        }
+    if (user) {
+      const subscriber = db.collection('users').onSnapshot((snapshot) => {
+        snapshot.forEach((doc) => {
+          const data = doc.data()
+          if (data.email === user.email) {
+            setUserData(data)
+            return
+          }
+        })
+        setIsLoading(false)
       })
-      setIsLoading(false)
-    })
-    return () => subscriber()
+      return () => subscriber()
+    }
   }, [user])
 
   if (isLoading) {
