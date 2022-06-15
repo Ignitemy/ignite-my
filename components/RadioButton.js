@@ -22,13 +22,14 @@ const ActiveOccupationWrapper = styled.div`
       isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
     background-color: ${({ isActive }) =>
       isActive ? 'var(--color-orange)' : 'var(--color-white)'};
+    opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
     border-radius: 6px;
     padding: 1.8rem 6.6rem;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    cursor: ${({ disabled }) => (disabled ? 'unset' : 'pointer')};
 
     input {
       display: none;
@@ -60,13 +61,14 @@ const OccupationWrapper = styled.div`
       isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
     background-color: ${({ isActive }) =>
       isActive ? 'var(--color-white)' : 'var(--color-orange)'};
+    opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
     border-radius: 6px;
-    padding: 1.8rem 6.6rem;
+    padding: 1.8rem 6.4rem;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    cursor: ${({ disabled }) => (disabled ? 'unset' : 'pointer')};
 
     input {
       display: none;
@@ -85,21 +87,41 @@ const OccupationWrapper = styled.div`
   }
 `
 
-const RadioButton = ({ question, options, name, func }) => {
+const RadioButton = ({ question, options, name, func, disabled }) => {
   const [isActive, setActive] = useState(true)
   return (
     <div>
       <Text color="white">{question}</Text>
       <TabWrapper>
-        <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
+        <ActiveOccupationWrapper
+          isActive={isActive}
+          onClick={() => !disabled && setActive(true)}
+          disabled={disabled}
+        >
           <label>
-            <Field type="radio" name={name} value={options.firstOption.value} onClick={func} />
+            <Field
+              type="radio"
+              name={name}
+              value={options.firstOption.value}
+              onClick={func}
+              disabled={disabled}
+            />
             <Text>{options.firstOption.label}</Text>
           </label>
         </ActiveOccupationWrapper>
-        <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
+        <OccupationWrapper
+          isActive={isActive}
+          onClick={() => !disabled && setActive(false)}
+          disabled={disabled}
+        >
           <label>
-            <Field type="radio" name={name} value={options.secondOption.value} onClick={func} />
+            <Field
+              type="radio"
+              name={name}
+              value={options.secondOption.value}
+              onClick={func}
+              disabled={disabled}
+            />
             <Text>{options.secondOption.label}</Text>
           </label>
         </OccupationWrapper>
@@ -112,7 +134,7 @@ RadioButton.prototype = {
   question: PropTypes.string.isRequired,
   options: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
-  func: PropTypes.func,
+  func: PropTypes.func
 }
 
 export default RadioButton
