@@ -4,16 +4,21 @@ import Image from 'next/image'
 import { Heading } from '../../components'
 
 const BannerContainer = styled.div`
-  height: 80rem;
+  height: calc(100vh - 100px);
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 15rem 8rem 0 8rem;
+  align-items: center;
+  /* padding: 15rem 8rem 0 8rem; */
+  padding: 0 8rem;
 
-  @media (min-width: 1980px) {
+  /* @media (min-width: 1980px) {
     height: 140rem;
     padding-top: 24rem;
-  }
+  } */
+  /* @media (max-width: 900px) {
+    padding-top: 24rem;
+  } */
   @media (max-width: 480px) {
     padding: 8rem 1.6rem;
   }
@@ -72,7 +77,7 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/jpg/yls-banner.jpg"
+        src="/images/png/igniteyls-2022-bg.png"
         alt="Flame pattern"
         layout="fill"
         objectFit="cover"
@@ -99,9 +104,9 @@ const Banner = () => {
               fstyle="italic"
               lh="4rem"
             >
-              4TH SEPT 2021
+              24TH SEPT 2022
             </StyledHeading>
-            <StyledHeading
+            {/* <StyledHeading
               as="h3"
               size="3.6rem"
               align="right"
@@ -111,7 +116,7 @@ const Banner = () => {
               lh="4rem"
             >
               10.00AM - 3.30PM
-            </StyledHeading>
+            </StyledHeading> */}
             <Heading
               as="h3"
               size="3.6rem"
@@ -121,7 +126,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              STREAMING LIVE
+              IN PERSON. ONLINE
             </Heading>
           </RightContent>
         </ContentWrapper>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {HeadingShadow } from '../../components'
 
 const SectionWrapper = styled.div`
   padding: 5rem 2rem;
@@ -21,46 +22,30 @@ const SectionWrapper = styled.div`
   }
 `
 
-const HeaderWrapper = styled.img`
-  width: 159px;
-  height: auto;
-  padding-bottom: 2rem;
-`
-
 const DetailWrapper = styled.details`
   padding: 2rem 0;
 `
 
 const StyledSummary = styled.summary`
-  font-size: 16px;
+  font-size: var(--text-size-s);
   color: var(--color-orange);
-  line-height: 35px;
+  line-height: 3rem;
   font-weight: 600;
-
-  @media screen and (min-width: 1024px) {
-    font-size: 18px;
+  cursor:pointer;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
   }
+  `
 
-  @media screen and (min-width: 1440px) {
-    font-size: 24px;
-    line-height: 40px;
-  }
-`
 
 const AnswerWrapper = styled.p`
-  font-size: 16px;
+  font-size: var(--text-size-xs);
   color: var(--color-white);
-  padding: 0.5rem 0;
-  line-height: 35px;
+  padding: 1rem 2.2rem;
+  line-height: 3rem;
   text-align: justify;
-
-  @media screen and (min-width: 1024px) {
-    font-size: 18px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 24px;
-    line-height: 40px;
+  @media screen and (min-width: 768px) {
+    font-size: 1.8rem;
   }
 `
 
@@ -83,7 +68,7 @@ const Faq = () => {
   ]
   return (
     <SectionWrapper>
-      <HeaderWrapper src="/images/png/faq.png" alt="faq" loading="lazy" />
+      <HeadingShadow>F.A.Q</HeadingShadow>
       {faqList.map((faq) => (
         <DetailWrapper key={faq.question}>
           <StyledSummary>{faq.question}</StyledSummary>

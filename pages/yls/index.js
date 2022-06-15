@@ -1,18 +1,16 @@
 import Layout from '../../components/Layout'
 import Banner from './_banner'
-import IgnitesYou from './_ignites-you'
-import Vision from './_vision'
+import JoinUs from './_join-us'
 import Schedule from './_schedule'
-import Speakers from './_speakers'
+import SpeakerSection from './_speaker-section'
 
 const YLS = () => {
   return (
     <Layout title="IGNITEMY2021 | Youth Leadership Summit">
       <Banner />
-      <IgnitesYou />
-      <Vision />
+      <SpeakerSection />
       <Schedule />
-      <Speakers />
+      <JoinUs />
     </Layout>
   )
 }

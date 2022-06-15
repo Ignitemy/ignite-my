@@ -7,7 +7,7 @@ import Banner from './home/_banner'
 // import WhatIsIgnite from './home/_what-is-ignite'
 // import Events from './home/_events'
 import Countdown from './home/_countdown'
-import Video from './home/_video'
+// import Video from './home/_video'
 import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
@@ -29,6 +29,7 @@ const Page = () => {
       {/* <Events /> */}
       <MiniBannerContainer>
         <MiniBanner
+          linkTo="/yls"
           imgSrc="/images/jpg/ignite-yls-banner-bg-2022.jpg"
           imgTitle="/images/png/ignite-yls-logo.png"
           imgHeight="173"
@@ -36,15 +37,16 @@ const Page = () => {
           subTitle="IN-PERSON.    ONLINE."
         />
         <MiniBanner
+          linkTo="/rally"
           imgSrc="/images/jpg/ignite-rally-banner-bg-2022.jpg"
           imgTitle="/images/png/ignite-rally.png"
           imgHeight="135"
           imgWidth="351"
-          subTitle="IN-PERSON."
+          subTitle="IN-PERSON.    ONLINE."
         />
       </MiniBannerContainer>
       <Countdown />
-      <Video />
+      {/* <Video /> */}
       <Location />
       <Faq />
     </Layout>

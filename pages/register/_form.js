@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { HeadingShadow } from '../../components'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import * as yup from 'yup'
@@ -261,6 +262,25 @@ const FourColumnRow = styled.div`
   }
 `
 
+const listOfStates = [
+  { value: 'Johor', disabled: false },
+  { value: 'Kedah', disabled: false },
+  { value: 'Kelantan', disabled: false },
+  { value: 'Kuala Lumpur', disabled: false },
+  { value: 'Labuan', disabled: false },
+  { value: 'Malacca', disabled: false },
+  { value: 'Negeri Sembilan', disabled: false },
+  { value: 'Pahang', disabled: false },
+  { value: 'Penang', disabled: false },
+  { value: 'Perak', disabled: false },
+  { value: 'Perlis', disabled: false },
+  { value: 'Putrajaya', disabled: false },
+  { value: 'Sabah', disabled: false },
+  { value: 'Sarawak', disabled: false },
+  { value: 'Selangor', disabled: false },
+  { value: 'Terrengganu', disabled: false }
+]
+
 const FollowButton = styled(Button)`
   display: inline-flex;
   align-items: center;
@@ -333,6 +353,7 @@ const RegistrationForm = () => {
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
+  const [states, setStates] = useState(listOfStates)
   const [showModal, setShowModal] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
@@ -359,6 +380,33 @@ const RegistrationForm = () => {
 
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
+
+  const handleRadioValueOnChange = (e) => {
+    // console.log('handle radio button value: ', e.target.value)
+    const selectedAttendanceOption = e.target.value
+    const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
+    const selectQuestion = document.querySelector('.MuiSelect-root.MuiSelect-select')
+    const inputState = document.querySelector(
+      '_form__StyledSelect-sc-1ducsw4-7 .MuiSelect-nativeInput'
+    )
+    if (selectedAttendanceOption === 'online') {
+      setStates(listOfStates)
+    } else {
+      // if (!includedLocation.includes(selectQuestion.textContent)) {
+      //   selectQuestion.textContent = ''
+      //   inputState.value = ''
+      // }
+      selectQuestion.textContent = ''
+      const newListOfStates = listOfStates.map((state) => {
+        if (includedLocation.includes(state.value)) {
+          return { ...state }
+        }
+        return { ...state, disabled: true }
+      })
+      console.log(newListOfStates)
+      setStates(newListOfStates)
+    }
+  }
 
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
@@ -505,7 +553,8 @@ const RegistrationForm = () => {
       ) : (
         <Container>
           <FormHeading>
-            <Image src="/images/png/register.png" height={45} width={230} />
+            {/* <Image src="/images/png/register.png" height={45} width={230} /> */}
+            <HeadingShadow>Register</HeadingShadow>
             <p>Submit the form to join IGNITEMY2022!</p>
           </FormHeading>
           <Formik
@@ -579,6 +628,12 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
+                <RadioButton
+                  question={secondRadioButtonQuestion.question}
+                  options={secondRadioButtonQuestion.options}
+                  name={secondRadioButtonQuestion.name}
+                  func={handleRadioValueOnChange}
+                />
                 <Field
                   name="address"
                   label="House Unit Number & Street Address"
@@ -604,7 +659,7 @@ const RegistrationForm = () => {
                 </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>
                 <Field name="state" label="State" required as={CustomSelect}>
-                  <MenuItem value="Johor">Johor</MenuItem>
+                  {/* <MenuItem value="Johor">Johor</MenuItem>
                   <MenuItem value="Kedah">Kedah</MenuItem>
                   <MenuItem value="Kelantan">Kelantan</MenuItem>
                   <MenuItem value="Kuala Lumpur">Kuala Lumpur</MenuItem>
@@ -619,7 +674,12 @@ const RegistrationForm = () => {
                   <MenuItem value="Sabah">Sabah</MenuItem>
                   <MenuItem value="Sarawak">Sarawak</MenuItem>
                   <MenuItem value="Selangor">Selangor</MenuItem>
-                  <MenuItem value="Terengganu">Terengganu</MenuItem>
+                  <MenuItem value="Terengganu">Terengganu</MenuItem> */}
+                  {states.map((state) => (
+                    <MenuItem value={state.value} disabled={state.disabled}>
+                      {state.value}
+                    </MenuItem>
+                  ))}
                 </Field>
                 <Field
                   name="school"
@@ -633,11 +693,6 @@ const RegistrationForm = () => {
                   options={firstRadioButtonQuestion.options}
                   name={firstRadioButtonQuestion.name}
                 />
-                <RadioButton
-                  question={secondRadioButtonQuestion.question}
-                  options={secondRadioButtonQuestion.options}
-                  name={secondRadioButtonQuestion.name}
-                />
                 <Field
                   name="remarks"
                   label="Remarks (if any)"
@@ -645,7 +700,7 @@ const RegistrationForm = () => {
                   as={CustomTextField}
                 />
                 <CheckboxGroup>
-                  <Field type="checkbox" name="checked" as={Checkbox} />
+                  <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
                   <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
                     I have informed my parent/guardian of the{' '}
                     <span onClick={() => setShowModal(true)}>statements</span>
@@ -653,7 +708,12 @@ const RegistrationForm = () => {
                 </CheckboxGroup>
                 <StyledErrorMessage name="checked" component="div" />
                 <CheckboxGroup>
-                  <Field type="checkbox" name="registerChecked" as={Checkbox} />
+                  <Field
+                    type="checkbox"
+                    name="registerChecked"
+                    id="registerChecked"
+                    as={Checkbox}
+                  />
                   <label htmlFor="registerChecked" style={{ color: 'var(--color-white)' }}>
                     I am registering for IGNITEMY2022
                   </label>

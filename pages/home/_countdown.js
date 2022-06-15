@@ -71,7 +71,7 @@ const SharedStyles = css`
 `
 const Number = styled.div`
   ${SharedStyles}
-
+  text-shadow: 1px 1px 2px #000000;
   @media (max-width: 1020px) {
     font-size: 4.8rem;
     margin: 0 0.2rem;

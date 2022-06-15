@@ -142,12 +142,12 @@ const Reset = css`
     display: none;
   }
   // this is to hide the default arrow in details and summary
-  details > summary {
+  /* details > summary {
     list-style: none;
   }
   details > summary::-webkit-details-marker {
     display: none;
-  }
+  } */
 `
 
 export default Reset

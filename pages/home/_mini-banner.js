@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useAuth } from '@/helpers/auth'
-import { Button } from '../../components'
+// import { useAuth } from '@/helpers/auth'
+// import { Button } from '../../components'
 
 // Variants
 const logo = {
@@ -95,11 +95,21 @@ const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.7s ease-in-out;
+  &:hover {
+    transform: scale(1.15);
+    transition: all 0.3s ease-in-out;
+    cursor:pointer;
+  }
 `
 
 const StyledImage = styled(Image)`
   z-index: 0;
 `
+
+const LinkTo = styled.a`
+`
+
 
 const ContentWrapper = styled.div`
   z-index: 1;
@@ -173,39 +183,41 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
   </Row>
 )
 
-const Banner = ({ imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => {
-  const user = useAuth()
+const Banner = ({ linkTo, imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => {
+  // const user = useAuth()
   return (
-    <BannerContainer>
-      <StyledImage
-        // src="/images/png/homepage-banner.png"
-        src={imgSrc}
-        alt="Fire patterns"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority="true"
-      />
-      <BannerContent>
-        <ContentWrapper>
-          <ImageWrapper initial="initial" animate="animate" variants={logo}>
-            <Image
-              src={imgTitle}
-              alt="Ignite logo"
-              height={imgHeight}
-              width={imgWidth}
-              priority="true"
-            />
-          </ImageWrapper>
-          <Details>
-            <ButtonWrapper>
-              <AnimatedLetters title={subTitle || "IN-PERSON."} variants={stream} />
-            </ButtonWrapper>
-            {/* <AnimatedLetters title="LIVE" variants={live} /> */}
-          </Details>
-        </ContentWrapper>
-      </BannerContent>
-    </BannerContainer>
+      <BannerContainer>
+        <StyledImage
+          // src="/images/png/homepage-banner.png"
+          src={imgSrc}
+          alt="Fire patterns"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          priority="true"
+        />
+        <BannerContent>
+          <LinkTo href={linkTo}>
+            <ContentWrapper>
+              <ImageWrapper initial="initial" animate="animate" variants={logo}>
+                <Image
+                  src={imgTitle}
+                  alt="Ignite logo"
+                  height={imgHeight}
+                  width={imgWidth}
+                  priority="true"
+                />
+              </ImageWrapper>
+              <Details>
+                <ButtonWrapper>
+                  <AnimatedLetters title={subTitle || "IN-PERSON."} variants={stream} />
+                </ButtonWrapper>
+                {/* <AnimatedLetters title="LIVE" variants={live} /> */}
+              </Details>
+            </ContentWrapper>
+          </LinkTo>
+        </BannerContent>
+      </BannerContainer>
   )
 }
 

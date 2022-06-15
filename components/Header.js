@@ -36,6 +36,10 @@ const StyledHeader = styled.header`
   background-color: var(--color-black);
   padding: 0 8rem;
 
+  @media (max-width: 1280px) {
+    padding: 0 2rem;
+  }
+
   @media (max-width: 992px) {
     padding: 0 4rem;
   }
@@ -194,11 +198,11 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            <li>
+            {/* <li>
               <StyledLink href="/blog/submit">
                 <a>Blog</a>
               </StyledLink>
-            </li>
+            </li> */}
             <li>
               <StyledLink href="/highlights">
                 <a>Highlights</a>
