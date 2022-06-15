@@ -96,6 +96,7 @@ const BannerContent = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all 0.7s ease-in-out;
+  z-index: 1;
   &:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;

@@ -25,7 +25,7 @@ const SectionContainer = styled.section`
 
 const SectionContentWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `
 
 const StyledImage = styled.div`
@@ -33,7 +33,7 @@ const StyledImage = styled.div`
   display: none;
   align-items: flex-end;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1025px) {
     display: flex;
     width: 264px;
   }
@@ -67,6 +67,7 @@ const TableSectionContainer = styled.div`
   @media (min-width: 1280px) {
     justify-content: flex-start;
     margin-top: 0;
+    margin-left:10rem;
     gap: 5rem;
     width: auto;
   }
