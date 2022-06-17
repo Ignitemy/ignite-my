@@ -27,6 +27,7 @@ import InstaIcon from '@/images/svg/insta-no-outline'
 import Modal from './_modal'
 import AlreadyRegisteredModal from './_already-registered-modal'
 import RadioButton from '@/components/RadioButton'
+import StateModal from './_state-block-modal'
 
 const theme = createMuiTheme({
   palette: {
@@ -361,6 +362,8 @@ const RegistrationForm = () => {
   // const [isActive, setActive] = useState(true)
   // Once we check that the user has already had an account, we can set this to true
   const [alreadyRegistered, setAlreadyRegistered] = useState(false)
+  // for state blocking error modal
+  const [stateErrorModal, setStateErrorModal] = useState(false)
 
   useEffect(() => {
     showModal || alreadyRegistered
@@ -403,7 +406,7 @@ const RegistrationForm = () => {
         }
         return { ...state, disabled: true }
       })
-      console.log(newListOfStates)
+      // console.log(newListOfStates)
       setStates(newListOfStates)
     }
   }
@@ -411,6 +414,16 @@ const RegistrationForm = () => {
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
     actions.setSubmitting(true)
+    const statesAllowedForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
+
+    // handle state validation for in-person option
+    // this is to prevent the loophole: Even though the input seems to be reseted when choosing in-person
+    // it doesn't reset the actual input, so the user will still be able to submit the form
+    if (values.attendance === 'in-person' && !statesAllowedForInPerson.includes(values.state)) {
+      // return alert('You are only allowed to atttend physically if you are from Kuala Lumpur, Selangor and Putrajaya. Please select "online" if you wished to attend from other states.')
+      setStateErrorModal(true)
+      return
+    }
 
     const emailExists = await doesEmailExist(values.email)
     if (!emailExists) {
@@ -659,22 +672,6 @@ const RegistrationForm = () => {
                 </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>
                 <Field name="state" label="State" required as={CustomSelect}>
-                  {/* <MenuItem value="Johor">Johor</MenuItem>
-                  <MenuItem value="Kedah">Kedah</MenuItem>
-                  <MenuItem value="Kelantan">Kelantan</MenuItem>
-                  <MenuItem value="Kuala Lumpur">Kuala Lumpur</MenuItem>
-                  <MenuItem value="Labuan">Labuan</MenuItem>
-                  <MenuItem value="Malacca">Malacca</MenuItem>
-                  <MenuItem value="Negeri Sembilan">Negeri Sembilan</MenuItem>
-                  <MenuItem value="Pahang">Pahang</MenuItem>
-                  <MenuItem value="Penang">Penang</MenuItem>
-                  <MenuItem value="Perak">Perak</MenuItem>
-                  <MenuItem value="Perlis">Perlis</MenuItem>
-                  <MenuItem value="Putrajaya">Putrajaya</MenuItem>
-                  <MenuItem value="Sabah">Sabah</MenuItem>
-                  <MenuItem value="Sarawak">Sarawak</MenuItem>
-                  <MenuItem value="Selangor">Selangor</MenuItem>
-                  <MenuItem value="Terengganu">Terengganu</MenuItem> */}
                   {states.map((state) => (
                     <MenuItem value={state.value} disabled={state.disabled}>
                       {state.value}
@@ -736,6 +733,7 @@ const RegistrationForm = () => {
       )}
       <Modal showModal={showModal} closeModal={() => setShowModal(false)} />
       <AlreadyRegisteredModal alreadyRegistered={alreadyRegistered} />
+      <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} />
     </ThemeProvider>
   )
 }
