@@ -5,21 +5,21 @@ import Image from 'next/image'
 
 const SectionContainer = styled.section`
   width: 100%;
-  padding: 7rem 3rem 9rem;
+  padding: 4rem 3rem 9rem;
   background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   background: ${(props) => props.background};
 
   @media (min-width: 768px) {
-    padding: 12rem 6rem;
+    padding: 4rem 6rem;
   }
   @media (min-width: 1024px) {
-    padding: 9rem 7rem;
+    padding: 4rem 7rem;
   }
   @media (min-width: 1440px) {
-    padding: 12rem 16rem;
+    padding: 4rem 16rem;
   }
   @media (min-width: 1700px) {
-    padding: 12rem 34rem;
+    padding: 4rem 34rem;
   }
 `
 
@@ -97,7 +97,7 @@ const AbosoluteDate = styled.p`
   position: absolute;
   font-style: italic;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 2rem;
   line-height: 27px;
   text-align: center;
   color: var(--color-orange);
@@ -220,7 +220,7 @@ const Schedule = () => {
           <Image src="/images/png/schedule-dwg.png" alt="in person" width={395} height={294} />
         </StyledImage>
         <TableSectionContainer>
-          <div>
+          {/* <div>
             <Heading>SUMMIT</Heading>
             <StyledTable>
               <tbody>
@@ -232,9 +232,9 @@ const Schedule = () => {
                 ))}
               </tbody>
             </StyledTable>
-          </div>
+          </div> */}
           <div>
-            <Heading color="var(--color-orange)">RALLY</Heading>
+            <Heading>RALLY</Heading>
             <StyledTable>
               {rallyTimetable.map((iteniary) => (
                 <tr>
