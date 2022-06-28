@@ -32,6 +32,7 @@ const speakerSectionDetails = [
     imgSrc: '/images/png/dummy-image.png',
     alt: 'dummy image',
     name: 'Rev Alexa Ho',
+    separator: 'of',
     founder: 'PJEFC',
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
@@ -40,6 +41,7 @@ const speakerSectionDetails = [
     imgSrc: '/images/png/dummy-image.png',
     alt: 'dummy image',
     name: 'Pr Daniel Tan',
+    separator: 'of',
     founder: 'Generasi Gemilang',
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
@@ -48,6 +50,7 @@ const speakerSectionDetails = [
     imgSrc: '/images/png/dummy-image.png',
     alt: 'dummy image',
     name: 'Daryll Tan',
+    separator: 'of',
     founder: 'Open Minds',
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
@@ -57,8 +60,9 @@ const speakerSectionDetails = [
 const specialItemBy = {
   imgSrc: '/images/png/dummy-image.png',
   alt: 'dummy image',
-  name: 'Speaker name',
-  founder: 'Founder',
+  name: 'Chloe/SHN',
+  separator: '',
+  founder: '',
   details:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
 }

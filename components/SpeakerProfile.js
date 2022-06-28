@@ -60,7 +60,7 @@ const SpeakerProfile = ({ speaker }) => {
         <Image src={speaker.imgSrc} alt={speaker.alt} height={250} width={250} />
       </StyledImage>
       <DetailsWrapper>
-        <SpeakerName><OrangeSpan>{speaker.name}</OrangeSpan> of {speaker.founder}</SpeakerName>
+        <SpeakerName><OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator} {speaker.founder}</SpeakerName>
         <SpeakerDetails>{speaker.details}</SpeakerDetails>
       </DetailsWrapper>
     </SpeakerProfileContainer>

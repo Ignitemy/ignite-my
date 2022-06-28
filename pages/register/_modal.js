@@ -116,7 +116,7 @@ const Modal = ({ showModal, closeModal }) => {
           <br />
           <br />
           2. DUMC NextGen and Scripture Union Peninsular Malaysia will take every precaution to
-          protect their son/daughter/ward from any online dangers.
+          protect their son/daughter/ward from any online/onsite dangers.
           <br />
           <br />
           3. For the smooth running of the event, the participant will adhere to any and all
