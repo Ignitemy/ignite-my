@@ -323,11 +323,11 @@ const SideMenu = () => {
                 </StyledExtLink>
               </li> */}
 
-              <li>
+              {/* <li>
                 <StyledLink href="/blog/submit">
                   <a>Blog</a>
                 </StyledLink>
-              </li>
+              </li> */}
               <li>
                 <StyledLink href="/highlights">
                   <a>Highlights</a>

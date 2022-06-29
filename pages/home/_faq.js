@@ -52,18 +52,23 @@ const AnswerWrapper = styled.p`
 const Faq = () => {
   const faqList = [
     {
-      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli1',
-      answer: 'A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet.'
+      question: 'Q: Who is IGNITEMY for?',
+      answer: 'A: For all high school students who aspire to be a change in their schools!'
     },
     {
-      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli2',
+      question: 'Q: Can I still register after 21st August, 2022?',
       answer:
-        'A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet.'
+        'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2022 booklet). So register now!'
     },
     {
-      question: 'Q: Lorem ipsum dolor sit amet, consectetur adipiscing eli3',
+      question: 'Q: I stay in Singapore. Can I attend IGNITEMY2022 in-person? ',
       answer:
-        'A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet.'
+        'A: Unfortunately, the option to attend in-person is only available to attendees from the Klang Vally. You can still join us online! We are excited to have you! :D'
+    },
+    {
+      question: 'Q: What do I need to bring? ',
+      answer:
+        'A: First, bring the items from your summit kit! Second, bring water and lunch money! Last, yourself and your friends for the night rally! See you then!'
     }
   ]
   return (
