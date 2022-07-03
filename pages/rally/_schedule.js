@@ -225,7 +225,7 @@ const Schedule = () => {
             <StyledTable>
               <tbody>
                 {summitTimetable.map((iteniary) => (
-                  <tr>
+                  <tr key={iteniary.time}>
                     <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
                     <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
                   </tr>
@@ -236,12 +236,14 @@ const Schedule = () => {
           <div>
             <Heading>RALLY</Heading>
             <StyledTable>
-              {rallyTimetable.map((iteniary) => (
-                <tr>
-                  <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
-                  <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
-                </tr>
-              ))}
+              <tbody>
+                {rallyTimetable.map((iteniary) => (
+                  <tr key={iteniary.time}>
+                    <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
+                    <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
+                  </tr>
+                ))}
+              </tbody>
             </StyledTable>
           </div>
           <AbosoluteDate>24 September 2022, Saturday</AbosoluteDate>
