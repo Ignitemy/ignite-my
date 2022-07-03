@@ -230,6 +230,19 @@ const Schedule = () => {
               </tbody>
             </StyledTable>
           </div>
+          {/* <div>
+            <Heading color="var(--color-orange)">RALLY</Heading>
+            <StyledTable>
+              <tbody>
+                {rallyTimetable.map((iteniary) => (
+                  <tr key={iteniary.time}>
+                    <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
+                    <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </div> */}
           <AbosoluteDate>24 September 2022, Saturday</AbosoluteDate>
         </TableSectionContainer>
       </SectionContentWrapper>
