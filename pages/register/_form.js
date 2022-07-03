@@ -4,7 +4,7 @@ import { HeadingShadow } from '../../components'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import * as yup from 'yup'
-import Image from 'next/image'
+// import Image from 'next/image'
 import {
   TextField,
   Checkbox,
@@ -263,24 +263,44 @@ const FourColumnRow = styled.div`
   }
 `
 
-const listOfStates = [
-  { value: 'Johor', disabled: false },
-  { value: 'Kedah', disabled: false },
-  { value: 'Kelantan', disabled: false },
-  { value: 'Kuala Lumpur', disabled: false },
-  { value: 'Labuan', disabled: false },
-  { value: 'Malacca', disabled: false },
-  { value: 'Negeri Sembilan', disabled: false },
-  { value: 'Pahang', disabled: false },
-  { value: 'Penang', disabled: false },
-  { value: 'Perak', disabled: false },
-  { value: 'Perlis', disabled: false },
-  { value: 'Putrajaya', disabled: false },
-  { value: 'Sabah', disabled: false },
-  { value: 'Sarawak', disabled: false },
-  { value: 'Selangor', disabled: false },
-  { value: 'Terrengganu', disabled: false }
-]
+const listOfStates = {
+  online: [
+    { value: 'Johor', disabled: false },
+    { value: 'Kedah', disabled: false },
+    { value: 'Kelantan', disabled: false },
+    { value: 'Kuala Lumpur', disabled: false },
+    { value: 'Labuan', disabled: false },
+    { value: 'Malacca', disabled: false },
+    { value: 'Negeri Sembilan', disabled: false },
+    { value: 'Pahang', disabled: false },
+    { value: 'Penang', disabled: false },
+    { value: 'Perak', disabled: false },
+    { value: 'Perlis', disabled: false },
+    { value: 'Putrajaya', disabled: false },
+    { value: 'Sabah', disabled: false },
+    { value: 'Sarawak', disabled: false },
+    { value: 'Selangor', disabled: false },
+    { value: 'Terrengganu', disabled: false }
+  ],
+  inPerson: [
+    { value: 'Johor', disabled: true },
+    { value: 'Kedah', disabled: true },
+    { value: 'Kelantan', disabled: true },
+    { value: 'Kuala Lumpur', disabled: false },
+    { value: 'Labuan', disabled: true },
+    { value: 'Malacca', disabled: true },
+    { value: 'Negeri Sembilan', disabled: true },
+    { value: 'Pahang', disabled: true },
+    { value: 'Penang', disabled: true },
+    { value: 'Perak', disabled: true },
+    { value: 'Perlis', disabled: true },
+    { value: 'Putrajaya', disabled: false },
+    { value: 'Sabah', disabled: true },
+    { value: 'Sarawak', disabled: true },
+    { value: 'Selangor', disabled: false },
+    { value: 'Terrengganu', disabled: true }
+  ]
+}
 
 const FollowButton = styled(Button)`
   display: inline-flex;
@@ -354,7 +374,7 @@ const RegistrationForm = () => {
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
-  const [states, setStates] = useState(listOfStates)
+  const [attendanceOption, setAttendanceOption] = useState('online')
   const [showModal, setShowModal] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
@@ -364,6 +384,8 @@ const RegistrationForm = () => {
   const [alreadyRegistered, setAlreadyRegistered] = useState(false)
   // for state blocking error modal
   const [stateErrorModal, setStateErrorModal] = useState(false)
+  // for filter option
+  // const [filterOption, setfilterOption] = useState('online')
 
   useEffect(() => {
     showModal || alreadyRegistered
@@ -384,30 +406,18 @@ const RegistrationForm = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
+  //! there is an issue with state selection after executing handleRadioValueOnChange
   const handleRadioValueOnChange = (e) => {
-    // console.log('handle radio button value: ', e.target.value)
     const selectedAttendanceOption = e.target.value
-    const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
+    // const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
     const selectQuestion = document.querySelector('.MuiSelect-root.MuiSelect-select')
-    const inputState = document.querySelector(
-      '_form__StyledSelect-sc-1ducsw4-7 .MuiSelect-nativeInput'
-    )
     if (selectedAttendanceOption === 'online') {
-      setStates(listOfStates)
+      setAttendanceOption(selectedAttendanceOption)
+      // setfilterOption(selectedAttendanceOption)
     } else {
-      // if (!includedLocation.includes(selectQuestion.textContent)) {
-      //   selectQuestion.textContent = ''
-      //   inputState.value = ''
-      // }
       selectQuestion.textContent = ''
-      const newListOfStates = listOfStates.map((state) => {
-        if (includedLocation.includes(state.value)) {
-          return { ...state }
-        }
-        return { ...state, disabled: true }
-      })
-      // console.log(newListOfStates)
-      setStates(newListOfStates)
+      setAttendanceOption('inPerson')
+      // setfilterOption('inPerson')
     }
   }
 
@@ -671,13 +681,40 @@ const RegistrationForm = () => {
                   />
                 </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>
-                <Field name="state" label="State" required as={CustomSelect}>
-                  {states.map((state) => (
-                    <MenuItem value={state.value} disabled={state.disabled}>
-                      {state.value}
-                    </MenuItem>
-                  ))}
-                </Field>
+                {/* <Field name="state" label="State" required as={CustomSelect}>
+                  {attendanceOption === 'online'
+                    ? listOfStates['online'].map((state) => {
+                        return (
+                          <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                            {state.value}
+                          </MenuItem>
+                        )
+                      })
+                    : listOfStates['inPerson'].map((state) => {
+                        return (
+                          <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                            {state.value}
+                          </MenuItem>
+                        )
+                      })}
+                </Field> */}
+                {attendanceOption === 'online' ? (
+                  <Field name="state" label="State" required as={CustomSelect}>
+                    {listOfStates['online'].map((state) => (
+                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                        {state.value}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                ) : (
+                  <Field name="state" label="State" required as={CustomSelect}>
+                    {listOfStates['inPerson'].map((state) => (
+                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                        {state.value}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                )}
                 <Field
                   name="school"
                   label="School"

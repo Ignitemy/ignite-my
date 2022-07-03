@@ -178,12 +178,12 @@ const Gallery = () => {
         <SRLWrapper>
           <ImageRow>
             {ROW1.map((image) => {
-              return <img src={image.src} alt={image.caption} height={200} draggable="false" />
+              return <img key={image.src} src={image.src} alt={image.caption} height={200} draggable="false" />
             })}
           </ImageRow>
           <ImageRow>
             {ROW2.map((image) => {
-              return <img src={image.src} alt={image.caption} height={200} draggable="false" />
+              return <img key={image.src} src={image.src} alt={image.caption} height={200} draggable="false" />
             })}
           </ImageRow>
         </SRLWrapper>

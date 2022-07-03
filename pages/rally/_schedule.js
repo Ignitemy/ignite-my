@@ -220,28 +220,17 @@ const Schedule = () => {
           <Image src="/images/png/schedule-dwg.png" alt="in person" width={395} height={294} />
         </StyledImage>
         <TableSectionContainer>
-          {/* <div>
-            <Heading>SUMMIT</Heading>
+          <div>
+            <Heading>RALLY</Heading>
             <StyledTable>
               <tbody>
-                {summitTimetable.map((iteniary) => (
-                  <tr>
+                {rallyTimetable.map((iteniary) => (
+                  <tr key={iteniary.time}>
                     <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
                     <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
                   </tr>
                 ))}
               </tbody>
-            </StyledTable>
-          </div> */}
-          <div>
-            <Heading>RALLY</Heading>
-            <StyledTable>
-              {rallyTimetable.map((iteniary) => (
-                <tr>
-                  <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
-                  <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
-                </tr>
-              ))}
             </StyledTable>
           </div>
           <AbosoluteDate>24 September 2022, Saturday</AbosoluteDate>

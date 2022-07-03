@@ -72,7 +72,7 @@ const SpeakerSection = () => {
     <SectionContainer>
       <HeadingShadow>Speakers</HeadingShadow>
       {speakerSectionDetails.map((speaker) => (
-        <SpeakerProfile speaker={speaker} />
+        <SpeakerProfile key={speaker.name} speaker={speaker} />
       ))}
       <SectionSeperator />
       <HeadingShadow>Special Item by</HeadingShadow>
