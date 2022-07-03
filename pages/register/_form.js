@@ -302,6 +302,8 @@ const listOfStates = {
   ]
 }
 
+const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+
 const FollowButton = styled(Button)`
   display: inline-flex;
   align-items: center;
@@ -365,6 +367,7 @@ const validationSchema = yup.object({
     .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
+  shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed'),
   registerChecked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
@@ -461,6 +464,7 @@ const RegistrationForm = () => {
           postcode: values.postcode,
           state: values.state,
           school: values.school,
+          shirtSize: values.shirtSize,
           remarks: values.remarks,
           occupation: values.occupation,
           attendance: values.attendance,
@@ -491,6 +495,7 @@ const RegistrationForm = () => {
               values.school,
               values.occupation,
               values.attendance,
+              values.shirtSize,
               values.remarks
             ]
           ])
@@ -592,6 +597,7 @@ const RegistrationForm = () => {
               postcode: '',
               state: '',
               school: '',
+              shirtSize: '',
               remarks: '',
               occupation: 'student',
               attendance: 'online',
@@ -727,6 +733,24 @@ const RegistrationForm = () => {
                   options={firstRadioButtonQuestion.options}
                   name={firstRadioButtonQuestion.name}
                 />
+                <StyledLabel htmlFor="shirtSize">
+                  T-Shirt size? Refer to sizing chart{' '}
+                  <a
+                    href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
+                    target="_blank"
+                    style={{ color: 'var(--color-orange)' }}
+                  >
+                    here
+                  </a>
+                  .*
+                </StyledLabel>
+                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
+                  {shirtSizes.map((size) => (
+                    <MenuItem key={size} value={size}>
+                      {size}
+                    </MenuItem>
+                  ))}
+                </Field>
                 <Field
                   name="remarks"
                   label="Remarks (if any)"
