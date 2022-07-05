@@ -409,7 +409,6 @@ const RegistrationForm = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
-  //! there is an issue with state selection after executing handleRadioValueOnChange
   const handleRadioValueOnChange = (e) => {
     const selectedAttendanceOption = e.target.value
     // const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
