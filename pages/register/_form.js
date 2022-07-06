@@ -409,7 +409,6 @@ const RegistrationForm = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
-  //! there is an issue with state selection after executing handleRadioValueOnChange
   const handleRadioValueOnChange = (e) => {
     const selectedAttendanceOption = e.target.value
     // const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
@@ -560,7 +559,7 @@ const RegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY
+              See you at IGNITEMY2022
             </Text>
           )}
           <FollowButton orange="true">
