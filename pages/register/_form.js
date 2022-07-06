@@ -559,7 +559,7 @@ const RegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY
+              See you at IGNITEMY2022
             </Text>
           )}
           <FollowButton orange="true">

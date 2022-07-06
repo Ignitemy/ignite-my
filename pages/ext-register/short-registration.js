@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import RadioButton from '@/components/RadioButton'
-import { Button, Heading } from '@/components/index'
+import { Button, Heading, Text } from '@/components/index'
 import FirebaseContext from '@/context/firebase'
 import router from 'next/router'
 import { getUserByUserId } from '@/helpers/firebase'
@@ -17,6 +17,8 @@ import {
   Select
 } from '@material-ui/core'
 import * as yup from 'yup'
+import StateModal from './_state-block-model'
+import SuccessIcon from '@/images/svg/success'
 
 const theme = createMuiTheme({
   palette: {
@@ -133,6 +135,12 @@ const StyledSelect = styled(Select)`
     right: 12px;
     font-size: 2.5rem;
   }
+`
+
+const StyledErrorMessage = styled(ErrorMessage)`
+  color: red;
+  font-size: 1.4rem;
+  padding-left: 1rem;
 `
 
 const FormWrapper = styled.div`
@@ -260,6 +268,18 @@ const StyledLabel = styled(InputLabel)`
   margin-bottom: -6px;
 `
 
+const RegisteredContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7%;
+  @media screen and (min-width: 768px) {
+    padding: 50px 30px;
+    border: 3px solid #fff;
+  }
+`
+
 const listOfStates = {
   online: [
     { value: 'Johor', disabled: false },
@@ -360,13 +380,14 @@ const ShortRegistrationForm = () => {
   const [userData, setUserData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const [attendanceOption, setAttendanceOption] = useState('online')
+  const [stateErrorModal, setStateErrorModal] = useState(false)
+  const [registered, setRegistered] = useState(false)
 
   const user = useAuth()
   const db = firebase.firestore()
 
   useEffect(() => {
     if (user) {
-      //! issue: could recognise the firebase function
       const subscriber = db.collection('users').onSnapshot((snapshot) => {
         snapshot.forEach((doc) => {
           const data = doc.data()
@@ -399,184 +420,227 @@ const ShortRegistrationForm = () => {
   //todo: need to modify the submit function below
   // similar to the one in registration
   const handleRegistration = async (values, actions) => {
+    actions.setSubmitting(true)
+    const statesAllowedForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
+
+    // handle state validation for in-person option
+    // this is to prevent the loophole: Even though the input seems to be reseted when choosing in-person
+    // it doesn't reset the actual input, so the user will still be able to submit the form
+    if (values.attendance === 'in-person' && !statesAllowedForInPerson.includes(values.state)) {
+      // return alert('You are only allowed to atttend physically if you are from Kuala Lumpur, Selangor and Putrajaya. Please select "online" if you wished to attend from other states.')
+      setStateErrorModal(true)
+      return
+    }
+
     try {
+      console.log('submitted')
+      console.log(values)
       const currentUser = firebase.auth().currentUser
       const userDocumentId = await getUserByUserId(currentUser.uid)
       console.log(userDocumentId)
       // update existing user document
       await firebase.firestore().collection('users').doc(userDocumentId[0].docId).update({
+        age: values.age,
+        myKad: values.myKad,
+        contactNumber: values.contactNumber,
+        address: values.address,
+        city: values.city,
+        postcode: values.postcode,
+        state: values.state,
+        school: values.school,
+        shirtSize: values.shirtSize,
+        remarks: values.remarks,
         occupation: values.occupation,
         attendance: values.attendance,
         ignite2022: true,
         dateCreated: Date.now()
       })
+      setRegistered(true)
       // once done redirect to home page
-      router.push('/')
+      setTimeout(() => {
+        router.push('/')
+      }, 2000);
     } catch (error) {
       console.log(error)
     }
   }
 
-  console.log(userData)
-
   return (
     <ThemeProvider theme={theme}>
       <PageContainer>
-        <FormContainer>
-          <HeadingWrapper>
-            <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
-              <span style={{ textShadow: '3px 1px 0 #FF6600' }}>
-                Register for IGNITEMY<Desktop2022>2022</Desktop2022>
-              </span>
-              <Mobile2022>2022</Mobile2022>
-            </Heading>
-          </HeadingWrapper>
-          <Formik
-            initialValues={{
-              age: userData.age,
-              myKad: userData.myKad,
-              contactNumber: userData.contactNumber,
-              address: userData.address,
-              city: userData.city,
-              postcode: userData.postcode,
-              state: userData.state,
-              school: userData.school,
-              shirtSize: '',
-              remarks: userData.remarks,
-              occupation: 'student',
-              attendance: 'online',
-              checked: false
-            }}
-            validationSchema={validationSchema}
-            onSubmit={(values, actions) => handleRegistration(values, actions)}
-          >
-            <StyledForm autoComplete="off">
-              <FormWrapper>
-                <FourColumnRow>
+        {registered ? (
+          <RegisteredContainer>
+            <SuccessIcon />
+            <Text color="white" size="2.4rem" align="center" m="4.5rem 0">
+              Hey {user.displayName}!
+              <br />
+              Your registration is complete.
+              <br />
+              See you at IGNITEMY2022
+            </Text>
+            <Text color="white" size="2rem" align="center" m="4.5rem 0">
+              Redirecting you back to the homepage...
+            </Text>
+          </RegisteredContainer>
+        ) : (
+          <FormContainer>
+            <HeadingWrapper>
+              <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
+                <span style={{ textShadow: '3px 1px 0 #FF6600' }}>
+                  Register for IGNITEMY<Desktop2022>2022</Desktop2022>
+                </span>
+                <Mobile2022>2022</Mobile2022>
+              </Heading>
+            </HeadingWrapper>
+            <Formik
+              initialValues={{
+                age: userData.age,
+                myKad: userData.myKad,
+                contactNumber: userData.contactNumber,
+                address: userData.address,
+                city: userData.city,
+                postcode: userData.postcode,
+                state: userData.state,
+                school: userData.school,
+                shirtSize: '',
+                remarks: userData.remarks,
+                occupation: 'student',
+                attendance: 'online',
+                checked: false
+              }}
+              validationSchema={validationSchema}
+              onSubmit={(values, actions) => handleRegistration(values, actions)}
+            >
+              <StyledForm autoComplete="off">
+                <FormWrapper>
+                  <FourColumnRow>
+                    <Field
+                      type="number"
+                      name="age"
+                      label="Age"
+                      value={userData.age}
+                      required
+                      as={CustomTextField}
+                    />
+                    <Field
+                      type="string"
+                      name="myKad"
+                      label="NRIC Number (without dashes)"
+                      value={userData.myKad}
+                      required
+                      as={CustomTextField}
+                    />
+                  </FourColumnRow>
                   <Field
-                    type="number"
-                    name="age"
-                    label="Age"
-                    value={userData.age}
+                    type="tel"
+                    name="contactNumber"
+                    label="Contact Number (without dashes)"
+                    value={userData.contactNumber}
                     required
                     as={CustomTextField}
                   />
+                  <RadioButton
+                    question={secondRadioButtonQuestion.question}
+                    options={secondRadioButtonQuestion.options}
+                    name={secondRadioButtonQuestion.name}
+                    func={handleRadioValueOnChange}
+                  />
                   <Field
-                    type="string"
-                    name="myKad"
-                    label="NRIC Number (without dashes)"
-                    value={userData.myKad}
+                    name="address"
+                    label="House Unit Number & Street Address"
+                    value={userData.address}
                     required
                     as={CustomTextField}
                   />
-                </FourColumnRow>
-                <Field
-                  type="tel"
-                  name="contactNumber"
-                  label="Contact Number (without dashes)"
-                  value={userData.contactNumber}
-                  required
-                  as={CustomTextField}
-                />
-                <RadioButton
-                  question={secondRadioButtonQuestion.question}
-                  options={secondRadioButtonQuestion.options}
-                  name={secondRadioButtonQuestion.name}
-                  func={handleRadioValueOnChange}
-                />
-                <Field
-                  name="address"
-                  label="House Unit Number & Street Address"
-                  value={userData.address}
-                  required
-                  as={CustomTextField}
-                />
-                <TwoColumnRow>
+                  <TwoColumnRow>
+                    <Field
+                      name="city"
+                      label="City"
+                      value={userData.city}
+                      required
+                      as={CustomTextField}
+                    />
+                    <Field
+                      name="postcode"
+                      label="Postcode"
+                      value={userData.postcode}
+                      required
+                      as={CustomTextField}
+                    />
+                  </TwoColumnRow>
+                  <StyledLabel htmlFor="State">State *</StyledLabel>
+                  {attendanceOption === 'online' ? (
+                    <Field name="state" label="State" required as={CustomSelect}>
+                      {listOfStates['online'].map((state) => (
+                        <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                          {state.value}
+                        </MenuItem>
+                      ))}
+                    </Field>
+                  ) : (
+                    <Field name="state" label="State" required as={CustomSelect}>
+                      {listOfStates['inPerson'].map((state) => (
+                        <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                          {state.value}
+                        </MenuItem>
+                      ))}
+                    </Field>
+                  )}
                   <Field
-                    name="city"
-                    label="City"
-                    value={userData.city}
+                    name="school"
+                    label="School"
+                    value={userData.school}
                     required
                     as={CustomTextField}
                   />
-                  <Field
-                    name="postcode"
-                    label="Postcode"
-                    value={userData.postcode}
-                    required
-                    as={CustomTextField}
+                  <RadioButton
+                    question={firstRadioButtonQuestion.question}
+                    options={firstRadioButtonQuestion.options}
+                    name={firstRadioButtonQuestion.name}
                   />
-                </TwoColumnRow>
-                <StyledLabel htmlFor="State">State *</StyledLabel>
-                {attendanceOption === 'online' ? (
-                  <Field name="state" label="State" required as={CustomSelect}>
-                    {listOfStates['online'].map((state) => (
-                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                        {state.value}
+                  <StyledLabel htmlFor="shirtSize">
+                    T-Shirt size? Refer to sizing chart{' '}
+                    <a
+                      href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
+                      target="_blank"
+                      style={{ color: 'var(--color-orange)' }}
+                    >
+                      here
+                    </a>
+                    .*
+                  </StyledLabel>
+                  <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
+                    {shirtSizes.map((size) => (
+                      <MenuItem key={size} value={size}>
+                        {size}
                       </MenuItem>
                     ))}
                   </Field>
-                ) : (
-                  <Field name="state" label="State" required as={CustomSelect}>
-                    {listOfStates['inPerson'].map((state) => (
-                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                        {state.value}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                )}
-                <Field
-                  name="school"
-                  label="School"
-                  value={userData.school}
-                  required
-                  as={CustomTextField}
-                />
-                <RadioButton
-                  question={firstRadioButtonQuestion.question}
-                  options={firstRadioButtonQuestion.options}
-                  name={firstRadioButtonQuestion.name}
-                />
-                <StyledLabel htmlFor="shirtSize">
-                  T-Shirt size? Refer to sizing chart{' '}
-                  <a
-                    href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
-                    target="_blank"
-                    style={{ color: 'var(--color-orange)' }}
-                  >
-                    here
-                  </a>
-                  .*
-                </StyledLabel>
-                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
-                  {shirtSizes.map((size) => (
-                    <MenuItem key={size} value={size}>
-                      {size}
-                    </MenuItem>
-                  ))}
-                </Field>
-                <Field
-                  name="remarks"
-                  label="Remarks (if any)"
-                  placeholder="e.g. So excited for IGNITEMY!"
-                  as={CustomTextField}
-                />
-                <CheckboxGroup>
-                  <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
-                  <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                    All the info above are correct
-                  </label>
-                </CheckboxGroup>
-                <ButtonWrapper>
-                  <Button style={{ width: '100%' }} orange="true" type="submit">
-                    Confirm
-                  </Button>
-                </ButtonWrapper>
-              </FormWrapper>
-            </StyledForm>
-          </Formik>
-        </FormContainer>
+                  <Field
+                    name="remarks"
+                    label="Remarks (if any)"
+                    placeholder="e.g. So excited for IGNITEMY!"
+                    as={CustomTextField}
+                  />
+                  <CheckboxGroup>
+                    <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
+                    <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
+                      All the info above are correct
+                    </label>
+                  </CheckboxGroup>
+                  <StyledErrorMessage name="checked" component="div" />
+                  <ButtonWrapper>
+                    <Button style={{ width: '100%' }} orange="true" type="submit">
+                      Confirm
+                    </Button>
+                  </ButtonWrapper>
+                </FormWrapper>
+              </StyledForm>
+            </Formik>
+          </FormContainer>
+        )}
       </PageContainer>
+      <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} />
     </ThemeProvider>
   )
 }
