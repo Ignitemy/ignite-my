@@ -80,6 +80,7 @@ const SpeakerProfile = ({ speaker }) => {
           height={250}
           width={250}
           hover={hover}
+          loading="lazy"
         />
         {speaker.imgSrcHover && (
           <HoverImage
@@ -88,6 +89,7 @@ const SpeakerProfile = ({ speaker }) => {
             height={250}
             width={250}
             hover={hover}
+            loading="lazy"
           />
         )}
       </StyledImage>

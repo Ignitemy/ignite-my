@@ -23,13 +23,14 @@ const SectionContainer = styled.section`
   }
 `
 const specialItemBy = {
-  imgSrc: '/images/png/dummy-image.png',
-  alt: 'dummy image',
-  name: 'Pr Ben Raj',
+  imgSrc: '/images/jpg/ben-1.jpg',
+  imgSrcHover: '/images/jpg/ben-2.jpg',
+  alt: 'Pr Ben',
+  name: 'Pr Ben',
   separator: 'of',
   founder: 'World Harvest Church',
   details:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere.'
+    'Ben is married to his best friend Bethel, and they have two sons, Joshua and Samuel. He loves the Church and his passion for the house of God and desire to see people’s lives rebuilt is evident in his life, ever since he was a young kid. He is a pastor at World Harvest Church, Sunway, where he leads the Creative Team and is part of the leadership team.'
 }
 
 const SpeakerSection = () => {
