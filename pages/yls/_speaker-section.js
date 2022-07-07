@@ -39,16 +39,6 @@ const speakerSectionDetails = [
       "In full time pastoring ministry since 2004, Alexa loves people, loves talking, and she gathers energy when she talks to people! She’s happily married to Gary, and together, they have a son, Micah. She's currently the Senior Pastor of PJ Evangelical Free Church — a church that seeks to love God, love people and make disciples."
   },
   {
-    imgSrc: '/images/jpg/ben-1.jpg',
-    imgSrcHover: '/images/jpg/ben-2.jpg',
-    alt: 'Pr Ben',
-    name: 'Pr Ben',
-    separator: 'of',
-    founder: 'World Harvest Church',
-    details:
-      'Ben is married to his best friend Bethel, and they have two sons, Joshua and Samuel. He loves the Church and his passion for the house of God and desire to see people’s lives rebuilt is evident in his life, ever since he was a young kid. He is a pastor at World Harvest Church, Sunway, where he leads the Creative Team and is part of the leadership team.'
-  },
-  {
     imgSrc: '/images/jpg/daniel.jpg',
     imgSrcHover: '/images/jpg/daniel.jpg',
     alt: 'Pr Daniel Tan',
