@@ -7,12 +7,11 @@ const SpeakerProfileContainer = styled.div`
   margin-top: 6rem;
   margin-bottom: 6rem;
   gap: 5rem;
-
+  align-items: center;
   @media (min-width: 1024px) {
     margin-top: 3rem;
     margin-bottom: 3rem;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     gap: 8rem;
   }
@@ -34,7 +33,7 @@ const DetailsWrapper = styled.div`
 `
 
 const SpeakerName = styled.p`
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 40px;
   margin-bottom: 0.5rem;
 `
