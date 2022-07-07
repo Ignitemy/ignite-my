@@ -14,7 +14,7 @@ const SectionWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 5rem 11rem;
+    padding: 5rem 14rem;
   }
 
   @media screen and (min-width: 1750px) {

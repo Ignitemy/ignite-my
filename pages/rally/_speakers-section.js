@@ -25,8 +25,8 @@ const SectionContainer = styled.section`
 const specialItemBy = {
   imgSrc: '/images/jpg/ben-1.jpg',
   imgSrcHover: '/images/jpg/ben-2.jpg',
-  alt: 'Pr Ben',
-  name: 'Pr Ben',
+  alt: 'Pr Ben Raj',
+  name: 'Pr Ben Raj',
   separator: 'of',
   founder: 'World Harvest Church',
   details:
