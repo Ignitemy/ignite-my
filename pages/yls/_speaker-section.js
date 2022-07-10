@@ -6,11 +6,14 @@ import SpeakerProfile from '@/components/SpeakerProfile'
 const SectionContainer = styled.section`
   width: 100%;
   padding: 7rem 3rem;
-  background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
-  background: ${(props) => props.background};
+  // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
+  // background: ${(props) => props.background};
+  background: url("/images/png/wave_yls_speakers.png");
+  background-size: cover;
+  background-position: center;
 
   @media (min-width: 768px) {
-    padding: 12rem 6rem;
+    padding: 12rem 6rem;    
   }
   @media (min-width: 1024px) {
     padding: 9rem 7rem;

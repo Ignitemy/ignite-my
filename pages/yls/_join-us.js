@@ -6,8 +6,10 @@ import Image from 'next/image'
 const SectionContainer = styled.section`
   width: 100%;
   padding: 7rem 3rem 9rem;
-  background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
-  background: ${(props) => props.background};
+  // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
+  // background: ${(props) => props.background};
+  background: url("/images/png/wave_joinus.png");
+  background-size: cover;
 
   @media (min-width: 768px) {
     padding: 12rem 12rem 14rem;

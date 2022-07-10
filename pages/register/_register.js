@@ -6,7 +6,9 @@ import { Text, Heading, HeadingShadow } from '../../components'
 
 const SectionContainer = styled.section`
   /* background-color: var(--color-black); */
-  background: url("/images/jpg/registration-bg.jpg");
+  // background: url("/images/jpg/registration-bg.jpg");
+  background: url("/images/png/wave_rego.png");
+  background-size: cover;
   display: flex;
   justify-content: center;
   max-width: 160rem;
@@ -35,6 +37,7 @@ const BannerContainer = styled.div`
   justify-content: center;
   /* padding: 6.4rem 8rem; */
   padding: 2.5rem 8rem;
+
 
   @media (max-width: 1200px) {
     /* padding: 4rem 6rem; */
@@ -162,7 +165,7 @@ const Register = () => {
                 <Row>
                   <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
                   <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
-                    24TH SEPT 2022 
+                    24TH SEPT 2022
                   </Text>
                 </Row>
                 <Row>

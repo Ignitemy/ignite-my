@@ -6,6 +6,9 @@ import { useAuth } from '@/helpers/auth'
 import { useRouter } from 'next/router'
 
 const Container = Styled.div`
+  background: url("/images/png/wave_profile.png");
+  background-size: cover;
+  background-position: top;
   display: flex;
   width: 100%;
   background-color: black;

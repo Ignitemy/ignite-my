@@ -214,7 +214,7 @@ const Banner = () => {
     <BannerContainer>
       <StyledImage
         // src="/images/png/homepage-banner.png"
-        src="/images/png/ignite2022-coming-soon-dark.png"
+        src="/images/png/wave_banner.png"
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"

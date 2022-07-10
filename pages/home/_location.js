@@ -7,7 +7,8 @@ const SectionWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 5rem 2rem;
-
+  background: url("/images/png/wave_location.png");
+  background-size: cover;
   @media screen and (min-width: 768px) {
     padding: 5rem 5rem;
   }

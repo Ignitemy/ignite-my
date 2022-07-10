@@ -85,7 +85,7 @@ const HeaderButtons = (props) => {
         <ButtonContainer>
           <Link href="/resources/groupings">
             <Button bgcolor='linear-gradient(90deg, #FF6600 0%, #FFFFFF 100%);'>
-              View Groupings
+              View IGNITEMY2021 Groupings
               <PeopleIcon />
             </Button>
           </Link>
