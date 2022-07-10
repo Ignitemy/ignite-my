@@ -83,7 +83,7 @@ const StyledIframe = styled.iframe`
 
 const Location = () => {
   const address = [
-    'Damansara Utama Methodist Church or Dream Center',
+    'Damansara Utama Methodist Church or Dream Centre',
     '2 Jalan 13/1, Seksyen 13,',
     '46200 Petaling Jaya',
     'Selangor, Malaysia'
@@ -101,7 +101,7 @@ const Location = () => {
         <div>
           <SubheaderWrapper>Parking spots</SubheaderWrapper>
           <TextContainer>
-            There are available parking lots in Dream Center, alternatively you may park at PJ33 or Symphony Square
+            There are available parking lots in Dream Centre, alternatively you may park at PJ33 or Symphony Square
           </TextContainer>
         </div>
       </LeftSection>
