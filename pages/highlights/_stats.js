@@ -53,20 +53,21 @@ const Unit = styled.div`
 `
 
 const StyledHeading = styled(Heading)`
-  margin: 3rem 0;
   @media (max-width: 768px) {
-    font-size: 3.2rem;
-    margin: 2.4rem 0;
+    font-size: 3rem;
+    margin: 2.4rem;
   }
 `
-
+const OrangeSpan = styled.span`
+  color: var(--color-orange);
+`
 
 const Stats = () => {
     return (
       <SectionContainer>
 
-        <StyledHeading size="4.8rem" color="orange" fstyle="italic" align="center" mb="1.4rem">
-          Here's what happened last year
+        <StyledHeading size="3.6rem" color="white" fstyle="italic" align="center" mt="3.6rem">
+          Here's what happened last year in <OrangeSpan>IGNITEMY2021</OrangeSpan>
         </StyledHeading>
       
         <OuterContainer>

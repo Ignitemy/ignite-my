@@ -69,6 +69,11 @@ const Faq = () => {
       question: 'Q: What do I need to bring? ',
       answer:
         'A: First, bring the items from your summit kit! Second, bring water and lunch money! Last, yourself and your friends for the night rally! See you then!'
+    },
+    {
+      question: 'Q: Are In-person seats limited?? ',
+      answer:
+        'A: Yes! Seats are limited, so register now to book your seat!'
     }
   ]
   return (

@@ -97,7 +97,7 @@ const LoginSection = () => {
       <RegisterSection>
         <BannerContainer>
           <StyledImage
-            src="/images/png/form-banner.png"
+            src="/images/png/wave_login.png"
             alt="Sunset"
             layout="fill"
             objectFit="cover"
