@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import useOnClickOutside from '@/hooks/useOnClickOutside'
 import Button from './Button'
 import SideMenu from './SideMenu'
-import { Text } from './Typography'
 import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
-import LogoutIcon from '../images/svg/logout'
+import ProfileIcon from '../images/svg/profile'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -35,6 +35,10 @@ const StyledHeader = styled.header`
   z-index: 100;
   background-color: var(--color-black);
   padding: 0 8rem;
+
+  @media (max-width: 1280px) {
+    padding: 0 2rem;
+  }
 
   @media (max-width: 992px) {
     padding: 0 4rem;
@@ -119,15 +123,55 @@ const StyledLogout = styled.button`
   margin-left: 2.4rem;
 `
 
-const WelcomeText = styled(Text)`
-  @media (max-width: 1150px) {
-    display: none;
+const StyledProfile = styled.button`
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 2.4rem;
+  position: relative;
+`
+
+const ProfileMenu = styled.div`
+  width: 180px;
+  padding: 1.6rem 2.4rem;
+  background-color: #2d2d2d;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 100;
+  top: 72px;
+  right: 0;
+
+  a {
+    color: var(--color-white);
+    font-size: 16px;
+    line-height: 2;
+    text-decoration: none;
+    transition: text-shadow 0.25s;
+    position: relative;
+    text-align: left;
+
+    &:hover {
+      color: var(--color-orange);
+    }
   }
 `
 
 const Header = () => {
   const user = useAuth()
   const { firebase } = useContext(FirebaseContext)
+  const [showMenu, setShowMenu] = React.useState(false)
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
+  const wrapperRef = useRef()
+  useOnClickOutside(wrapperRef, () => toggleMenu())
+
   return (
     <StyledHeader>
       <StyledNav>
@@ -138,7 +182,7 @@ const Header = () => {
                 <a>Home</a>
               </StyledLink>
             </li>
-            {/* <li>
+            <li>
               <StyledLink href="/yls">
                 <a>
                   <WhiteSpan>IGNITE</WhiteSpan>
@@ -153,12 +197,12 @@ const Header = () => {
                   <OrangeSpan>RALLY</OrangeSpan>
                 </a>
               </StyledLink>
-            </li> */}
-            <li>
+            </li>
+            {/* <li>
               <StyledLink href="/blog/submit">
                 <a>Blog</a>
               </StyledLink>
-            </li>
+            </li> */}
             <li>
               <StyledLink href="/highlights">
                 <a>Highlights</a>
@@ -170,14 +214,14 @@ const Header = () => {
         <RightWrapper>
           {!user ? (
             <>
-              {/* <StyledLink href="/login">
+              <StyledLink href="/login">
                 <Button white="true" style={{ marginRight: '2rem' }}>
                   Log In
                 </Button>
-              </StyledLink> */}
-              {/* <StyledLink href="/register">
+              </StyledLink>
+              <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink> */}
+              </StyledLink>
               {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
@@ -188,8 +232,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              {/* <WelcomeText color="white">Welcome back, {user.displayName}</WelcomeText>
-              <StyledLogout
+              {/* <StyledLogout
                 type="button"
                 title="Sign Out"
                 onClick={() => {
@@ -203,6 +246,25 @@ const Header = () => {
               >
                 <LogoutIcon />
               </StyledLogout> */}
+              <StyledProfile type="button" onClick={toggleMenu}>
+                <ProfileIcon />
+                {showMenu && (
+                  <ProfileMenu ref={wrapperRef}>
+                    <StyledLink href="/profile">
+                      <a>My Profile</a>
+                    </StyledLink>
+                    <StyledLink href="#">
+                      <a
+                        onClick={() => {
+                          setTimeout(() => firebase.auth().signOut(), 500)
+                        }}
+                      >
+                        Log Out
+                      </a>
+                    </StyledLink>
+                  </ProfileMenu>
+                )}
+              </StyledProfile>
             </>
           )}
         </RightWrapper>

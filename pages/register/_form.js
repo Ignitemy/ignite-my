@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { HeadingShadow } from '../../components'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import * as yup from 'yup'
-import Image from 'next/image'
+// import Image from 'next/image'
 import {
   TextField,
   Checkbox,
@@ -24,6 +25,9 @@ import { useAuth } from '@/helpers/auth'
 import SuccessIcon from '@/images/svg/success'
 import InstaIcon from '@/images/svg/insta-no-outline'
 import Modal from './_modal'
+import AlreadyRegisteredModal from './_already-registered-modal'
+import RadioButton from '@/components/RadioButton'
+import StateModal from './_state-block-modal'
 
 const theme = createMuiTheme({
   palette: {
@@ -41,7 +45,8 @@ const Container = styled.div`
   width: 100%;
   flex-direction: column;
   padding: 4rem 8rem;
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
+  /* background-color: transparent; */
 
   @media (max-width: 1200px) {
     padding: 4rem 4rem;
@@ -51,11 +56,13 @@ const Container = styled.div`
   }
 `
 
-const FlexCenter = styled.div`
-  display: flex;
-  flex-direction: ${(props) => props.fd};
-  justify-content: center;
-  align-items: center;
+const FormHeading = styled.div`
+  font-size: 18px;
+  color: var(--color-white);
+
+  > p {
+    margin-top: 7px;
+  }
 `
 
 const RegisteredContainer = styled(Container)`
@@ -203,91 +210,11 @@ const StyledErrorMessage = styled(ErrorMessage)`
   padding-left: 1rem;
 `
 
-const ActiveOccupationWrapper = styled.div`
-  display: flex;
-  margin-right: 2rem;
-
-  label {
-    border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-orange)' : '1px solid var(--color-black)'};
-    background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-orange)' : 'var(--color-white)'};
-    border-radius: 6px;
-    padding: 1.8rem 6.6rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    input {
-      display: none;
-    }
-
-    ${Text} {
-      color: ${({ isActive }) => (isActive ? 'var(--color-white)' : 'var(--color-black)')};
-    }
-    @media (max-width: 1120px) {
-      padding: 1.8rem 4rem;
-    }
-    @media (max-width: 480px) {
-      width: 100%;
-      margin-right: 0;
-    }
-  }
-  @media (max-width: 480px) {
-    margin-right: 0;
-  }
-`
-
-const OccupationWrapper = styled.div`
-  display: flex;
-
-  label {
-    border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
-    background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-white)' : 'var(--color-orange)'};
-    border-radius: 6px;
-    padding: 1.8rem 6.6rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    input {
-      display: none;
-    }
-
-    ${Text} {
-      color: ${({ isActive }) => (isActive ? 'var(--color-black)' : 'var(--color-white)')};
-    }
-
-    @media (max-width: 1120px) {
-      padding: 1.8rem 4rem;
-    }
-    @media (max-width: 480px) {
-      width: 100%;
-      margin-top: 2rem;
-    }
-  }
-`
-
 const StyledLabel = styled(InputLabel)`
   color: var(--color-white) !important;
   font-size: 1.6rem !important;
   margin-top: 1.2rem;
   margin-bottom: -6px;
-`
-
-const TabWrapper = styled.div`
-  display: flex;
-  margin: 1.2rem 0;
-
-  @media (max-width: 480px) {
-    flex-direction: column;
-  }
 `
 
 const ButtonWrapper = styled.div`
@@ -311,10 +238,106 @@ const TwoColumnRow = styled.div`
   }
 `
 
+const FourColumnRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+
+  div:first-child {
+    width: 20%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+  div:last-child {
+    width: 100%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+`
+
+const listOfStates = {
+  online: [
+    { value: 'Johor', disabled: false },
+    { value: 'Kedah', disabled: false },
+    { value: 'Kelantan', disabled: false },
+    { value: 'Kuala Lumpur', disabled: false },
+    { value: 'Labuan', disabled: false },
+    { value: 'Malacca', disabled: false },
+    { value: 'Negeri Sembilan', disabled: false },
+    { value: 'Pahang', disabled: false },
+    { value: 'Penang', disabled: false },
+    { value: 'Perak', disabled: false },
+    { value: 'Perlis', disabled: false },
+    { value: 'Putrajaya', disabled: false },
+    { value: 'Sabah', disabled: false },
+    { value: 'Sarawak', disabled: false },
+    { value: 'Selangor', disabled: false },
+    { value: 'Terrengganu', disabled: false }
+  ],
+  inPerson: [
+    { value: 'Johor', disabled: true },
+    { value: 'Kedah', disabled: true },
+    { value: 'Kelantan', disabled: true },
+    { value: 'Kuala Lumpur', disabled: false },
+    { value: 'Labuan', disabled: true },
+    { value: 'Malacca', disabled: true },
+    { value: 'Negeri Sembilan', disabled: true },
+    { value: 'Pahang', disabled: true },
+    { value: 'Penang', disabled: true },
+    { value: 'Perak', disabled: true },
+    { value: 'Perlis', disabled: true },
+    { value: 'Putrajaya', disabled: false },
+    { value: 'Sabah', disabled: true },
+    { value: 'Sarawak', disabled: true },
+    { value: 'Selangor', disabled: false },
+    { value: 'Terrengganu', disabled: true }
+  ]
+}
+
+const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+
 const FollowButton = styled(Button)`
   display: inline-flex;
   align-items: center;
 `
+
+const firstRadioButtonQuestion = {
+  question: 'Student or Teacher?*',
+  options: {
+    firstOption: {
+      value: 'student',
+      label: 'Student'
+    },
+    secondOption: {
+      value: 'teacher',
+      label: 'Teacher'
+    }
+  },
+  name: 'occupation'
+}
+
+const secondRadioButtonQuestion = {
+  question: 'Online or In-Person?*',
+  options: {
+    firstOption: {
+      value: 'online',
+      label: 'Online'
+    },
+    secondOption: {
+      value: 'in-person',
+      label: 'In-Person'
+    }
+  },
+  name: 'attendance'
+}
 
 const validationSchema = yup.object({
   fullName: yup.string().required("Don't forget to include your full name"),
@@ -344,23 +367,34 @@ const validationSchema = yup.object({
     .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
+  shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
-  checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
+  checked: yup.bool().oneOf([true], 'You have to check this to prcoeed'),
+  registerChecked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
 const RegistrationForm = () => {
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
+  const [attendanceOption, setAttendanceOption] = useState('online')
   const [showModal, setShowModal] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
-  const [isActive, setActive] = useState(true)
+  // const [isActive, setActive] = useState(true)
+  // Once we check that the user has already had an account, we can set this to true
+  const [alreadyRegistered, setAlreadyRegistered] = useState(false)
+  // for state blocking error modal
+  const [stateErrorModal, setStateErrorModal] = useState(false)
+  // for filter option
+  // const [filterOption, setfilterOption] = useState('online')
 
   useEffect(() => {
-    showModal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
-  }, [showModal])
+    showModal || alreadyRegistered
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'unset')
+  }, [showModal, alreadyRegistered])
 
   const scrollTop = () => {
     if (typeof window !== 'undefined') {
@@ -375,9 +409,33 @@ const RegistrationForm = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
+  const handleRadioValueOnChange = (e) => {
+    const selectedAttendanceOption = e.target.value
+    // const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
+    const selectQuestion = document.querySelector('.MuiSelect-root.MuiSelect-select')
+    if (selectedAttendanceOption === 'online') {
+      setAttendanceOption(selectedAttendanceOption)
+      // setfilterOption(selectedAttendanceOption)
+    } else {
+      selectQuestion.textContent = ''
+      setAttendanceOption('inPerson')
+      // setfilterOption('inPerson')
+    }
+  }
+
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
     actions.setSubmitting(true)
+    const statesAllowedForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
+
+    // handle state validation for in-person option
+    // this is to prevent the loophole: Even though the input seems to be reseted when choosing in-person
+    // it doesn't reset the actual input, so the user will still be able to submit the form
+    if (values.attendance === 'in-person' && !statesAllowedForInPerson.includes(values.state)) {
+      // return alert('You are only allowed to atttend physically if you are from Kuala Lumpur, Selangor and Putrajaya. Please select "online" if you wished to attend from other states.')
+      setStateErrorModal(true)
+      return
+    }
 
     const emailExists = await doesEmailExist(values.email)
     if (!emailExists) {
@@ -405,10 +463,14 @@ const RegistrationForm = () => {
           postcode: values.postcode,
           state: values.state,
           school: values.school,
+          shirtSize: values.shirtSize,
           remarks: values.remarks,
           occupation: values.occupation,
+          attendance: values.attendance,
+          ignite2022: true,
           dateCreated: Date.now()
         })
+
         await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_END_POINT, {
           method: 'POST',
           headers: {
@@ -431,6 +493,8 @@ const RegistrationForm = () => {
               values.state,
               values.school,
               values.occupation,
+              values.attendance,
+              values.shirtSize,
               values.remarks
             ]
           ])
@@ -446,8 +510,9 @@ const RegistrationForm = () => {
         setError(error.message)
       }
     } else {
-      values.email = ''
-      setError('That email is already taken, please try another.')
+      // values.email = ''
+      // setError('That email is already taken, please try another.')
+      setAlreadyRegistered(true)
     }
   }
 
@@ -494,7 +559,7 @@ const RegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY
+              See you at IGNITEMY2022
             </Text>
           )}
           <FollowButton orange="true">
@@ -514,9 +579,11 @@ const RegistrationForm = () => {
         </RegisteredContainer>
       ) : (
         <Container>
-          <FlexCenter>
-            <Image src="/images/png/sign-me-up.png" height={82} width={461} />
-          </FlexCenter>
+          <FormHeading>
+            {/* <Image src="/images/png/register.png" height={45} width={230} /> */}
+            <HeadingShadow>Register</HeadingShadow>
+            <p>Submit the form to join IGNITEMY2022!</p>
+          </FormHeading>
           <Formik
             initialValues={{
               fullName: '',
@@ -529,9 +596,12 @@ const RegistrationForm = () => {
               postcode: '',
               state: '',
               school: '',
+              shirtSize: '',
               remarks: '',
               occupation: 'student',
-              checked: false
+              attendance: 'online',
+              checked: false,
+              registerChecked: false
             }}
             validationSchema={validationSchema}
             onSubmit={(values, actions) => handleSignUp(values, actions)}
@@ -560,22 +630,24 @@ const RegistrationForm = () => {
                   required
                   as={CustomPasswordField}
                 />
-                <Field
-                  type="number"
-                  name="age"
-                  label="Age"
-                  placeholder="e.g. 17"
-                  required
-                  as={CustomTextField}
-                />
-                <Field
-                  type="string"
-                  name="myKad"
-                  label="NRIC Number (without dashes)"
-                  placeholder="e.g. 901230064089"
-                  required
-                  as={CustomTextField}
-                />
+                <FourColumnRow>
+                  <Field
+                    type="number"
+                    name="age"
+                    label="Age"
+                    placeholder="e.g. 17"
+                    required
+                    as={CustomTextField}
+                  />
+                  <Field
+                    type="string"
+                    name="myKad"
+                    label="NRIC Number (without dashes)"
+                    placeholder="e.g. 901230064089"
+                    required
+                    as={CustomTextField}
+                  />
+                </FourColumnRow>
                 <Field
                   type="tel"
                   name="contactNumber"
@@ -583,6 +655,12 @@ const RegistrationForm = () => {
                   placeholder="e.g. 0123456789"
                   required
                   as={CustomTextField}
+                />
+                <RadioButton
+                  question={secondRadioButtonQuestion.question}
+                  options={secondRadioButtonQuestion.options}
+                  name={secondRadioButtonQuestion.name}
+                  func={handleRadioValueOnChange}
                 />
                 <Field
                   name="address"
@@ -608,24 +686,40 @@ const RegistrationForm = () => {
                   />
                 </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>
-                <Field name="state" label="State" required as={CustomSelect}>
-                  <MenuItem value="Johor">Johor</MenuItem>
-                  <MenuItem value="Kedah">Kedah</MenuItem>
-                  <MenuItem value="Kelantan">Kelantan</MenuItem>
-                  <MenuItem value="Kuala Lumpur">Kuala Lumpur</MenuItem>
-                  <MenuItem value="Labuan">Labuan</MenuItem>
-                  <MenuItem value="Malacca">Malacca</MenuItem>
-                  <MenuItem value="Negeri Sembilan">Negeri Sembilan</MenuItem>
-                  <MenuItem value="Pahang">Pahang</MenuItem>
-                  <MenuItem value="Penang">Penang</MenuItem>
-                  <MenuItem value="Perak">Perak</MenuItem>
-                  <MenuItem value="Perlis">Perlis</MenuItem>
-                  <MenuItem value="Putrajaya">Putrajaya</MenuItem>
-                  <MenuItem value="Sabah">Sabah</MenuItem>
-                  <MenuItem value="Sarawak">Sarawak</MenuItem>
-                  <MenuItem value="Selangor">Selangor</MenuItem>
-                  <MenuItem value="Terengganu">Terengganu</MenuItem>
-                </Field>
+                {/* <Field name="state" label="State" required as={CustomSelect}>
+                  {attendanceOption === 'online'
+                    ? listOfStates['online'].map((state) => {
+                        return (
+                          <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                            {state.value}
+                          </MenuItem>
+                        )
+                      })
+                    : listOfStates['inPerson'].map((state) => {
+                        return (
+                          <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                            {state.value}
+                          </MenuItem>
+                        )
+                      })}
+                </Field> */}
+                {attendanceOption === 'online' ? (
+                  <Field name="state" label="State" required as={CustomSelect}>
+                    {listOfStates['online'].map((state) => (
+                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                        {state.value}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                ) : (
+                  <Field name="state" label="State" required as={CustomSelect}>
+                    {listOfStates['inPerson'].map((state) => (
+                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                        {state.value}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                )}
                 <Field
                   name="school"
                   label="School"
@@ -633,34 +727,55 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
+                <RadioButton
+                  question={firstRadioButtonQuestion.question}
+                  options={firstRadioButtonQuestion.options}
+                  name={firstRadioButtonQuestion.name}
+                />
+                <StyledLabel htmlFor="shirtSize">
+                  T-Shirt size? Refer to sizing chart{' '}
+                  <a
+                    href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
+                    target="_blank"
+                    style={{ color: 'var(--color-orange)' }}
+                  >
+                    here
+                  </a>
+                  .*
+                </StyledLabel>
+                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
+                  {shirtSizes.map((size) => (
+                    <MenuItem key={size} value={size}>
+                      {size}
+                    </MenuItem>
+                  ))}
+                </Field>
                 <Field
                   name="remarks"
                   label="Remarks (if any)"
                   placeholder="e.g. So excited for IGNITEMY!"
                   as={CustomTextField}
                 />
-                <TabWrapper>
-                  <ActiveOccupationWrapper isActive={isActive} onClick={() => setActive(true)}>
-                    <label>
-                      <Field type="radio" name="occupation" value="student" />
-                      <Text>Student</Text>
-                    </label>
-                  </ActiveOccupationWrapper>
-                  <OccupationWrapper isActive={isActive} onClick={() => setActive(false)}>
-                    <label>
-                      <Field type="radio" name="occupation" value="teacher" />
-                      <Text>Teacher</Text>
-                    </label>
-                  </OccupationWrapper>
-                </TabWrapper>
                 <CheckboxGroup>
-                  <Field type="checkbox" name="checked" as={Checkbox} />
+                  <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
                   <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                    I have read the{' '}
-                    <span onClick={() => setShowModal(true)}>terms & conditions</span>
+                    I have informed my parent/guardian of the{' '}
+                    <span onClick={() => setShowModal(true)}>statements</span>
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="checked" component="div" />
+                <CheckboxGroup>
+                  <Field
+                    type="checkbox"
+                    name="registerChecked"
+                    id="registerChecked"
+                    as={Checkbox}
+                  />
+                  <label htmlFor="registerChecked" style={{ color: 'var(--color-white)' }}>
+                    I am registering for IGNITEMY2022
+                  </label>
+                </CheckboxGroup>
+                <StyledErrorMessage name="registerChecked" component="div" />
                 {!registered && error && (
                   <StyledAlert severity="error">
                     <Text size="1.2rem">{error}</Text>
@@ -677,6 +792,8 @@ const RegistrationForm = () => {
         </Container>
       )}
       <Modal showModal={showModal} closeModal={() => setShowModal(false)} />
+      <AlreadyRegisteredModal alreadyRegistered={alreadyRegistered} />
+      <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} />
     </ThemeProvider>
   )
 }

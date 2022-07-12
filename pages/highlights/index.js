@@ -13,7 +13,7 @@ const Highlights = () => {
       <Stats />
       <Logo />
       <Quotes />
-      <Video />
+      {/* <Video /> */}
       <Gallery />
     </Layout>
   )

@@ -5,26 +5,31 @@ import { Button } from '../../components'
 
 const SectionContainer = styled.section`
   width: 100%;
-  padding: 8rem 0;
+  // padding: 8rem 0;
+  padding: 9rem 0;
   background-color: ${(props) => props.bgcolor || 'var(--color-white)'};
   background: ${(props) => props.background};
 `
 
 const CountdownContainer = styled.div`
-  width: 70%;
+  width: 85%;
   max-width: 144rem;
-  padding: 8rem 0;
+  // padding: 8rem 0;
+  padding: 10rem 2rem;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-black);
-  border: 2rem solid var(--color-white);
+  // background-color: var(--color-black);
+  background-color: #ffffff10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  // border: 2rem solid var(--color-white);
   border-radius: 1rem;
   color: var(--color-white);
 
-  @media (max-width: 900px) {
-    border: 0.5rem solid var(--color-white);
-  }
+  // @media (max-width: 900px) {
+  //   border: 0.5rem solid var(--color-white);
+  // }
 
   @media (max-width: 750px) {
     width: 90%;
@@ -66,7 +71,7 @@ const SharedStyles = css`
 `
 const Number = styled.div`
   ${SharedStyles}
-
+  text-shadow: 1px 1px 2px #000000;
   @media (max-width: 1020px) {
     font-size: 4.8rem;
     margin: 0 0.2rem;
@@ -167,7 +172,7 @@ const Countdown = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
     // Date format MM/DD/YYYY
-    let difference = new Date(`09/04/${year} 10:00`) - new Date()
+    let difference = new Date(`09/24/${year} 10:00`) - new Date()
     let timeLeft = {}
 
     if (difference > 0) {
@@ -283,7 +288,8 @@ const Countdown = () => {
 
   return (
     <>
-      <SectionContainer background="linear-gradient(90deg, #FC6076 0%, #FF9A44 100%);">
+    {/* previously bg gradient used is linear-gradient(90deg, #FC6076 0%, #FF9A44 100%); */}
+      <SectionContainer background="url(/images/jpg/countdown-2022-banner.jpg)">
         <CountdownContainer>
           <StyledContainer>{isEventStart ? eventStart : timerComponents}</StyledContainer>
           

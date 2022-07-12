@@ -4,22 +4,24 @@ import Image from 'next/image'
 import { Heading } from '../../components'
 
 const BannerContainer = styled.div`
-  height: 88rem;
+  height: calc(100vh - 100px);
   position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 26rem;
+  align-items: center;
+  padding: 0 8rem;
 
   @media (max-width: 480px) {
-    padding-top: 16rem;
-    height: 68rem;
+    padding: 8rem 1.6rem;
   }
 `
 
 const BannerContent = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100rem;
 `
 
 const StyledImage = styled(Image)`
@@ -29,48 +31,46 @@ const StyledImage = styled(Image)`
 const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+`
+
+const ImageWrapper = styled.div`
+  height: 173px;
+  margin-right: 2.5rem;
+
+  @media (max-width: 900px) {
+    margin: 0 0 2.5rem;
+  }
+`
+
+const RightContent = styled.div`
+  margin-left: 2.5rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 900px) {
-    align-items: center;
+    margin: 2.5rem 0 0;
   }
 `
-
-const LogoWrapper = styled.div`
-  height: 173px;
-  display: flex;
-  justify-content: center;
-
+const StyledHeading = styled(Heading)`
   @media (max-width: 480px) {
-    width: 320px;
-    height: 110px;
+    font-size: 2.8rem;
   }
-`
-
-const EventDetails = styled.div`
-  margin-top: 7.6rem;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 480px) {
-    span {
-      font-size: 2.8rem;
-    }
-  }
-`
-const StreamingLive = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: flex-start;
 `
 
 const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/png/rally-banner.png"
-        alt="Campfire"
+        src="/images/jpg/night-sky.jpg"
+        alt="Flame pattern"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
@@ -78,58 +78,38 @@ const Banner = () => {
       />
       <BannerContent>
         <ContentWrapper>
-          <LogoWrapper>
+          <ImageWrapper>
             <Image
               src="/images/png/ignite-rally.png"
               alt="Ignite youth leadership summit logo"
-              height={202}
-              width={526}
+              height={146}
+              width={379}
               priority="true"
             />
-          </LogoWrapper>
-          <EventDetails>
-            <Heading as="span" size="3.6rem" align="center" color="white" fstyle="italic" lh="4rem">
-              4TH SEPT 2021
-            </Heading>
-            <Heading
-              as="span"
+          </ImageWrapper>
+          <RightContent>
+            <StyledHeading
+              as="h3"
               size="3.6rem"
-              align="center"
+              align="right"
               color="white"
+              fstyle="italic"
+              lh="4rem"
+            >
+              24TH SEPT 2022
+            </StyledHeading>
+            <Heading
+              as="h3"
+              size="3.6rem"
+              align="right"
+              color="orange"
               fstyle="italic"
               mt="2.4rem"
               lh="4rem"
             >
-              8.00PM - 10.00PM
+              IN PERSON. ONLINE
             </Heading>
-            <StreamingLive>
-              <Heading
-                as="span"
-                size="3.6rem"
-                align="center"
-                color="orange"
-                fstyle="italic"
-                mt="2.4rem"
-                lh="4rem"
-                width="auto"
-              >
-                STREAMING
-              </Heading>
-              <Heading
-                as="span"
-                size="3.6rem"
-                align="center"
-                color="white"
-                fstyle="italic"
-                mt="2.4rem"
-                ml="1.2rem"
-                lh="4rem"
-                width="auto"
-              >
-                LIVE
-              </Heading>
-            </StreamingLive>
-          </EventDetails>
+          </RightContent>
         </ContentWrapper>
       </BannerContent>
     </BannerContainer>

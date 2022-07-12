@@ -13,6 +13,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { Button, Text, Heading } from '@/components/index'
 import { useAuth } from '@/helpers/auth'
+import { getUserByUserId } from '@/helpers/firebase'
 
 const theme = createMuiTheme({
   palette: {
@@ -198,7 +199,14 @@ const LoginForm = () => {
   const handleLogin = async (values, actions) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-      router.push(`/${redirect}`)
+      const currentUser = firebase.auth().currentUser
+      if (currentUser) {
+        const uid = currentUser.uid
+        let userDocument = await getUserByUserId(uid)
+        if (userDocument[0].ignite2022 === null || userDocument[0].ignite2022 === undefined)
+          router.push('/ext-register')
+        else router.push(`/${redirect}`)
+      }
     } catch (error) {
       setError(error.message)
       actions.resetErrors()

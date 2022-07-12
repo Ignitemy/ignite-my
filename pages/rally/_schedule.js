@@ -1,194 +1,256 @@
 import React from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import { HeadingShadow } from '../../components'
 import Image from 'next/image'
-import { Heading, Text } from '../../components'
 
 const SectionContainer = styled.section`
   width: 100%;
-  padding: 8rem 0;
-  overflow-x: hidden;
-  background-color: ${(props) => props.bgcolor || 'var(--color-white)'};
+  padding: 4rem 3rem 9rem;
+  background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   background: ${(props) => props.background};
+
+  @media (min-width: 768px) {
+    padding: 4rem 6rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 4rem 7rem;
+  }
+  @media (min-width: 1440px) {
+    padding: 4rem 16rem;
+  }
+  @media (min-width: 1700px) {
+    padding: 4rem 34rem;
+  }
 `
 
-const Container = styled.div`
-  width: 90%;
-  margin: 0 auto;
+const SectionContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
 `
 
-// const StyledHeading = styled(Heading)`
-//   -webkit-text-stroke: 3px ${(props) => props.stroke}; /* stroke width and color */
-//   -webkit-font-smoothing: antialiased;
-//   color: transparent;
-//   letter-spacing: 10px;
-//   text-indent: 10px;
-//   text-align: center;
-//   width: auto;
-//   padding: 0.4rem;
-//   border-top: 4px solid var(--color-white);
-//   border-bottom: 4px solid var(--color-white);
+const StyledImage = styled.div`
+  height: inherit;
+  display: none;
+  align-items: flex-end;
 
-//   @media (max-width: 900px) {
-//     font-size: 4.8rem;
-//   }
-//   @media (max-width: 480px) {
-//     font-size: 3.2rem;
-//     line-height: 3.6rem;
-//     border-top: 2px solid var(--color-white);
-//     border-bottom: 2px solid var(--color-white);
-//     -webkit-text-stroke: 2px ${(props) => props.stroke};
-//   }
-// `
+  @media (min-width: 1025px) {
+    display: flex;
+    width: 364px;
+  }
+  @media (min-width: 1280px) {
+    width: 396px;
+  }
+`
 
-const ScheduleWrapper = styled.div`
+const Heading = styled.p`
+  font-weight: 800;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 35px;
+  color: ${(props) => props.color || 'var(--color-white)'};
+  text-transform: capitalize;
+`
+
+const TableSectionContainer = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  max-width: 112rem;
-  margin-top: 4.8rem;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
-`
-
-const SummitWrapper = styled.div`
-  margin-right: 3.8rem;
-`
-
-const RallyWrapper = styled.div`
-  display: flex;
-
-  @media (max-width: 900px) {
-    justify-content: flex-end;
-    margin-top: 2rem;
-  }
-`
-
-const DateWrapper = styled.div`
-  display: flex;
-  margin-top: 4.8rem;
-
-  @media (max-width: 480px) {
-    h4 {
-      font-size: 3.2rem;
-    }
-  }
-`
-
-const LeftDate = styled.div`
-  display: flex;
+  margin-top: 4rem;
   flex-direction: column;
-  margin-right: 2rem;
+  gap: 5rem;
+  position: relative;
 
-  @media (max-width: 480px) {
-    margin-right: 1.2rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+  @media (min-width: 1280px) {
+    justify-content: flex-start;
+    margin-top: 0;
+    margin-left:10rem;
+    gap: 5rem;
+    width: auto;
   }
 `
-const RightDate = styled.div`
-  display: flex;
-  flex-direction: column;
+
+const StyledTable = styled.table`
+  text-align: left;
+  border-collapse: collapse;
+  margin-top: 3rem;
 `
 
-export const Marquee = styled.div`
-  display: flex;
-  width: 100vw;
-  margin: 0 auto;
-  white-space: nowrap;
-  display: block;
-  transform: rotate(-1.5deg);
+const StyledLeftTd = styled.td`
+  font-size: 18px;
+  color: ${(props) => props.color || 'var(--color-white)'};
+  letter-spacing: 2px;
+  padding: 1rem 0;
 `
 
-export const MarqueeText = styled(Text)`
-  display: inline-block;
-  overflow-x: hidden;
-  text-indent: 0;
-  font-weight: 600;
-  font-size: calc(6rem + (80 - 38) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(10rem + (80 - 38) * ((100vw - 320px) / (1600 - 320)));
-  border-top: 3px solid var(--color-white);
-  border-bottom: 3px solid var(--color-white);
-  will-change: transform !important;
-  margin: 2.4rem 0;
-  -webkit-text-fill-color: var(--color-black);
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: var(--color-white);
+const StyledRightTd = styled.td`
+  font-size: 18px;
+  color: ${(props) => props.color || 'var(--color-white)'};
+  letter-spacing: 2px;
+  padding: 1rem 0 1rem 3rem;
+`
 
-  :hover {
-    background-color: var(--color-white);
-    -webkit-text-stroke-color: var(--color-black);
-    -webkit-text-fill-color: initial;
-    text-decoration: line-through;
+const AbosoluteDate = styled.p`
+  position: absolute;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 27px;
+  text-align: center;
+  color: var(--color-orange);
+  width: 100%;
+  bottom: -8rem;
+  left: 0;
+
+  @media (min-width: 768px) {
+    bottom: -5rem;
   }
 `
-const MarqueeTextMotion = motion(MarqueeText)
 
-const IgnitesYou = () => {
-  const marqueeText = Array(10)
-    .fill(` SCHEDULE -`)
-    .map((name) => name)
+const summitTimetable = [
+  {
+    color: 'var(--color-white)',
+    time: '10:00',
+    activity: 'Welcome + Worship'
+  },
+  {
+    color: 'var(--color-orange)',
+    time: '10:20',
+    activity: 'Session 1'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '10:50',
+    activity: 'Discussion'
+  },
+  {
+    color: 'var(--color-orange)',
+    time: '11:00',
+    activity: 'Session 2'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '11:30',
+    activity: 'Discussion'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '12:00',
+    activity: 'Lunch (on your own)'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '13:00',
+    activity: 'Special Item'
+  },
+  {
+    color: 'var(--color-orange)',
+    time: '13:20',
+    activity: 'Session 3'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '13:50',
+    activity: 'Discussion'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '14:00',
+    activity: 'Summit Up'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '15:00',
+    activity: 'Closing'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '15:30',
+    activity: 'End'
+  }
+]
+
+const rallyTimetable = [
+  {
+    color: 'var(--color-white)',
+    time: '19:45',
+    activity: 'Icebreaker'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '20:00',
+    activity: 'Welcome + Worship'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '20:30',
+    activity: 'Activities'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '20:50',
+    activity: 'Word'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '21:20',
+    activity: 'Altar Call'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '21:50',
+    activity: 'Closing'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '22:00',
+    activity: 'End'
+  }
+]
+
+const Schedule = () => {
   return (
-    <>
-      <SectionContainer bgcolor="var(--color-black)">
-        <Marquee>
-          <MarqueeTextMotion
-            animate={{
-              x: ['-50.28%', '0%']
-            }}
-            transition={{
-              ease: 'linear',
-              duration: 18,
-              repeat: Infinity
-            }}
-          >
-            {marqueeText}
-          </MarqueeTextMotion>
-        </Marquee>
-        <Container>
-          {/* <StyledHeading
-            size="6.4rem"
-            align="center"
-            weight="bold"
-            lh="7.2rem"
-            stroke="var(--color-white)"
-          >
-            SCHEDULE
-          </StyledHeading> */}
-          <ScheduleWrapper>
-            <SummitWrapper>
-              <Image src="/images/png/summit-schedule-dark.png" width={533} height={528} />
-            </SummitWrapper>
-            <RallyWrapper>
-              <Image src="/images/png/rally-schedule-dark.png" width={538} height={528} />
-            </RallyWrapper>
-          </ScheduleWrapper>
-          <DateWrapper>
-            <LeftDate>
-              <Heading color="white" as="h4" size="4.8rem" lh="5rem" align="right">
-                4TH
-              </Heading>
-              <Heading color="white" as="h4" size="4.8rem" lh="5rem" align="right">
-                SEPT
-              </Heading>
-            </LeftDate>
-            <RightDate>
-              <Heading color="white" as="h4" size="4.8rem" lh="5rem" align="left">
-                20
-              </Heading>
-              <Heading color="white" as="h4" size="4.8rem" lh="5rem" align="left">
-                21
-              </Heading>
-            </RightDate>
-          </DateWrapper>
-        </Container>
-      </SectionContainer>
-    </>
+    <SectionContainer>
+      <HeadingShadow>Schedule</HeadingShadow>
+      <SectionContentWrapper>
+        <StyledImage>
+          <Image src="/images/png/schedule-dwg.png" alt="in person" width={395} height={294} />
+        </StyledImage>
+        <TableSectionContainer>
+          {/* <div>
+            <Heading>SUMMIT</Heading>
+            <StyledTable>
+              <tbody>
+                {summitTimetable.map((iteniary) => (
+                  <tr key={iteniary.time}>
+                    <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
+                    <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </div> */}
+          <div>
+            <Heading>RALLY</Heading>
+            <StyledTable>
+              <tbody>
+                {rallyTimetable.map((iteniary) => (
+                  <tr key={iteniary.time}>
+                    <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
+                    <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </div>
+          <AbosoluteDate>24 September 2022, Saturday</AbosoluteDate>
+        </TableSectionContainer>
+      </SectionContentWrapper>
+    </SectionContainer>
   )
 }
 
-export default IgnitesYou
+export default Schedule
