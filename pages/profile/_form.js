@@ -255,7 +255,6 @@ const Profile = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        {console.log(userData)}
         <FormHeading>
           <Heading
             as="h2"
