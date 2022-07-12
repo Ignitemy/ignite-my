@@ -263,44 +263,26 @@ const FourColumnRow = styled.div`
   }
 `
 
-const listOfStates = {
-  online: [
-    { value: 'Johor', disabled: false },
-    { value: 'Kedah', disabled: false },
-    { value: 'Kelantan', disabled: false },
-    { value: 'Kuala Lumpur', disabled: false },
-    { value: 'Labuan', disabled: false },
-    { value: 'Malacca', disabled: false },
-    { value: 'Negeri Sembilan', disabled: false },
-    { value: 'Pahang', disabled: false },
-    { value: 'Penang', disabled: false },
-    { value: 'Perak', disabled: false },
-    { value: 'Perlis', disabled: false },
-    { value: 'Putrajaya', disabled: false },
-    { value: 'Sabah', disabled: false },
-    { value: 'Sarawak', disabled: false },
-    { value: 'Selangor', disabled: false },
-    { value: 'Terrengganu', disabled: false }
-  ],
-  inPerson: [
-    { value: 'Johor', disabled: true },
-    { value: 'Kedah', disabled: true },
-    { value: 'Kelantan', disabled: true },
-    { value: 'Kuala Lumpur', disabled: false },
-    { value: 'Labuan', disabled: true },
-    { value: 'Malacca', disabled: true },
-    { value: 'Negeri Sembilan', disabled: true },
-    { value: 'Pahang', disabled: true },
-    { value: 'Penang', disabled: true },
-    { value: 'Perak', disabled: true },
-    { value: 'Perlis', disabled: true },
-    { value: 'Putrajaya', disabled: false },
-    { value: 'Sabah', disabled: true },
-    { value: 'Sarawak', disabled: true },
-    { value: 'Selangor', disabled: false },
-    { value: 'Terrengganu', disabled: true }
-  ]
-}
+const listOfStates = [
+  { value: 'Johor', disabled: false },
+  { value: 'Kedah', disabled: false },
+  { value: 'Kelantan', disabled: false },
+  { value: 'Kuala Lumpur', disabled: false },
+  { value: 'Labuan', disabled: false },
+  { value: 'Malacca', disabled: false },
+  { value: 'Negeri Sembilan', disabled: false },
+  { value: 'Pahang', disabled: false },
+  { value: 'Penang', disabled: false },
+  { value: 'Perak', disabled: false },
+  { value: 'Perlis', disabled: false },
+  { value: 'Putrajaya', disabled: false },
+  { value: 'Sabah', disabled: false },
+  { value: 'Sarawak', disabled: false },
+  { value: 'Selangor', disabled: false },
+  { value: 'Terrengganu', disabled: false }
+]
+
+const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
 
 const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
@@ -377,18 +359,16 @@ const RegistrationForm = () => {
   const router = useRouter()
   const { firebase } = useContext(FirebaseContext)
 
-  const [attendanceOption, setAttendanceOption] = useState('online')
   const [showModal, setShowModal] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [registered, setRegistered] = useState(false)
-  // const [isActive, setActive] = useState(true)
   // Once we check that the user has already had an account, we can set this to true
   const [alreadyRegistered, setAlreadyRegistered] = useState(false)
   // for state blocking error modal
   const [stateErrorModal, setStateErrorModal] = useState(false)
   // for filter option
-  // const [filterOption, setfilterOption] = useState('online')
+  const [filterOption, setfilterOption] = useState('online')
 
   useEffect(() => {
     showModal || alreadyRegistered
@@ -409,17 +389,13 @@ const RegistrationForm = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
-  const handleRadioValueOnChange = (e) => {
+  const handleRadioValueOnChange = (e, setFieldValue) => {
     const selectedAttendanceOption = e.target.value
-    // const includedLocation = ['Selangor', 'Putrajaya', 'Kuala Lumpur']
-    const selectQuestion = document.querySelector('.MuiSelect-root.MuiSelect-select')
     if (selectedAttendanceOption === 'online') {
-      setAttendanceOption(selectedAttendanceOption)
-      // setfilterOption(selectedAttendanceOption)
+      setfilterOption(selectedAttendanceOption)
     } else {
-      selectQuestion.textContent = ''
-      setAttendanceOption('inPerson')
-      // setfilterOption('inPerson')
+      setFieldValue('state', '')
+      setfilterOption('inPerson')
     }
   }
 
@@ -606,7 +582,7 @@ const RegistrationForm = () => {
             validationSchema={validationSchema}
             onSubmit={(values, actions) => handleSignUp(values, actions)}
           >
-            {({ isSubmitting, dirty, isValid }) => (
+            {({ isSubmitting, dirty, isValid, setFieldValue }) => (
               <StyledForm autoComplete="off">
                 <Field
                   name="fullName"
@@ -656,11 +632,13 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
+                {/* https://web-brackets.com/discussion/12/how-to-use-setfieldvalue-from-outside-render-function-formik */}
+                {/* https://stackoverflow.com/questions/66235334/formik-setfieldvalue-inside-a-function */}
                 <RadioButton
                   question={secondRadioButtonQuestion.question}
                   options={secondRadioButtonQuestion.options}
                   name={secondRadioButtonQuestion.name}
-                  func={handleRadioValueOnChange}
+                  func={(e) => handleRadioValueOnChange(e, setFieldValue)}
                 />
                 <Field
                   name="address"
@@ -686,40 +664,24 @@ const RegistrationForm = () => {
                   />
                 </TwoColumnRow>
                 <StyledLabel htmlFor="State">State *</StyledLabel>
-                {/* <Field name="state" label="State" required as={CustomSelect}>
-                  {attendanceOption === 'online'
-                    ? listOfStates['online'].map((state) => {
-                        return (
-                          <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                            {state.value}
-                          </MenuItem>
-                        )
-                      })
-                    : listOfStates['inPerson'].map((state) => {
-                        return (
-                          <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                            {state.value}
-                          </MenuItem>
-                        )
-                      })}
-                </Field> */}
-                {attendanceOption === 'online' ? (
-                  <Field name="state" label="State" required as={CustomSelect}>
-                    {listOfStates['online'].map((state) => (
-                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                        {state.value}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                ) : (
-                  <Field name="state" label="State" required as={CustomSelect}>
-                    {listOfStates['inPerson'].map((state) => (
-                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                        {state.value}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                )}
+                <Field name="state" label="State" required as={CustomSelect}>
+                  {listOfStates
+                    .filter((state) => {
+                      if (filterOption === 'inPerson' && !stateForInPerson.includes(state.value)) {
+                        state.disabled = true
+                        return state
+                      }
+                      state.disabled = false
+                      return state
+                    })
+                    .map((state) => {
+                      return (
+                        <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                          {state.value}
+                        </MenuItem>
+                      )
+                    })}
+                </Field>
                 <Field
                   name="school"
                   label="School"

@@ -280,44 +280,26 @@ const RegisteredContainer = styled.div`
   }
 `
 
-const listOfStates = {
-  online: [
-    { value: 'Johor', disabled: false },
-    { value: 'Kedah', disabled: false },
-    { value: 'Kelantan', disabled: false },
-    { value: 'Kuala Lumpur', disabled: false },
-    { value: 'Labuan', disabled: false },
-    { value: 'Malacca', disabled: false },
-    { value: 'Negeri Sembilan', disabled: false },
-    { value: 'Pahang', disabled: false },
-    { value: 'Penang', disabled: false },
-    { value: 'Perak', disabled: false },
-    { value: 'Perlis', disabled: false },
-    { value: 'Putrajaya', disabled: false },
-    { value: 'Sabah', disabled: false },
-    { value: 'Sarawak', disabled: false },
-    { value: 'Selangor', disabled: false },
-    { value: 'Terrengganu', disabled: false }
-  ],
-  inPerson: [
-    { value: 'Johor', disabled: true },
-    { value: 'Kedah', disabled: true },
-    { value: 'Kelantan', disabled: true },
-    { value: 'Kuala Lumpur', disabled: false },
-    { value: 'Labuan', disabled: true },
-    { value: 'Malacca', disabled: true },
-    { value: 'Negeri Sembilan', disabled: true },
-    { value: 'Pahang', disabled: true },
-    { value: 'Penang', disabled: true },
-    { value: 'Perak', disabled: true },
-    { value: 'Perlis', disabled: true },
-    { value: 'Putrajaya', disabled: false },
-    { value: 'Sabah', disabled: true },
-    { value: 'Sarawak', disabled: true },
-    { value: 'Selangor', disabled: false },
-    { value: 'Terrengganu', disabled: true }
-  ]
-}
+const listOfStates = [
+  { value: 'Johor', disabled: false },
+  { value: 'Kedah', disabled: false },
+  { value: 'Kelantan', disabled: false },
+  { value: 'Kuala Lumpur', disabled: false },
+  { value: 'Labuan', disabled: false },
+  { value: 'Malacca', disabled: false },
+  { value: 'Negeri Sembilan', disabled: false },
+  { value: 'Pahang', disabled: false },
+  { value: 'Penang', disabled: false },
+  { value: 'Perak', disabled: false },
+  { value: 'Perlis', disabled: false },
+  { value: 'Putrajaya', disabled: false },
+  { value: 'Sabah', disabled: false },
+  { value: 'Sarawak', disabled: false },
+  { value: 'Selangor', disabled: false },
+  { value: 'Terrengganu', disabled: false }
+]
+
+const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
 
 const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
@@ -379,7 +361,8 @@ const ShortRegistrationForm = () => {
   const { firebase } = useContext(FirebaseContext)
   const [userData, setUserData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
-  const [attendanceOption, setAttendanceOption] = useState('online')
+  // for filter option
+  const [filterOption, setfilterOption] = useState('online')
   const [stateErrorModal, setStateErrorModal] = useState(false)
   const [registered, setRegistered] = useState(false)
 
@@ -406,19 +389,16 @@ const ShortRegistrationForm = () => {
     return <h1>Loading...</h1>
   }
 
-  const handleRadioValueOnChange = (e) => {
+  const handleRadioValueOnChange = (e, setFieldValue) => {
     const selectedAttendanceOption = e.target.value
-    const selectQuestion = document.querySelector('.MuiSelect-root.MuiSelect-select')
     if (selectedAttendanceOption === 'online') {
-      setAttendanceOption(selectedAttendanceOption)
+      setfilterOption(selectedAttendanceOption)
     } else {
-      selectQuestion.textContent = ''
-      setAttendanceOption('inPerson')
+      setFieldValue('state', '')
+      setfilterOption('inPerson')
     }
   }
 
-  //todo: need to modify the submit function below
-  // similar to the one in registration
   const handleRegistration = async (values, actions) => {
     actions.setSubmitting(true)
     const statesAllowedForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
@@ -459,7 +439,7 @@ const ShortRegistrationForm = () => {
       // once done redirect to home page
       setTimeout(() => {
         router.push('/')
-      }, 2000);
+      }, 2000)
     } catch (error) {
       console.log(error)
     }
@@ -511,131 +491,146 @@ const ShortRegistrationForm = () => {
               validationSchema={validationSchema}
               onSubmit={(values, actions) => handleRegistration(values, actions)}
             >
-              <StyledForm autoComplete="off">
-                <FormWrapper>
-                  <FourColumnRow>
+              {({ isSubmitting, dirty, isValid, setFieldValue }) => (
+                <StyledForm autoComplete="off">
+                  <FormWrapper>
+                    <FourColumnRow>
+                      <Field
+                        type="number"
+                        name="age"
+                        label="Age"
+                        value={userData.age}
+                        required
+                        as={CustomTextField}
+                      />
+                      <Field
+                        type="string"
+                        name="myKad"
+                        label="NRIC Number (without dashes)"
+                        value={userData.myKad}
+                        required
+                        as={CustomTextField}
+                      />
+                    </FourColumnRow>
                     <Field
-                      type="number"
-                      name="age"
-                      label="Age"
-                      value={userData.age}
+                      type="tel"
+                      name="contactNumber"
+                      label="Contact Number (without dashes)"
+                      value={userData.contactNumber}
                       required
                       as={CustomTextField}
                     />
+                    <RadioButton
+                      question={secondRadioButtonQuestion.question}
+                      options={secondRadioButtonQuestion.options}
+                      name={secondRadioButtonQuestion.name}
+                      func={(e) => handleRadioValueOnChange(e, setFieldValue)}
+                    />
                     <Field
-                      type="string"
-                      name="myKad"
-                      label="NRIC Number (without dashes)"
-                      value={userData.myKad}
+                      name="address"
+                      label="House Unit Number & Street Address"
+                      value={userData.address}
                       required
                       as={CustomTextField}
                     />
-                  </FourColumnRow>
-                  <Field
-                    type="tel"
-                    name="contactNumber"
-                    label="Contact Number (without dashes)"
-                    value={userData.contactNumber}
-                    required
-                    as={CustomTextField}
-                  />
-                  <RadioButton
-                    question={secondRadioButtonQuestion.question}
-                    options={secondRadioButtonQuestion.options}
-                    name={secondRadioButtonQuestion.name}
-                    func={handleRadioValueOnChange}
-                  />
-                  <Field
-                    name="address"
-                    label="House Unit Number & Street Address"
-                    value={userData.address}
-                    required
-                    as={CustomTextField}
-                  />
-                  <TwoColumnRow>
-                    <Field
-                      name="city"
-                      label="City"
-                      value={userData.city}
-                      required
-                      as={CustomTextField}
-                    />
-                    <Field
-                      name="postcode"
-                      label="Postcode"
-                      value={userData.postcode}
-                      required
-                      as={CustomTextField}
-                    />
-                  </TwoColumnRow>
-                  <StyledLabel htmlFor="State">State *</StyledLabel>
-                  {attendanceOption === 'online' ? (
+                    <TwoColumnRow>
+                      <Field
+                        name="city"
+                        label="City"
+                        value={userData.city}
+                        required
+                        as={CustomTextField}
+                      />
+                      <Field
+                        name="postcode"
+                        label="Postcode"
+                        value={userData.postcode}
+                        required
+                        as={CustomTextField}
+                      />
+                    </TwoColumnRow>
+                    <StyledLabel htmlFor="State">State *</StyledLabel>
                     <Field name="state" label="State" required as={CustomSelect}>
-                      {listOfStates['online'].map((state) => (
-                        <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                          {state.value}
+                      {listOfStates
+                        .filter((state) => {
+                          if (
+                            filterOption === 'inPerson' &&
+                            !stateForInPerson.includes(state.value)
+                          ) {
+                            state.disabled = true
+                            return state
+                          }
+                          state.disabled = false
+                          return state
+                        })
+                        .map((state) => {
+                          return (
+                            <MenuItem
+                              key={state.value}
+                              value={state.value}
+                              disabled={state.disabled}
+                            >
+                              {state.value}
+                            </MenuItem>
+                          )
+                        })}
+                    </Field>
+                    <Field
+                      name="school"
+                      label="School"
+                      value={userData.school}
+                      required
+                      as={CustomTextField}
+                    />
+                    <RadioButton
+                      question={firstRadioButtonQuestion.question}
+                      options={firstRadioButtonQuestion.options}
+                      name={firstRadioButtonQuestion.name}
+                    />
+                    <StyledLabel htmlFor="shirtSize">
+                      T-Shirt size? Refer to sizing chart{' '}
+                      <a
+                        href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
+                        target="_blank"
+                        style={{ color: 'var(--color-orange)' }}
+                      >
+                        here
+                      </a>
+                      .*
+                    </StyledLabel>
+                    <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
+                      {shirtSizes.map((size) => (
+                        <MenuItem key={size} value={size}>
+                          {size}
                         </MenuItem>
                       ))}
                     </Field>
-                  ) : (
-                    <Field name="state" label="State" required as={CustomSelect}>
-                      {listOfStates['inPerson'].map((state) => (
-                        <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                          {state.value}
-                        </MenuItem>
-                      ))}
-                    </Field>
-                  )}
-                  <Field
-                    name="school"
-                    label="School"
-                    value={userData.school}
-                    required
-                    as={CustomTextField}
-                  />
-                  <RadioButton
-                    question={firstRadioButtonQuestion.question}
-                    options={firstRadioButtonQuestion.options}
-                    name={firstRadioButtonQuestion.name}
-                  />
-                  <StyledLabel htmlFor="shirtSize">
-                    T-Shirt size? Refer to sizing chart{' '}
-                    <a
-                      href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
-                      target="_blank"
-                      style={{ color: 'var(--color-orange)' }}
-                    >
-                      here
-                    </a>
-                    .*
-                  </StyledLabel>
-                  <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
-                    {shirtSizes.map((size) => (
-                      <MenuItem key={size} value={size}>
-                        {size}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                  <Field
-                    name="remarks"
-                    label="Remarks (if any)"
-                    placeholder="e.g. So excited for IGNITEMY!"
-                    as={CustomTextField}
-                  />
-                  <CheckboxGroup>
-                    <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
-                    <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                      All the info above are correct
-                    </label>
-                  </CheckboxGroup>
-                  <StyledErrorMessage name="checked" component="div" />
-                  <ButtonWrapper>
-                    <Button style={{ width: '100%' }} orange="true" type="submit">
-                      Confirm
-                    </Button>
-                  </ButtonWrapper>
-                </FormWrapper>
-              </StyledForm>
+                    <Field
+                      name="remarks"
+                      label="Remarks (if any)"
+                      placeholder="e.g. So excited for IGNITEMY!"
+                      as={CustomTextField}
+                    />
+                    <CheckboxGroup>
+                      <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
+                      <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
+                        All the info above are correct
+                      </label>
+                    </CheckboxGroup>
+                    <StyledErrorMessage name="checked" component="div" />
+                    <ButtonWrapper>
+                      <Button
+                        style={{ width: '100%' }}
+                        orange="true"
+                        type="submit"
+                        disabled={!isValid || !dirty || isSubmitting}
+                      >
+                        Confirm
+                      </Button>
+                    </ButtonWrapper>
+                  </FormWrapper>
+                </StyledForm>
+              )}
             </Formik>
           </FormContainer>
         )}
