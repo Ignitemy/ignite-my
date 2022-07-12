@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Text } from '../../components'
+import { Heading } from '../../components'
 
 const SectionContainer = styled.section`
   display: flex;
@@ -51,9 +51,25 @@ const Unit = styled.div`
     font-size:1.7rem;
     }
 `
+
+const StyledHeading = styled(Heading)`
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    margin: 2.4rem;
+  }
+`
+const OrangeSpan = styled.span`
+  color: var(--color-orange);
+`
+
 const Stats = () => {
     return (
       <SectionContainer>
+
+        <StyledHeading size="3.6rem" color="white" fstyle="italic" align="center" mt="3.6rem">
+          Here's what happened last year in <OrangeSpan>IGNITEMY2021</OrangeSpan>
+        </StyledHeading>
+      
         <OuterContainer>
           <Stat>
             <Number color="var(--color-orange)" fontSize="6.4rem">

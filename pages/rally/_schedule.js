@@ -110,84 +110,21 @@ const AbosoluteDate = styled.p`
   }
 `
 
-const summitTimetable = [
-  {
-    color: 'var(--color-white)',
-    time: '10:00',
-    activity: 'Welcome + Worship'
-  },
-  {
-    color: 'var(--color-orange)',
-    time: '10:20',
-    activity: 'Session 1'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '10:50',
-    activity: 'Discussion'
-  },
-  {
-    color: 'var(--color-orange)',
-    time: '11:00',
-    activity: 'Session 2'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '11:30',
-    activity: 'Discussion'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '12:00',
-    activity: 'Lunch (on your own)'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '13:00',
-    activity: 'Special Item'
-  },
-  {
-    color: 'var(--color-orange)',
-    time: '13:20',
-    activity: 'Session 3'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '13:50',
-    activity: 'Discussion'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '14:00',
-    activity: 'Summit Up'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '15:00',
-    activity: 'Closing'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '15:30',
-    activity: 'End'
-  }
-]
-
 const rallyTimetable = [
   {
     color: 'var(--color-white)',
     time: '19:45',
-    activity: 'Icebreaker'
+    activity: 'Doors Open'
   },
   {
     color: 'var(--color-white)',
     time: '20:00',
-    activity: 'Welcome + Worship'
+    activity: 'Welcome + Activities'
   },
   {
     color: 'var(--color-white)',
     time: '20:30',
-    activity: 'Activities'
+    activity: 'Worship'
   },
   {
     color: 'var(--color-white)',
@@ -196,13 +133,8 @@ const rallyTimetable = [
   },
   {
     color: 'var(--color-white)',
-    time: '21:20',
+    time: '21:30',
     activity: 'Altar Call'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '21:50',
-    activity: 'Closing'
   },
   {
     color: 'var(--color-white)',

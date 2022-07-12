@@ -9,10 +9,10 @@ import Gallery from './_gallery'
 const Highlights = () => {
   return (
     <Layout title="IGNITEMY2021 | Highlights">
-      <HeaderButtons />
+      {/* <HeaderButtons /> */}
       <Stats />
-      <Logo />
-      <Quotes />
+      {/* <Logo /> */}
+      {/* <Quotes /> */}
       {/* <Video /> */}
       <Gallery />
     </Layout>

@@ -56,19 +56,24 @@ const Faq = () => {
       answer: 'A: For all high school students who aspire to be a change in their schools!'
     },
     {
-      question: 'Q: Can I still register after 21st August, 2022?',
+      question: 'Q: Can I still register after 22nd August 2022?',
       answer:
         'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2022 booklet). So register now!'
     },
     {
       question: 'Q: I stay in Singapore. Can I attend IGNITEMY2022 in-person? ',
       answer:
-        'A: Unfortunately, the option to attend in-person is only available to attendees from the Klang Vally. You can still join us online! We are excited to have you! :D'
+        'A: Unfortunately, the option to attend in-person is only available to attendees from the Klang Valley. You can still join us online! We are excited to have you! :D'
     },
     {
       question: 'Q: What do I need to bring? ',
       answer:
         'A: First, bring the items from your summit kit! Second, bring water and lunch money! Last, yourself and your friends for the night rally! See you then!'
+    },
+    {
+      question: 'Q: Are In-person seats limited?? ',
+      answer:
+        'A: Yes! Seats are limited, so register now to book your seat!'
     }
   ]
   return (

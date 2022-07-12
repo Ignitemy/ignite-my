@@ -219,7 +219,7 @@ const LoginForm = () => {
       <Container>
         <FlexCenter>
           {!action ? (
-            <Image src="/images/png/login-for.png" height={82} width={461} />
+            <Image src="/images/png/login-for-2022.png" height={90} width={500} />
           ) : (
             <Heading size="3.6rem" fstyle="italic" color="white" align="center">
               PLEASE LOG IN TO VIEW PAGE

@@ -46,6 +46,28 @@ const SpeakerDetails = styled.p`
   font-size: 1.6rem;
   line-height: 30px;
 `
+const StyledExtLink = styled.a`
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    transition: width 0.25s;
+    height: 0.2rem;
+    width: 0;
+    background-color: var(--color-orange);
+    bottom: -4px;
+    right:-4px;
+  }
+  &:hover {
+    &::before {
+      width: 98%;
+    }
+  }
+`
+
 
 const sharedImageCSS = css`
   position: absolute;
@@ -94,9 +116,14 @@ const SpeakerProfile = ({ speaker }) => {
       </StyledImage>
       <DetailsWrapper>
         <SpeakerName>
-          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator} {speaker.founder}
+          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator} 
+          <StyledExtLink
+          href={speaker.founderLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          > {speaker.founder}</StyledExtLink>
         </SpeakerName>
-        <SpeakerDetails>{speaker.details}</SpeakerDetails>
+          <SpeakerDetails>{speaker.details}</SpeakerDetails>
       </DetailsWrapper>
     </SpeakerProfileContainer>
   )

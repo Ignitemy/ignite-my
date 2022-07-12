@@ -32,6 +32,7 @@ const specialItemBy = {
   name: 'Pr Ben Raj',
   separator: 'of',
   founder: 'World Harvest Church',
+  founderLink: 'https://www.whcmy.com/',
   details:
     'Ben is married to his best friend Bethel, and they have two sons, Joshua and Samuel. He loves the Church and his passion for the house of God and desire to see people’s lives rebuilt is evident in his life, ever since he was a young kid. He is a pastor at World Harvest Church, Sunway, where he leads the Creative Team and is part of the leadership team.'
 }
