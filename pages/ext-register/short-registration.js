@@ -413,11 +413,8 @@ const ShortRegistrationForm = () => {
     }
 
     try {
-      console.log('submitted')
-      console.log(values)
       const currentUser = firebase.auth().currentUser
       const userDocumentId = await getUserByUserId(currentUser.uid)
-      console.log(userDocumentId)
       // update existing user document
       await firebase.firestore().collection('users').doc(userDocumentId[0].docId).update({
         age: values.age,
@@ -441,7 +438,7 @@ const ShortRegistrationForm = () => {
         router.push('/')
       }, 2000)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 
