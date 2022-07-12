@@ -49,7 +49,7 @@ const speakerSectionDetails = [
     separator: 'of',
     founder: 'Generasi Gemilang',
     details:
-      'Daniel has served in the pastoral ministry for 17 years. Daniel pioneered a ministry to reach the East Malaysians residing in the Klang Valley. The ministry eventually grew to be the SIBLife Church he pastors here in PJ today. Ever since his corporate life, Daniel has been very involved in serving the underserved community. In 2010, he founded a social welfare organization, Yayasan Generasi Gemilang.'
+      'Daniel has served in the pastoral ministry for 17 years. Daniel pioneered a ministry to reach the East Malaysians residing in the Klang Valley. The ministry eventually grew to be the SIBLife Church he pastors here in PJ today. Ever since his corporate life, Daniel has been very involved in serving the underserved community. In 2010, he founded a social welfare organisation, Yayasan Generasi Gemilang.'
   },
   {
     imgSrc: '/images/jpg/daryll-1.jpg',
@@ -59,15 +59,15 @@ const speakerSectionDetails = [
     separator: 'of',
     founder: 'Open Minds',
     details:
-      'Daryll Tan started with establishing his own talent management and video marketing business at 21 years old. Today, he is the Co-Founder and Marketing Technology consultant at OpenMinds™, and the Founder and Group CEO of food & technology company Feed Forward Sdn. Bhd. Daryll is actively involved in entrepreneurship, startup mentorship, partnership development and social media consultation. As an entrepreneur, he strives to make a positive impact and create purposeful jobs; actively nurturing high-performing, innovative teams and growing entrepreneurs to make a positive impact.'
+      'Daryll started with establishing his own talent management and video marketing business at 21 years old. Today, he is the Co-Founder and Marketing Technology Consultant at OpenMinds™, and the Founder and Group CEO of food & technology company Feed Forward Sdn. Bhd. Daryll is actively involved in entrepreneurship, startup mentorship, partnership development and social media consultation. As an entrepreneur, he strives to make a positive impact and create purposeful jobs; actively nurturing high-performing, innovative teams and growing entrepreneurs to make a positive impact.'
   }
 ]
 
 const specialItemBy = {
   imgSrc: '/images/jpg/shn-1.jpg',
   imgSrcHover: '/images/jpg/shn-2.jpg',
-  alt: 'Chloe/SHNe',
-  name: 'Chloe/SHN',
+  alt: 'SHNe',
+  name: 'SHN',
   separator: '',
   founder: '',
   details:

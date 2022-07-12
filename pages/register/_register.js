@@ -189,7 +189,7 @@ const Register = () => {
                 <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
                 <br />
                 <br />
-                Participants who register from <span id='date'>21st August 2022</span> onwards are still invited
+                Participants who register from <span id='date'>22nd August 2022</span> onwards are still invited
                 to join the Summit via online. However, you WILL NOT receive the Summit kit.
                 <br />
                 <br />

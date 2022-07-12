@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Text } from '../../components'
+import { Heading } from '../../components'
 
 const SectionContainer = styled.section`
   display: flex;
@@ -51,9 +51,24 @@ const Unit = styled.div`
     font-size:1.7rem;
     }
 `
+
+const StyledHeading = styled(Heading)`
+  margin: 3rem 0;
+  @media (max-width: 768px) {
+    font-size: 3.2rem;
+    margin: 2.4rem 0;
+  }
+`
+
+
 const Stats = () => {
     return (
       <SectionContainer>
+
+        <StyledHeading size="4.8rem" color="orange" fstyle="italic" align="center" mb="1.4rem">
+          Here's what happened last year
+        </StyledHeading>
+      
         <OuterContainer>
           <Stat>
             <Number color="var(--color-orange)" fontSize="6.4rem">
