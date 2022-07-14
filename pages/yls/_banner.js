@@ -81,7 +81,7 @@ const Banner = () => {
         alt="mountains"
         layout="fill"
         objectFit="cover"
-        objectPosition="bottom"
+        objectPosition="center"
         priority="true"
       />
       <BannerContent>
