@@ -53,8 +53,8 @@ const StyledContainer = styled.div`
     font-size: 2rem;
 
     img {
-      width: 187px;
-      height: 32px;
+      width: 300px;
+      height: 60px;
     }
   }
 `

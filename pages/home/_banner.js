@@ -264,7 +264,7 @@ const Banner = () => {
       <StyledIframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/mQWBvqyyZ5w"
+        src="https://www.youtube.com/embed/fQkThyL3QVY"
         title="IGNITEMY2021 Promo Video"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

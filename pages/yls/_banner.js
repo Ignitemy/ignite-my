@@ -77,8 +77,8 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/png/igniteyls-2022-bg.png"
-        alt="Flame pattern"
+        src="/images/jpg/igniteyls_bg.jpg"
+        alt="mountains"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
