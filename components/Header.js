@@ -7,6 +7,7 @@ import SideMenu from './SideMenu'
 import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
 import ProfileIcon from '../images/svg/profile'
+import router from 'next/router'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -256,7 +257,10 @@ const Header = () => {
                     <StyledLink href="#">
                       <a
                         onClick={() => {
-                          setTimeout(() => firebase.auth().signOut(), 500)
+                          setTimeout(() => {
+                            firebase.auth().signOut()
+                            router.push('/')
+                          }, 500)
                         }}
                       >
                         Log Out
