@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField } from 'formik'
 import { TextField, Select, MenuItem, InputLabel } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
@@ -8,6 +7,7 @@ import FirebaseContext from '@/context/firebase'
 import { useAuth } from '@/helpers/auth'
 import RadioButton from '@/components/RadioButton'
 import { Heading } from '@/components/Typography'
+import { shirtSizes, listOfStates } from '../register/_form'
 
 const theme = createMuiTheme({
   palette: {
@@ -329,22 +329,13 @@ const Profile = () => {
               </TwoColumnRow>
               <StyledLabel htmlFor="State">State *</StyledLabel>
               <Field name="state" value={userData.state} label="State" required as={CustomSelect}>
-                <MenuItem value="Johor">Johor</MenuItem>
-                <MenuItem value="Kedah">Kedah</MenuItem>
-                <MenuItem value="Kelantan">Kelantan</MenuItem>
-                <MenuItem value="Kuala Lumpur">Kuala Lumpur</MenuItem>
-                <MenuItem value="Labuan">Labuan</MenuItem>
-                <MenuItem value="Malacca">Malacca</MenuItem>
-                <MenuItem value="Negeri Sembilan">Negeri Sembilan</MenuItem>
-                <MenuItem value="Pahang">Pahang</MenuItem>
-                <MenuItem value="Penang">Penang</MenuItem>
-                <MenuItem value="Perak">Perak</MenuItem>
-                <MenuItem value="Perlis">Perlis</MenuItem>
-                <MenuItem value="Putrajaya">Putrajaya</MenuItem>
-                <MenuItem value="Sabah">Sabah</MenuItem>
-                <MenuItem value="Sarawak">Sarawak</MenuItem>
-                <MenuItem value="Selangor">Selangor</MenuItem>
-                <MenuItem value="Terengganu">Terengganu</MenuItem>
+                {listOfStates.map((state) => {
+                    return (
+                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                        {state.value}
+                      </MenuItem>
+                    )
+                  })}
               </Field>
               <Field
                 name="school"
@@ -354,17 +345,29 @@ const Profile = () => {
                 as={CustomTextField}
               />
               <RadioButton
+                userActiveIndex={userData.occupation === 'student' ? 0 : 1}
                 question={firstRadioButtonQuestion.question}
                 options={firstRadioButtonQuestion.options}
                 name={firstRadioButtonQuestion.name}
+                userValue={userData.occupation}
                 disabled
               />
               <RadioButton
+                userActiveIndex={userData.attendance === 'online' ? 0 : 1}
                 question={secondRadioButtonQuestion.question}
                 options={secondRadioButtonQuestion.options}
                 name={secondRadioButtonQuestion.name}
+                userValue={userData.occupation}
                 disabled
               />
+              <StyledLabel htmlFor="State">T-Shirt Size *</StyledLabel>
+              <Field name="shirtSize" value={userData.shirtSize} label="shirtSize" required as={CustomSelect}>
+                {shirtSizes.map((size) => (
+                  <MenuItem key={size} value={size}>
+                    {size}
+                  </MenuItem>
+                ))}
+              </Field>
             </StyledForm>
           )}
         </Formik>

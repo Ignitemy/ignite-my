@@ -11,10 +11,9 @@ const TabWrapper = styled.div`
   margin: 1.2rem 0;
 `
 
-const ActiveOccupationWrapper = styled.div`
+const FieldWrapper = styled.div`
   display: flex;
   width: calc(50% - 9px);
-  /* margin-right: 2rem; */
 
   label {
     width: 100%;
@@ -24,7 +23,7 @@ const ActiveOccupationWrapper = styled.div`
       isActive ? 'var(--color-orange)' : 'var(--color-white)'};
     opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
     border-radius: 6px;
-    padding: 1.8rem 6.6rem;
+    padding: 1.8rem 6.4rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -51,51 +50,16 @@ const ActiveOccupationWrapper = styled.div`
   }
 `
 
-const OccupationWrapper = styled.div`
-  display: flex;
-  width: calc(50% - 9px);
+const RadioButton = ({ question, options, name, func, disabled, userActiveIndex }) => {
+  const [activeIndex, setActiveIndex] = useState(userActiveIndex || 0) // 0 - first button, 1 - second button
 
-  label {
-    width: 100%;
-    border: ${({ isActive }) =>
-      isActive ? '1px solid var(--color-black)' : '1px solid var(--color-orange)'};
-    background-color: ${({ isActive }) =>
-      isActive ? 'var(--color-white)' : 'var(--color-orange)'};
-    opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
-    border-radius: 6px;
-    padding: 1.8rem 6.4rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: ${({ disabled }) => (disabled ? 'unset' : 'pointer')};
-
-    input {
-      display: none;
-    }
-
-    ${Text} {
-      color: ${({ isActive }) => (isActive ? 'var(--color-black)' : 'var(--color-white)')};
-    }
-
-    @media (max-width: 1120px) {
-      padding: 1.8rem 4rem;
-    }
-    @media (max-width: 480px) {
-      width: 100%;
-    }
-  }
-`
-
-const RadioButton = ({ question, options, name, func, disabled }) => {
-  const [isActive, setActive] = useState(true)
   return (
     <div>
       <Text color="white">{question}</Text>
       <TabWrapper>
-        <ActiveOccupationWrapper
-          isActive={isActive}
-          onClick={() => !disabled && setActive(true)}
+        <FieldWrapper
+          isActive={activeIndex === 0}
+          onClick={() => !disabled && setActiveIndex(0)}
           disabled={disabled}
         >
           <label>
@@ -108,10 +72,10 @@ const RadioButton = ({ question, options, name, func, disabled }) => {
             />
             <Text>{options.firstOption.label}</Text>
           </label>
-        </ActiveOccupationWrapper>
-        <OccupationWrapper
-          isActive={isActive}
-          onClick={() => !disabled && setActive(false)}
+        </FieldWrapper>
+        <FieldWrapper
+          isActive={activeIndex === 1}
+          onClick={() => !disabled && setActiveIndex(1)}
           disabled={disabled}
         >
           <label>
@@ -124,7 +88,7 @@ const RadioButton = ({ question, options, name, func, disabled }) => {
             />
             <Text>{options.secondOption.label}</Text>
           </label>
-        </OccupationWrapper>
+        </FieldWrapper>
       </TabWrapper>
     </div>
   )
@@ -134,7 +98,8 @@ RadioButton.prototype = {
   question: PropTypes.string.isRequired,
   options: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
-  func: PropTypes.func
+  func: PropTypes.func,
+  userActiveIndex: PropTypes.number
 }
 
 export default RadioButton

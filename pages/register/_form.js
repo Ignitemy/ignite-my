@@ -4,7 +4,6 @@ import { HeadingShadow } from '../../components'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
 import * as yup from 'yup'
-// import Image from 'next/image'
 import {
   TextField,
   Checkbox,
@@ -263,7 +262,7 @@ const FourColumnRow = styled.div`
   }
 `
 
-const listOfStates = [
+export const listOfStates = [
   { value: 'Johor', disabled: false },
   { value: 'Kedah', disabled: false },
   { value: 'Kelantan', disabled: false },
@@ -284,7 +283,7 @@ const listOfStates = [
 
 const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
 
-const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+export const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
 const FollowButton = styled(Button)`
   display: inline-flex;
