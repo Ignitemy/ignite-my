@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import * as Slices from './slices'
 
 const __allSlices = {  ...Slices, }
@@ -24,7 +25,7 @@ const NotFound = ({ sliceName, slice, i }) => {
         Check that you registered this component in your slices library!
       </p>
     </div>
-  ) : <></>
+  ) : <Fragment />
 }
 
 export default function SliceResolver({ sliceName, ...rest }) {
