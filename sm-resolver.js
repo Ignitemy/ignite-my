@@ -24,7 +24,7 @@ const NotFound = ({ sliceName, slice, i }) => {
         Check that you registered this component in your slices library!
       </p>
     </div>
-  ) : null
+  ) : <></>
 }
 
 export default function SliceResolver({ sliceName, ...rest }) {
