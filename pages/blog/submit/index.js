@@ -65,7 +65,7 @@ const Blog = () => {
   // const router = useRouter()
 
   // useEffect(() => {
-  //   if (!user) router.push(encodeURI('/login?action=login&redirect=blog/submit'))
+  //   if (user === null) router.push(encodeURI('/login?action=login&redirect=blog/submit'))
   // }, [user])
 
   return (
