@@ -611,7 +611,7 @@ const ShortRegistrationForm = () => {
                     <CheckboxGroup>
                       <Field type="checkbox" name="checked" id="checked" as={Checkbox} />
                       <label htmlFor="checked" style={{ color: 'var(--color-white)' }}>
-                        All the info above are correct
+                        All the info above are correct, especially your age & address
                       </label>
                     </CheckboxGroup>
                     <StyledErrorMessage name="checked" component="div" />
