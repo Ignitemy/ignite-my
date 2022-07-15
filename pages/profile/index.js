@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Styled from 'styled-components'
 import Form from './_form'
 import Layout from '../../components/Layout'
-// import { useAuth } from '@/helpers/auth'
-// import { useRouter } from 'next/router'
+import { useAuth } from '@/helpers/auth'
+import { useRouter } from 'next/router'
 
 const Container = Styled.div`
   background: url("/images/png/wave_profile.png");
@@ -22,13 +22,12 @@ const FormContainer = Styled.div`
 `
 
 const Profile = () => {
-  // const user = useAuth()
-  // const router = useRouter()
+  const user = useAuth()
+  const router = useRouter()
 
-  // useEffect(() => {
-  //   if (!user) router.push('/login')
-  //   console.log(user)
-  // }, [user])
+  useEffect(() => {
+    if (user === null) router.push('/login')
+  }, [user])
 
   return (
     <Layout title="IGNITEMY2021 | Profile">

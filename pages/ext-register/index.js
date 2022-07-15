@@ -8,7 +8,7 @@ const ExtRegister = () => {
   const user = useAuth()
   
   useEffect(() => {
-    if(!user) router.push('/login')
+    if(user === null) router.push('/login')
   }, [user])
 
   return (

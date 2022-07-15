@@ -20,7 +20,7 @@ const Resources = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (!user) router.push('/login?action=login&redirect=resources')
+    if (user === null) router.push('/login?action=login&redirect=resources')
   }, [user])
 
   return (
