@@ -353,6 +353,7 @@ const Profile = () => {
                 disabled
               />
               <RadioButton
+                userActiveIndex={userData.attendance === 'online' ? 0 : 1}
                 question={secondRadioButtonQuestion.question}
                 options={secondRadioButtonQuestion.options}
                 name={secondRadioButtonQuestion.name}
