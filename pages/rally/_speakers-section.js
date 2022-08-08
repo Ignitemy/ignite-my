@@ -28,8 +28,8 @@ const SectionContainer = styled.section`
 const specialItemBy = {
   imgSrc: '/images/jpg/ben-1.jpg',
   imgSrcHover: '/images/jpg/ben-2.jpg',
-  alt: 'Pr Ben Raj',
-  name: 'Pr Ben Raj',
+  alt: 'Pr Ben Rajendram',
+  name: 'Pr Ben Rajendram',
   separator: 'of',
   founder: 'World Harvest Church',
   founderLink: 'https://www.whcmy.com/',
