@@ -49,6 +49,19 @@ const AnswerWrapper = styled.p`
   }
 `
 
+
+const DisclaimerTxt = styled.p`
+  font-size: var(--text-size-s);
+  color: var(--color-orange);
+  line-height: 7rem;
+  font-weight: 600;
+  font-style:italic;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
+  }
+`
+
+
 const Faq = () => {
   const faqList = [
     {
@@ -85,6 +98,7 @@ const Faq = () => {
           <AnswerWrapper>{faq.answer}</AnswerWrapper>
         </DetailWrapper>
       ))}
+      <DisclaimerTxt>IGNITEMY is a church event.</DisclaimerTxt>
     </SectionWrapper>
   )
 }
