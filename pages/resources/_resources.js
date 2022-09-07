@@ -43,7 +43,7 @@ const ResourceComponent = () => {
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #FC6176 0%, #FFFFFF 100%);">
-          IGNITE2021 Participant's Booklet PDF
+          IGNITE2022 Participant's Booklet PDF
           <DownloadIcon />
         </Button>
       </ButtonContainer>
@@ -54,7 +54,7 @@ const ResourceComponent = () => {
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #C163E2 0%, #FFFFFF 100%);">
-          IGNITEMY2021 Participant's Booklet Link
+          IGNITEMY2022 Participant's Booklet Link
           <LinkIcon />
         </Button>
       </ButtonContainer>
@@ -65,7 +65,7 @@ const ResourceComponent = () => {
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);">
-          IGNITEMY2021 Zoom Background
+          IGNITEMY2022 Zoom Background
           <VideoIcon />
         </Button>
       </ButtonContainer>
