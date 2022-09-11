@@ -49,7 +49,7 @@ const ResourceComponent = () => {
       </ButtonContainer>
       <ButtonContainer
         target="_blank"
-        href="https://heyzine.com/flip-book/8dddaaca3f.html#page/1"
+        href="https://heyzine.com/flip-book/2260771cd6.html"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
