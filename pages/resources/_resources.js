@@ -43,7 +43,7 @@ const ResourceComponent = () => {
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #FC6176 0%, #FFFFFF 100%);">
-          IGNITE2022 Participant's Booklet PDF
+          IGNITEMY2022 Participant's Booklet PDF
           <DownloadIcon />
         </Button>
       </ButtonContainer>
