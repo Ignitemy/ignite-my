@@ -38,7 +38,7 @@ const ResourceComponent = () => {
       </ImageContainer>
       <ButtonContainer
         target="_blank"
-        href="https://drive.google.com/file/d/1dKJrsWLLrgFKIGc8cjkMs_EzsmTspz5I/view?usp=sharing"
+        href="https://drive.google.com/file/d/1XFhrh_Vx_d8FCriGMNJ8avBWroH-rCs4/view?usp=sharing"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
