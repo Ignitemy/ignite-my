@@ -38,7 +38,7 @@ const ResourceComponent = () => {
       </ImageContainer>
       <ButtonContainer
         target="_blank"
-        href="bit.ly/IGNITEMY2022_booklet"
+        href="https://bit.ly/IGNITEMY2022_booklet"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
