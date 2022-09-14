@@ -38,7 +38,7 @@ const ResourceComponent = () => {
       </ImageContainer>
       <ButtonContainer
         target="_blank"
-        href="https://drive.google.com/file/d/1XFhrh_Vx_d8FCriGMNJ8avBWroH-rCs4/view?usp=sharing"
+        href="bit.ly/IGNITEMY2022_booklet"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
@@ -49,7 +49,7 @@ const ResourceComponent = () => {
       </ButtonContainer>
       <ButtonContainer
         target="_blank"
-        href="https://heyzine.com/flip-book/2260771cd6.html"
+        href="https://heyzine.com/flip-book/04c699a4b0.html"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
@@ -60,7 +60,7 @@ const ResourceComponent = () => {
       </ButtonContainer>
       <ButtonContainer
         target="_blank"
-        href="https://drive.google.com/file/d/1_9zD-ErDOwcIcGqewq_6rbgHe-rk2pYr/view?usp=sharing"
+        href="https://drive.google.com/file/d/1NTkRxwAbM2V53ATb2B60hEdB707JVGIS/view?usp=sharing"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
