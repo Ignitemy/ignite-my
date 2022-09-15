@@ -9,7 +9,7 @@ import { useAuth } from '@/helpers/auth'
 import {HeadingShadow } from '../../../components'
 
 
-const data = [
+const data_physical = [
   {
     group: 'Group 1',
     facilitators: ['Ngui Xin Ru'],
@@ -283,7 +283,9 @@ const data = [
       'Kellie Teh Huey Ern',
       'Rachel Lee Zhi Xian '
     ]
-  },
+  }
+]
+const data_online = [
   {
     group: 'Group A',
     facilitators: ['Nga Hong Hoong', 'YEAU MING YEE '],
@@ -463,9 +465,10 @@ const Groupings = () => {
             {!show_grouping ? 'My Group' : 'All Groups'}
           </StyledButton>
         </HeaderContainer>
+        <HeadingShadow size="3.6rem" mb="3.6rem">In-Person</HeadingShadow>
         <Container>
           {!show_grouping &&
-            data.map((item) => (
+            data_physical.map((item) => (
               <Card key={item.group}>
                 <CardHeader>
                   <Heading width="auto" color="orange" fstyle="italic" ls="1px" size="18px">
@@ -485,7 +488,56 @@ const Groupings = () => {
               </Card>
             ))}
           {show_grouping &&
-            data
+            data_physical
+              .filter((data_item) => data_item.members.includes(logged_in_user))
+              .map((item) => (
+                <Card key={item.group}>
+                  <CardHeader>
+                    <Heading width="auto" color="orange" fstyle="italic" ls="1px" size="20px">
+                      {item.group.toUpperCase()}
+                    </Heading>
+                  </CardHeader>
+                  {item.facilitators.map((facilitator) => (
+                    <Text color="white" align="center" size="14px">
+                      {facilitator.toLowerCase()} [C]
+                    </Text>
+                  ))}
+                  {item.members.map((member) => (
+                    <Text
+                      color={member === logged_in_user ? 'orange' : 'white'}
+                      align="center"
+                      size="14px"
+                    >
+                      {member.toLowerCase()}
+                    </Text>
+                  ))}
+                </Card>
+              ))}
+        </Container>
+        <HeadingShadow size="3.6rem" mt="4.4rem" mb="3.6rem">Online</HeadingShadow>
+        <Container>
+          {!show_grouping &&
+            data_online.map((item) => (
+              <Card key={item.group}>
+                <CardHeader>
+                  <Heading width="auto" color="orange" fstyle="italic" ls="1px" size="18px">
+                    {item.group.toUpperCase()}
+                  </Heading>
+                </CardHeader>
+                {item.facilitators.map((facilitator) => (
+                  <Text color="white" align="center" size="14px">
+                    {facilitator.toLowerCase()} [C]
+                  </Text>
+                ))}
+                {item.members.map((member) => (
+                  <Text color="white" align="center" size="14px">
+                    {member.toLowerCase()}
+                  </Text>
+                ))}
+              </Card>
+            ))}
+          {show_grouping &&
+            data_online
               .filter((data_item) => data_item.members.includes(logged_in_user))
               .map((item) => (
                 <Card key={item.group}>
