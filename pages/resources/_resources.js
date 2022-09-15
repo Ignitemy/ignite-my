@@ -38,34 +38,34 @@ const ResourceComponent = () => {
       </ImageContainer>
       <ButtonContainer
         target="_blank"
-        href="https://drive.google.com/file/d/1dKJrsWLLrgFKIGc8cjkMs_EzsmTspz5I/view?usp=sharing"
+        href="https://bit.ly/IGNITEMY2022_booklet"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #FC6176 0%, #FFFFFF 100%);">
-          IGNITE2021 Participant's Booklet PDF
+          IGNITEMY2022 Participant's Booklet PDF
           <DownloadIcon />
         </Button>
       </ButtonContainer>
       <ButtonContainer
         target="_blank"
-        href="https://heyzine.com/flip-book/8dddaaca3f.html#page/1"
+        href="https://heyzine.com/flip-book/04c699a4b0.html"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #C163E2 0%, #FFFFFF 100%);">
-          IGNITEMY2021 Participant's Booklet Link
+          IGNITEMY2022 Participant's Booklet Link
           <LinkIcon />
         </Button>
       </ButtonContainer>
       <ButtonContainer
         target="_blank"
-        href="https://drive.google.com/file/d/1_9zD-ErDOwcIcGqewq_6rbgHe-rk2pYr/view?usp=sharing"
+        href="https://drive.google.com/file/d/1NTkRxwAbM2V53ATb2B60hEdB707JVGIS/view?usp=sharing"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);">
-          IGNITEMY2021 Zoom Background
+          IGNITEMY2022 Zoom Background
           <VideoIcon />
         </Button>
       </ButtonContainer>

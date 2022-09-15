@@ -6,366 +6,373 @@ import Layout from '@/components/Layout'
 import { Heading, Text } from '@/components/Typography'
 import Button from '@/components/Button'
 import { useAuth } from '@/helpers/auth'
+import {HeadingShadow } from '../../../components'
+
 
 const data = [
   {
     group: 'Group 1',
-    facilitators: ['Aisen Oh Joo Ee', 'Leong Zhi-Xin'],
+    facilitators: ['Ngui Xin Ru'],
     members: [
-      'Chan El Lyn',
-      'Gabriel Wong Bak Sheng',
-      'Hailey Wong Zoe Ern',
-      'Jonathan Teoh Ming Ern ',
-      'KEONI LEE SHENG YAO',
-      'LEE JI HYM',
-      'LEE JOLEEN',
-      'Lim Tao',
-      'Wong Jia Hui'
+      'Rachel Chew Jing Ern ( CN )',
+      'Adrisa Ng Ching Ai ',
+      'Jocelyn Wee Jing Huei CN-ZYT',
+      'Steffi Wong Lin Qin CN-ZYT ',
+      'BERNICE CHOO LOKYEE',
+      'Jason Ting Chang Shen CN',
+      'Sophia Cheong Zi Qi',
+      'Wong Guan Xuan '
     ]
   },
   {
     group: 'Group 2',
-    facilitators: ['Benjamin Choy Chuen Yi', 'Joyce Sow Wei Ching'],
+    facilitators: ['Ng Yin Lun (CN)'],
     members: [
-      'Benison Wong Yu Cheng',
       'Chloe Ling Yen Ee',
-      'Elizabeth Tan Li Hwa',
-      'Eviana Wong Yee Ern',
-      'Hayden Wong Zoe Herng',
-      'Kuan Yu Sheng',
-      'Phoebe Teoh Ern Wei',
-      'Wong Hui Lin'
+      'LEE VIN YING',
+      'LEE ZHI HONG',
+      'Lee Zhi Yen',
+      'NGAI JESSYE',
+      'Ng Jing Hwei',
+      '',
+      '',
+      '',
+      ''
     ]
   },
   {
     group: 'Group 3',
-    facilitators: ['Choo Shern Wei'],
+    facilitators: ['Aisen Oh Joo Ee'],
     members: [
-      'Christine Chen',
-      'Eleanor Inn Rei Shuen',
-      'Elijah Inn Tsin Tsern',
-      'John Chen Siong Wai',
-      'Samuel Chong Teng Wai',
-      'shana soon yin',
-      'Thang Wan Er',
-      'Ti Jia Xi',
-      'Wong Mu Jie'
+      'Benison Wong Yu Cheng',
+      'Esther Ho Xing En',
+      'Eviana Wong Yee Ern',
+      'Hailey Wong Zoe Ern',
+      'KEONI LEE SHENG YAO',
+      'LEE JI HYM',
+      'LEE JOLEEN',
+      'YAP JIA WERN',
+      'ZECHARIAH LOW YONG-ERN'
     ]
   },
   {
     group: 'Group 4',
-    facilitators: ['Anantha Krishnan Raman Fesabas'],
+    facilitators: ['Chew Yi Hong'],
     members: [
-      'Anna Lam Li Szer',
-      'CHIANG JING WEN',
-      'Choo Yang Wei',
-      'CHOO YUNG WEI',
-      'Dang Eve Lynn',
-      'John Ng Ye Hann',
-      'Lim Qiao Jie',
-      'ZACHARY EMMANUEL SINGKEE'
+      'ANG ERN HUI ASHLYNN',
+      'Gabriel Wong Bak Sheng',
+      'Kyshennaath Shanmugam ',
+      'Lim Zhi Qing',
+      'Matthew Poh Wayne Loon',
+      'Nicky Ng',
+      'SEE YI ZHE',
+      'SII JIA MEEI',
+      'Tan Wei Ming',
+      'Wong Jia Hui'
     ]
   },
   {
     group: 'Group 5',
-    facilitators: ['David Teoh Qi-En'],
+    facilitators: ['Lim Yi Fen'],
     members: [
-      'Brendan Lim Wai Li',
-      'Chen Jiazen',
-      'Feby Lifeni Anak Nick Resien',
-      'Isbelle Lim Kyle Chern',
-      'Loo Fui Jade',
-      'Micole Yeap Sin Yii',
-      'Nicole Chong Huei Lyng ',
-      'Rheanna',
-      'Sharita Saravanan',
-      'Wee Ke Qin'
+      'CALIXTA ELYSE YOW WEN',
+      'Ethan Eng Yeung Zjung',
+      'Gabriel Tan Jia Le ',
+      'Hope Tan Mae Lyn',
+      'Isaac Leong Hans Yoong',
+      'Jade Ooi Shen Min ',
+      'Kristen Chua Li Yen ',
+      'Ng Shan-Zi',
+      'Teoh Kye Xen'
     ]
   },
   {
     group: 'Group 6',
-    facilitators: ['Joshua Wong Wui Xhuen', 'Megan Soh Sha Ming'],
+    facilitators: ['Teoh Enxi'],
     members: [
-      'Adelle Mae Lim',
-      'Alyssa Kathleen Paul',
-      'CASSANDRA CHUNG KAI YUAN',
-      'Harry Chen Fan Bin ',
-      'LU QUI ZHUIN',
-      'Wong Sze Chee',
-      'Wong Zi Qi'
+      'Jonathan Chin Yee',
+      'Elizabeth Tsan Ern Huey',
+      'Jaden Lee Zhen Hao',
+      'JOSEPH TAN YUNG WEI',
+      'Joy-Anne Tan Soong Hwei ',
+      'Julia Lau YiJen',
+      'Louise Leong Li Ling ',
+      'Lydia Woon Ee Jean',
+      'Naiomi Chee Rui En',
+      'Tan Kate-Lynn ',
+      'Thasyica Janardhan ',
+      'Toh Weng Jheng ',
+      'VANESSA TSAN ERN MEI'
     ]
   },
   {
     group: 'Group 7',
-    facilitators: ['Joel Bryan Mohan'],
+    facilitators: ['Ong Hun Lee'],
     members: [
-      'Chua Pek Yzin',
-      'Ethan Eng Yeung Zjung',
-      'Jeanette Phang Shin Roe',
-      'John Shiu Moon Tim ',
-      'Lucas Lim Zhi Jet',
-      'Pua How Keat ',
-      'Shawn Tiew Sheng En',
-      'Tang Joann'
+      'Chong Ray Shuen',
+      'Christine Chen',
+      'Khu Poh Sim',
+      'Lee Shin Ying',
+      'Ling Wan Xin Kristen',
+      'Ong Tsu Yit ',
+      'Ong Wei Xuan'
     ]
   },
   {
     group: 'Group 8',
-    facilitators: ['Darren Gill', 'Yeoh jun jin'],
+    facilitators: ['Sandra Soh Sha Ying'],
     members: [
-      'Abigail Goh Kai En',
-      'Ashton Chong Wye Hon',
-      'Edward Ooi',
-      'Enze',
-      'Eunice Lim Shuen Hui',
-      'GABRIELLA KOONG ELYSSE',
-      'Jovin Wong Wui Yang',
-      'Nolan Segaran Krishnan'
+      'Herald Hwa De Yi',
+      'Hon Janson',
+      'Low Han Wen',
+      'Low Jun Wei',
+      'Samuel Chong Teng Wai',
+      'shana soon yin',
+      'Shum Xian You'
     ]
   },
   {
     group: 'Group 9',
-    facilitators: ['Ling Ying Phoebe'],
+    facilitators: ['Anna Lam Li Szer'],
     members: [
-      'Chin Kai Yi ',
-      'Chung Shen Lin',
-      'Erica Chiew Hui Ying ',
-      'Esther Liew Yue Shi',
-      'JEFFERSON JUNIOR SHIM HUAN CONG',
-      'Joy Young Mei Yue',
-      'Keith Young',
-      'Lai En Qi',
-      'Leticia Lee ',
-      'Marsha Chin Shiuan',
-      'Megan Wong ',
-      'Quek Yuen Hang'
+      'David Teoh Qi-En',
+      'Ang Ern Yi Angelynn',
+      'Enid Kang Yin Qian',
+      'GRACE KOK EI WEN',
+      'Shawn Tiew Sheng En',
+      'John Ng Ye Hann',
+      'Vanessa Lim Hai Eng ',
+      'Micah Andrew Lim Jia Jun',
+      'JAMIE ALLYSON TAN I-LING',
+      'Ethan Chong Tze Wei ',
+      'Ivana Yap Hong Ler'
     ]
   },
   {
     group: 'Group 10',
-    facilitators: ['Nicholas Cheah Yuan Zhong '],
+    facilitators: ['Darren Gill'],
     members: [
-      'Alvin Tham Wei Yuan',
-      'Caleb Lim Shian Zer',
-      'Colleen Lim Shian Ern',
+      'Eve Ling Hsern Ai',
+      'Faith Wei Ann Snyder',
+      'Jonadab Tan Tze Ming',
+      'Joy Ling Hsern Zhi',
       'Joy Natasha',
-      'Kaylene Lim Shian Ying',
-      'Leann Chong Wen Yen ',
-      'MAY SIEW',
-      'Shania Wong Ee En'
+      'Ronak Pherwani',
+      'DANIEL LIM WEN HUI',
+      'Eunice Lim Shuen Hui',
+      'Evan Lim Shuen Yong',
+      'Hannah Chan Jia En',
+      'Jovin Wong Wui Yang'
     ]
   },
   {
     group: 'Group 11',
-    facilitators: ['Eugene Lee Ee Jin'],
+    facilitators: ['Leong Zhi-Xin'],
     members: [
-      'Arielle Wang Xue Ern',
-      'DANAY RANE SNEHA DHARAN',
-      'Danielle Ang Jing Wei',
-      'Eve Ling Hsern Ai',
-      'Faith Wei Ann Snyder',
-      'JADEN ASHTON MONK SOH HAN - MING',
-      'Jonadab Tan Tze Ming',
-      'Leong Kai Wei'
+      'Alexa Tornini Hong',
+      'Max Lim Ern Yao',
+      'Gabriel Wong Tim Lok',
+      'Joshua Wong Tim Wei',
+      'Marjorie Ella',
+      'Vanessa Yap',
+      'Alynna Lim Jia Yin',
+      'Jeanelle Mah Ren Ee',
+      '',
+      ''
     ]
   },
   {
     group: 'Group 12',
-    facilitators: ['Hwang Foo Shen'],
+    facilitators: ['Gan Jia Yi'],
     members: [
-      'Alexa Tornini Hong ',
-      'Chloe Teh Zi Ern',
-      'Choong Kah Yi',
-      'Eleora Teoh Tze Qian',
-      'Gan Jia Qi',
-      'Khoo Kah Wai',
-      'Matthew Lim Ern Xi',
-      'Nathelie Yap Chew Li ',
-      'Samantha Low'
+      'Carlson Maheshon Victor',
+      'Kwan ren zhe',
+      'chieng zhiyi',
+      'Ashlynn Ann Su Chern',
+      'Kylie Low ',
+      'Nathanael Ang Yi Xin',
+      'Daniel Foo Shen Aun'
     ]
   },
   {
     group: 'Group 13',
-    facilitators: ['Owen Woo Tsen Wen'],
+    facilitators: ['Samantha Ng heng ling ', 'Gan Rong Sheng '],
     members: [
-      'Ashley Ho Tze Huay',
-      'Ashlynn Ann Su Chern',
-      'Carmen Ng',
-      'Jaeden Lim Wye Yung',
-      'Jeremy Tan Chun Xian',
+      'Isaac Lim Wei Zhong ',
       'Karyn Ling Defen ',
+      'Marissa Ling Deying',
       'Olivia ng ',
-      'Vasshon Kevin'
+      'Abigail Tan',
+      'Janae Lee Jia En',
+      'Leann Chong Wen Yen ',
+      'Robin Wong Kung Shan',
+      'Shania Wong Ee En',
+      'Ashton Beh Sheng en'
     ]
   },
   {
     group: 'Group 14',
-    facilitators: ['Kelly Tan Yi Ying'],
+    facilitators: ['Bernice Boey'],
     members: [
-      'ANGELINA LIEW XUE EN',
-      'Isaac Lim',
-      'Joel Teh Sheng Jie',
-      'Lizzannia Peeter',
-      'RAVEENA CASANDRAA',
-      'Shammah James A/P Murugan ',
-      'Timothy Teh  Yi Tian'
+      'Ahn Yu Eun',
+      'Justin Chen ',
+      'Yap Jia Hui',
+      'Carmen Ng',
+      'Megan chang Jia Yuen',
+      'Eleora Teoh Tze Qian',
+      'Hannah Faith Liau Mae Tze',
+      'Adrian Foo Jun Ho '
     ]
   },
   {
     group: 'Group 15',
-    facilitators: ['Sashaa Long'],
+    facilitators: ['Loke Yun Kit', 'Marianne Liaw Sook Huei'],
     members: [
-      'Adeline Wong',
-      'Anselm Beh En Sheng',
-      'Jannelle Tong Kar Yan',
-      'Justyn Tong Kar Wai',
-      'Previna A/P Suresh',
-      'TREESHEA JOY LEE TZE SAN',
-      'WONG YEE LING',
-      'Yap Jia Hui'
+      'Steven Duh Ceu Lian',
+      'Zing Dawt Thai ',
+      'Bernis Kam Xue Ying',
+      'John Kam Chee Qian',
+      'SAMUEL RUDY',
+      'Nehemika Amarina',
+      'ANITA MARY ',
+      'Carmen Chong ',
+      'Dora Ling Wei En',
+      'Wong Zhi Yang',
+      'Nicholas Amariah '
     ]
   },
   {
     group: 'Group 16',
-    facilitators: ['Chew Yi Hong', 'Queena Lee Chin'],
+    facilitators: ['Felix Foo'],
     members: [
-      'Effy Wong Yih Jyue (中文堂）',
-      'Jason Ting Chang Shen CN',
-      'Lam Mon Sion (CN)',
-      'Ng Yin Lun (CN)',
-      'Ngui Xin Ru (CN)',
-      'Rachel Chew Jing Ern ( CN )',
-      'Ryan Lim Wye Ern',
-      'Yeong Wai Kit (CN)'
+      'Julianne Rheshara',
+      'MOK YEN QIN',
+      'Melissa Foong Yuin Mern',
+      'Chloe Teh Zi Ern',
+      'Cristian Barbulescu',
+      'Matthew Roshan Neelagandan',
+      'Low Kai En, Iris',
+      'Rowena Jeyamani Jeremiah '
     ]
   },
   {
     group: 'Group 17',
-    facilitators: ['Koh Earn Soo'],
+    facilitators: ['Nicholas Cheah Yuan Zhong '],
     members: [
-      'Au Kar Fei',
-      'avril joane soon ai chen',
-      'Kenneth Lam Wai Foong',
-      'Lim Siew Lan',
-      'Naaman Foong Yao Yong',
-      'Violet Soon Ai May '
+      'Nicholas Cheah Yuan Zhong ',
+      'CHOO YUNG WEI',
+      'Matthew Lim Ern Xi',
+      'Benjamin Chong Rong En ',
+      'Justin Ho Jun Jie',
+      'Choo Yang Wei',
+      'Isaac Rahuldev Neelagandan',
+      'CHU WEI MING',
+      'Garynaath Shanmugam '
     ]
   },
   {
     group: 'Group 18',
-    facilitators: ['Felix Foo'],
+    facilitators: ['Joshua Wong Wui Xhuen'],
     members: [
-      'Ashton Hii Wei Kang',
-      'Cathryn Toh Yee Lyn',
-      'Celine Leong Mae Ann',
-      'Ivan Lim Eu Wen',
-      'Jason Chew Jia Yit',
-      'Lam Xin Yi',
-      'Lim Zi Sheng',
-      'lum samuel',
-      'Nathaniel Inn Tsin Qian',
+      'Abel Chow Poa Ern ',
+      'Augustine Lu Jinn Meng',
+      'Clarisse Lee Ern Ning ',
+      'Constantine Kong Zhong You',
+      'Hooi Ker Nee',
+      'Keith Gan Wei Kit',
+      'Kellie Teh Huey Ern',
+      'Rachel Lee Zhi Xian '
+    ]
+  },
+  {
+    group: 'Group A',
+    facilitators: ['Nga Hong Hoong', 'YEAU MING YEE '],
+    members: [
+      'Elizabeth Tan Li Hwa',
+      'TAN YONG HAN ',
+      'Sean Sia En Hao '
+    ]
+  },
+  {
+    group: 'Group B',
+    facilitators: ['Joel Wong Wui Ern'],
+    members: [
+      'Zen Teh ',
+      'Chai Kee Fong',
+      'Dheeban Kumar Saravana Kumar ',
+      'Emerson Ng',
+      'Emma Lee Jia Ying ',
+      'Gao Dan Dan ',
+      'How Jia Xin',
+      'Jeevika Isabel Johnson ',
+      'Jing Ze',
+      'Josiah Yeoh Tsung Ern',
+      'Justin Tang Jia Zw',
+      'Leanna Tsen May Hwa',
+      'Lee En',
+      'Lim Yi Ping',
+      'Morven Anak Mundi',
+      'Nor Izz Rayyan Bin Norazli ',
+      'PAULUS LEE XING RONG',
+      'Rachael Loh Rui Qi',
+      'Sherlyn Liong',
+      'Shia Jia Tong',
+      'Sofie Zaidi',
+      'Tan Chun Hee',
+      'Tasha Ting',
+      'Tey Hui Fung',
+      'Xavier Chen Zhi Yuan',
+      'Yu Huan ',
+      'Zuleskandar Bin Rosli'
+    ]
+  },
+  {
+    group: 'Group C',
+    facilitators: ['Tan Li Ann'],
+    members: [
+      'Leong Deng Fu',
+      'Regina Yeo Man Xin',
+      'Lee Ai Lin ',
       'Nikeisha Ariaretnam'
     ]
   },
   {
-    group: 'Group 19',
-    facilitators: ['Bala Murugan A/L Monogaran'],
-    members: [
-      'Charlize Ti Jia Yi',
-      'Estelle Ngu Yuen Ee ',
-      'Eunice Ching Zhi Jun',
-      'Kok Fang Juin',
-      'Melissa Foong Yuin Mern',
-      'Regina Yeo Man Xin',
-      'Sam Perry Lee Chin Howe',
-      'Siah Aun Yue'
-    ]
-  },
-  {
-    group: 'Group 20',
-    facilitators: ['Leong Sheng Khai'],
-    members: [
-      'Amamda Cheong Yee Lyn',
-      'Cleo Lam Hor Yee',
-      'Esthefenyvie Junip',
-      'Garynaath Shanmugam ',
-      'Nathania Grace Mahadevan ',
-      'Reuel Rajah',
-      'Wong Jia Yu',
-      'Yvonne Chok Yee Wen'
-    ]
-  },
-  {
-    group: 'Group 21',
-    facilitators: ['Lee Yin Yin'],
-    members: [
-      'BRENDON CHEE JUN REN',
-      'Darick Phoon Weng Sung',
-      'Deborah A/P Peter Chandran',
-      'ENG KEN LI',
-      'IRENE YUNGA',
-      'Jessie Chua',
-      'Ng Mei Xuan',
-      'Yeong Wai Kian'
-    ]
-  },
-  {
-    group: 'Group 22',
-    facilitators: ['Tang Yue Weng'],
+    group: 'Group D',
+    facilitators: ['Owen Woo Tsen Wen'],
     members: [
       'Annabelle Tong Xin Yue',
+      'Jeremy Tan Chun Xian',
+      'Sofee Tieh',
+      'Lydia Mah Xin yue',
+      'Christopher Cheah Shuan Loomg',
+      'Nicholas Woo',
+      'Lee Jie Sheng'
+    ]
+  },
+  {
+    group: 'Group E',
+    facilitators: ['Choo Shern Wei'],
+    members: [
+      'Emily Foo Ai Mei ',
+      'Shannon Loong Jean Ann ',
+      'Pua How Keat ',
+      'Jeanette Phang Shin Roe',
+      'John Shiu Moon Tim ',
+      'SHAVONNE LEE JIE ERN',
+      'Wong Wei Wen'
+    ]
+  },
+  {
+    group: 'Group F',
+    facilitators: ['Cordelia Kong Ju Ai', 'Niklas Choo Yong Shih'],
+    members: [
+      'Eaden Kapono Lim Fang Rong',
+      'Alaynn Hoe wen xia ',
+      'Jessey Soo',
+      'JONATHAN TOO KIM GHEE',
+      'Teh Yen Hong',
       'Daniel Rudy',
-      'Ezra Daniel Powell',
-      'Leora Lee Yun',
-      'Megan chang Jia Yuen',
-      'Samuel Rudy',
-      'William Harniess',
-      'Wong Daphne Xuanxi '
-    ]
-  },
-  {
-    group: 'Group 23',
-    facilitators: ['Ong Hun Lee'],
-    members: [
-      'Gabriel Goh Zhen Ning',
-      'Lim Jie Wei',
-      'Low Jun Ee',
-      'Marcus Tan Di Fai',
-      'Ong Jo-Yi',
-      'SERAPHINA JOYCE MAHADEVAN ',
-      'Teoh Sue Yee ',
-      'Veronica Loke'
-    ]
-  },
-  {
-    group: 'Group 24',
-    facilitators: ['YEONG VOON KANG'],
-    members: [
-      'Abel Tan Lay Yee',
-      'Christie Ng Xian Yi',
-      'Elisa Beh Hui En',
-      'Elizabeth Tsan Ern Huey',
-      'Enid Kang Yin Qian',
-      'JOSEPH TAN YUNG WEI',
-      'Joy-Anne Tan Soong Hwei ',
-      'Tan Ler Shen',
-      'Yap Xin Er'
-    ]
-  },
-  {
-    group: 'Group 25',
-    facilitators: ['Marianne Liaw Sook Huei', 'Victor Yeow Sheng Rueng'],
-    members: [
-      'Adelyn Lai Wan Yen',
-      'Allison Choy Suet Mun',
-      'Chat Dong Xuan',
-      'Janice Lim Wei Ling',
-      'Joey Jee Vv Roseyannilly binti Bairi@Johnny',
-      'Lee Ai Lin ',
-      'Lim Kok Tien',
-      'Miracle Wong',
-      'Olivia Lian Yu-Qi',
-      'SOH HAN YANG-JOSHUA DRE DHARAN'
+      'Isaac Lai Jie Hin '
     ]
   }
 ]
@@ -446,7 +453,8 @@ const Groupings = () => {
     <Layout title="IGNITEMY2021 | Groupings">
       <PageContainer>
         <HeaderContainer>
-          <Image src="/images/png/groupings.png" width={335} height={45} />
+          <HeadingShadow>Groupings</HeadingShadow>
+          {/* <Image src="/images/png/groupings.png" width={335} height={45} /> */}
           <StyledButton
             onClick={() => setShowGrouping(!show_grouping)}
             orange={show_grouping ? 'true' : null}
