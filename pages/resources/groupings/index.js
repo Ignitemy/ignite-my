@@ -88,9 +88,8 @@ const data_physical = [
   },
   {
     group: 'Group 6',
-    facilitators: ['Teoh Enxi'],
+    facilitators: ['Teoh Enxi','Jonathan Chin Yee'],
     members: [
-      'Jonathan Chin Yee',
       'Elizabeth Tsan Ern Huey',
       'Jaden Lee Zhen Hao',
       'JOSEPH TAN YUNG WEI',
@@ -133,9 +132,8 @@ const data_physical = [
   },
   {
     group: 'Group 9',
-    facilitators: ['Anna Lam Li Szer'],
+    facilitators: ['Anna Lam Li Szer','David Teoh Qi-En'],
     members: [
-      'David Teoh Qi-En',
       'Ang Ern Yi Angelynn',
       'Enid Kang Yin Qian',
       'GRACE KOK EI WEN',
@@ -272,7 +270,7 @@ const data_physical = [
   },
   {
     group: 'Group 18',
-    facilitators: ['Joshua Wong Wui Xhuen'],
+    facilitators: ['Bernice Chee Wai Yee'],
     members: [
       'Abel Chow Poa Ern ',
       'Augustine Lu Jinn Meng',
@@ -288,7 +286,7 @@ const data_physical = [
 const data_online = [
   {
     group: 'Group A',
-    facilitators: ['Nga Hong Hoong', 'YEAU MING YEE '],
+    facilitators: ['Nga Hong Hoong'],
     members: [
       'Elizabeth Tan Li Hwa',
       'TAN YONG HAN ',
@@ -353,9 +351,8 @@ const data_online = [
   },
   {
     group: 'Group E',
-    facilitators: ['Choo Shern Wei'],
+    facilitators: ['Choo Shern Wei','Emily Foo Ai Mei '],
     members: [
-      'Emily Foo Ai Mei ',
       'Shannon Loong Jean Ann ',
       'Pua How Keat ',
       'Jeanette Phang Shin Roe',
