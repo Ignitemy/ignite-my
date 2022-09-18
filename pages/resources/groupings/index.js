@@ -21,7 +21,8 @@ const data_physical = [
       'BERNICE CHOO LOKYEE',
       'Jason Ting Chang Shen CN',
       'Sophia Cheong Zi Qi',
-      'Wong Guan Xuan '
+      'Wong Guan Xuan ',
+      'Shannen Teoh Yun Mei'
     ]
   },
   {
@@ -83,14 +84,14 @@ const data_physical = [
       'Jade Ooi Shen Min ',
       'Kristen Chua Li Yen ',
       'Ng Shan-Zi',
-      'Teoh Kye Xen'
+      'Teoh Kye Xen',
+      'Josh Chua Jien Wei'
     ]
   },
   {
     group: 'Group 6',
-    facilitators: ['Teoh Enxi'],
+    facilitators: ['Teoh Enxi','Jonathan Chin Yee'],
     members: [
-      'Jonathan Chin Yee',
       'Elizabeth Tsan Ern Huey',
       'Jaden Lee Zhen Hao',
       'JOSEPH TAN YUNG WEI',
@@ -133,9 +134,8 @@ const data_physical = [
   },
   {
     group: 'Group 9',
-    facilitators: ['Anna Lam Li Szer'],
+    facilitators: ['Anna Lam Li Szer','David Teoh Qi-En'],
     members: [
-      'David Teoh Qi-En',
       'Ang Ern Yi Angelynn',
       'Enid Kang Yin Qian',
       'GRACE KOK EI WEN',
@@ -221,7 +221,8 @@ const data_physical = [
       'Megan chang Jia Yuen',
       'Eleora Teoh Tze Qian',
       'Hannah Faith Liau Mae Tze',
-      'Adrian Foo Jun Ho '
+      'Adrian Foo Jun Ho ',
+      'Christopher Cheah Shuan Loomg'
     ]
   },
   {
@@ -252,7 +253,8 @@ const data_physical = [
       'Cristian Barbulescu',
       'Matthew Roshan Neelagandan',
       'Low Kai En, Iris',
-      'Rowena Jeyamani Jeremiah '
+      'Rowena Jeyamani Jeremiah ',
+      'Elisa Beh Hui En'
     ]
   },
   {
@@ -267,12 +269,13 @@ const data_physical = [
       'Choo Yang Wei',
       'Isaac Rahuldev Neelagandan',
       'CHU WEI MING',
-      'Garynaath Shanmugam '
+      'Garynaath Shanmugam ',
+      'Long Li Herrn Nigerl'
     ]
   },
   {
     group: 'Group 18',
-    facilitators: ['Joshua Wong Wui Xhuen'],
+    facilitators: ['Bernice Chee Wai Yee'],
     members: [
       'Abel Chow Poa Ern ',
       'Augustine Lu Jinn Meng',
@@ -288,7 +291,7 @@ const data_physical = [
 const data_online = [
   {
     group: 'Group A',
-    facilitators: ['Nga Hong Hoong', 'YEAU MING YEE '],
+    facilitators: ['Nga Hong Hoong'],
     members: [
       'Elizabeth Tan Li Hwa',
       'TAN YONG HAN ',
@@ -346,16 +349,15 @@ const data_online = [
       'Jeremy Tan Chun Xian',
       'Sofee Tieh',
       'Lydia Mah Xin yue',
-      'Christopher Cheah Shuan Loomg',
       'Nicholas Woo',
-      'Lee Jie Sheng'
+      'Lee Jie Sheng',
+      'Justyn Tan Kai Jie'
     ]
   },
   {
     group: 'Group E',
-    facilitators: ['Choo Shern Wei'],
+    facilitators: ['Choo Shern Wei','Emily Foo Ai Mei '],
     members: [
-      'Emily Foo Ai Mei ',
       'Shannon Loong Jean Ann ',
       'Pua How Keat ',
       'Jeanette Phang Shin Roe',
@@ -374,7 +376,8 @@ const data_online = [
       'JONATHAN TOO KIM GHEE',
       'Teh Yen Hong',
       'Daniel Rudy',
-      'Isaac Lai Jie Hin '
+      'Isaac Lai Jie Hin ',
+      'Viveken Krishnan'
     ]
   }
 ]
