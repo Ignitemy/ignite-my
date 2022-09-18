@@ -21,7 +21,8 @@ const data_physical = [
       'BERNICE CHOO LOKYEE',
       'Jason Ting Chang Shen CN',
       'Sophia Cheong Zi Qi',
-      'Wong Guan Xuan '
+      'Wong Guan Xuan ',
+      'Shannen Teoh Yun Mei'
     ]
   },
   {
@@ -83,7 +84,8 @@ const data_physical = [
       'Jade Ooi Shen Min ',
       'Kristen Chua Li Yen ',
       'Ng Shan-Zi',
-      'Teoh Kye Xen'
+      'Teoh Kye Xen',
+      'Josh Chua Jien Wei'
     ]
   },
   {
@@ -219,7 +221,8 @@ const data_physical = [
       'Megan chang Jia Yuen',
       'Eleora Teoh Tze Qian',
       'Hannah Faith Liau Mae Tze',
-      'Adrian Foo Jun Ho '
+      'Adrian Foo Jun Ho ',
+      'Christopher Cheah Shuan Loomg'
     ]
   },
   {
@@ -250,7 +253,8 @@ const data_physical = [
       'Cristian Barbulescu',
       'Matthew Roshan Neelagandan',
       'Low Kai En, Iris',
-      'Rowena Jeyamani Jeremiah '
+      'Rowena Jeyamani Jeremiah ',
+      'Elisa Beh Hui En'
     ]
   },
   {
@@ -265,7 +269,8 @@ const data_physical = [
       'Choo Yang Wei',
       'Isaac Rahuldev Neelagandan',
       'CHU WEI MING',
-      'Garynaath Shanmugam '
+      'Garynaath Shanmugam ',
+      'Long Li Herrn Nigerl'
     ]
   },
   {
@@ -344,9 +349,9 @@ const data_online = [
       'Jeremy Tan Chun Xian',
       'Sofee Tieh',
       'Lydia Mah Xin yue',
-      'Christopher Cheah Shuan Loomg',
       'Nicholas Woo',
-      'Lee Jie Sheng'
+      'Lee Jie Sheng',
+      'Justyn Tan Kai Jie'
     ]
   },
   {
@@ -371,7 +376,8 @@ const data_online = [
       'JONATHAN TOO KIM GHEE',
       'Teh Yen Hong',
       'Daniel Rudy',
-      'Isaac Lai Jie Hin '
+      'Isaac Lai Jie Hin ',
+      'Viveken Krishnan'
     ]
   }
 ]
