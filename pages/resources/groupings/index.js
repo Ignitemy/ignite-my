@@ -43,9 +43,8 @@ const data_physical = [
   },
   {
     group: 'Group 3',
-    facilitators: ['Aisen Oh Joo Ee'],
+    facilitators: ['Aisen Oh Joo Ee', 'Benison Wong Yu Cheng'],
     members: [
-      'Benison Wong Yu Cheng',
       'Esther Ho Xing En',
       'Eviana Wong Yee Ern',
       'Hailey Wong Zoe Ern',
