@@ -120,7 +120,7 @@ const data_physical = [
   },
   {
     group: 'Group 8',
-    facilitators: ['Sandra Soh Sha Ying'],
+    facilitators: ['Gan Rong Sheng '],
     members: [
       'Herald Hwa De Yi',
       'Hon Janson',
@@ -195,7 +195,7 @@ const data_physical = [
   },
   {
     group: 'Group 13',
-    facilitators: ['Samantha Ng heng ling ', 'Gan Rong Sheng '],
+    facilitators: ['Samantha Ng heng ling '],
     members: [
       'Isaac Lim Wei Zhong ',
       'Karyn Ling Defen ',
