@@ -172,7 +172,7 @@ const Countdown = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
     // Date format MM/DD/YYYY
-    let difference = new Date(`09/24/${year} 10:00`) - new Date()
+    let difference = new Date(`09/24/${year} 9:30`) - new Date()
     let timeLeft = {}
 
     if (difference > 0) {
