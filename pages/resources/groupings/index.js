@@ -22,7 +22,8 @@ const data_physical = [
       'Jason Ting Chang Shen CN',
       'Sophia Cheong Zi Qi',
       'Wong Guan Xuan ',
-      'Shannen Teoh Yun Mei'
+      'Shannen Teoh Yun Mei',
+      'Sean Sia En Hao '
     ]
   },
   {
@@ -288,15 +289,6 @@ const data_physical = [
 ]
 const data_online = [
   {
-    group: 'Group A',
-    facilitators: ['Nga Hong Hoong'],
-    members: [
-      'Elizabeth Tan Li Hwa',
-      'TAN YONG HAN ',
-      'Sean Sia En Hao '
-    ]
-  },
-  {
     group: 'Group B',
     facilitators: ['Joel Wong Wui Ern'],
     members: [
@@ -348,7 +340,8 @@ const data_online = [
       'Lydia Mah Xin yue',
       'Nicholas Woo',
       'Lee Jie Sheng',
-      'Justyn Tan Kai Jie'
+      'Justyn Tan Kai Jie',
+      'TAN YONG HAN '
     ]
   },
   {
