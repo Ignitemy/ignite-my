@@ -571,7 +571,7 @@ const RegistrationForm = () => {
               postcode: '',
               state: '',
               school: '',
-              shirtSize: '',
+              shirtSize: 'N/A',
               remarks: '',
               occupation: 'student',
               attendance: 'online',
@@ -638,6 +638,7 @@ const RegistrationForm = () => {
                   options={secondRadioButtonQuestion.options}
                   name={secondRadioButtonQuestion.name}
                   func={(e) => handleRadioValueOnChange(e, setFieldValue)}
+                  disabled = 'true'
                 />
                 <Field
                   name="address"
@@ -704,7 +705,7 @@ const RegistrationForm = () => {
                   </a>
                   .*
                 </StyledLabel>
-                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
+                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}  disabled = 'true'>
                   {shirtSizes.map((size) => (
                     <MenuItem key={size} value={size}>
                       {size}
