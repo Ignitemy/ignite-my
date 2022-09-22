@@ -142,7 +142,6 @@ const data_physical = [
       'Shawn Tiew Sheng En',
       'John Ng Ye Hann',
       'Vanessa Lim Hai Eng ',
-      'Micah Andrew Lim Jia Jun',
       'JAMIE ALLYSON TAN I-LING',
       'Ethan Chong Tze Wei ',
       'Ivana Yap Hong Ler'
@@ -367,7 +366,8 @@ const data_online = [
       'Teh Yen Hong',
       'Daniel Rudy',
       'Isaac Lai Jie Hin ',
-      'Viveken Krishnan'
+      'Viveken Krishnan',
+      'Micah Andrew Lim Jia Jun'
     ]
   }
 ]
