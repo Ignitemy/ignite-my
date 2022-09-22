@@ -22,7 +22,8 @@ const data_physical = [
       'Jason Ting Chang Shen CN',
       'Sophia Cheong Zi Qi',
       'Wong Guan Xuan ',
-      'Shannen Teoh Yun Mei'
+      'Shannen Teoh Yun Mei',
+      'Sean Sia En Hao '
     ]
   },
   {
@@ -292,8 +293,7 @@ const data_online = [
     facilitators: ['Nga Hong Hoong'],
     members: [
       'Elizabeth Tan Li Hwa',
-      'TAN YONG HAN ',
-      'Sean Sia En Hao '
+      'TAN YONG HAN '
     ]
   },
   {
