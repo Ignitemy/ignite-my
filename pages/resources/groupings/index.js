@@ -176,8 +176,7 @@ const data_physical = [
       'Vanessa Yap',
       'Alynna Lim Jia Yin',
       'Jeanelle Mah Ren Ee',
-      '',
-      ''
+      'Jeremy Tan Chun Xian'
     ]
   },
   {
@@ -345,7 +344,6 @@ const data_online = [
     facilitators: ['Owen Woo Tsen Wen'],
     members: [
       'Annabelle Tong Xin Yue',
-      'Jeremy Tan Chun Xian',
       'Sofee Tieh',
       'Lydia Mah Xin yue',
       'Nicholas Woo',
