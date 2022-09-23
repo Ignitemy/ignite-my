@@ -188,7 +188,8 @@ const data_physical = [
       'Ashlynn Ann Su Chern',
       'Kylie Low ',
       'Nathanael Ang Yi Xin',
-      'Daniel Foo Shen Aun'
+      'Daniel Foo Shen Aun',
+      'Nicholas Woo'
     ]
   },
   {
@@ -258,7 +259,6 @@ const data_physical = [
     group: 'Group 17',
     facilitators: ['Nicholas Cheah Yuan Zhong '],
     members: [
-      'Nicholas Cheah Yuan Zhong ',
       'CHOO YUNG WEI',
       'Matthew Lim Ern Xi',
       'Benjamin Chong Rong En ',
@@ -336,7 +336,6 @@ const data_online = [
       'Annabelle Tong Xin Yue',
       'Sofee Tieh',
       'Lydia Mah Xin yue',
-      'Nicholas Woo',
       'Lee Jie Sheng',
       'Justyn Tan Kai Jie',
       'TAN YONG HAN '
