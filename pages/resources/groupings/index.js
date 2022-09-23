@@ -6,7 +6,7 @@ import Layout from '@/components/Layout'
 import { Heading, Text } from '@/components/Typography'
 import Button from '@/components/Button'
 import { useAuth } from '@/helpers/auth'
-import {HeadingShadow } from '../../../components'
+import { HeadingShadow } from '../../../components'
 
 
 const data_physical = [
@@ -90,7 +90,7 @@ const data_physical = [
   },
   {
     group: 'Group 6',
-    facilitators: ['Teoh Enxi','Jonathan Chin Yee'],
+    facilitators: ['Teoh Enxi', 'Jonathan Chin Yee'],
     members: [
       'Elizabeth Tsan Ern Huey',
       'Jaden Lee Zhen Hao',
@@ -134,12 +134,11 @@ const data_physical = [
   },
   {
     group: 'Group 9',
-    facilitators: ['Anna Lam Li Szer','David Teoh Qi-En'],
+    facilitators: ['Anna Lam Li Szer', 'David Teoh Qi-En'],
     members: [
       'Ang Ern Yi Angelynn',
       'Enid Kang Yin Qian',
       'GRACE KOK EI WEN',
-      'Shawn Tiew Sheng En',
       'John Ng Ye Hann',
       'Vanessa Lim Hai Eng ',
       'JAMIE ALLYSON TAN I-LING',
@@ -345,14 +344,15 @@ const data_online = [
   },
   {
     group: 'Group E',
-    facilitators: ['Choo Shern Wei','Emily Foo Ai Mei '],
+    facilitators: ['Choo Shern Wei', 'Emily Foo Ai Mei '],
     members: [
       'Shannon Loong Jean Ann ',
       'Pua How Keat ',
       'Jeanette Phang Shin Roe',
       'John Shiu Moon Tim ',
       'SHAVONNE LEE JIE ERN',
-      'Wong Wei Wen'
+      'Wong Wei Wen',
+      'Shawn Tiew Sheng En'
     ]
   },
   {
