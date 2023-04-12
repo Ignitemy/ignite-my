@@ -13,6 +13,7 @@ import styled from 'styled-components'
 import Location from './home/_location'
 import Faq from './home/_faq'
 import EventBanner from './home/_event-banner'
+import CollaborationSection from './home/_collaboration-logo'
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -35,6 +36,33 @@ const igniteCarnivalRalleyLogo = {
   width: 687,
   height: 114
 }
+
+const collaborationLogos = [
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  },
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  },
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  },
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  }
+]
 
 const Page = () => {
   return (
@@ -60,6 +88,7 @@ const Page = () => {
         programTime="5-10pm"
         subheading="Invite your friends & family!"
       />
+      <CollaborationSection imageList={collaborationLogos} />
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
       {/* <MiniBannerContainer>
