@@ -40,7 +40,7 @@ const Page = () => {
   return (
     <Layout title="IGNITEMY2022 | Home">
       <Banner
-        bgImgSrc="/images/png/wave_banner.png"
+        bgImgSrc="/images/jpg/worship_hands.jpg"
         eventDate="24.09.2022"
         lineOneText="DAY SUMMIT.&nbsp;"
         lineTwoText="NIGHT RALLY."
