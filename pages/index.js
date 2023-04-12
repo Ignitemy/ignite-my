@@ -14,6 +14,7 @@ import Location from './home/_location'
 import Faq from './home/_faq'
 import EventBanner from './home/_event-banner'
 import CollaborationSection from './home/_collaboration-logo'
+import JoinUs from './home/_join-us'
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -89,6 +90,7 @@ const Page = () => {
         subheading="Invite your friends & family!"
       />
       <CollaborationSection imageList={collaborationLogos} />
+      <JoinUs />
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
       {/* <MiniBannerContainer>
