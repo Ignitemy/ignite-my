@@ -91,7 +91,7 @@ const Faq = () => {
   ]
   return (
     <SectionWrapper>
-      <HeadingShadow>F.A.Q</HeadingShadow>
+      <HeadingShadow align="center">F.A.Q</HeadingShadow>
       {faqList.map((faq) => (
         <DetailWrapper key={faq.question}>
           <StyledSummary>{faq.question}</StyledSummary>
