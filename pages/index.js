@@ -12,6 +12,7 @@ import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
 import Faq from './home/_faq'
+import EventBanner from './home/_event-banner'
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -20,6 +21,20 @@ const MiniBannerContainer = styled.div`
     display: flex;
   }
 `
+
+const igniteYlsLogo = {
+  imgUrl: '/images/png/ignite_yls_full_name.png',
+  alt: 'Ignite Youth Leadership Summit',
+  width: 679,
+  height: 115
+}
+
+const igniteCarnivalRalleyLogo = {
+  imgUrl: '/images/png/ignite_carnival_rally_logo.png',
+  alt: 'Ignite carnival plus Ignite Rally',
+  width: 687,
+  height: 114
+}
 
 const Page = () => {
   return (
@@ -31,9 +46,23 @@ const Page = () => {
         lineTwoText="NIGHT RALLY."
         videoUrl="https://www.youtube.com/embed/fQkThyL3QVY"
       />
+      <EventBanner
+        bgImgSrc="/images/png/wave_banner.png"
+        logoImgDetails={igniteYlsLogo}
+        programDate="26 Aug"
+        programTime="10-3pm"
+        subheading="Requires registration!"
+      />
+      <EventBanner
+        bgImgSrc="/images/png/wave_banner.png"
+        logoImgDetails={igniteCarnivalRalleyLogo}
+        programDate="27 Aug"
+        programTime="5-10pm"
+        subheading="Invite your friends & family!"
+      />
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
-      <MiniBannerContainer>
+      {/* <MiniBannerContainer>
         <MiniBanner
           linkTo="/yls"
           imgSrc="/images/jpg/ignite-yls-banner-bg-2022.jpg"
@@ -50,7 +79,7 @@ const Page = () => {
           imgWidth="351"
           subTitle="IN-PERSON.    ONLINE."
         />
-      </MiniBannerContainer>
+      </MiniBannerContainer> */}
       <Countdown />
       {/* <Video /> */}
       <Location />
