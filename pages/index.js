@@ -11,7 +11,7 @@ import Countdown from './home/_countdown'
 import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
-import Faq from "./home/_faq"
+import Faq from './home/_faq'
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -24,7 +24,13 @@ const MiniBannerContainer = styled.div`
 const Page = () => {
   return (
     <Layout title="IGNITEMY2022 | Home">
-      <Banner />
+      <Banner
+        bgImgSrc="/images/png/wave_banner.png"
+        eventDate="24.09.2022"
+        lineOneText="DAY SUMMIT.&nbsp;"
+        lineTwoText="NIGHT RALLY."
+        videoUrl="https://www.youtube.com/embed/fQkThyL3QVY"
+      />
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
       <MiniBannerContainer>

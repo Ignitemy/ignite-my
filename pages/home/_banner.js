@@ -66,6 +66,19 @@ const letterAni = {
   }
 }
 
+const iframeAnimation = {
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+      delay: 1
+    }
+  }
+}
+
 const BannerContainer = styled.div`
   height: calc(100vh - 100px);
   position: relative;
@@ -174,7 +187,7 @@ const OrangeHeader = styled(motion.h3)`
 //   position: relative;
 // `
 
-const StyledIframe = styled.iframe`
+const StyledIframe = styled(motion.iframe)`
   z-index: 2;
   max-width: 60rem;
   border: solid 2px white;
@@ -208,13 +221,13 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
   </Row>
 )
 
-const Banner = () => {
+const Banner = ({ bgImgSrc, eventDate, lineOneText, lineTwoText, videoUrl }) => {
   const user = useAuth()
   return (
     <BannerContainer>
       <StyledImage
         // src="/images/png/homepage-banner.png"
-        src="/images/png/wave_banner.png"
+        src={bgImgSrc}
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"
@@ -234,14 +247,14 @@ const Banner = () => {
           </ImageWrapper>
           <Details>
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-              24.09.2022
+              {eventDate}
             </WhiteHeader>
             <ShortDetailWrapper>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                DAY SUMMIT.&nbsp;
+                {lineOneText}
               </WhiteHeader>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                NIGHT RALLY.
+                {lineTwoText}
               </WhiteHeader>
             </ShortDetailWrapper>
             <ButtonWrapper>
@@ -266,11 +279,14 @@ const Banner = () => {
       <StyledIframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/fQkThyL3QVY"
+        src={videoUrl}
         title="IGNITEMY2021 Promo Video"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        initial="initial"
+        animate="animate"
+        variants={iframeAnimation}
       />
     </BannerContainer>
   )
