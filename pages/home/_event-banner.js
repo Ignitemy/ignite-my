@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 const BannerContainer = styled.div`
   height: 60vh;
