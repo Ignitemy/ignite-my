@@ -4,15 +4,15 @@ import Image from 'next/image'
 // import { motion } from 'framer-motion'
 
 const BannerContainer = styled.div`
-  height: 60vh;
+  height: 50vh;
+  padding: 5rem 0 7rem 0;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 900px) {
-    height: auto;
-    padding: 5rem 0 7rem 0;
+  @media (min-width: 901px) {
+    height: 60vh;
   }
 `
 
@@ -22,6 +22,8 @@ const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5rem;
+
   @media (min-width: 1280px) {
     gap: 9rem;
   }
@@ -42,18 +44,27 @@ const DateTimeContainer = styled.div`
 `
 
 const WhiteHeader = styled.h3`
-  font-size: 32px;
+  font-size: 26px;
   line-height: 40px;
   font-style: italic;
   color: var(--color-white);
+
+  @media (min-width: 1280px) {
+    font-size: 32px;
+  }
 `
 
 const OrangeHeader = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   line-height: 40px;
   font-style: italic;
   color: var(--color-orange);
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+
+  @media (min-width: 1280px) {
+    font-size: 24px;
+    margin-top: 2rem;
+  }
 `
 
 const EventBanner = ({ bgImgSrc, logoImgDetails, programDate, programTime, subheading }) => {
