@@ -225,16 +225,16 @@ const Header = () => {
                   Log In
                 </Button>
               </StyledLink>
-              {/* <StyledLink href="/register">
+              <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink> */}
-              <StyledExtLink
+              </StyledLink>
+              {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
             </>
           ) : (
             <>
