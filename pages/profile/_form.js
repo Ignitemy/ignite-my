@@ -234,7 +234,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (user) {
-      const subscriber = db.collection('users').onSnapshot((snapshot) => {
+      const subscriber = db.collection('ignitemy23').onSnapshot((snapshot) => {
         snapshot.forEach((doc) => {
           const data = doc.data()
           if (data.email === user.email) {
