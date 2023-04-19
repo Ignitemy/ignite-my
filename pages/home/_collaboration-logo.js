@@ -47,12 +47,39 @@ const StyledImageContainer = styled.div`
   }
 `
 
-const CollaborationSection = ({ imageList }) => {
+const collaborationLogos = [
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  },
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  },
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  },
+  {
+    imgUrl: '/images/png/event-1.png',
+    alt: 'Burning match',
+    width: 642,
+    height: 380
+  }
+]
+
+const CollaborationSection = () => {
   return (
     <SectionWrapper>
       <HeadingShadow align="center">In Collaboration With:</HeadingShadow>
       <ImagesContainer>
-        {imageList.map((image) => (
+        {collaborationLogos.map((image) => (
           <StyledImageContainer>
             <Image src={image.imgUrl} alt={image.alt} width={image.width} height={image.height} />
           </StyledImageContainer>

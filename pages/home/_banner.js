@@ -221,13 +221,21 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
   </Row>
 )
 
-const Banner = ({ bgImgSrc, eventDate, lineOneText, lineTwoText, videoUrl }) => {
+const bannerInfo = {
+  bgImgSrc: "/images/jpg/worship_hands.jpg",
+  eventDate: "24.09.2023",
+  lineOneText: "DAY SUMMIT.&nbsp;",
+  lineTwoText: "NIGHT RALLY.",
+  videoUrl: "https://www.youtube.com/embed/fQkThyL3QVY"
+}
+
+const Banner = () => {
   const user = useAuth()
   return (
     <BannerContainer>
       <StyledImage
         // src="/images/png/homepage-banner.png"
-        src={bgImgSrc}
+        src={bannerInfo.bgImgSrc}
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"
@@ -247,14 +255,14 @@ const Banner = ({ bgImgSrc, eventDate, lineOneText, lineTwoText, videoUrl }) => 
           </ImageWrapper>
           <Details>
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-              {eventDate}
+              {bannerInfo.eventDate}
             </WhiteHeader>
             <ShortDetailWrapper>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                {lineOneText}
+                {bannerInfo.lineOneText}
               </WhiteHeader>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                {lineTwoText}
+                {bannerInfo.lineTwoText}
               </WhiteHeader>
             </ShortDetailWrapper>
             <ButtonWrapper>
@@ -279,7 +287,7 @@ const Banner = ({ bgImgSrc, eventDate, lineOneText, lineTwoText, videoUrl }) => 
       <StyledIframe
         width="100%"
         height="100%"
-        src={videoUrl}
+        src={bannerInfo.videoUrl}
         title="IGNITEMY2021 Promo Video"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
