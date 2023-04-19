@@ -224,7 +224,7 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
 const bannerInfo = {
   bgImgSrc: "/images/jpg/worship_hands.jpg",
   eventDate: "24.09.2023",
-  lineOneText: "DAY SUMMIT.&nbsp;",
+  lineOneText: "DAY SUMMIT.",
   lineTwoText: "NIGHT RALLY.",
   videoUrl: "https://www.youtube.com/embed/fQkThyL3QVY"
 }
@@ -259,7 +259,7 @@ const Banner = () => {
             </WhiteHeader>
             <ShortDetailWrapper>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                {bannerInfo.lineOneText}
+                {bannerInfo.lineOneText} &nbsp;
               </WhiteHeader>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
                 {bannerInfo.lineTwoText}
