@@ -34,8 +34,8 @@ const igniteYlsLogo = {
 const igniteCarnivalRalleyLogo = {
   imgUrl: '/images/png/ignite_carnival_rally_logo.png',
   alt: 'Ignite carnival plus Ignite Rally',
-  width: 687,
-  height: 114
+  width: 711,
+  height: 107
 }
 
 const Page = () => {
@@ -43,21 +43,23 @@ const Page = () => {
     <Layout title="IGNITEMY2022 | Home">
       <Banner />
       <EventBanner
-        bgImgSrc="/images/png/wave_banner.png"
+        bgImgSrc="/images/jpg/demo_rally.jpg"
         logoImgDetails={igniteYlsLogo}
-        programDate="26 Aug"
-        programTime="10-3pm"
-        subheading="Requires registration!"
+        programDate="26 AUG 2023"
+        programTime="10:00AM - 3:00PM"
+        subheading="Join us onine or in-person"
+        subheading2="Requires registration!"
       />
       <EventBanner
-        bgImgSrc="/images/png/wave_banner.png"
+        bgImgSrc="/images/png/demo_carnival.png"
         logoImgDetails={igniteCarnivalRalleyLogo}
-        programDate="27 Aug"
-        programTime="5-10pm"
+        programDate="27 AUG 2023"
+        programTime="4:30PM - 10:00PM"
         subheading="Invite your friends & family!"
+        subheading2="No registration needed!"
       />
       <CollaborationSection />
-      <JoinUs />
+      {/* <JoinUs /> */}
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
       {/* <MiniBannerContainer>
