@@ -48,7 +48,6 @@ const WhiteHeader = styled.h3`
   line-height: 40px;
   font-style: italic;
   color: var(--color-white);
-
   @media (min-width: 1280px) {
     font-size: 32px;
   }
@@ -56,18 +55,18 @@ const WhiteHeader = styled.h3`
 
 const OrangeHeader = styled.h3`
   font-size: 20px;
-  line-height: 40px;
+  line-height: 22px;
   font-style: italic;
   color: var(--color-orange);
   margin-top: 0.5rem;
-
+  text-align:center;
   @media (min-width: 1280px) {
     font-size: 24px;
     margin-top: 2rem;
   }
 `
 
-const EventBanner = ({ bgImgSrc, logoImgDetails, programDate, programTime, subheading }) => {
+const EventBanner = ({ bgImgSrc, logoImgDetails, programDate, programTime, subheading, subheading2 }) => {
   return (
     <BannerContainer>
       <StyledImage
@@ -92,6 +91,7 @@ const EventBanner = ({ bgImgSrc, logoImgDetails, programDate, programTime, subhe
             <WhiteHeader>{programTime}</WhiteHeader>
           </DateTimeContainer>
           <OrangeHeader>{subheading}</OrangeHeader>
+          <OrangeHeader>{subheading2}</OrangeHeader>
         </div>
       </BannerContent>
     </BannerContainer>
