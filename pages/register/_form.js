@@ -568,7 +568,7 @@ const RegistrationForm = () => {
           <FormHeading>
             {/* <Image src="/images/png/register.png" height={45} width={230} /> */}
             <HeadingShadow>Register</HeadingShadow>
-            <p>Submit the form to join IGNITEMY2022!</p>
+            <p>Submit the form to join IGNITEMY2023!</p>
           </FormHeading>
           <Formik
             initialValues={{
@@ -777,7 +777,7 @@ const RegistrationForm = () => {
                     as={Checkbox}
                   />
                   <label htmlFor="registerChecked" style={{ color: 'var(--color-white)' }}>
-                    I am registering for IGNITEMY2022
+                    I am registering for IGNITEMY2023
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="registerChecked" component="div" />

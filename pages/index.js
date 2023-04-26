@@ -13,7 +13,7 @@ import styled from 'styled-components'
 import Location from './home/_location'
 import Faq from './home/_faq'
 import EventBanner from '@/components/EventBanner'
-import CollaborationSection from './home/_collaboration-logo'
+import CollaborationSection from './rally/_collaboration-logo'
 import JoinUs from './home/_join-us'
 
 const MiniBannerContainer = styled.div`
@@ -40,10 +40,10 @@ const igniteCarnivalRalleyLogo = {
 
 const Page = () => {
   return (
-    <Layout title="IGNITEMY2022 | Home">
+    <Layout title="IGNITEMY2023 | Home">
       <Banner />
       <EventBanner
-        bgImgSrc="/images/jpg/demo_rally.jpg"
+        bgImgSrc="/images/png/IGNITEMY2023/chain1.png"
         logoImgDetails={igniteYlsLogo}
         programDate="26 AUG 2023"
         programTime="10:00AM - 3:00PM"
@@ -51,14 +51,13 @@ const Page = () => {
         subheading2="Requires registration!"
       />
       <EventBanner
-        bgImgSrc="/images/png/demo_carnival.png"
+        bgImgSrc="/images/png/IGNITEMY2023/chain 1.2.png"
         logoImgDetails={igniteCarnivalRalleyLogo}
         programDate="27 AUG 2023"
         programTime="4:30PM - 10:00PM"
-        subheading="Invite your friends & family!"
+        subheading="Invite your friends & family"
         subheading2="No registration needed!"
       />
-      <CollaborationSection />
       {/* <JoinUs /> */}
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}

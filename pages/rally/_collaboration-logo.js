@@ -77,7 +77,7 @@ const collaborationLogos = [
 const CollaborationSection = () => {
   return (
     <SectionWrapper>
-      <HeadingShadow align="center">In Collaboration With:</HeadingShadow>
+      <HeadingShadow align="center">Partners</HeadingShadow>
       <ImagesContainer>
         {collaborationLogos.map((image) => (
           <StyledImageContainer>

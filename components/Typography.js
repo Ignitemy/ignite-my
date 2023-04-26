@@ -59,9 +59,9 @@ export const HeadingBold = styled.p`
   font-style: ${(props) => props.fstyle || 'italic'};
   letter-spacing: 0.2rem;
   @media (max-width: 900px) {
-  font-size: ${(props) => props.size || '3.4rem'};
-  letter-spacing: 0.1rem;
-}
+    font-size: ${(props) => props.size || '3.4rem'};
+    letter-spacing: 0.1rem;
+  }
   `
 
 export const HeadingShadow = styled.p`
@@ -73,9 +73,9 @@ font-style: ${(props) => props.fstyle || 'italic'};
 text-shadow: 3px 1px 0px #FF6600;
 letter-spacing: 0.2rem;
 @media (max-width: 900px) {
-font-size: ${(props) => props.size || '3.4rem'};
-text-shadow: 2px 1px 0px #FF6600;
-letter-spacing: 0.1rem;
+  font-size: ${(props) => props.size || '3.4rem'};
+  text-shadow: 2px 1px 0px #FF6600;
+  letter-spacing: 0.1rem;
 }
 `
 

@@ -97,8 +97,7 @@ const LoginSection = () => {
       <RegisterSection>
         <BannerContainer>
           <StyledImage
-            src="/images/png/wave_login.png"
-            alt="Sunset"
+            src="/images/png/IGNITEMY2023/chain 5.png"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
@@ -118,7 +117,7 @@ const LoginSection = () => {
                 <Row>
                     <CalendarIcon />
                     <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                      24TH SEPT 2022
+                      26TH AUG 2023
                     </Text>
                   </Row>
                   {/* <Row>

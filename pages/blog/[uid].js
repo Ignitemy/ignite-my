@@ -86,7 +86,7 @@ const BlogLink = styled.span`
 const Blog = (props) => {
   const data = props.response.data
   return (
-    <Layout title="IGNITEMY2022 | Posts">
+    <Layout title="IGNITEMY2023 | Posts">
       <Container>
         <LinkWrapper>
           <Link href="/blog">

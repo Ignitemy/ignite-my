@@ -144,6 +144,10 @@ const Details = styled.div`
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
+  font-size: 30px;
+  line-height: 40px;
+  font-style: italic;
+  color: var(--color-white);
 
   @media (max-width: 900px) {
     margin: 0;
@@ -152,7 +156,10 @@ const Details = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-  margin-top: 1.2rem;
+  margin-top: 2rem;  
+  @media (max-width: 900px) {
+    margin-top: 6rem;  
+  }
 `
 
 const Row = styled(motion.div)`
@@ -221,11 +228,22 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
   </Row>
 )
 
+const OrangeSpan = styled.span`
+  color: var(--color-orange);
+  font-style: italic;
+`
+
 const bannerInfo = {
   bgImgSrc: "/images/jpg/worship_hands.jpg",
-  eventDate: "24.09.2023",
-  lineOneText: "DAY SUMMIT.",
-  lineTwoText: "NIGHT RALLY.",
+  eventDate1: "26 ",
+  eventDate2: "& ",
+  eventDate3: "27 AUG 2023",
+  subHeadingA1: "TWO ",
+  subHeadingA2: "DAY EVENT",
+  subHeadingB1: "FREE ",
+  subHeadingB2: "FREE",
+  // lineOneText: "DAY SUMMIT.",
+  // lineTwoText: "NIGHT RALLY.",
   videoUrl: "https://www.youtube.com/embed/fQkThyL3QVY"
 }
 
@@ -253,21 +271,28 @@ const Banner = () => {
               priority="true"
             />
           </ImageWrapper>
-          <Details>
-            <WhiteHeader initial="initial" animate="animate" variants={date}>
-              {bannerInfo.eventDate}
-            </WhiteHeader>
-            <ShortDetailWrapper>
+          <Details> 
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
+              {bannerInfo.eventDate1}<OrangeSpan>{bannerInfo.eventDate2}</OrangeSpan>{bannerInfo.eventDate3}
+          </WhiteHeader>
+          
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
+              <OrangeSpan>{bannerInfo.subHeadingA1}</OrangeSpan>{bannerInfo.subHeadingA2}
+          </WhiteHeader>
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
+              {bannerInfo.subHeadingB1}<OrangeSpan>{bannerInfo.subHeadingB1}</OrangeSpan>{bannerInfo.subHeadingB2}
+          </WhiteHeader>
+            {/* <ShortDetailWrapper>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
                 {bannerInfo.lineOneText} &nbsp;
               </WhiteHeader>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                {bannerInfo.lineTwoText}
+                {bannerInfo.liShortDetailWrapperneTwoText}
               </WhiteHeader>
-            </ShortDetailWrapper>
-            <ButtonWrapper>
+            </ShortDetailWrapper> */}
+            {/* <ButtonWrapper>
               <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
-            </ButtonWrapper>
+            </ButtonWrapper> */}
             {/* <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>
         </ContentWrapper>

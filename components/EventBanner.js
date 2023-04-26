@@ -26,6 +26,7 @@ const BannerContent = styled.div`
 
   @media (min-width: 1280px) {
     gap: 9rem;
+
   }
 `
 
@@ -36,9 +37,13 @@ const StyledImage = styled(Image)`
 const DateTimeContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction:column;
   gap: 1rem;
+  margin-bottom:5rem;
   @media (min-width: 1280px) {
-    gap: 5rem;
+    flex-direction:row;
+    gap: 10rem;
   }
   /* margin: auto; */
 `

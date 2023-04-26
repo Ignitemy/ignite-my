@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
   padding: 7rem 3rem;
   // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   // background: ${(props) => props.background};
-  background: url("/images/png/IGNITEMY2023/chain 1 flip.png");
+  background: url("/images/png/wave_yls_speakers.png");
   background-size: cover;
   background-position: center;
 
@@ -25,13 +25,9 @@ const SectionContainer = styled.section`
     padding: 12rem 34rem;
   }
 `
-const DetailsWrapper = styled.div`
-display: flex;
-flex-direction: row;
-@media (max-width: 1024px) {
-  flex-direction: column;
-  gap: 8rem;
-}
+
+const SectionSeperator = styled.div`
+  height: 7rem;
 `
 
 const speakerSectionDetails = [
@@ -56,19 +52,42 @@ const speakerSectionDetails = [
     founderLink: 'https://www.gengemilang.org/',
     details:
       'Daniel has served in the pastoral ministry for 17 years. Daniel pioneered a ministry to reach the East Malaysians residing in the Klang Valley. The ministry eventually grew to be the SIBLife Church he pastors here in PJ today. Ever since his corporate life, Daniel has been very involved in serving the underserved community. In 2010, he founded a social welfare organisation, Yayasan Generasi Gemilang.'
+  },
+  {
+    imgSrc: '/images/jpg/daryll-1.jpg',
+    imgSrcHover: '/images/jpg/daryll-2.jpg',
+    alt: 'Daryll Tan',
+    name: 'Daryll Tan',
+    separator: 'of',
+    founder: 'Open Minds',
+    founderLink: 'https://openmindsresources.com/',
+    details:
+      'Daryll started with establishing his own talent management and video marketing business at 21 years old. Today, he is the Co-Founder and Marketing Technology Consultant at OpenMinds™, and the Founder and Group CEO of food & technology company Feed Forward Sdn. Bhd. Daryll is actively involved in entrepreneurship, startup mentorship, partnership development and social media consultation. As an entrepreneur, he strives to make a positive impact and create purposeful jobs; actively nurturing high-performing, innovative teams and growing entrepreneurs to make a positive impact.'
   }
 ]
 
+const specialItemBy = {
+  imgSrc: '/images/jpg/shn-1.jpg',
+  imgSrcHover: '/images/jpg/shn-2.jpg',
+  alt: 'SHNe',
+  name: 'SHN',
+  separator: '',
+  founder: '🎵',
+  founderLink: 'https://open.spotify.com/artist/5EovY4LBurcmsfIdpNEtfq?si=IsqtvvPlSXmbT6NjD12d2g&nd=1',
+  details:
+    'After going independent in 2020, SHN released several singles that amassed a total of over 100,000 streams across all platforms. She is most excited about weaving stories into lyrics with pop tunes that will get you either dancing to the likes of "people i love (hurt me)", having your heartstrings pulled by "I Hope She\'s Me" or vibing out to songs like "do ya". SHN has collaborated with local artists likeTheMingThing, Jo Malone, and Estee Lauder, and artists across the causeway and will continue to expand her reach beyond the local music scene!'
+}
 
 const SpeakerSection = () => {
   return (
     <SectionContainer>
-      <HeadingShadow align="center">Speakers</HeadingShadow>
-      <DetailsWrapper>
+      <HeadingShadow>Speakers</HeadingShadow>
       {speakerSectionDetails.map((speaker) => (
         <SpeakerProfile key={speaker.name} speaker={speaker} />
       ))}
-      </DetailsWrapper>
+      <SectionSeperator />
+      <HeadingShadow>Special Item by</HeadingShadow>
+      <SpeakerProfile speaker={specialItemBy} />
     </SectionContainer>
   )
 }

@@ -13,7 +13,7 @@ const Login = () => {
   }, [user])
 
   return (
-    <Layout title="IGNITEMY2022 | Reset Password">
+    <Layout title="IGNITEMY2023 | Reset Password">
       <ResetPasswordSection />
     </Layout>
   )

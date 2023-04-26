@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
   padding: 7rem 3rem;
   // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   // background: ${(props) => props.background};
-  background: url("/images/png/wave_rally_speakers.png");
+  background: url("/images/png/IGNITEMY2023/chain 3.png");
   background-size: cover;
   background-position: bottom;
 
@@ -40,7 +40,7 @@ const specialItemBy = {
 const SpeakerSection = () => {
   return (
     <SectionContainer>
-      <HeadingShadow>Speaker</HeadingShadow>
+      <HeadingShadow align='center'>Speaker</HeadingShadow>
       <SpeakerProfile speaker={specialItemBy} />
     </SectionContainer>
   )

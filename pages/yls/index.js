@@ -10,7 +10,7 @@ const YLS = () => {
       <Banner />
       <SpeakerSection />
       <Schedule />
-      <JoinUs />
+      {/* <JoinUs /> */}
     </Layout>
   )
 }

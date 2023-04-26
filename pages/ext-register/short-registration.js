@@ -453,7 +453,7 @@ const ShortRegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY2022
+              See you at IGNITEMY2023
             </Text>
             <Text color="white" size="2rem" align="center" m="4.5rem 0">
               Redirecting you back to the homepage...
@@ -464,9 +464,9 @@ const ShortRegistrationForm = () => {
             <HeadingWrapper>
               <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
                 <span style={{ textShadow: '3px 1px 0 #FF6600' }}>
-                  Register for IGNITEMY<Desktop2022>2022</Desktop2022>
+                  Register for IGNITEMY<Desktop2022>2023</Desktop2022>
                 </span>
-                <Mobile2022>2022</Mobile2022>
+                <Mobile2022>2023</Mobile2022>
               </Heading>
             </HeadingWrapper>
             <Formik

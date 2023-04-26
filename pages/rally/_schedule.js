@@ -146,7 +146,7 @@ const rallyTimetable = [
 const Schedule = () => {
   return (
     <SectionContainer>
-      <HeadingShadow>Schedule</HeadingShadow>
+      <HeadingShadow align='center'>Schedule</HeadingShadow>
       <SectionContentWrapper>
         <StyledImage>
           <Image src="/images/png/schedule-dwg.png" alt="in person" width={395} height={294} />
@@ -178,7 +178,7 @@ const Schedule = () => {
               </tbody>
             </StyledTable>
           </div>
-          <AbosoluteDate>24 September 2022, Saturday</AbosoluteDate>
+          <AbosoluteDate>27 August 2023, Sunday</AbosoluteDate>
         </TableSectionContainer>
       </SectionContentWrapper>
     </SectionContainer>

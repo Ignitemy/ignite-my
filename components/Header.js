@@ -252,13 +252,13 @@ const Header = () => {
               >
                 <LogoutIcon />
               </StyledLogout> */}
-              <StyledExtLink
+              {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
               <StyledProfile type="button" onClick={toggleMenu}>
                 <ProfileIcon />
                 {showMenu && (

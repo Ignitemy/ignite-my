@@ -11,22 +11,21 @@ const SpeakerProfileContainer = styled.div`
   @media (min-width: 1024px) {
     margin-top: 3rem;
     margin-bottom: 3rem;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 8rem;
   }
 `
 
 const StyledImage = styled.div`
-  width: 250px;
-  min-height: 300px;
+  width: 400px;
+  min-height: 400px;
   height: auto;
   position: relative;
 `
 
 const DetailsWrapper = styled.div`
   color: var(--color-white);
-
   @media (min-width: 1024px) {
     width: 70%;
   }
@@ -76,7 +75,7 @@ const sharedImageCSS = css`
   transform: translate(-50%, -50%);
   transition: opacity 0.5s ease-in-out;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 5%;
 `
 
 const SpeakerImage = styled.img`
@@ -98,8 +97,8 @@ const SpeakerProfile = ({ speaker }) => {
         <SpeakerImage
           src={speaker.imgSrc}
           alt={speaker.alt}
-          height={250}
-          width={250}
+          height={400}
+          width={400}
           hover={hover}
           loading="lazy"
         />
@@ -107,8 +106,8 @@ const SpeakerProfile = ({ speaker }) => {
           <HoverImage
             src={speaker.imgSrcHover}
             alt={speaker.alt}
-            height={250}
-            width={250}
+            height={400}
+            width={400}
             hover={hover}
             loading="lazy"
           />
