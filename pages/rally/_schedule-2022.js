@@ -16,16 +16,20 @@ const SectionContainer = styled.section`
     padding: 4rem 7rem;
   }
   @media (min-width: 1440px) {
-    padding: 4rem 16rem;
+    padding: 5rem 16rem;
   }
   @media (min-width: 1700px) {
-    padding: 4rem 34rem;
+    padding: 5rem 34rem;
   }
 `
 
 const SectionContentWrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (min-width: 1280px) {
+    padding: 6em 0;
+  }
 `
 
 const StyledImage = styled.div`
@@ -67,7 +71,7 @@ const TableSectionContainer = styled.div`
   @media (min-width: 1280px) {
     justify-content: flex-start;
     margin-top: 0;
-    margin-left:10rem;
+    margin-left: 10rem;
     gap: 5rem;
     width: auto;
   }
@@ -146,7 +150,7 @@ const rallyTimetable = [
 const Schedule = () => {
   return (
     <SectionContainer>
-      <HeadingShadow align='center'>Schedule</HeadingShadow>
+      <HeadingShadow align="center">Schedule</HeadingShadow>
       <SectionContentWrapper>
         <StyledImage>
           <Image src="/images/png/schedule-dwg.png" alt="in person" width={395} height={294} />
