@@ -16,16 +16,20 @@ const SectionContainer = styled.section`
     padding: 4rem 7rem;
   }
   @media (min-width: 1440px) {
-    padding: 4rem 16rem;
+    padding: 5rem 16rem;
   }
   @media (min-width: 1700px) {
-    padding: 4rem 34rem;
+    padding: 5rem 34rem;
   }
 `
 
 const SectionContentWrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (min-width: 1280px) {
+    padding: 6em 0;
+  }
 `
 
 const StyledImage = styled.div`
