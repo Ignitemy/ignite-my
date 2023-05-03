@@ -203,7 +203,10 @@ const LoginForm = () => {
       if (currentUser) {
         const uid = currentUser.uid
         let userDocument = await getUserByUserId(uid)
-        if (userDocument[0].ignite2022 === null || userDocument[0].ignite2022 === undefined)
+        // if (userDocument[0].ignite2022 === null || userDocument[0].ignite2022 === undefined)
+        //   router.push('/ext-register')
+        console.log(userDocument);
+        if (userDocument.length === 0)
           router.push('/ext-register')
         else router.push(`/${redirect}`)
       }
