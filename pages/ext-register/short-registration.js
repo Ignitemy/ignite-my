@@ -5,7 +5,7 @@ import RadioButton from '@/components/RadioButton'
 import { Button, Heading, Text } from '@/components/index'
 import FirebaseContext from '@/context/firebase'
 import router from 'next/router'
-import { getUserByUserId } from '@/helpers/firebase'
+// import { getUserByUserId } from '@/helpers/firebase'
 import { useAuth } from '@/helpers/auth'
 import {
   Checkbox,
@@ -19,6 +19,7 @@ import {
 import * as yup from 'yup'
 import StateModal from './_state-block-model'
 import SuccessIcon from '@/images/svg/success'
+import { listOfStates, shirtSizes, languagePreferences } from '../register/_form'
 
 const theme = createMuiTheme({
   palette: {
@@ -280,28 +281,7 @@ const RegisteredContainer = styled.div`
   }
 `
 
-const listOfStates = [
-  { value: 'Johor', disabled: false },
-  { value: 'Kedah', disabled: false },
-  { value: 'Kelantan', disabled: false },
-  { value: 'Kuala Lumpur', disabled: false },
-  { value: 'Labuan', disabled: false },
-  { value: 'Malacca', disabled: false },
-  { value: 'Negeri Sembilan', disabled: false },
-  { value: 'Pahang', disabled: false },
-  { value: 'Penang', disabled: false },
-  { value: 'Perak', disabled: false },
-  { value: 'Perlis', disabled: false },
-  { value: 'Putrajaya', disabled: false },
-  { value: 'Sabah', disabled: false },
-  { value: 'Sarawak', disabled: false },
-  { value: 'Selangor', disabled: false },
-  { value: 'Terrengganu', disabled: false }
-]
-
 const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
-
-const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
 const firstRadioButtonQuestion = {
   question: 'Student or Teacher?*',
@@ -334,6 +314,11 @@ const secondRadioButtonQuestion = {
 }
 
 const validationSchema = yup.object({
+  fullName: yup.string().required("Don't forget to include your full name"),
+  email: yup
+    .string()
+    .email('Your email has to be in the right format')
+    .required("Don't forget to include your email address"),
   age: yup.string().max(2, "You can't be that old...").required("Don't forget to include your age"),
   myKad: yup
     .string()
@@ -352,15 +337,17 @@ const validationSchema = yup.object({
     .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
-  shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
+  // shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
+  languagePreference: yup.string().required('Please select your language preference'),
+  schoolHasCF: yup.string().required('Let us know whether your school has a Christ Fellowship.'),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
 const ShortRegistrationForm = () => {
   const { firebase } = useContext(FirebaseContext)
-  const [userData, setUserData] = useState({})
-  const [isLoading, setIsLoading] = useState(true)
+  // const [userData, setUserData] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
   // for filter option
   const [filterOption, setfilterOption] = useState('online')
   const [stateErrorModal, setStateErrorModal] = useState(false)
@@ -371,17 +358,19 @@ const ShortRegistrationForm = () => {
 
   useEffect(() => {
     if (user) {
-      const subscriber = db.collection('users').onSnapshot((snapshot) => {
-        snapshot.forEach((doc) => {
-          const data = doc.data()
-          if (data.email === user.email) {
-            setUserData(data)
-            return
-          }
-        })
-        setIsLoading(false)
-      })
-      return () => subscriber()
+      // const subscriber = db.collection('users').onSnapshot((snapshot) => {
+      //   snapshot.forEach((doc) => {
+      //     const data = doc.data()
+      //     if (data.email === user.email) {
+      //       setUserData(data)
+      //       return
+      //     }
+      //   })
+      //   setIsLoading(false)
+      // })
+      setIsLoading(false)
+
+      // return () => subscriber()
     }
   }, [user])
 
@@ -414,9 +403,13 @@ const ShortRegistrationForm = () => {
 
     try {
       const currentUser = firebase.auth().currentUser
-      const userDocumentId = await getUserByUserId(currentUser.uid)
+      // const userDocumentId = await getUserByUserId(currentUser.uid)
       // update existing user document
-      await firebase.firestore().collection('users').doc(userDocumentId[0].docId).update({
+      // await firebase.firestore().collection('users').doc(userDocumentId[0].docId).add({
+      await firebase.firestore().collection('ignitemy23').add({
+        userId: currentUser.uid,
+        fullName: values.fullName,
+        email: values.email,
         age: values.age,
         myKad: values.myKad,
         contactNumber: values.contactNumber,
@@ -425,11 +418,14 @@ const ShortRegistrationForm = () => {
         postcode: values.postcode,
         state: values.state,
         school: values.school,
-        shirtSize: values.shirtSize,
+        // shirtSize: values.shirtSize,
         remarks: values.remarks,
         occupation: values.occupation,
         attendance: values.attendance,
-        ignite2022: true,
+        schoolHasCF: values.schoolHasCF,
+        languagePreference: values.languagePreference,
+        firstTime: 'No',
+        // ignite2022: true,
         dateCreated: Date.now()
       })
       setRegistered(true)
@@ -463,6 +459,8 @@ const ShortRegistrationForm = () => {
           <FormContainer>
             <HeadingWrapper>
               <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
+                <span style={{ textShadow: '3px 1px 0 #FF6600' }}>Hey {user.displayName}!</span>
+                <br />
                 <span style={{ textShadow: '3px 1px 0 #FF6600' }}>
                   Register for IGNITEMY<Desktop2022>2023</Desktop2022>
                 </span>
@@ -471,18 +469,22 @@ const ShortRegistrationForm = () => {
             </HeadingWrapper>
             <Formik
               initialValues={{
-                age: userData.age,
-                myKad: userData.myKad,
-                contactNumber: userData.contactNumber,
-                address: userData.address,
-                city: userData.city,
-                postcode: userData.postcode,
-                state: userData.state,
-                school: userData.school,
-                shirtSize: '',
-                remarks: userData.remarks,
+                fullName: user.displayName,
+                email: user.email,
+                age: '',
+                myKad: '',
+                contactNumber: '',
+                address: '',
+                city: '',
+                postcode: '',
+                state: '',
+                school: '',
+                // shirtSize: '',
+                remarks: '',
                 occupation: 'student',
                 attendance: 'online',
+                schoolHasCF: '',
+                languagePreference: '',
                 checked: false
               }}
               validationSchema={validationSchema}
@@ -491,20 +493,29 @@ const ShortRegistrationForm = () => {
               {({ isSubmitting, dirty, isValid, setFieldValue }) => (
                 <StyledForm autoComplete="off">
                   <FormWrapper>
+                    <Field
+                      name="fullName"
+                      label="Full Name (as per NRIC)"
+                      placeholder="e.g. ignite team"
+                      value={user.displayName}
+                      required
+                      as={CustomTextField}
+                    />
+                    <Field
+                      type="email"
+                      name="email"
+                      label="Email Address"
+                      placeholder="e.g. ignite@example.com"
+                      value={user.email}
+                      required
+                      as={CustomTextField}
+                    />
                     <FourColumnRow>
-                      <Field
-                        type="number"
-                        name="age"
-                        label="Age"
-                        value={userData.age}
-                        required
-                        as={CustomTextField}
-                      />
+                      <Field type="number" name="age" label="Age" required as={CustomTextField} />
                       <Field
                         type="string"
                         name="myKad"
                         label="NRIC Number (without dashes)"
-                        value={userData.myKad}
                         required
                         as={CustomTextField}
                       />
@@ -513,7 +524,6 @@ const ShortRegistrationForm = () => {
                       type="tel"
                       name="contactNumber"
                       label="Contact Number (without dashes)"
-                      value={userData.contactNumber}
                       required
                       as={CustomTextField}
                     />
@@ -526,25 +536,12 @@ const ShortRegistrationForm = () => {
                     <Field
                       name="address"
                       label="House Unit Number & Street Address"
-                      value={userData.address}
                       required
                       as={CustomTextField}
                     />
                     <TwoColumnRow>
-                      <Field
-                        name="city"
-                        label="City"
-                        value={userData.city}
-                        required
-                        as={CustomTextField}
-                      />
-                      <Field
-                        name="postcode"
-                        label="Postcode"
-                        value={userData.postcode}
-                        required
-                        as={CustomTextField}
-                      />
+                      <Field name="city" label="City" required as={CustomTextField} />
+                      <Field name="postcode" label="Postcode" required as={CustomTextField} />
                     </TwoColumnRow>
                     <StyledLabel htmlFor="State">State *</StyledLabel>
                     <Field name="state" label="State" required as={CustomSelect}>
@@ -572,19 +569,13 @@ const ShortRegistrationForm = () => {
                           )
                         })}
                     </Field>
-                    <Field
-                      name="school"
-                      label="School"
-                      value={userData.school}
-                      required
-                      as={CustomTextField}
-                    />
+                    <Field name="school" label="School" required as={CustomTextField} />
                     <RadioButton
                       question={firstRadioButtonQuestion.question}
                       options={firstRadioButtonQuestion.options}
                       name={firstRadioButtonQuestion.name}
                     />
-                    <StyledLabel htmlFor="shirtSize">
+                    {/* <StyledLabel htmlFor="shirtSize">
                       T-Shirt size? Refer to sizing chart{' '}
                       <a
                         href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
@@ -599,6 +590,29 @@ const ShortRegistrationForm = () => {
                       {shirtSizes.map((size) => (
                         <MenuItem key={size} value={size}>
                           {size}
+                        </MenuItem>
+                      ))}
+                    </Field> */}
+                    <StyledLabel htmlFor="schoolHasCF">
+                      Does your school have Christian Fellowship?*
+                    </StyledLabel>
+                    <Field name="schoolHasCF" label="schoolHasCF" required as={CustomSelect}>
+                      {['Yes', 'No'].map((option) => (
+                        <MenuItem key={option} value={option}>
+                          {option}
+                        </MenuItem>
+                      ))}
+                    </Field>
+                    <StyledLabel htmlFor="languagePreference">Language Preference*</StyledLabel>
+                    <Field
+                      name="languagePreference"
+                      label="languagePreference"
+                      required
+                      as={CustomSelect}
+                    >
+                      {languagePreferences.map((language) => (
+                        <MenuItem key={language} value={language}>
+                          {language}
                         </MenuItem>
                       ))}
                     </Field>
