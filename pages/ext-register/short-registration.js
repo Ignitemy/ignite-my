@@ -314,11 +314,6 @@ const secondRadioButtonQuestion = {
 }
 
 const validationSchema = yup.object({
-  fullName: yup.string().required("Don't forget to include your full name"),
-  email: yup
-    .string()
-    .email('Your email has to be in the right format')
-    .required("Don't forget to include your email address"),
   age: yup.string().max(2, "You can't be that old...").required("Don't forget to include your age"),
   myKad: yup
     .string()
@@ -347,6 +342,7 @@ const validationSchema = yup.object({
 const ShortRegistrationForm = () => {
   const { firebase } = useContext(FirebaseContext)
   // const [userData, setUserData] = useState({})
+  const [displayName, setDisplayName] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   // for filter option
   const [filterOption, setfilterOption] = useState('online')
@@ -368,6 +364,7 @@ const ShortRegistrationForm = () => {
       //   })
       //   setIsLoading(false)
       // })
+      setDisplayName(user.displayName)
       setIsLoading(false)
 
       // return () => subscriber()
@@ -408,8 +405,8 @@ const ShortRegistrationForm = () => {
       // await firebase.firestore().collection('users').doc(userDocumentId[0].docId).add({
       await firebase.firestore().collection('ignitemy23').add({
         userId: currentUser.uid,
-        fullName: values.fullName,
-        email: values.email,
+        fullName: currentUser.displayName,
+        email: currentUser.email,
         age: values.age,
         myKad: values.myKad,
         contactNumber: values.contactNumber,
@@ -459,7 +456,7 @@ const ShortRegistrationForm = () => {
           <FormContainer>
             <HeadingWrapper>
               <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
-                <span style={{ textShadow: '3px 1px 0 #FF6600' }}>Hey {user.displayName}!</span>
+                <span style={{ textShadow: '3px 1px 0 #FF6600' }}>Hey {displayName}!</span>
                 <br />
                 <span style={{ textShadow: '3px 1px 0 #FF6600' }}>
                   Register for IGNITEMY<Desktop2022>2023</Desktop2022>
@@ -469,8 +466,6 @@ const ShortRegistrationForm = () => {
             </HeadingWrapper>
             <Formik
               initialValues={{
-                fullName: user.displayName,
-                email: user.email,
                 age: '',
                 myKad: '',
                 contactNumber: '',
@@ -493,29 +488,20 @@ const ShortRegistrationForm = () => {
               {({ isSubmitting, dirty, isValid, setFieldValue }) => (
                 <StyledForm autoComplete="off">
                   <FormWrapper>
-                    <Field
-                      name="fullName"
-                      label="Full Name (as per NRIC)"
-                      placeholder="e.g. ignite team"
-                      value={user.displayName}
-                      required
-                      as={CustomTextField}
-                    />
-                    <Field
-                      type="email"
-                      name="email"
-                      label="Email Address"
-                      placeholder="e.g. ignite@example.com"
-                      value={user.email}
-                      required
-                      as={CustomTextField}
-                    />
                     <FourColumnRow>
-                      <Field type="number" name="age" label="Age" required as={CustomTextField} />
+                      <Field
+                        type="number"
+                        name="age"
+                        label="Age"
+                        placeholder="e.g. 17"
+                        required
+                        as={CustomTextField}
+                      />
                       <Field
                         type="string"
                         name="myKad"
                         label="NRIC Number (without dashes)"
+                        placeholder="e.g. 901230064089"
                         required
                         as={CustomTextField}
                       />
@@ -524,6 +510,7 @@ const ShortRegistrationForm = () => {
                       type="tel"
                       name="contactNumber"
                       label="Contact Number (without dashes)"
+                      placeholder="e.g. 0123456789"
                       required
                       as={CustomTextField}
                     />
@@ -540,8 +527,20 @@ const ShortRegistrationForm = () => {
                       as={CustomTextField}
                     />
                     <TwoColumnRow>
-                      <Field name="city" label="City" required as={CustomTextField} />
-                      <Field name="postcode" label="Postcode" required as={CustomTextField} />
+                      <Field
+                        name="city"
+                        label="City"
+                        placeholder="e.g. Petaling Jaya"
+                        required
+                        as={CustomTextField}
+                      />
+                      <Field
+                        name="postcode"
+                        label="Postcode"
+                        placeholder="e.g. 48100"
+                        required
+                        as={CustomTextField}
+                      />
                     </TwoColumnRow>
                     <StyledLabel htmlFor="State">State *</StyledLabel>
                     <Field name="state" label="State" required as={CustomSelect}>
@@ -569,7 +568,13 @@ const ShortRegistrationForm = () => {
                           )
                         })}
                     </Field>
-                    <Field name="school" label="School" required as={CustomTextField} />
+                    <Field
+                      name="school"
+                      label="School"
+                      placeholder="e.g. SMK Damansara Jaya"
+                      required
+                      as={CustomTextField}
+                    />
                     <RadioButton
                       question={firstRadioButtonQuestion.question}
                       options={firstRadioButtonQuestion.options}
@@ -596,7 +601,13 @@ const ShortRegistrationForm = () => {
                     <StyledLabel htmlFor="schoolHasCF">
                       Does your school have Christian Fellowship?*
                     </StyledLabel>
-                    <Field name="schoolHasCF" label="schoolHasCF" required as={CustomSelect}>
+                    <Field
+                      name="schoolHasCF"
+                      label="schoolHasCF"
+                      placeholder="e.g. SMK Damansara Jaya"
+                      required
+                      as={CustomSelect}
+                    >
                       {['Yes', 'No'].map((option) => (
                         <MenuItem key={option} value={option}>
                           {option}
@@ -646,7 +657,7 @@ const ShortRegistrationForm = () => {
           </FormContainer>
         )}
       </PageContainer>
-      <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} />
+      {/* <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} /> */}
     </ThemeProvider>
   )
 }
