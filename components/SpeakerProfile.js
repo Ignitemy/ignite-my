@@ -18,10 +18,15 @@ const SpeakerProfileContainer = styled.div`
 `
 
 const StyledImage = styled.div`
-  width: 400px;
-  min-height: 400px;
+  width: 300px;
+  min-height: 300px;
   height: auto;
   position: relative;
+
+  @media (min-width: 768px) {
+    width: 400px;
+    min-height: 400px;
+  }
 `
 
 const DetailsWrapper = styled.div`
@@ -58,7 +63,7 @@ const StyledExtLink = styled.a`
     width: 0;
     background-color: var(--color-orange);
     bottom: -4px;
-    right:-4px;
+    right: -4px;
   }
   &:hover {
     &::before {
@@ -66,7 +71,6 @@ const StyledExtLink = styled.a`
     }
   }
 `
-
 
 const sharedImageCSS = css`
   position: absolute;
@@ -76,6 +80,14 @@ const sharedImageCSS = css`
   transition: opacity 0.5s ease-in-out;
   object-fit: cover;
   border-radius: 5%;
+  width: 300px;
+  max-height: 300px;
+  
+
+  @media (min-width: 768px) {
+    width: 400px;
+    max-height: 400px;
+  }
 `
 
 const SpeakerImage = styled.img`
@@ -97,8 +109,8 @@ const SpeakerProfile = ({ speaker }) => {
         <SpeakerImage
           src={speaker.imgSrc}
           alt={speaker.alt}
-          height={400}
-          width={400}
+          height={1600}
+          width={1069}
           hover={hover}
           loading="lazy"
         />
@@ -106,8 +118,8 @@ const SpeakerProfile = ({ speaker }) => {
           <HoverImage
             src={speaker.imgSrcHover}
             alt={speaker.alt}
-            height={400}
-            width={400}
+            height={1600}
+            width={1069}
             hover={hover}
             loading="lazy"
           />
@@ -115,14 +127,13 @@ const SpeakerProfile = ({ speaker }) => {
       </StyledImage>
       <DetailsWrapper>
         <SpeakerName>
-          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator} 
-          <StyledExtLink
-          href={speaker.founderLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          > {speaker.founder}</StyledExtLink>
+          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator}
+          <StyledExtLink href={speaker.founderLink} target="_blank" rel="noopener noreferrer">
+            {' '}
+            {speaker.founder}
+          </StyledExtLink>
         </SpeakerName>
-          <SpeakerDetails>{speaker.details}</SpeakerDetails>
+        <SpeakerDetails>{speaker.details}</SpeakerDetails>
       </DetailsWrapper>
     </SpeakerProfileContainer>
   )
