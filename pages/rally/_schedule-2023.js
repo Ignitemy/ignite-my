@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const SectionContainer = styled.section`
   width: 100%;
-  padding: 4rem 3rem 9rem;
+  padding: 4rem 1.5rem 9rem;
   background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   background: ${(props) => props.background};
 
@@ -32,35 +32,16 @@ const SectionContentWrapper = styled.div`
   }
 `
 
-const StyledImage = styled.div`
-  height: inherit;
-  display: none;
-  align-items: flex-end;
-
-  @media (min-width: 1025px) {
-    display: flex;
-    width: 364px;
-  }
-  @media (min-width: 1280px) {
-    width: 396px;
-  }
-`
-
-const Heading = styled.p`
-  font-weight: 800;
-  font-style: italic;
-  font-size: 32px;
-  line-height: 35px;
-  color: ${(props) => props.color || 'var(--color-white)'};
-  text-transform: capitalize;
-`
-
 const TableSectionContainer = styled.div`
   width: 100%;
   margin-top: 4rem;
   position: relative;
-  padding: 7rem 7rem 13rem;
+  padding: 3rem 10px 10rem 20px;
   border: 2px solid #FF6600;
+
+  @media (min-width: 768px) {
+    padding: 7rem 7rem 13rem;
+  }
 
   @media (min-width: 1280px) {
     margin-top: 0;
