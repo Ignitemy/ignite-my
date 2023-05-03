@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 // import { useRouter } from 'next/router'
 import { Alert } from '@material-ui/lab'
 import { Button, Text, Heading } from '@/components/index'
+import FirebaseContext from '@/context/firebase'
 
 const Container = styled.div`
   display: flex;
@@ -81,6 +82,7 @@ const StyledInput = styled.input`
 
 const SubmitBlogForm = () => {
   // const router = useRouter()
+  const { firebase } = useContext(FirebaseContext)
 
   const [fullName, setFullName] = useState('')
   const [title, setTitle] = useState('')
@@ -96,25 +98,35 @@ const SubmitBlogForm = () => {
     setSubmitting(true)
 
     try {
-      await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_SUBMIT_POST, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify([
-          [
-            new Date().toLocaleString('en-GB', {
-              timeZone: 'Asia/Kuala_Lumpur',
-              hour12: false
-            }),
-            fullName,
-            title,
-            body
-          ]
-        ])
+      await firebase.firestore().collection('ignitemyblog').add({
+        fullName: fullName,
+        blogTitle: title,
+        blogContent: body
       })
+      // await fetch(process.env.NEXT_PUBLIC_NOCODEAPI_SUBMIT_POST, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify([
+      //     [
+      //       new Date().toLocaleString('en-GB', {
+      //         timeZone: 'Asia/Kuala_Lumpur',
+      //         hour12: false
+      //       }),
+      //       fullName,
+      //       title,
+      //       body
+      //     ]
+      //   ])
+      // })
       setSubmitting(false)
       setSubmitted(true)
+
+      // clear form input
+      setTitle('')
+      setBody('')
+      setFullName('')
 
       // setTimeout(() => {
       //   router.push('/blog')
