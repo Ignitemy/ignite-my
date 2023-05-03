@@ -11,13 +11,13 @@ const SectionContainer = styled.section`
   background-size: cover;
   display: flex;
   justify-content: center;
-  max-width: 160rem;
+  max-width: 1500px;
   margin: 0 auto;
 
   /* will need to check with team whether to maintain this */
-  @media (min-width: 1600px) {
+  /* @media (min-width: 1600px) {
     max-width: none;
-  }
+  } */
 `
 
 const RegisterSection = styled.div`
