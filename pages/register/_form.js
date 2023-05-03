@@ -43,12 +43,12 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 4rem 8rem;
+  padding: 3rem 8rem;
   /* background-color: var(--color-black); */
   /* background-color: transparent; */
 
   @media (max-width: 1200px) {
-    padding: 4rem 4rem;
+    padding: 2.5rem 4rem;
   }
   @media (max-width: 480px) {
     padding: 4rem 2.4rem;
@@ -350,10 +350,11 @@ const validationSchema = yup.object({
     .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
-  shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
+  // shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
   // church: yup.string().required("Don't forget to include church name"),
   languagePreference: yup.string().required('Please select your language preference'),
+  schoolHasCF: yup.string().required('Let us know whether your school has a Christ Fellowship.'),
   firstTime: yup.string().required('Let us know whether this is your first time attending IGNITE!'),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed'),
   registerChecked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
@@ -443,12 +444,13 @@ const RegistrationForm = () => {
           postcode: values.postcode,
           state: values.state,
           school: values.school,
-          shirtSize: values.shirtSize,
+          // shirtSize: values.shirtSize,
           remarks: values.remarks,
           occupation: values.occupation,
           attendance: values.attendance,
           // ignite2022: true,
-          church: values.church,
+          schoolHasCF: values.schoolHasCF,
+          // church: values.church,
           languagePreference: values.languagePreference,
           firstTime: values.firstTime,
           dateCreated: Date.now()
@@ -477,8 +479,9 @@ const RegistrationForm = () => {
               values.school,
               values.occupation,
               values.attendance,
-              values.shirtSize,
-              values.church,
+              // values.shirtSize,
+              // values.church,
+              values.schoolHasCF,
               values.languagePreference,
               values.firstTime,
               values.remarks
@@ -582,11 +585,12 @@ const RegistrationForm = () => {
               postcode: '',
               state: '',
               school: '',
-              shirtSize: 'N/A',
+              // shirtSize: 'N/A',
               remarks: '',
               occupation: 'student',
               attendance: 'online',
-              church: '',
+              // church: '',
+              schoolHasCF: '',
               languagePreference: '',
               firstTime: '',
               checked: false,
@@ -708,7 +712,7 @@ const RegistrationForm = () => {
                   name={secondRadioButtonQuestion.name}
                   func={(e) => handleRadioValueOnChange(e, setFieldValue)}
                 />
-                <StyledLabel htmlFor="shirtSize">
+                {/* <StyledLabel htmlFor="shirtSize">
                   T-Shirt size? Refer to sizing chart{' '}
                   <a
                     href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
@@ -718,8 +722,8 @@ const RegistrationForm = () => {
                     here
                   </a>
                   .*
-                </StyledLabel>
-                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
+                </StyledLabel> */}
+                {/* <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
                   {shirtSizes.map((size) => (
                     <MenuItem key={size} value={size}>
                       {size}
@@ -731,7 +735,17 @@ const RegistrationForm = () => {
                   label="Church"
                   placeholder="e.g. Damansara Utama Methodist Church"
                   as={CustomTextField}
-                />
+                /> */}
+                <StyledLabel htmlFor="schoolHasCF">
+                  Does your school have Christian Fellowship?*
+                </StyledLabel>
+                <Field name="schoolHasCF" label="schoolHasCF" required as={CustomSelect}>
+                  {['Yes', 'No'].map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </Field>
                 <StyledLabel htmlFor="languagePreference">Language Preference*</StyledLabel>
                 <Field
                   name="languagePreference"
