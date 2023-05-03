@@ -649,6 +649,12 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
+                <RadioButton
+                  question={secondRadioButtonQuestion.question}
+                  options={secondRadioButtonQuestion.options}
+                  name={secondRadioButtonQuestion.name}
+                  func={(e) => handleRadioValueOnChange(e, setFieldValue)}
+                />
                 {/* https://web-brackets.com/discussion/12/how-to-use-setfieldvalue-from-outside-render-function-formik */}
                 {/* https://stackoverflow.com/questions/66235334/formik-setfieldvalue-inside-a-function */}
 
@@ -705,12 +711,6 @@ const RegistrationForm = () => {
                   question={firstRadioButtonQuestion.question}
                   options={firstRadioButtonQuestion.options}
                   name={firstRadioButtonQuestion.name}
-                />
-                <RadioButton
-                  question={secondRadioButtonQuestion.question}
-                  options={secondRadioButtonQuestion.options}
-                  name={secondRadioButtonQuestion.name}
-                  func={(e) => handleRadioValueOnChange(e, setFieldValue)}
                 />
                 {/* <StyledLabel htmlFor="shirtSize">
                   T-Shirt size? Refer to sizing chart{' '}
