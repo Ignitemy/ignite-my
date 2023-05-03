@@ -285,7 +285,7 @@ const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
 
 export const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
-const languagePreferences = ['English', 'Mandarin']
+export const languagePreferences = ['English', 'Mandarin']
 
 const FollowButton = styled(Button)`
   display: inline-flex;
