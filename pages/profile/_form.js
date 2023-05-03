@@ -7,7 +7,7 @@ import FirebaseContext from '@/context/firebase'
 import { useAuth } from '@/helpers/auth'
 import RadioButton from '@/components/RadioButton'
 import { Heading } from '@/components/Typography'
-import { shirtSizes, listOfStates } from '../register/_form'
+import { shirtSizes, listOfStates, languagePreferences } from '../register/_form'
 
 const theme = createMuiTheme({
   palette: {
@@ -330,12 +330,12 @@ const Profile = () => {
               <StyledLabel htmlFor="State">State *</StyledLabel>
               <Field name="state" value={userData.state} label="State" required as={CustomSelect}>
                 {listOfStates.map((state) => {
-                    return (
-                      <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
-                        {state.value}
-                      </MenuItem>
-                    )
-                  })}
+                  return (
+                    <MenuItem key={state.value} value={state.value} disabled={state.disabled}>
+                      {state.value}
+                    </MenuItem>
+                  )
+                })}
               </Field>
               <Field
                 name="school"
@@ -360,11 +360,41 @@ const Profile = () => {
                 userValue={userData.occupation}
                 disabled
               />
-              <StyledLabel htmlFor="State">T-Shirt Size *</StyledLabel>
+              {/* <StyledLabel htmlFor="State">T-Shirt Size *</StyledLabel>
               <Field name="shirtSize" value={userData.shirtSize} label="shirtSize" required as={CustomSelect}>
                 {shirtSizes.map((size) => (
                   <MenuItem key={size} value={size}>
                     {size}
+                  </MenuItem>
+                ))}
+              </Field> */}
+              <StyledLabel htmlFor="schoolHasCF">
+                Does your school have Christian Fellowship?*
+              </StyledLabel>
+              <Field
+                name="schoolHasCF"
+                label="schoolHasCF"
+                value={userData.schoolHasCF}
+                required
+                as={CustomSelect}
+              >
+                {['Yes', 'No'].map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </Field>
+              <StyledLabel htmlFor="languagePreference">Language Preference*</StyledLabel>
+              <Field
+                name="languagePreference"
+                label="languagePreference"
+                value={userData.languagePreference}
+                required
+                as={CustomSelect}
+              >
+                {languagePreferences.map((language) => (
+                  <MenuItem key={language} value={language}>
+                    {language}
                   </MenuItem>
                 ))}
               </Field>
