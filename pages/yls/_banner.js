@@ -126,7 +126,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              10:00AM - 3:00PM
+              10:00AM - 3:30PM
             </Heading>
           </RightContent>
         </ContentWrapper>

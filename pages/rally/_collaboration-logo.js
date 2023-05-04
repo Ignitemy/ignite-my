@@ -59,18 +59,6 @@ const collaborationLogos = [
     alt: 'Burning match',
     width: 200,
     height: 66
-  },
-  {
-    imgUrl: '/images/png/event-1.png',
-    alt: 'Burning match',
-    width: 642,
-    height: 380
-  },
-  {
-    imgUrl: '/images/png/event-1.png',
-    alt: 'Burning match',
-    width: 642,
-    height: 380
   }
 ]
 

@@ -244,7 +244,7 @@ const bannerInfo = {
   subHeadingB2: "FREE",
   // lineOneText: "DAY SUMMIT.",
   // lineTwoText: "NIGHT RALLY.",
-  videoUrl: "https://www.youtube.com/embed/fQkThyL3QVY"
+  videoUrl: "https://www.youtube.com/embed/mho994i7LG0"
 }
 
 const Banner = () => {

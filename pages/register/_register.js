@@ -165,7 +165,7 @@ const Register = () => {
                 <Row>
                   <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
                   <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
-                    27TH AUG 2023
+                    26TH AUG 2023
                   </Text>
                 </Row>
                 <Row>
@@ -189,7 +189,7 @@ const Register = () => {
                 <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
                 <br />
                 <br />
-                Participants who register from <span id='date'>22nd July 2023</span> onwards are still invited
+                Participants who register from <span id='date'>25th July 2023</span> onwards are still invited
                 to join the Summit via online. However, you WILL NOT receive the Summit kit.
                 <br />
                 <br />

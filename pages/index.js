@@ -46,7 +46,7 @@ const Page = () => {
         bgImgSrc="/images/png/IGNITEMY2023/chain1.png"
         logoImgDetails={igniteYlsLogo}
         programDate="26 AUG 2023"
-        programTime="10:00AM - 3:00PM"
+        programTime="10:00AM - 3:30PM"
         subheading="Join us onine or in-person"
         subheading2="Requires registration!"
       />
@@ -54,7 +54,7 @@ const Page = () => {
         bgImgSrc="/images/png/IGNITEMY2023/chain 1.2.png"
         logoImgDetails={igniteCarnivalRalleyLogo}
         programDate="27 AUG 2023"
-        programTime="4:30PM - 10:00PM"
+        programTime="4:30PM - 9:30PM"
         subheading="Invite your friends & family"
         subheading2="No registration needed!"
       />

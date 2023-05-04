@@ -37,6 +37,7 @@ const DetailsWrapper = styled.div`
 `
 
 const SpeakerName = styled.p`
+  text-align:center;
   font-size: 2rem;
   line-height: 40px;
   margin-bottom: 0.5rem;
@@ -47,6 +48,7 @@ const OrangeSpan = styled.span`
 `
 
 const SpeakerDetails = styled.p`
+  text-align:center;
   font-size: 1.6rem;
   line-height: 30px;
 `
@@ -127,7 +129,7 @@ const SpeakerProfile = ({ speaker }) => {
       </StyledImage>
       <DetailsWrapper>
         <SpeakerName>
-          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator}
+          <OrangeSpan >{speaker.name}</OrangeSpan> {speaker.separator}
           <StyledExtLink href={speaker.founderLink} target="_blank" rel="noopener noreferrer">
             {' '}
             {speaker.founder}
