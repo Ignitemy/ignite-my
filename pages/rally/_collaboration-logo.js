@@ -28,6 +28,7 @@ const ImagesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin-top: 5rem;
   gap: 1rem;
 
@@ -41,7 +42,6 @@ const ImagesContainer = styled.div`
 
 const StyledImageContainer = styled.div`
   width: calc(50% - 1rem);
-
   @media (min-width: 1280px) {
     width: 100%;
   }
@@ -49,16 +49,16 @@ const StyledImageContainer = styled.div`
 
 const collaborationLogos = [
   {
-    imgUrl: '/images/png/event-1.png',
+    imgUrl: '/images/png/NextGen Logo (WHITE).png',
     alt: 'Burning match',
-    width: 642,
-    height: 380
+    width: 200,
+    height: 200
   },
   {
-    imgUrl: '/images/png/event-1.png',
+    imgUrl: '/images/png/SU logo white transparent background.png',
     alt: 'Burning match',
-    width: 642,
-    height: 380
+    width: 200,
+    height: 66
   },
   {
     imgUrl: '/images/png/event-1.png',

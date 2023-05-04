@@ -335,7 +335,7 @@ const validationSchema = yup.object({
   // shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
   languagePreference: yup.string().required('Please select your language preference'),
-  schoolHasCF: yup.string().required('Let us know whether your school has a Christ Fellowship.'),
+  schoolHasCF: yup.string().required('Let us know whether your school has a Christian Fellowship.'),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
@@ -599,7 +599,7 @@ const ShortRegistrationForm = () => {
                       ))}
                     </Field> */}
                     <StyledLabel htmlFor="schoolHasCF">
-                      Does your school have Christian Fellowship?*
+                      Does your school have a Christian Fellowship?*
                     </StyledLabel>
                     <Field
                       name="schoolHasCF"

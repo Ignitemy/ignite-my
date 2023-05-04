@@ -328,16 +328,16 @@ const SideMenu = () => {
                   <a>Blog</a>
                 </StyledLink>
               </li>
-              <li>
+              {/* <li>
                     <StyledLink href="/resources">
                       <a>Resource</a>
                     </StyledLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <StyledLink href="/highlights">
                   <a>Highlights</a>
                 </StyledLink>
-              </li>
+              </li> */}
               {!user && (
                 <>
                   <li>

@@ -369,7 +369,7 @@ const Profile = () => {
                 ))}
               </Field> */}
               <StyledLabel htmlFor="schoolHasCF">
-                Does your school have Christian Fellowship?*
+                Does your school have a Christian Fellowship?*
               </StyledLabel>
               <Field
                 name="schoolHasCF"
