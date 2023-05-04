@@ -12,7 +12,8 @@ const SpeakerProfileContainer = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
+    align-items:center;
     gap: 8rem;
   }
 `
@@ -22,7 +23,6 @@ const StyledImage = styled.div`
   min-height: 300px;
   height: auto;
   position: relative;
-
   @media (min-width: 768px) {
     width: 400px;
     min-height: 400px;
@@ -32,12 +32,12 @@ const StyledImage = styled.div`
 const DetailsWrapper = styled.div`
   color: var(--color-white);
   @media (min-width: 1024px) {
-    width: 70%;
+    width: 60%;
   }
 `
 
 const SpeakerName = styled.p`
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 40px;
   margin-bottom: 0.5rem;
 `

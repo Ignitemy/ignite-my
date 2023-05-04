@@ -87,33 +87,43 @@ const AbosoluteDate = styled.p`
 
 const rallyTimetable = [
   {
+    color: 'var(--color-orange)',
+    time: '16:30',
+    activity: 'IGNITE Bazaar'
+  },
+  {
     color: 'var(--color-white)',
-    time: '19:45',
-    activity: 'Icebreaker'
+    time: '19:00',
+    activity: 'Door Open'
+  },
+  {
+    color: 'var(--color-orange)',
+    time: '19:30',
+    activity: 'Welcome'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '19:40',
+    activity: 'Activities'
   },
   {
     color: 'var(--color-white)',
     time: '20:00',
-    activity: 'Welcome + Activities'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '20:30',
     activity: 'Worship'
   },
   {
     color: 'var(--color-white)',
-    time: '21:00',
+    time: '20:35',
     activity: 'Word'
   },
   {
     color: 'var(--color-white)',
-    time: '21:30',
-    activity: 'Altar Call'
+    time: '21:05',
+    activity: 'Ministry + Worship '
   },
   {
     color: 'var(--color-white)',
-    time: '22:00',
+    time: '21:30',
     activity: 'End'
   }
 ]

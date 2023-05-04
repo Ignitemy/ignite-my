@@ -99,62 +99,52 @@ const summitTimetable = [
   {
     color: 'var(--color-white)',
     time: '10:00',
-    activity: 'Welcome + Worship'
+    activity: 'Welcome'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '10:10',
+    activity: 'Worship'
   },
   {
     color: 'var(--color-orange)',
-    time: '10:30',
+    time: '10:35',
     activity: 'Session 1'
   },
   {
     color: 'var(--color-white)',
-    time: '10:55',
-    activity: 'Discussion'
+    time: '11:00',
+    activity: 'Discussion 1'
   },
   {
     color: 'var(--color-orange)',
-    time: '11:15',
+    time: '11:25',
     activity: 'Session 2'
   },
   {
     color: 'var(--color-white)',
-    time: '11:40',
-    activity: 'Discussion'
+    time: '11:50',
+    activity: 'Discussion 2'
   },
   {
     color: 'var(--color-white)',
-    time: '12:00',
+    time: '12:15',
     activity: 'Lunch (on your own)'
   },
   {
-    color: 'var(--color-white)',
-    time: '13:00',
+    color: 'var(--color-orange)',
+    time: '13:45',
     activity: 'Special Item'
   },
   {
     color: 'var(--color-orange)',
-    time: '13:10',
-    activity: 'Session 3'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '13:35',
-    activity: 'Discussion'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '14:00',
+    time: '13:55',
     activity: 'Summit Up'
   },
   {
     color: 'var(--color-white)',
-    time: '15:00',
-    activity: 'Closing'
-  },
-  {
-    color: 'var(--color-white)',
     time: '15:30',
-    activity: 'End'
+    activity: 'Closing'
   }
 ]
 
