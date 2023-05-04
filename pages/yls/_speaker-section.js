@@ -37,8 +37,8 @@ flex-direction: row;
 
 const speakerSectionDetails = [
   {
-    imgSrc: '/images/jpg/alexa-1.jpg',
-    imgSrcHover: '/images/jpg/alexa-2.jpg',
+    imgSrc: '/images/jpg/Alarice-2.jpg',
+    imgSrcHover: '/images/jpg/Alarice-2.jpg',
     alt: 'Alarice Hong',
     name: 'Alarice Hong',
     separator: 'of',
@@ -48,8 +48,8 @@ const speakerSectionDetails = [
       "Alarice is the co-founder of Awaken Generation - a worship missions organisation in Singapore that has trained & equipped close to 700 students in worship ministry over the past 9 years. Alarice is a worship leader & songwriter whose heart is to mentor & disciple a generation of worshippers. Alarice has released several solo albums in her early years as an artist and has released close to 80 original worship songs together with the AG community. Her joy is leading Awaken Generation together with her husband Calvin Hong of whom she has been married to for 10 years. "
   },
   {
-    imgSrc: '/images/jpg/daniel.jpg',
-    imgSrcHover: '/images/jpg/daniel.jpg',
+    imgSrc: '/images/png/coming-soon.png',
+    imgSrcHover: '/images/png/coming-soon.png',
     alt: 'Sarath Kumar',
     name: 'Sarath Kumar',
     separator: 'of',
