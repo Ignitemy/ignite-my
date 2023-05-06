@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 const SpeakerProfileContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 6rem;
@@ -13,7 +14,7 @@ const SpeakerProfileContainer = styled.div`
     margin-bottom: 3rem;
     flex-direction: column;
     justify-content: start;
-    align-items:center;
+    align-items: center;
     gap: 8rem;
   }
 `
@@ -32,12 +33,12 @@ const StyledImage = styled.div`
 const DetailsWrapper = styled.div`
   color: var(--color-white);
   @media (min-width: 1024px) {
-    width: 60%;
+    width: 70%;
   }
 `
 
 const SpeakerName = styled.p`
-  text-align:center;
+  text-align: center;
   font-size: 2rem;
   line-height: 40px;
   margin-bottom: 0.5rem;
@@ -48,7 +49,7 @@ const OrangeSpan = styled.span`
 `
 
 const SpeakerDetails = styled.p`
-  text-align:center;
+  text-align: center;
   font-size: 1.6rem;
   line-height: 30px;
 `
@@ -84,7 +85,6 @@ const sharedImageCSS = css`
   border-radius: 5%;
   width: 300px;
   max-height: 300px;
-  
 
   @media (min-width: 768px) {
     width: 400px;
@@ -129,7 +129,7 @@ const SpeakerProfile = ({ speaker }) => {
       </StyledImage>
       <DetailsWrapper>
         <SpeakerName>
-          <OrangeSpan >{speaker.name}</OrangeSpan> {speaker.separator}
+          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator}
           <StyledExtLink href={speaker.founderLink} target="_blank" rel="noopener noreferrer">
             {' '}
             {speaker.founder}
