@@ -8,12 +8,12 @@ const SectionContainer = styled.section`
   padding: 7rem 3rem;
   // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   // background: ${(props) => props.background};
-  background: url("/images/png/IGNITEMY2023/chain 1 flip.png");
+  background: url('/images/png/IGNITEMY2023/chain 1 flip.png');
   background-size: cover;
   background-position: center;
 
   @media (min-width: 768px) {
-    padding: 12rem 6rem;    
+    padding: 12rem 6rem;
   }
   @media (min-width: 1024px) {
     padding: 9rem 7rem;
@@ -26,13 +26,13 @@ const SectionContainer = styled.section`
   }
 `
 const DetailsWrapper = styled.div`
-display: flex;
-flex-direction: row;
-@media (max-width: 1024px) {
-  flex-direction: column;
-  gap: 8rem;
-  justify-content: center;
-}
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 8rem;
+    justify-content: center;
+  }
 `
 
 const speakerSectionDetails = [
@@ -45,7 +45,7 @@ const speakerSectionDetails = [
     founder: 'Awaken Generation',
     founderLink: 'https://www.awakengeneration.sg/',
     details:
-      "Alarice is the co-founder of Awaken Generation - a worship missions organisation in Singapore that has trained & equipped close to 700 students in worship ministry over the past 9 years. Alarice is a worship leader & songwriter whose heart is to mentor & disciple a generation of worshippers. Alarice has released several solo albums in her early years as an artist and has released close to 80 original worship songs together with the AG community. Her joy is leading Awaken Generation together with her husband Calvin Hong of whom she has been married to for 10 years. "
+      'Alarice is the co-founder of Awaken Generation - a worship missions organisation in Singapore that has trained & equipped close to 700 students in worship ministry over the past 9 years. Alarice is a worship leader & songwriter whose heart is to mentor & disciple a generation of worshippers. Alarice has released several solo albums in her early years as an artist and has released close to 80 original worship songs together with the AG community. Her joy is leading Awaken Generation together with her husband Calvin Hong of whom she has been married to for 10 years. '
   },
   {
     imgSrc: '/images/png/coming-soon.png',
@@ -60,15 +60,14 @@ const speakerSectionDetails = [
   }
 ]
 
-
 const SpeakerSection = () => {
   return (
     <SectionContainer>
       <HeadingShadow align="center">Speakers</HeadingShadow>
       <DetailsWrapper>
-      {speakerSectionDetails.map((speaker) => (
-        <SpeakerProfile key={speaker.name} speaker={speaker} />
-      ))}
+        {speakerSectionDetails.map((speaker) => (
+          <SpeakerProfile key={speaker.name} speaker={speaker} />
+        ))}
       </DetailsWrapper>
     </SectionContainer>
   )
