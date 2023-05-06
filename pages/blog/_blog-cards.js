@@ -49,7 +49,7 @@ const BlogCards = ({ data, index }) => {
     return (
       newdate.toLocaleString('en', { day: 'numeric' }) +
       ' ' +
-      newdate.toLocaleString('en', { month: 'long' }) +
+      newdate.toLocaleString('en', { month: 'short' }) +
       ' ' +
       newdate.toLocaleString('en', { year: 'numeric' })
     )
@@ -59,10 +59,10 @@ const BlogCards = ({ data, index }) => {
     <Link href={`/blog/${data?.uid}`} key={index}>
       <CardWrapper>
         <TitleBar>
-          <StyledHeading as="h2" color="orange" size="3.2rem" fstyle="italic">
+          <StyledHeading as="h2" color="orange" size="3rem" fstyle="italic">
             {data.data.title[0].text.toUpperCase()}
           </StyledHeading>
-          <StyledHeading as="h3" align="right" color="orange" size="3.2rem" fstyle="italic">
+          <StyledHeading as="h3" align="right" color="orange" size="3rem" fstyle="italic">
             {convertDate(data.data.date)}
           </StyledHeading>
         </TitleBar>

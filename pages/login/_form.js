@@ -11,7 +11,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
-import { Button, Text, Heading } from '@/components/index'
+import { Button, Text, Heading, HeadingShadow } from '@/components/index'
 import { useAuth } from '@/helpers/auth'
 import { getUserByUserId } from '@/helpers/firebase'
 
@@ -222,11 +222,14 @@ const LoginForm = () => {
       <Container>
         <FlexCenter>
           {!action ? (
-            <Image src="/images/png/login-for-2022.png" height={90} width={500} />
+            // <Image src="/images/png/login-for-2022.png" height={90} width={500} />
+            <HeadingShadow>LOG IN FOR IGNITEMY</HeadingShadow>
           ) : (
-            <Heading size="3.6rem" fstyle="italic" color="white" align="center">
-              PLEASE LOG IN TO VIEW PAGE
-            </Heading>
+            // <Heading size="3.6rem" fstyle="italic" color="white" align="center">
+            //   PLEASE LOG IN TO VIEW PAGE
+            // </Heading>
+            <HeadingShadow size="3.2rem">PLEASE LOG IN TO VIEW PAGE</HeadingShadow>
+
           )}
         </FlexCenter>
         <Formik

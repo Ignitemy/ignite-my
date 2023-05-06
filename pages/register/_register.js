@@ -7,7 +7,7 @@ import { Text, Heading, HeadingShadow } from '../../components'
 const SectionContainer = styled.section`
   /* background-color: var(--color-black); */
   // background: url("/images/jpg/registration-bg.jpg");
-  background: url("/images/png/IGNITEMY2023/CHAIN 2.png");
+  background: url("/images/png/IGNITEMY2023/chain 2.png");
   background-size: cover;
   display: flex;
   justify-content: center;
