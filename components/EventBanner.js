@@ -11,8 +11,16 @@ const BannerContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (min-width: 768px) {
+    height: 80vh;
+  }
+
   @media (min-width: 901px) {
     height: 60vh;
+  }
+
+  @media (min-width: 1280px) {
+    height: 70vh;
   }
 `
 
