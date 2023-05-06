@@ -12,15 +12,15 @@ const SectionWrapper = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 7rem 8rem;
+    padding: 7rem 8rem 10rem;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 7rem 14rem;
+    padding: 7rem 14rem 10rem;
   }
 
   @media screen and (min-width: 1750px) {
-    padding: 8rem 24rem;
+    padding: 7rem 24rem 10rem;
   }
 `
 
@@ -29,36 +29,41 @@ const ImagesContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
-  gap: 1rem;
+  margin-top: 4rem;
+  gap: 4rem;
 
-  @media (min-width: 1280px) {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-top: 9rem;
-    gap: 3rem;
+  @media (min-width: 768px) {
+    margin-top: 5rem;
+    gap: 5rem;
   }
 `
 
 const StyledImageContainer = styled.div`
-  width: calc(50% - 1rem);
+  width: 80%;
+  /* max-width: 25%; */
+
+  @media (min-width: 768px) {
+    width: fit-content;
+    max-width: 25%;
+  }
+  /* width: calc(50% - 1rem);
   @media (min-width: 1280px) {
     width: 100%;
-  }
+  } */
 `
 
 const collaborationLogos = [
   {
-    imgUrl: '/images/png/NextGen Logo (WHITE).png',
-    alt: 'Burning match',
-    width: 200,
-    height: 200
+    imgUrl: '/images/png/NextGen-Logo-(WHITE)_crop.png',
+    alt: 'NextGen Logo',
+    width: 640,
+    height: 164
   },
   {
     imgUrl: '/images/png/SU logo white transparent background.png',
-    alt: 'Burning match',
-    width: 200,
-    height: 66
+    alt: 'Scripture Union Logo',
+    width: 640,
+    height: 212
   }
 ]
 
