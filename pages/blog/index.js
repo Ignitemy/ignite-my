@@ -213,7 +213,7 @@ const Blog = ({ data }) => {
 }
 
 export const getStaticProps = async () => {
-  const response = await Client().query('')
+  const response = await Client().query('', { orderings: "[my.blog_post.date desc]" })
   return {
     props: {
       data: response.results
