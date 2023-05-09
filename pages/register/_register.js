@@ -7,17 +7,17 @@ import { Text, Heading, HeadingShadow } from '../../components'
 const SectionContainer = styled.section`
   /* background-color: var(--color-black); */
   // background: url("/images/jpg/registration-bg.jpg");
-  background: url("/images/png/wave_rego.png");
+  background: url("/images/png/IGNITEMY2023/chain 2.png");
   background-size: cover;
   display: flex;
   justify-content: center;
-  max-width: 160rem;
+  max-width: 1500px;
   margin: 0 auto;
 
   /* will need to check with team whether to maintain this */
-  @media (min-width: 1600px) {
+  /* @media (min-width: 1600px) {
     max-width: none;
-  }
+  } */
 `
 
 const RegisterSection = styled.div`
@@ -153,7 +153,7 @@ const Register = () => {
                 <HeadingShadow>Hello!</HeadingShadow>
               </Heading>
               <Text color="white" size="1.8rem" mt="2.4rem">
-                Welcome to IGNITEMY2022! This one-day Summit, organised by DUMC NextGen Teens in
+                Welcome to IGNITEMY2023! This two-day Summit, organised by DUMC NextGen Teens in
                 collaboration with Scripture Union, seeks to inspire Christian students to be
                 catalysts of change in their schools.
                 <br />
@@ -165,13 +165,13 @@ const Register = () => {
                 <Row>
                   <Image src="/images/svg/calendar.svg" alt="calendar" height={36} width={36} />
                   <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
-                    24TH SEPT 2022
+                    26TH AUG 2023
                   </Text>
                 </Row>
                 <Row>
                   <Image src="/images/svg/time.svg" alt="clock" height={36} width={36} />
                   <Text color="orange" size="2.4rem" weight="bold" ml="1.5rem" fontStyle="italic">
-                    10.00AM - 3.30PM
+                    10:00AM - 3:30PM
                   </Text>
                 </Row>
                 <Row>
@@ -189,7 +189,7 @@ const Register = () => {
                 <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
                 <br />
                 <br />
-                Participants who register from <span id='date'>22nd August 2022</span> onwards are still invited
+                Participants who register from <span id='date'>25th July 2023</span> onwards are still invited
                 to join the Summit via online. However, you WILL NOT receive the Summit kit.
                 <br />
                 <br />

@@ -100,7 +100,7 @@ const Modal = ({ alreadyRegistered }) => {
         </StyledHeading>
         <StyledText mb="4rem" color="white">
           For existing accounts. please log in and click on your Profile to double check your details and
-          confirm your registration for IGNITEMY2022.
+          confirm your registration for IGNITEMY2023.
         </StyledText>
         <Link href="/login">
           <Button orange="true">Log in</Button>

@@ -444,7 +444,7 @@ const Groupings = () => {
   }, [user])
 
   return (
-    <Layout title="IGNITEMY2021 | Groupings">
+    <Layout title="IGNITEMY2023 | Groupings">
       <PageContainer>
         <HeaderContainer>
           <HeadingShadow>Groupings</HeadingShadow>

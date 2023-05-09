@@ -8,7 +8,7 @@ import Gallery from './_gallery'
 
 const Highlights = () => {
   return (
-    <Layout title="IGNITEMY2021 | Highlights">
+    <Layout title="IGNITEMY2023 | Highlights">
       {/* <HeaderButtons /> */}
       <Stats />
       {/* <Logo /> */}

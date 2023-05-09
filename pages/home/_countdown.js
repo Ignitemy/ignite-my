@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
-import { Button } from '../../components'
+import { Button,HeadingBold } from '../../components'
+
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -58,6 +59,21 @@ const StyledContainer = styled.div`
     }
   }
 `
+const StyledBoldContainer = styled.div`
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 4.2rem;
+  font-weight: bold;
+  font-style: italic;
+  @media (max-width: 560px) {
+    font-size: 2rem;
+  }
+`
+
 
 const SharedStyles = css`
   color: ${(props) => props.color};
@@ -172,7 +188,7 @@ const Countdown = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
     // Date format MM/DD/YYYY
-    let difference = new Date(`09/24/${year} 9:30`) - new Date()
+    let difference = new Date(`8/26/${year} 10:00`) - new Date()
     let timeLeft = {}
 
     if (difference > 0) {
@@ -289,16 +305,21 @@ const Countdown = () => {
   return (
     <>
     {/* previously bg gradient used is linear-gradient(90deg, #FC6076 0%, #FF9A44 100%); */}
-      <SectionContainer background="url(/images/jpg/countdown-2022-banner.jpg)">
+      <SectionContainer background="linear-gradient(28deg, #000000 0%, #FF6600 100%)">
         <CountdownContainer>
+          {isEventStart ? blankText : <HeadingBold align='center'>ARE YOU READY?</HeadingBold>}
+
           <StyledContainer>{isEventStart ? eventStart : timerComponents}</StyledContainer>
           
-          {isEventStart ? blankText : <StyledContainer>UNTIL</StyledContainer>}
+          {isEventStart ? blankText : <StyledContainer>FOR</StyledContainer>}
           
           <StyledContainer>
             {isEventStart
               ? btnStart
-              : <Image src="/images/png/wave_logo_2.png" height={120} width={575} alt="Ignite logo" />}
+              : <Image src="/images/png/ignite-logo.png" 
+                height={55}
+                width={383}
+                alt="Ignite logo" />}
 
           </StyledContainer>
         </CountdownContainer>

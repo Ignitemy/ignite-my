@@ -24,7 +24,7 @@ const Resources = () => {
   }, [user])
 
   return (
-    <Layout title="IGNITEMY2022 | Resources">
+    <Layout title="IGNITEMY2023 | Resources">
       <SectionContainer bgcolor="var(--color-black)">
         <ResourceComponent />
       </SectionContainer>

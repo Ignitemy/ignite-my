@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const SectionContainer = styled.section`
   width: 100%;
-  padding: 4rem 3rem 9rem;
+  padding: 4rem 1.5rem 9rem;
   background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   background: ${(props) => props.background};
 
@@ -16,56 +16,35 @@ const SectionContainer = styled.section`
     padding: 4rem 7rem;
   }
   @media (min-width: 1440px) {
-    padding: 4rem 16rem;
+    padding: 5rem 16rem;
   }
   @media (min-width: 1700px) {
-    padding: 4rem 34rem;
+    padding: 5rem 34rem;
   }
 `
 
 const SectionContentWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
 
-const StyledImage = styled.div`
-  height: inherit;
-  display: none;
-  align-items: flex-end;
-
-  @media (min-width: 1025px) {
-    display: flex;
-    width: 396px;
+  @media (min-width: 1280px) {
+    padding: 6em 0;
   }
-`
-
-const Heading = styled.p`
-  font-weight: 800;
-  font-style: italic;
-  font-size: 32px;
-  line-height: 35px;
-  color: ${(props) => props.color || 'var(--color-white)'};
-  text-transform: capitalize;
 `
 
 const TableSectionContainer = styled.div`
-  display: flex;
   width: 100%;
   margin-top: 4rem;
-  flex-direction: column;
-  gap: 5rem;
   position: relative;
+  padding: 3rem 10px 10rem 20px;
+  border: 2px solid #FF6600;
 
   @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 2rem;
+    padding: 7rem 7rem 13rem;
   }
+
   @media (min-width: 1280px) {
-    justify-content: flex-start;
     margin-top: 0;
-    margin-left:10rem;
-    gap: 5rem;
     width: auto;
   }
 `
@@ -73,7 +52,6 @@ const TableSectionContainer = styled.div`
 const StyledTable = styled.table`
   text-align: left;
   border-collapse: collapse;
-  margin-top: 3rem;
 `
 
 const StyledLeftTd = styled.td`
@@ -99,12 +77,12 @@ const AbosoluteDate = styled.p`
   text-align: center;
   color: var(--color-orange);
   width: 100%;
-  bottom: -8rem;
+  bottom: 4.5rem;
   left: 0;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     bottom: -5rem;
-  }
+  } */
 `
 
 const summitTimetable = [
@@ -121,76 +99,62 @@ const summitTimetable = [
   {
     color: 'var(--color-white)',
     time: '10:00',
-    activity: 'Welcome + Worship'
+    activity: 'Welcome'
+  },
+  {
+    color: 'var(--color-white)',
+    time: '10:10',
+    activity: 'Worship'
   },
   {
     color: 'var(--color-orange)',
-    time: '10:30',
+    time: '10:35',
     activity: 'Session 1'
   },
   {
     color: 'var(--color-white)',
-    time: '10:55',
-    activity: 'Discussion'
+    time: '11:00',
+    activity: 'Discussion 1'
   },
   {
     color: 'var(--color-orange)',
-    time: '11:15',
+    time: '11:25',
     activity: 'Session 2'
   },
   {
     color: 'var(--color-white)',
-    time: '11:40',
-    activity: 'Discussion'
+    time: '11:50',
+    activity: 'Discussion 2'
   },
   {
     color: 'var(--color-white)',
-    time: '12:00',
+    time: '12:15',
     activity: 'Lunch (on your own)'
   },
   {
-    color: 'var(--color-white)',
-    time: '13:00',
+    color: 'var(--color-orange)',
+    time: '13:45',
     activity: 'Special Item'
   },
   {
     color: 'var(--color-orange)',
-    time: '13:10',
-    activity: 'Session 3'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '13:35',
-    activity: 'Discussion'
-  },
-  {
-    color: 'var(--color-white)',
-    time: '14:00',
+    time: '13:55',
     activity: 'Summit Up'
   },
   {
     color: 'var(--color-white)',
-    time: '15:00',
-    activity: 'Closing'
-  },
-  {
-    color: 'var(--color-white)',
     time: '15:30',
-    activity: 'End'
+    activity: 'Closing'
   }
 ]
 
 const Schedule = () => {
   return (
     <SectionContainer>
-      <HeadingShadow>Schedule</HeadingShadow>
+      <HeadingShadow align='center'>Schedule</HeadingShadow>
       <SectionContentWrapper>
-        <StyledImage>
-          <Image src="/images/png/schedule-dwg.png" alt="in person" width={395} height={294} />
-        </StyledImage>
         <TableSectionContainer>
           <div>
-            <Heading>SUMMIT</Heading>
             <StyledTable>
               <tbody>
                 {summitTimetable.map((iteniary) => (
@@ -202,20 +166,7 @@ const Schedule = () => {
               </tbody>
             </StyledTable>
           </div>
-          {/* <div>
-            <Heading color="var(--color-orange)">RALLY</Heading>
-            <StyledTable>
-              <tbody>
-                {rallyTimetable.map((iteniary) => (
-                  <tr key={iteniary.time}>
-                    <StyledLeftTd color={iteniary.color}>{iteniary.time}</StyledLeftTd>
-                    <StyledRightTd color={iteniary.color}>{iteniary.activity}</StyledRightTd>
-                  </tr>
-                ))}
-              </tbody>
-            </StyledTable>
-          </div> */}
-          <AbosoluteDate>24 September 2022, Saturday</AbosoluteDate>
+          <AbosoluteDate>26 August 2023, Saturday</AbosoluteDate>
         </TableSectionContainer>
       </SectionContentWrapper>
     </SectionContainer>

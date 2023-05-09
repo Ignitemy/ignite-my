@@ -51,18 +51,31 @@ export const Heading = styled(({ as = 'h1', children, ...props }) =>
   letter-spacing: ${(props) => props.ls};
 `
 
-export const HeadingShadow = styled.p`
+export const HeadingBold = styled.p`
   ${BaseElement}
   color: var(--color-${(props) => props.color || 'white'});
   font-size: ${(props) => props.size || '4.2rem'};
   font-weight: ${(props) => props.weight || '800'};
   font-style: ${(props) => props.fstyle || 'italic'};
-  text-shadow: 3px 1px 0px #FF6600;
   letter-spacing: 0.2rem;
   @media (max-width: 900px) {
+    font-size: ${(props) => props.size || '3.4rem'};
+    letter-spacing: 0.1rem;
+  }
+  `
+
+export const HeadingShadow = styled.p`
+${BaseElement}
+color: var(--color-${(props) => props.color || 'white'});
+font-size: ${(props) => props.size || '4.2rem'};
+font-weight: ${(props) => props.weight || '800'};
+font-style: ${(props) => props.fstyle || 'italic'};
+text-shadow: 3px 1px 0px #FF6600;
+letter-spacing: 0.2rem;
+@media (max-width: 900px) {
   font-size: ${(props) => props.size || '3.4rem'};
   text-shadow: 2px 1px 0px #FF6600;
   letter-spacing: 0.1rem;
 }
-  `
+`
 

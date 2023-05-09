@@ -104,7 +104,7 @@ const RegistrationModal = ({ showModal, closeModal }) => {
         </StyledModalHeader>
         <StyledText mb="2.4rem" color="white">
           <HeadingShadow size="2rem" mb="2.4rem">For existing accounts</HeadingShadow>
-          Please <StyledLink href="/login" as="a">log in</StyledLink> to confirm your registration for IGNITEMY2022.
+          Please <StyledLink href="/login" as="a">log in</StyledLink> to confirm your registration for IGNITEMY2023.
         </StyledText>
       </ModalCard>
     </ModalWrapper>

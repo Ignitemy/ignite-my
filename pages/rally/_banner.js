@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { Heading } from '../../components'
+import { Heading,HeadingShadow } from '../../components'
 
 const BannerContainer = styled.div`
   height: calc(100vh - 100px);
@@ -10,7 +10,6 @@ const BannerContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 8rem;
-
   @media (max-width: 480px) {
     padding: 8rem 1.6rem;
   }
@@ -41,9 +40,8 @@ const ContentWrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
-  height: 173px;
+  // height: 330px;
   margin-right: 2.5rem;
-
   @media (max-width: 900px) {
     margin: 0 0 2.5rem;
   }
@@ -56,7 +54,7 @@ const RightContent = styled.div`
   align-items: center;
 
   @media (max-width: 900px) {
-    margin: 2.5rem 0 0;
+    margin: 4rem 0 0;
   }
 `
 const StyledHeading = styled(Heading)`
@@ -69,21 +67,29 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/jpg/night-sky.jpg"
+        src="/images/png/IGNITEMY2023/chain 7.png"
         alt="Flame pattern"
         layout="fill"
         objectFit="cover"
-        objectPosition="center"
+        objectPosition="bottom"
         priority="true"
       />
       <BannerContent>
         <ContentWrapper>
           <ImageWrapper>
             <Image
+              src="/images/png/ignite_bazaar_logo.png"
+              alt="Ignite youth leadership summit logo"
+              height={110}
+              width={310}
+              priority="true"
+            />
+            <HeadingShadow align='center'>+</HeadingShadow>
+            <Image
               src="/images/png/ignite-rally.png"
               alt="Ignite youth leadership summit logo"
-              height={146}
-              width={379}
+              height={130}
+              width={358}
               priority="true"
             />
           </ImageWrapper>
@@ -96,7 +102,7 @@ const Banner = () => {
               fstyle="italic"
               lh="4rem"
             >
-              24TH SEPT 2022
+              27TH AUG 2023
             </StyledHeading>
             <Heading
               as="h3"
@@ -107,7 +113,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              IN PERSON. ONLINE
+              4:30PM - 9:30PM
             </Heading>
           </RightContent>
         </ContentWrapper>

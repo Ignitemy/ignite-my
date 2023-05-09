@@ -6,7 +6,7 @@ import { useAuth } from '@/helpers/auth'
 import { useRouter } from 'next/router'
 
 const Container = Styled.div`
-  background: url("/images/png/wave_profile.png");
+  background: url("/images/png/IGNITEMY2023/chain 3.png");
   background-size: cover;
   background-position: top;
   display: flex;
@@ -30,7 +30,7 @@ const Profile = () => {
   }, [user])
 
   return (
-    <Layout title="IGNITEMY2021 | Profile">
+    <Layout title="IGNITEMY2023 | Profile">
       <Container>
         <FormContainer>
           <Form />

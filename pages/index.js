@@ -8,10 +8,13 @@ import Banner from './home/_banner'
 // import Events from './home/_events'
 import Countdown from './home/_countdown'
 // import Video from './home/_video'
-import MiniBanner from './home/_mini-banner'
+// import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
-import Faq from "./home/_faq"
+import Faq from './home/_faq'
+import EventBanner from '@/components/EventBanner'
+import CollaborationSection from './rally/_collaboration-logo'
+import JoinUs from './home/_join-us'
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -21,13 +24,44 @@ const MiniBannerContainer = styled.div`
   }
 `
 
+const igniteYlsLogo = {
+  imgUrl: '/images/png/ignite_yls_full_name.png',
+  alt: 'Ignite Youth Leadership Summit',
+  width: 679,
+  height: 115
+}
+
+const igniteCarnivalRalleyLogo = {
+  imgUrl: '/images/png/ignite_carnival_rally_logo.png',
+  alt: 'Ignite carnival plus Ignite Rally',
+  width: 711,
+  height: 107
+}
+
 const Page = () => {
   return (
-    <Layout title="IGNITEMY2022 | Home">
+    <Layout title="IGNITEMY2023 | Home">
       <Banner />
+      <EventBanner
+        bgImgSrc="/images/png/IGNITEMY2023/chain1.png"
+        logoImgDetails={igniteYlsLogo}
+        programDate="26 AUG 2023"
+        programTime="10:00AM - 3:30PM"
+        subheading="Join us onine or in-person"
+        subheading2="Requires registration!"
+      />
+      <EventBanner
+        bgImgSrc="/images/png/IGNITEMY2023/chain 1.2.png"
+        logoImgDetails={igniteCarnivalRalleyLogo}
+        programDate="27 AUG 2023"
+        programTime="4:30PM - 9:30PM"
+        subheading="Invite your friends & family"
+        subheading2="No registration needed!"
+      />
+      {/* <JoinUs /> */}
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
-      <MiniBannerContainer>
+      {/* <MiniBannerContainer>
         <MiniBanner
           linkTo="/yls"
           imgSrc="/images/jpg/ignite-yls-banner-bg-2022.jpg"
@@ -44,7 +78,7 @@ const Page = () => {
           imgWidth="351"
           subTitle="IN-PERSON.    ONLINE."
         />
-      </MiniBannerContainer>
+      </MiniBannerContainer> */}
       <Countdown />
       {/* <Video /> */}
       <Location />

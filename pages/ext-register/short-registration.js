@@ -5,7 +5,7 @@ import RadioButton from '@/components/RadioButton'
 import { Button, Heading, Text } from '@/components/index'
 import FirebaseContext from '@/context/firebase'
 import router from 'next/router'
-import { getUserByUserId } from '@/helpers/firebase'
+// import { getUserByUserId } from '@/helpers/firebase'
 import { useAuth } from '@/helpers/auth'
 import {
   Checkbox,
@@ -19,6 +19,7 @@ import {
 import * as yup from 'yup'
 import StateModal from './_state-block-model'
 import SuccessIcon from '@/images/svg/success'
+import { listOfStates, shirtSizes, languagePreferences } from '../register/_form'
 
 const theme = createMuiTheme({
   palette: {
@@ -280,28 +281,7 @@ const RegisteredContainer = styled.div`
   }
 `
 
-const listOfStates = [
-  { value: 'Johor', disabled: false },
-  { value: 'Kedah', disabled: false },
-  { value: 'Kelantan', disabled: false },
-  { value: 'Kuala Lumpur', disabled: false },
-  { value: 'Labuan', disabled: false },
-  { value: 'Malacca', disabled: false },
-  { value: 'Negeri Sembilan', disabled: false },
-  { value: 'Pahang', disabled: false },
-  { value: 'Penang', disabled: false },
-  { value: 'Perak', disabled: false },
-  { value: 'Perlis', disabled: false },
-  { value: 'Putrajaya', disabled: false },
-  { value: 'Sabah', disabled: false },
-  { value: 'Sarawak', disabled: false },
-  { value: 'Selangor', disabled: false },
-  { value: 'Terrengganu', disabled: false }
-]
-
 const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
-
-const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
 const firstRadioButtonQuestion = {
   question: 'Student or Teacher?*',
@@ -352,15 +332,18 @@ const validationSchema = yup.object({
     .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
-  shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
+  // shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
+  languagePreference: yup.string().required('Please select your language preference'),
+  schoolHasCF: yup.string().required('Let us know whether your school has a Christian Fellowship.'),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
 
 const ShortRegistrationForm = () => {
   const { firebase } = useContext(FirebaseContext)
-  const [userData, setUserData] = useState({})
-  const [isLoading, setIsLoading] = useState(true)
+  // const [userData, setUserData] = useState({})
+  const [displayName, setDisplayName] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   // for filter option
   const [filterOption, setfilterOption] = useState('online')
   const [stateErrorModal, setStateErrorModal] = useState(false)
@@ -371,17 +354,20 @@ const ShortRegistrationForm = () => {
 
   useEffect(() => {
     if (user) {
-      const subscriber = db.collection('users').onSnapshot((snapshot) => {
-        snapshot.forEach((doc) => {
-          const data = doc.data()
-          if (data.email === user.email) {
-            setUserData(data)
-            return
-          }
-        })
-        setIsLoading(false)
-      })
-      return () => subscriber()
+      // const subscriber = db.collection('users').onSnapshot((snapshot) => {
+      //   snapshot.forEach((doc) => {
+      //     const data = doc.data()
+      //     if (data.email === user.email) {
+      //       setUserData(data)
+      //       return
+      //     }
+      //   })
+      //   setIsLoading(false)
+      // })
+      setDisplayName(user.displayName)
+      setIsLoading(false)
+
+      // return () => subscriber()
     }
   }, [user])
 
@@ -414,9 +400,13 @@ const ShortRegistrationForm = () => {
 
     try {
       const currentUser = firebase.auth().currentUser
-      const userDocumentId = await getUserByUserId(currentUser.uid)
+      // const userDocumentId = await getUserByUserId(currentUser.uid)
       // update existing user document
-      await firebase.firestore().collection('users').doc(userDocumentId[0].docId).update({
+      // await firebase.firestore().collection('users').doc(userDocumentId[0].docId).add({
+      await firebase.firestore().collection('ignitemy23').add({
+        userId: currentUser.uid,
+        fullName: currentUser.displayName,
+        email: currentUser.email,
         age: values.age,
         myKad: values.myKad,
         contactNumber: values.contactNumber,
@@ -425,11 +415,14 @@ const ShortRegistrationForm = () => {
         postcode: values.postcode,
         state: values.state,
         school: values.school,
-        shirtSize: values.shirtSize,
+        // shirtSize: values.shirtSize,
         remarks: values.remarks,
         occupation: values.occupation,
         attendance: values.attendance,
-        ignite2022: true,
+        schoolHasCF: values.schoolHasCF,
+        languagePreference: values.languagePreference,
+        firstTime: 'No',
+        // ignite2022: true,
         dateCreated: Date.now()
       })
       setRegistered(true)
@@ -453,7 +446,7 @@ const ShortRegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY2022
+              See you at IGNITEMY2023
             </Text>
             <Text color="white" size="2rem" align="center" m="4.5rem 0">
               Redirecting you back to the homepage...
@@ -463,26 +456,30 @@ const ShortRegistrationForm = () => {
           <FormContainer>
             <HeadingWrapper>
               <Heading size="4.8rem" color="white" fstyle="italic" ls="4px">
+                <span style={{ textShadow: '3px 1px 0 #FF6600' }}>Hey {displayName}!</span>
+                <br />
                 <span style={{ textShadow: '3px 1px 0 #FF6600' }}>
-                  Register for IGNITEMY<Desktop2022>2022</Desktop2022>
+                  Register for IGNITEMY<Desktop2022>2023</Desktop2022>
                 </span>
-                <Mobile2022>2022</Mobile2022>
+                <Mobile2022>2023</Mobile2022>
               </Heading>
             </HeadingWrapper>
             <Formik
               initialValues={{
-                age: userData.age,
-                myKad: userData.myKad,
-                contactNumber: userData.contactNumber,
-                address: userData.address,
-                city: userData.city,
-                postcode: userData.postcode,
-                state: userData.state,
-                school: userData.school,
-                shirtSize: '',
-                remarks: userData.remarks,
+                age: '',
+                myKad: '',
+                contactNumber: '',
+                address: '',
+                city: '',
+                postcode: '',
+                state: '',
+                school: '',
+                // shirtSize: '',
+                remarks: '',
                 occupation: 'student',
                 attendance: 'online',
+                schoolHasCF: '',
+                languagePreference: '',
                 checked: false
               }}
               validationSchema={validationSchema}
@@ -496,7 +493,7 @@ const ShortRegistrationForm = () => {
                         type="number"
                         name="age"
                         label="Age"
-                        value={userData.age}
+                        placeholder="e.g. 17"
                         required
                         as={CustomTextField}
                       />
@@ -504,7 +501,7 @@ const ShortRegistrationForm = () => {
                         type="string"
                         name="myKad"
                         label="NRIC Number (without dashes)"
-                        value={userData.myKad}
+                        placeholder="e.g. 901230064089"
                         required
                         as={CustomTextField}
                       />
@@ -513,7 +510,7 @@ const ShortRegistrationForm = () => {
                       type="tel"
                       name="contactNumber"
                       label="Contact Number (without dashes)"
-                      value={userData.contactNumber}
+                      placeholder="e.g. 0123456789"
                       required
                       as={CustomTextField}
                     />
@@ -526,7 +523,6 @@ const ShortRegistrationForm = () => {
                     <Field
                       name="address"
                       label="House Unit Number & Street Address"
-                      value={userData.address}
                       required
                       as={CustomTextField}
                     />
@@ -534,14 +530,14 @@ const ShortRegistrationForm = () => {
                       <Field
                         name="city"
                         label="City"
-                        value={userData.city}
+                        placeholder="e.g. Petaling Jaya"
                         required
                         as={CustomTextField}
                       />
                       <Field
                         name="postcode"
                         label="Postcode"
-                        value={userData.postcode}
+                        placeholder="e.g. 48100"
                         required
                         as={CustomTextField}
                       />
@@ -575,7 +571,7 @@ const ShortRegistrationForm = () => {
                     <Field
                       name="school"
                       label="School"
-                      value={userData.school}
+                      placeholder="e.g. SMK Damansara Jaya"
                       required
                       as={CustomTextField}
                     />
@@ -584,7 +580,7 @@ const ShortRegistrationForm = () => {
                       options={firstRadioButtonQuestion.options}
                       name={firstRadioButtonQuestion.name}
                     />
-                    <StyledLabel htmlFor="shirtSize">
+                    {/* <StyledLabel htmlFor="shirtSize">
                       T-Shirt size? Refer to sizing chart{' '}
                       <a
                         href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
@@ -599,6 +595,35 @@ const ShortRegistrationForm = () => {
                       {shirtSizes.map((size) => (
                         <MenuItem key={size} value={size}>
                           {size}
+                        </MenuItem>
+                      ))}
+                    </Field> */}
+                    <StyledLabel htmlFor="schoolHasCF">
+                      Does your school have a Christian Fellowship?*
+                    </StyledLabel>
+                    <Field
+                      name="schoolHasCF"
+                      label="schoolHasCF"
+                      placeholder="e.g. SMK Damansara Jaya"
+                      required
+                      as={CustomSelect}
+                    >
+                      {['Yes', 'No'].map((option) => (
+                        <MenuItem key={option} value={option}>
+                          {option}
+                        </MenuItem>
+                      ))}
+                    </Field>
+                    <StyledLabel htmlFor="languagePreference">Language Preference*</StyledLabel>
+                    <Field
+                      name="languagePreference"
+                      label="languagePreference"
+                      required
+                      as={CustomSelect}
+                    >
+                      {languagePreferences.map((language) => (
+                        <MenuItem key={language} value={language}>
+                          {language}
                         </MenuItem>
                       ))}
                     </Field>
@@ -632,7 +657,7 @@ const ShortRegistrationForm = () => {
           </FormContainer>
         )}
       </PageContainer>
-      <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} />
+      {/* <StateModal showStateModal={stateErrorModal} closeModal={() => setStateErrorModal(false)} /> */}
     </ThemeProvider>
   )
 }

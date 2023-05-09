@@ -199,21 +199,21 @@ const Header = () => {
                 </a>
               </StyledLink>
             </li>
-            {/* <li>
-              <StyledLink href="/blog/submit">
+            <li>
+              <StyledLink href="/blog">
                 <a>Blog</a>
               </StyledLink>
-            </li> */}
-            <li>
-                    <StyledLink href="/resources">
-                      <a>Resource</a>
-                    </StyledLink>
             </li>
-            <li>
+            {/* <li>
+              <StyledLink href="/resources">
+                <a>Resource</a>
+              </StyledLink>
+            </li> */}
+            {/* <li>
               <StyledLink href="/highlights">
                 <a>Highlights</a>
               </StyledLink>
-            </li>
+            </li> */}
           </ul>
         </LeftWrapper>
         <SideMenu />
@@ -225,16 +225,16 @@ const Header = () => {
                   Log In
                 </Button>
               </StyledLink>
-              {/* <StyledLink href="/register">
+              <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink> */}
-              <StyledExtLink
+              </StyledLink>
+              {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
             </>
           ) : (
             <>
@@ -252,13 +252,13 @@ const Header = () => {
               >
                 <LogoutIcon />
               </StyledLogout> */}
-              <StyledExtLink
+              {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
               <StyledProfile type="button" onClick={toggleMenu}>
                 <ProfileIcon />
                 {showMenu && (

@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 const SpeakerProfileContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 6rem;
@@ -11,29 +12,34 @@ const SpeakerProfileContainer = styled.div`
   @media (min-width: 1024px) {
     margin-top: 3rem;
     margin-bottom: 3rem;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     gap: 8rem;
   }
 `
 
 const StyledImage = styled.div`
-  width: 250px;
+  width: 300px;
   min-height: 300px;
   height: auto;
   position: relative;
+  @media (min-width: 768px) {
+    width: 400px;
+    min-height: 400px;
+  }
 `
 
 const DetailsWrapper = styled.div`
   color: var(--color-white);
-
   @media (min-width: 1024px) {
     width: 70%;
   }
 `
 
 const SpeakerName = styled.p`
-  font-size: 2.2rem;
+  text-align: center;
+  font-size: 2rem;
   line-height: 40px;
   margin-bottom: 0.5rem;
 `
@@ -43,6 +49,7 @@ const OrangeSpan = styled.span`
 `
 
 const SpeakerDetails = styled.p`
+  text-align: center;
   font-size: 1.6rem;
   line-height: 30px;
 `
@@ -59,7 +66,7 @@ const StyledExtLink = styled.a`
     width: 0;
     background-color: var(--color-orange);
     bottom: -4px;
-    right:-4px;
+    right: -4px;
   }
   &:hover {
     &::before {
@@ -68,7 +75,6 @@ const StyledExtLink = styled.a`
   }
 `
 
-
 const sharedImageCSS = css`
   position: absolute;
   top: 50%;
@@ -76,7 +82,14 @@ const sharedImageCSS = css`
   transform: translate(-50%, -50%);
   transition: opacity 0.5s ease-in-out;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 5%;
+  width: 300px;
+  max-height: 300px;
+
+  @media (min-width: 768px) {
+    width: 400px;
+    max-height: 400px;
+  }
 `
 
 const SpeakerImage = styled.img`
@@ -98,8 +111,8 @@ const SpeakerProfile = ({ speaker }) => {
         <SpeakerImage
           src={speaker.imgSrc}
           alt={speaker.alt}
-          height={250}
-          width={250}
+          height={1600}
+          width={1069}
           hover={hover}
           loading="lazy"
         />
@@ -107,8 +120,8 @@ const SpeakerProfile = ({ speaker }) => {
           <HoverImage
             src={speaker.imgSrcHover}
             alt={speaker.alt}
-            height={250}
-            width={250}
+            height={1600}
+            width={1069}
             hover={hover}
             loading="lazy"
           />
@@ -116,14 +129,13 @@ const SpeakerProfile = ({ speaker }) => {
       </StyledImage>
       <DetailsWrapper>
         <SpeakerName>
-          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator} 
-          <StyledExtLink
-          href={speaker.founderLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          > {speaker.founder}</StyledExtLink>
+          <OrangeSpan>{speaker.name}</OrangeSpan> {speaker.separator}
+          <StyledExtLink href={speaker.founderLink} target="_blank" rel="noopener noreferrer">
+            {' '}
+            {speaker.founder}
+          </StyledExtLink>
         </SpeakerName>
-          <SpeakerDetails>{speaker.details}</SpeakerDetails>
+        <SpeakerDetails>{speaker.details}</SpeakerDetails>
       </DetailsWrapper>
     </SpeakerProfileContainer>
   )

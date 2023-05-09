@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
   padding: 7rem 3rem;
   // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   // background: ${(props) => props.background};
-  background: url("/images/png/wave_rally_speakers.png");
+  background: url("/images/png/IGNITEMY2023/chain 3.png");
   background-size: cover;
   background-position: bottom;
 
@@ -26,21 +26,21 @@ const SectionContainer = styled.section`
   }
 `
 const specialItemBy = {
-  imgSrc: '/images/jpg/ben-1.jpg',
-  imgSrcHover: '/images/jpg/ben-2.jpg',
-  alt: 'Pr Ben Rajendram',
-  name: 'Pr Ben Rajendram',
+  imgSrc: '/images/png/coming-soon.png',
+  imgSrcHover: '/images/png/coming-soon.png',
+  alt: 'Daniel Kuilan',
+  name: 'Daniel Kuilan',
   separator: 'of',
-  founder: 'World Harvest Church',
-  founderLink: 'https://www.whcmy.com/',
+  founder: 'Soul Malaysia',
+  founderLink: 'https://www.instagram.com/soulmalaysia',
   details:
-    'Ben is married to his best friend Bethel, and they have two sons, Joshua and Samuel. He loves the Church and his passion for the house of God and desire to see people’s lives rebuilt is evident in his life, ever since he was a young kid. He is a pastor at World Harvest Church, Sunway, where he leads the Creative Team and is part of the leadership team.'
+    ''
 }
 
 const SpeakerSection = () => {
   return (
     <SectionContainer>
-      <HeadingShadow>Speaker</HeadingShadow>
+      <HeadingShadow align='center'>Speaker</HeadingShadow>
       <SpeakerProfile speaker={specialItemBy} />
     </SectionContainer>
   )

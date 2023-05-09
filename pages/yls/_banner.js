@@ -77,7 +77,7 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/jpg/igniteyls_bg.jpg"
+        src="/images/png/IGNITEMY2023/chain 4.png"
         alt="mountains"
         layout="fill"
         objectFit="cover"
@@ -104,7 +104,7 @@ const Banner = () => {
               fstyle="italic"
               lh="4rem"
             >
-              24TH SEPT 2022
+              26TH AUG 2023
             </StyledHeading>
             {/* <StyledHeading
               as="h3"
@@ -126,7 +126,7 @@ const Banner = () => {
               mt="2.4rem"
               lh="4rem"
             >
-              IN PERSON. ONLINE
+              10:00AM - 3:30PM
             </Heading>
           </RightContent>
         </ContentWrapper>

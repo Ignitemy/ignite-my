@@ -122,11 +122,11 @@ const Blog = ({ data }) => {
   const [pageNumber, setPageNumber] = useState(0)
 
   // const user = useAuth()
-  const router = useRouter()
+  // const router = useRouter()
 
-  useEffect(() => {
-    router.push('/')
-  }, [])
+  // useEffect(() => {
+  //   router.push('/')
+  // }, [])
 
   // TODO: Enable when blog page is ready for release
   // useEffect(() => {
@@ -144,9 +144,9 @@ const Blog = ({ data }) => {
   }
 
   return (
-    <Layout title="IGNITEMY2022 | Blog">
+    <Layout title="IGNITEMY2023 | Blog">
       {/* TODO: Enable when blog page is ready for release */}
-      {/* <Container>
+      <Container>
         <Grid>
           <LeftPanel>
             <BannerContainer>
@@ -207,13 +207,13 @@ const Blog = ({ data }) => {
             />
           </RightPanel>
         </Grid>
-      </Container> */}
+      </Container>
     </Layout>
   )
 }
 
 export const getStaticProps = async () => {
-  const response = await Client().query('')
+  const response = await Client().query('', { orderings: "[my.blog_post.date desc]" })
   return {
     props: {
       data: response.results

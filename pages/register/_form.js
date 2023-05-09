@@ -43,12 +43,12 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 4rem 8rem;
+  padding: 3rem 8rem;
   /* background-color: var(--color-black); */
   /* background-color: transparent; */
 
   @media (max-width: 1200px) {
-    padding: 4rem 4rem;
+    padding: 2.5rem 4rem;
   }
   @media (max-width: 480px) {
     padding: 4rem 2.4rem;
@@ -285,6 +285,8 @@ const stateForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
 
 export const shirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
+export const languagePreferences = ['English', 'Mandarin', 'Bahasa Malayu']
+
 const FollowButton = styled(Button)`
   display: inline-flex;
   align-items: center;
@@ -348,8 +350,12 @@ const validationSchema = yup.object({
     .max(6, 'Your postcode must be no longer than 6 characters')
     .required("Don't forget your postcode"),
   state: yup.string().required("Don't forget to include your state"),
-  shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
+  // shirtSize: yup.string().required("Don't forget to include your t-shirt size"),
   school: yup.string().required("Don't forget to include your school"),
+  // church: yup.string().required("Don't forget to include church name"),
+  languagePreference: yup.string().required('Please select your language preference'),
+  schoolHasCF: yup.string().required('Let us know whether your school has a Christian Fellowship.'),
+  firstTime: yup.string().required('Let us know whether this is your first time attending IGNITE!'),
   checked: yup.bool().oneOf([true], 'You have to check this to prcoeed'),
   registerChecked: yup.bool().oneOf([true], 'You have to check this to prcoeed')
 })
@@ -426,7 +432,7 @@ const RegistrationForm = () => {
         })
 
         // firebase user collection (create a document)
-        await firebase.firestore().collection('users').add({
+        await firebase.firestore().collection('ignitemy23').add({
           userId: createdUserResult.user.uid,
           fullName: values.fullName,
           email: values.email,
@@ -438,11 +444,15 @@ const RegistrationForm = () => {
           postcode: values.postcode,
           state: values.state,
           school: values.school,
-          shirtSize: values.shirtSize,
+          // shirtSize: values.shirtSize,
           remarks: values.remarks,
           occupation: values.occupation,
           attendance: values.attendance,
-          ignite2022: true,
+          // ignite2022: true,
+          schoolHasCF: values.schoolHasCF,
+          // church: values.church,
+          languagePreference: values.languagePreference,
+          firstTime: values.firstTime,
           dateCreated: Date.now()
         })
 
@@ -469,7 +479,11 @@ const RegistrationForm = () => {
               values.school,
               values.occupation,
               values.attendance,
-              values.shirtSize,
+              // values.shirtSize,
+              // values.church,
+              values.schoolHasCF,
+              values.languagePreference,
+              values.firstTime,
               values.remarks
             ]
           ])
@@ -534,7 +548,7 @@ const RegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY2022
+              See you at IGNITEMY2023
             </Text>
           )}
           <FollowButton orange="true">
@@ -557,7 +571,7 @@ const RegistrationForm = () => {
           <FormHeading>
             {/* <Image src="/images/png/register.png" height={45} width={230} /> */}
             <HeadingShadow>Register</HeadingShadow>
-            <p>Submit the form to join IGNITEMY2022!</p>
+            <p>Submit the form to join IGNITEMY2023!</p>
           </FormHeading>
           <Formik
             initialValues={{
@@ -571,10 +585,14 @@ const RegistrationForm = () => {
               postcode: '',
               state: '',
               school: '',
-              shirtSize: 'N/A',
+              // shirtSize: 'N/A',
               remarks: '',
               occupation: 'student',
               attendance: 'online',
+              // church: '',
+              schoolHasCF: '',
+              languagePreference: '',
+              firstTime: '',
               checked: false,
               registerChecked: false
             }}
@@ -631,15 +649,15 @@ const RegistrationForm = () => {
                   required
                   as={CustomTextField}
                 />
-                {/* https://web-brackets.com/discussion/12/how-to-use-setfieldvalue-from-outside-render-function-formik */}
-                {/* https://stackoverflow.com/questions/66235334/formik-setfieldvalue-inside-a-function */}
                 <RadioButton
                   question={secondRadioButtonQuestion.question}
                   options={secondRadioButtonQuestion.options}
                   name={secondRadioButtonQuestion.name}
                   func={(e) => handleRadioValueOnChange(e, setFieldValue)}
-                  disabled = 'true'
                 />
+                {/* https://web-brackets.com/discussion/12/how-to-use-setfieldvalue-from-outside-render-function-formik */}
+                {/* https://stackoverflow.com/questions/66235334/formik-setfieldvalue-inside-a-function */}
+
                 <Field
                   name="address"
                   label="House Unit Number & Street Address"
@@ -694,7 +712,7 @@ const RegistrationForm = () => {
                   options={firstRadioButtonQuestion.options}
                   name={firstRadioButtonQuestion.name}
                 />
-                <StyledLabel htmlFor="shirtSize">
+                {/* <StyledLabel htmlFor="shirtSize">
                   T-Shirt size? Refer to sizing chart{' '}
                   <a
                     href="https://drive.google.com/file/d/1fM2eJk99bT5wHun0NWJaIQIw-yjN6Bio/view"
@@ -704,9 +722,48 @@ const RegistrationForm = () => {
                     here
                   </a>
                   .*
-                </StyledLabel>
-                <Field name="shirtSize" label="shirtSize" required as={CustomSelect}  disabled = 'true'>
+                </StyledLabel> */}
+                {/* <Field name="shirtSize" label="shirtSize" required as={CustomSelect}>
                   {shirtSizes.map((size) => (
+                    <MenuItem key={size} value={size}>
+                      {size}
+                    </MenuItem>
+                  ))}
+                </Field>
+                <Field
+                  name="church"
+                  label="Church"
+                  placeholder="e.g. Damansara Utama Methodist Church"
+                  as={CustomTextField}
+                /> */}
+                <StyledLabel htmlFor="schoolHasCF">
+                  Does your school have a Christian Fellowship?*
+                </StyledLabel>
+                <Field name="schoolHasCF" label="schoolHasCF" required as={CustomSelect}>
+                  {['Yes', 'No'].map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </Field>
+                <StyledLabel htmlFor="languagePreference">Language Preference*</StyledLabel>
+                <Field
+                  name="languagePreference"
+                  label="languagePreference"
+                  required
+                  as={CustomSelect}
+                >
+                  {languagePreferences.map((language) => (
+                    <MenuItem key={language} value={language}>
+                      {language}
+                    </MenuItem>
+                  ))}
+                </Field>
+                <StyledLabel htmlFor="firstTime">
+                  Is this your first time attending IGNITEMY?*
+                </StyledLabel>
+                <Field name="firstTime" label="firstTime" required as={CustomSelect}>
+                  {['Yes', 'No'].map((size) => (
                     <MenuItem key={size} value={size}>
                       {size}
                     </MenuItem>
@@ -734,7 +791,7 @@ const RegistrationForm = () => {
                     as={Checkbox}
                   />
                   <label htmlFor="registerChecked" style={{ color: 'var(--color-white)' }}>
-                    I am registering for IGNITEMY2022
+                    I am registering for IGNITEMY2023
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="registerChecked" component="div" />

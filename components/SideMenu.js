@@ -313,7 +313,7 @@ const SideMenu = () => {
                   </a>
                 </StyledLink>
               </li>
-              <li>
+              {/* <li>
                 <StyledExtLink
                   href="https://ignitemy.online.church/"
                   target="_blank"
@@ -321,23 +321,23 @@ const SideMenu = () => {
                 >
                   Streaming Live
                 </StyledExtLink>
-              </li>
+              </li> */}
 
-              {/* <li>
+              <li>
                 <StyledLink href="/blog/submit">
                   <a>Blog</a>
                 </StyledLink>
-              </li> */}
-              <li>
+              </li>
+              {/* <li>
                     <StyledLink href="/resources">
                       <a>Resource</a>
                     </StyledLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <StyledLink href="/highlights">
                   <a>Highlights</a>
                 </StyledLink>
-              </li>
+              </li> */}
               {!user && (
                 <>
                   <li>

@@ -66,6 +66,19 @@ const letterAni = {
   }
 }
 
+const iframeAnimation = {
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+      delay: 1
+    }
+  }
+}
+
 const BannerContainer = styled.div`
   height: calc(100vh - 100px);
   position: relative;
@@ -131,6 +144,10 @@ const Details = styled.div`
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
+  font-size: 30px;
+  line-height: 40px;
+  font-style: italic;
+  color: var(--color-white);
 
   @media (max-width: 900px) {
     margin: 0;
@@ -139,7 +156,10 @@ const Details = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-  margin-top: 1.2rem;
+  margin-top: 2rem;  
+  @media (max-width: 900px) {
+    margin-top: 6rem;  
+  }
 `
 
 const Row = styled(motion.div)`
@@ -174,7 +194,7 @@ const OrangeHeader = styled(motion.h3)`
 //   position: relative;
 // `
 
-const StyledIframe = styled.iframe`
+const StyledIframe = styled(motion.iframe)`
   z-index: 2;
   max-width: 60rem;
   border: solid 2px white;
@@ -208,13 +228,32 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
   </Row>
 )
 
+const OrangeSpan = styled.span`
+  color: var(--color-orange);
+  font-style: italic;
+`
+
+const bannerInfo = {
+  bgImgSrc: "/images/jpg/worship_hands.jpg",
+  eventDate1: "26 ",
+  eventDate2: "& ",
+  eventDate3: "27 AUG 2023",
+  subHeadingA1: "TWO ",
+  subHeadingA2: "DAY EVENT",
+  subHeadingB1: "FREE ",
+  subHeadingB2: "FREE",
+  // lineOneText: "DAY SUMMIT.",
+  // lineTwoText: "NIGHT RALLY.",
+  videoUrl: "https://www.youtube.com/embed/mho994i7LG0"
+}
+
 const Banner = () => {
   const user = useAuth()
   return (
     <BannerContainer>
       <StyledImage
         // src="/images/png/homepage-banner.png"
-        src="/images/png/wave_banner.png"
+        src={bannerInfo.bgImgSrc}
         alt="Fire patterns"
         layout="fill"
         objectFit="cover"
@@ -232,21 +271,28 @@ const Banner = () => {
               priority="true"
             />
           </ImageWrapper>
-          <Details>
-            <WhiteHeader initial="initial" animate="animate" variants={date}>
-              24.09.2022
-            </WhiteHeader>
-            <ShortDetailWrapper>
+          <Details> 
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
+              {bannerInfo.eventDate1}<OrangeSpan>{bannerInfo.eventDate2}</OrangeSpan>{bannerInfo.eventDate3}
+          </WhiteHeader>
+          
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
+              <OrangeSpan>{bannerInfo.subHeadingA1}</OrangeSpan>{bannerInfo.subHeadingA2}
+          </WhiteHeader>
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
+              {bannerInfo.subHeadingB1}<OrangeSpan>{bannerInfo.subHeadingB1}</OrangeSpan>{bannerInfo.subHeadingB2}
+          </WhiteHeader>
+            {/* <ShortDetailWrapper>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                DAY SUMMIT.&nbsp;
+                {bannerInfo.lineOneText} &nbsp;
               </WhiteHeader>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
-                NIGHT RALLY.
+                {bannerInfo.liShortDetailWrapperneTwoText}
               </WhiteHeader>
-            </ShortDetailWrapper>
-            <ButtonWrapper>
+            </ShortDetailWrapper> */}
+            {/* <ButtonWrapper>
               <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
-            </ButtonWrapper>
+            </ButtonWrapper> */}
             {/* <AnimatedLetters title="LIVE" variants={live} /> */}
           </Details>
         </ContentWrapper>
@@ -266,11 +312,14 @@ const Banner = () => {
       <StyledIframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/fQkThyL3QVY"
+        src={bannerInfo.videoUrl}
         title="IGNITEMY2021 Promo Video"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        initial="initial"
+        animate="animate"
+        variants={iframeAnimation}
       />
     </BannerContainer>
   )
