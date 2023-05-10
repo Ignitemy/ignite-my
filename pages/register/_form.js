@@ -635,7 +635,7 @@ const RegistrationForm = () => {
                   <Field
                     type="string"
                     name="myKad"
-                    label="NRIC Number/Passport (without dashes)"
+                    label="NRIC/Passport Number (without dashes)"
                     placeholder="e.g. 901230064089"
                     required
                     as={CustomTextField}
