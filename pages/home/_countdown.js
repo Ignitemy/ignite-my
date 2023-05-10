@@ -316,9 +316,10 @@ const Countdown = () => {
           <StyledContainer>
             {isEventStart
               ? btnStart
-              : <Image src="/images/png/ignite-logo.png" 
-                height={55}
-                width={383}
+              : <Image src="/images/png/IGNITEMY_2023_logo.png" 
+                height={59}
+                width={480}
+                // height={59} width={383} // original logo dimension
                 alt="Ignite logo" />}
 
           </StyledContainer>

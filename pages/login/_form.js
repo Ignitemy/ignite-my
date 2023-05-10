@@ -220,10 +220,12 @@ const LoginForm = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <FlexCenter>
+        <FlexCenter fd='column'>
           {!action ? (
-            // <Image src="/images/png/login-for-2022.png" height={90} width={500} />
-            <HeadingShadow>LOG IN FOR IGNITEMY</HeadingShadow>
+            <>
+              <HeadingShadow>LOG IN FOR</HeadingShadow>
+              <Image src="/images/png/IGNITEMY_2023_logo.png" height={40} width={350} />
+            </>
           ) : (
             // <Heading size="3.6rem" fstyle="italic" color="white" align="center">
             //   PLEASE LOG IN TO VIEW PAGE

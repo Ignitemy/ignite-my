@@ -264,10 +264,11 @@ const Banner = () => {
         <ContentWrapper>
           <ImageWrapper initial="initial" animate="animate" variants={logo}>
             <Image
-              src="/images/png/ignite-logo.png"
+              src="/images/png/IGNITEMY_2023_logo.png"
               alt="Ignite logo"
               height={59}
-              width={383}
+              width={480}
+              // height={59} width={383} // original logo dimension
               priority="true"
             />
           </ImageWrapper>
