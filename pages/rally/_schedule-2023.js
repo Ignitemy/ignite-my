@@ -94,7 +94,7 @@ const rallyTimetable = [
   {
     color: 'var(--color-white)',
     time: '19:00',
-    activity: 'Door Open'
+    activity: 'Doors Open'
   },
   {
     color: 'var(--color-orange)',
