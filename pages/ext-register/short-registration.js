@@ -500,7 +500,7 @@ const ShortRegistrationForm = () => {
                       <Field
                         type="string"
                         name="myKad"
-                        label="NRIC Number (without dashes)"
+                        label="NRIC Number/Passport (without dashes)"
                         placeholder="e.g. 901230064089"
                         required
                         as={CustomTextField}

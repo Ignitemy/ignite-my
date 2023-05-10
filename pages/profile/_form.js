@@ -290,7 +290,7 @@ const Profile = () => {
                 <Field
                   type="string"
                   name="myKad"
-                  label="NRIC Number (without dashes)"
+                  label="NRIC Number/Passport (without dashes)"
                   value={userData.myKad}
                   required
                   as={CustomTextField}
