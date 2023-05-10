@@ -190,7 +190,7 @@ const Register = () => {
                 <br />
                 <br />
                 Participants who register from <span id='date'>25th July 2023</span> onwards are still invited
-                to join the Summit via online. However, you WILL NOT receive the Summit kit.
+                to join the Summit. However, you WILL NOT receive the Summit kit.
                 <br />
                 <br />
                 An exclusive access to the Summit will be sent to you via email closer to the date!
