@@ -53,10 +53,10 @@ const StyledContainer = styled.div`
   @media (max-width: 560px) {
     font-size: 2rem;
 
-    img {
-      width: 300px;
-      height: 60px;
-    }
+    // img {
+    //   width: 300px;
+    //   height: 60px;
+    // }
   }
 `
 const StyledBoldContainer = styled.div`
