@@ -101,6 +101,7 @@ const Banner = () => {
               color="white"
               fstyle="italic"
               lh="4rem"
+              ts='3px 1px 0px #000000'
             >
               27TH AUG 2023
             </StyledHeading>
@@ -112,6 +113,7 @@ const Banner = () => {
               fstyle="italic"
               mt="2.4rem"
               lh="4rem"
+              ts='3px 1px 0px #000000'
             >
               4:30PM - 9:30PM
             </Heading>
