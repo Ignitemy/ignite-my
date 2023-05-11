@@ -47,7 +47,7 @@ const Page = () => {
         logoImgDetails={igniteYlsLogo}
         programDate="26 AUG 2023"
         programTime="10:00AM - 3:30PM"
-        subheading="Join us onine or in-person"
+        subheading="Join us online or in-person"
         subheading2="Requires registration!"
       />
       <EventBanner
