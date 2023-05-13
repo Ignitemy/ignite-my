@@ -8,10 +8,11 @@ import Layout from '../../components/Layout'
 import Video from './_video'
 import Gallery from './_gallery'
 import EventHighlights from './_event-highlights'
+import CommsTeam from './_comms-team'
 
 const ImageWrapper = styled.div`
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   max-width: 383px;
   padding: 0 0 7rem;
 
@@ -43,6 +44,7 @@ const Highlights = () => {
           loading='lazy'
         />
       </ImageWrapper>
+      <CommsTeam />
       <Gallery />
     </Layout>
   )
