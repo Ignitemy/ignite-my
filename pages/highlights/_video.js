@@ -14,7 +14,7 @@ const BannerContainer = styled.section`
   justify-content: center;
   align-items: center;
   @media (max-width: 800px) {
-    height: 420px;
+    height: 620px;
     padding: 2.4rem 0;
   }
 `
@@ -30,7 +30,7 @@ const ImageWrapper = styled.div`
 const StyledIFrame = styled.iframe`
   z-index: 2;
   /* max-width: 144rem; */
-  max-width: 80rem;
+  max-width: 70rem;
   border: solid 2px white;
   border-radius: 10px;
   @media (max-width: 768px) {
