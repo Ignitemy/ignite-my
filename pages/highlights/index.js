@@ -10,10 +10,10 @@ const Highlights = () => {
   return (
     <Layout title="IGNITEMY2023 | Highlights">
       {/* <HeaderButtons /> */}
-      <Stats />
+      {/* <Stats /> */}
       {/* <Logo /> */}
       {/* <Quotes /> */}
-      {/* <Video /> */}
+      <Video />
       <Gallery />
     </Layout>
   )
