@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useAuth } from '@/helpers/auth'
 import { Button, Text } from '../../components'
 
-const BannerContainer = styled.div`
+const BannerContainer = styled.section`
   height: 650px;
   padding: 2rem 0;
   position: relative;
