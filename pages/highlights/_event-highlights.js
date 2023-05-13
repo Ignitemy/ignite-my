@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { HeadingShadow, Text } from '../../components'
 
 const SectionContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10rem 0 5rem;
+  padding: 10rem 0 0;
 `
 
 const SessionDetails = styled.div`
