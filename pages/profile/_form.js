@@ -397,7 +397,15 @@ const Profile = () => {
                     {language}
                   </MenuItem>
                 ))}
-              </Field>
+              </Field> 
+
+              <Field
+                name="remarks"
+                label="Remarks (if any)"
+                value={userData.remarks}
+                required
+                as={CustomTextField}
+              />
             </StyledForm>
           )}
         </Formik>
