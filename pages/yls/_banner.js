@@ -2,6 +2,38 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { Heading } from '../../components'
+import { motion } from 'framer-motion'
+
+// Variants
+const logo = {
+  initial: {
+    opacity: 0,
+    x: -200
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.2
+    }
+  }
+}
+
+const details = {
+  initial: {
+    opacity: 0,
+    x: 200
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.2
+    }
+  }
+}
 
 const BannerContainer = styled.div`
   height: calc(100vh - 100px);
@@ -48,7 +80,7 @@ const ContentWrapper = styled.div`
   }
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   height: 173px;
   margin-right: 2.5rem;
 
@@ -57,7 +89,7 @@ const ImageWrapper = styled.div`
   }
 `
 
-const RightContent = styled.div`
+const RightContent = styled(motion.div)`
   margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -86,7 +118,7 @@ const Banner = () => {
       />
       <BannerContent>
         <ContentWrapper>
-          <ImageWrapper>
+          <ImageWrapper initial="initial" animate="animate" variants={logo}>
             <Image
               src="/images/png/ignite-yls-logo.png"
               alt="Ignite youth leadership summit logo"
@@ -95,7 +127,7 @@ const Banner = () => {
               priority="true"
             />
           </ImageWrapper>
-          <RightContent>
+          <RightContent initial="initial" animate="animate" variants={details}>
             <StyledHeading
               as="h3"
               size="3.6rem"
