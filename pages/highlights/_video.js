@@ -1,9 +1,57 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useAuth } from '@/helpers/auth'
-import { Button, Text } from '../../components'
+import { Text } from '../../components'
+import { motion } from 'framer-motion'
+
+// Variants
+const header = {
+  initial: {
+    opacity: 0,
+    y: 100
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1
+    }
+  }
+}
+
+const video = {
+  initial: {
+    opacity: 0,
+    y: 100
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+      delay: 0.8
+    }
+  }
+}
+
+const caption = {
+  initial: {
+    opacity: 0,
+    y: 100
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+      delay: 1.6
+    }
+  }
+}
 
 const BannerContainer = styled.section`
   height: 650px;
@@ -19,7 +67,7 @@ const BannerContainer = styled.section`
   }
 `
 
-const VideoHeader = styled.div`
+const VideoHeader = styled(motion.div)`
   margin-bottom: 5rem;
 `
 
@@ -27,7 +75,7 @@ const ImageWrapper = styled.div`
   margin: 0 auto;
   max-width: 383px;
 `
-const StyledIFrame = styled.iframe`
+const StyledIFrame = styled(motion.iframe)`
   z-index: 2;
   /* max-width: 144rem; */
   max-width: 70rem;
@@ -43,7 +91,7 @@ const StyledIFrame = styled.iframe`
   }
 `
 
-const VideoCaption = styled.caption`
+const VideoCaption = styled(motion.caption)`
   display: flex;
   margin-top: 1em;
 `
@@ -52,13 +100,14 @@ const Video = () => {
   const user = useAuth()
   return (
     <BannerContainer>
-      <VideoHeader>
+      <VideoHeader initial="initial" animate="animate" variants={header}>
         <ImageWrapper>
           <Image
             src="/images/png/ignite-logo-v2.png"
             width={670}
             height={118}
             alt="IGNITEMY 2022"
+            priority={true}
           />
         </ImageWrapper>
         <Text color="white" align="center" size="18px">
@@ -67,6 +116,9 @@ const Video = () => {
       </VideoHeader>
 
       <StyledIFrame
+        initial="initial"
+        animate="animate"
+        variants={video}
         width="60%"
         height="75%"
         src="https://www.youtube.com/embed/mQWBvqyyZ5w"
@@ -76,7 +128,7 @@ const Video = () => {
         allowfullscreen
       />
 
-      <VideoCaption>
+      <VideoCaption initial="initial" animate="animate" variants={caption}>
         <Text color="white" weight="700" size="36px" align="center">
           Recap of IGNITEMY{' '}
           <span style={{ color: 'var(--color-orange)', textDecoration: 'none' }}>2022</span>
