@@ -1,7 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { Heading,HeadingShadow } from '../../components'
+import { Heading, HeadingShadow } from '../../components'
+import { motion } from 'framer-motion'
+
+// Variants
+const logo = {
+  initial: {
+    opacity: 0,
+    x: -200
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.2
+    }
+  }
+}
+
+const details = {
+  initial: {
+    opacity: 0,
+    x: 200
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.2
+    }
+  }
+}
 
 const BannerContainer = styled.div`
   height: calc(100vh - 100px);
@@ -39,7 +71,7 @@ const ContentWrapper = styled.div`
   }
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   // height: 330px;
   margin-right: 2.5rem;
   @media (max-width: 900px) {
@@ -47,7 +79,7 @@ const ImageWrapper = styled.div`
   }
 `
 
-const RightContent = styled.div`
+const RightContent = styled(motion.div)`
   margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -76,7 +108,7 @@ const Banner = () => {
       />
       <BannerContent>
         <ContentWrapper>
-          <ImageWrapper>
+          <ImageWrapper initial="initial" animate="animate" variants={logo}>
             <Image
               src="/images/png/ignite_bazaar_logo.png"
               alt="Ignite youth leadership summit logo"
@@ -84,7 +116,7 @@ const Banner = () => {
               width={310}
               priority="true"
             />
-            <HeadingShadow align='center'>+</HeadingShadow>
+            <HeadingShadow align="center">+</HeadingShadow>
             <Image
               src="/images/png/ignite-rally.png"
               alt="Ignite youth leadership summit logo"
@@ -93,7 +125,7 @@ const Banner = () => {
               priority="true"
             />
           </ImageWrapper>
-          <RightContent>
+          <RightContent initial="initial" animate="animate" variants={details}>
             <StyledHeading
               as="h3"
               size="3.6rem"
@@ -101,7 +133,7 @@ const Banner = () => {
               color="white"
               fstyle="italic"
               lh="4rem"
-              ts='3px 1px 0px #000000'
+              ts="3px 1px 0px #000000"
             >
               27TH AUG 2023
             </StyledHeading>
@@ -113,7 +145,7 @@ const Banner = () => {
               fstyle="italic"
               mt="2.4rem"
               lh="4rem"
-              ts='3px 1px 0px #000000'
+              ts="3px 1px 0px #000000"
             >
               4:30PM - 9:30PM
             </Heading>
