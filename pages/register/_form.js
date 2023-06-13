@@ -407,16 +407,16 @@ const RegistrationForm = () => {
   const handleSignUp = async (values, actions) => {
     // event.preventDefault()
     actions.setSubmitting(true)
-    const statesAllowedForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
+    // const statesAllowedForInPerson = ['Kuala Lumpur', 'Putrajaya', 'Selangor']
 
     // handle state validation for in-person option
     // this is to prevent the loophole: Even though the input seems to be reseted when choosing in-person
     // it doesn't reset the actual input, so the user will still be able to submit the form
-    if (values.attendance === 'in-person' && !statesAllowedForInPerson.includes(values.state)) {
-      // return alert('You are only allowed to atttend physically if you are from Kuala Lumpur, Selangor and Putrajaya. Please select "online" if you wished to attend from other states.')
-      setStateErrorModal(true)
-      return
-    }
+    // if (values.attendance === 'in-person' && !statesAllowedForInPerson.includes(values.state)) {
+    //   // return alert('You are only allowed to atttend physically if you are from Kuala Lumpur, Selangor and Putrajaya. Please select "online" if you wished to attend from other states.')
+    //   setStateErrorModal(true)
+    //   return
+    // }
 
     const emailExists = await doesEmailExist(values.email)
     if (!emailExists) {
@@ -653,7 +653,6 @@ const RegistrationForm = () => {
                   question={secondRadioButtonQuestion.question}
                   options={secondRadioButtonQuestion.options}
                   name={secondRadioButtonQuestion.name}
-                  func={(e) => handleRadioValueOnChange(e, setFieldValue)}
                 />
                 {/* https://web-brackets.com/discussion/12/how-to-use-setfieldvalue-from-outside-render-function-formik */}
                 {/* https://stackoverflow.com/questions/66235334/formik-setfieldvalue-inside-a-function */}
