@@ -59,8 +59,8 @@ const RadioButton = ({ question, options, name, func, disabled, userActiveIndex 
       <TabWrapper>
         <FieldWrapper
           isActive={activeIndex === 0}
-          onClick={() => !disabled && setActiveIndex(0)}
-          disabled={disabled}
+          onClick={() => !options.secondOption.disabled && setActiveIndex(0)}
+          disabled={options.firstOption.disabled}
         >
           <label>
             <Field
@@ -68,15 +68,15 @@ const RadioButton = ({ question, options, name, func, disabled, userActiveIndex 
               name={name}
               value={options.firstOption.value}
               onClick={func}
-              disabled={disabled}
+              disabled={options.firstOption.disabled}
             />
             <Text>{options.firstOption.label}</Text>
           </label>
         </FieldWrapper>
         <FieldWrapper
           isActive={activeIndex === 1}
-          onClick={() => !disabled && setActiveIndex(1)}
-          disabled={disabled}
+          onClick={() => !options.secondOption.disabled && setActiveIndex(1)}
+          disabled={options.secondOption.disabled}
         >
           <label>
             <Field
@@ -84,7 +84,7 @@ const RadioButton = ({ question, options, name, func, disabled, userActiveIndex 
               name={name}
               value={options.secondOption.value}
               onClick={func}
-              disabled={disabled}
+              disabled={options.secondOption.disabled}
             />
             <Text>{options.secondOption.label}</Text>
           </label>
