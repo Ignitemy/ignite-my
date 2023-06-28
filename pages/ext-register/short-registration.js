@@ -288,13 +288,11 @@ const firstRadioButtonQuestion = {
   options: {
     firstOption: {
       value: 'student',
-      label: 'Student',
-      disabled: false
+      label: 'Student'
     },
     secondOption: {
       value: 'teacher',
-      label: 'Teacher',
-      disabled: false
+      label: 'Teacher'
     }
   },
   name: 'occupation'
@@ -305,13 +303,11 @@ const secondRadioButtonQuestion = {
   options: {
     firstOption: {
       value: 'online',
-      label: 'Online',
-      disabled: false
+      label: 'Online'
     },
     secondOption: {
       value: 'in-person',
-      label: 'In-Person',
-      disabled: true
+      label: 'In-Person'
     }
   },
   name: 'attendance'
