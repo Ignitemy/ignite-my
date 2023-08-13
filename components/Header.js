@@ -225,9 +225,9 @@ const Header = () => {
                   Log In
                 </Button>
               </StyledLink>
-              <StyledLink href="/register">
+              {/* <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink>
+              </StyledLink> */}
               {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
