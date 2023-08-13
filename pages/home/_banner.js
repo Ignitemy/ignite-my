@@ -302,13 +302,13 @@ const Banner = () => {
               <Button orange="true">Streaming Live</Button>
             </StyledExtLink>
           </ButtonWrapper> */}
-        {!user && (
+        {/* {!user && (
           <ButtonWrapper>
             <Link href="/register">
               <Button orange="true">Register</Button>
             </Link>
           </ButtonWrapper>
-        )}
+        )} */}
       </BannerContent>
       <StyledIframe
         width="100%"
