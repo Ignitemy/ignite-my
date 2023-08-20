@@ -38,7 +38,7 @@ const ResourceComponent = () => {
       </ImageContainer>
       <ButtonContainer
         target="_blank"
-        href="https://bit.ly/IGNITEMY2022_booklet"
+        href="https://drive.google.com/file/d/1F0t6rEo6GeEJgc0Lv4O15tWPEXXPMIk7/view?usp=sharing"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
