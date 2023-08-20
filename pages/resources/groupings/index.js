@@ -66,7 +66,7 @@ const data_physical = [
   },
   {
     group: 'Group 5',
-    facilitators: ['Gan Rong Sheng '],
+    facilitators: ['Gan Jia Yi'],
     members: [
       'Ashton Haoran Lee',
       'Casper Too Xin Qian',
@@ -96,7 +96,7 @@ const data_physical = [
   },
   {
     group: 'Group 7',
-    facilitators: ['Gan Jia Yi'],
+    facilitators: ['Gan Rong Sheng '],
     members: [
       'Chong Yee Zhe',
       'Hon Janson',
