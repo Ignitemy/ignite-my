@@ -6,7 +6,7 @@ import Layout from '../../components/Layout'
 // import Logo from './_logo'
 // import Quotes from './_quotes'
 import Video from './_video'
-import Gallery from './_gallery'
+// import Gallery from './_gallery'
 import EventHighlights from './_event-highlights'
 import CommsTeam from './_comms-team'
 
@@ -45,7 +45,7 @@ const Highlights = () => {
         />
       </ImageWrapper>
       <CommsTeam />
-      <Gallery />
+      {/* <Gallery /> */}
     </Layout>
   )
 }
