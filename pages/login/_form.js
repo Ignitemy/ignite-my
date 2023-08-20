@@ -266,7 +266,7 @@ const LoginForm = () => {
               />
               <FlexEnd>
                 <Link href="/reset-password">
-                  <a>Forgot password?</a>
+                 Forgot password?
                 </Link>
               </FlexEnd>
               <ButtonWrapper>
@@ -282,7 +282,7 @@ const LoginForm = () => {
               <StyledText color="white" mt="2rem">
                 Not registered?{' '}
                 <Link href="/register" as="a">
-                  <a>Register for an account</a>
+                  Register for an account
                 </Link>
               </StyledText>
             </StyledForm>

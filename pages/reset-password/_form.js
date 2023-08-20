@@ -192,7 +192,7 @@ const ResetPassword = () => {
               </ButtonWrapper>
               <FlexStart>
                 <Link href="/login">
-                  <a>&larr; Back to login</a>
+                  &larr; Back to login
                 </Link>
               </FlexStart>
             </StyledForm>

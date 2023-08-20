@@ -180,33 +180,33 @@ const Header = () => {
           <ul>
             <li>
               <StyledLink href="/">
-                <a>Home</a>
+                Home
               </StyledLink>
             </li>
             <li>
               <StyledLink href="/yls">
-                <a>
+                
                   <WhiteSpan>IGNITE</WhiteSpan>
                   <OrangeSpan>YLS</OrangeSpan>
-                </a>
+                
               </StyledLink>
             </li>
             <li>
               <StyledLink href="/rally">
-                <a>
+                
                   <WhiteSpan>IGNITE</WhiteSpan>
                   <OrangeSpan>RALLY</OrangeSpan>
-                </a>
+                
               </StyledLink>
             </li>
             <li>
               <StyledLink href="/blog">
-                <a>Blog</a>
+                Blog
               </StyledLink>
             </li>
             <li>
               <StyledLink href="/resources">
-                <a>Resource</a>
+                Resource
               </StyledLink>
             </li>
             {/* <li>
@@ -264,19 +264,18 @@ const Header = () => {
                 {showMenu && (
                   <ProfileMenu ref={wrapperRef}>
                     <StyledLink href="/profile">
-                      <a>My Profile</a>
+                      My Profile
                     </StyledLink>
-                    <StyledLink href="#">
-                      <a
-                        onClick={() => {
-                          setTimeout(() => {
-                            firebase.auth().signOut()
-                            router.push('/')
-                          }, 500)
-                        }}
-                      >
-                        Log Out
-                      </a>
+                    <StyledLink 
+                      href="#" 
+                      onClick={() => {
+                        setTimeout(() => {
+                          firebase.auth().signOut()
+                          router.push('/')
+                        }, 500)
+                      }}
+                    >
+                      Log Out
                     </StyledLink>
                   </ProfileMenu>
                 )}
