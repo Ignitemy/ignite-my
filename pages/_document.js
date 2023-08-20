@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import { createResolver } from 'next-slicezone/resolver'
-import { ServerStyleSheets } from '@material-ui/core/styles'
+// import { ServerStyleSheets } from '@mui/styled-engine'
 import { ServerStyleSheet } from 'styled-components'
 import { apiEndpoint } from './../sm.json' // import the endpoint name
 const prismicRepoName = /([a-zA-Z0-9-]+)?(\.cdn)?\.prismic\.io/.exec(apiEndpoint)[1] //Regex to get repo ID
@@ -9,14 +9,14 @@ const prismicRepoName = /([a-zA-Z0-9-]+)?(\.cdn)?\.prismic\.io/.exec(apiEndpoint
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const styledComponentsSheet = new ServerStyleSheet()
-    const materialSheets = new ServerStyleSheets()
+    // const materialSheets = new ServerStyleSheets()
     const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
-            styledComponentsSheet.collectStyles(materialSheets.collect(<App {...props} />))
+            styledComponentsSheet.collectStyles(<App {...props} />)
         })
       const initialProps = await Document.getInitialProps(ctx)
       await createResolver()
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
         styles: (
           <React.Fragment>
             {initialProps.styles}
-            {materialSheets.getStyleElement()}
+            {/* {materialSheets.getStyleElement()} */}
             {styledComponentsSheet.getStyleElement()}
           </React.Fragment>
         )
