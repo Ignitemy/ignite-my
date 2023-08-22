@@ -12,11 +12,10 @@ import { HeadingShadow } from '../../../components'
 const data_physical = [
   {
     group: 'Group 1',
-    facilitators: ['Kuan Yu Sheng'],
+    facilitators: ['Kuan Yu Sheng', 'PANG YEE BOB'],
     members: [
       'Rachel Chew Jing Ern ( CN )',
       'Law Xin Yi',
-      'PANG YEE BOB',
       'Hannah Sia En Xi ',
       'Jocelyn Wee Jing Huei',
       'Sean Sia En Hao ',
@@ -40,7 +39,7 @@ const data_physical = [
   },
   {
     group: 'Group 3',
-    facilitators: ['Ngui Xin Ru (CN)'],
+    facilitators: ['Ngui Xin Ru (CN)', 'Yeau Ming Yee'],
     members: [
       'Cheng Yin Xi',
       'Chloe Chen Wen Xuan ',
@@ -224,7 +223,6 @@ const data_physical = [
     group: 'Group 16',
     facilitators: ['Felicia Leong Jie Ern'],
     members: [
-      'Chan Yan Teng',
       'DARLENE SHALOM A/P EDWIN SELVARAJA ',
       'Esther Ho Xing En',
       'Hannah Fong Shir Enn',
@@ -588,7 +586,8 @@ const data_online = [
       'Rachel Yap',
       'SIAU ZHE XUAN',
       'OOI SU CHEEN',
-      'Abigail Quah'
+      'Abigail Quah',
+      'Chan Yan Teng'
     ]
   },
   {
