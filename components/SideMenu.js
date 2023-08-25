@@ -313,7 +313,7 @@ const SideMenu = () => {
                   </a>
                 </StyledLink>
               </li>
-              {/* <li>
+              <li>
                 <StyledExtLink
                   href="https://ignitemy.online.church/"
                   target="_blank"
@@ -321,7 +321,7 @@ const SideMenu = () => {
                 >
                   Streaming Live
                 </StyledExtLink>
-              </li> */}
+              </li>
 
               <li>
                 <StyledLink href="/blog">
