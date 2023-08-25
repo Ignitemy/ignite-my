@@ -228,13 +228,13 @@ const Header = () => {
               {/* <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
               </StyledLink> */}
-              {/* <StyledExtLink
+              <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink> */}
+              </StyledExtLink>
             </>
           ) : (
             <>
