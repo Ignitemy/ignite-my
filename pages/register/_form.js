@@ -1,34 +1,37 @@
 import React, { useContext, useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { HeadingShadow } from '../../components'
 import { useRouter } from 'next/router'
-import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
-import * as yup from 'yup'
-import {
-  TextField,
-  Checkbox,
-  Select,
-  MenuItem,
-  InputLabel,
-  InputAdornment,
-  IconButton
-} from '@material-ui/core'
-import { Alert } from '@material-ui/lab'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import Visibility from '@material-ui/icons/Visibility'
-import VisibilityOff from '@material-ui/icons/VisibilityOff'
-import FirebaseContext from '@/context/firebase'
-import { doesEmailExist } from '@/helpers/firebase'
-import { Button, Text } from '@/components/index'
-import { useAuth } from '@/helpers/auth'
 import SuccessIcon from '@/images/svg/success'
 import InstaIcon from '@/images/svg/insta-no-outline'
+//component
 import Modal from './_modal'
 import AlreadyRegisteredModal from './_already-registered-modal'
 import RadioButton from '@/components/RadioButton'
 import StateModal from './_state-block-modal'
+import { Button, Text } from '@/components/index'
+import { HeadingShadow } from '../../components'
+//styled component
+import styled from 'styled-components'
+//formik
+import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
+import * as yup from 'yup'
+//mui
+import TextField from '@mui/material/TextField'
+import InputAdornment from '@mui/material/InputAdornment'
+import IconButton from '@mui/material/IconButton'
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import Checkbox from '@mui/material/Checkbox'
+import Alert from '@mui/material/Alert'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Visibility from '@mui/icons-material/Visibility'
+import VisibilityOff from '@mui/icons-material/VisibilityOff'
+//firebase
+import FirebaseContext from '@/context/firebase'
+import { doesEmailExist } from '@/helpers/firebase'
+import { useAuth } from '@/helpers/auth'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#ff9999'
@@ -94,7 +97,7 @@ const StyledTextField = styled(TextField)`
   > label {
     font-size: 2rem;
     color: var(--color-white);
-    top: -6px;
+    left: -12px;
 
     @media (max-width: 480px) {
       font-size: 1.6rem;
@@ -105,6 +108,7 @@ const StyledTextField = styled(TextField)`
     background-color: var(--color-white);
     border-radius: 8px;
     font-size: 1.4rem;
+    margin-top: 16px;
 
     input {
       padding: 0.8rem 1.2rem;

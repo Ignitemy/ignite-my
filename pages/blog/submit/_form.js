@@ -1,8 +1,12 @@
 import React, { useContext, useState } from 'react'
-import styled from 'styled-components'
 // import { useRouter } from 'next/router'
-import { Alert } from '@material-ui/lab'
+//component
 import { Button, Text, Heading } from '@/components/index'
+//styled component
+import styled from 'styled-components'
+//mui
+import Alert from '@mui/material/Alert'
+//firebase
 import FirebaseContext from '@/context/firebase'
 
 const Container = styled.div`

@@ -1,27 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
+import router from 'next/router'
+import SuccessIcon from '@/images/svg/success'
+//component
 import RadioButton from '@/components/RadioButton'
 import { Button, Heading, Text } from '@/components/index'
-import FirebaseContext from '@/context/firebase'
-import router from 'next/router'
+import { listOfStates, shirtSizes, languagePreferences } from '../register/_form'
+// import StateModal from './_state-block-model'
+//styled component
+import styled from 'styled-components'
+//formik
+import { Formik, Form, Field, useField, ErrorMessage } from 'formik'
+import * as yup from 'yup'
+//mui
+import TextField from '@mui/material/TextField'
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import Checkbox from '@mui/material/Checkbox'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+//firebase
 // import { getUserByUserId } from '@/helpers/firebase'
 import { useAuth } from '@/helpers/auth'
-import {
-  Checkbox,
-  createMuiTheme,
-  ThemeProvider,
-  InputLabel,
-  MenuItem,
-  TextField,
-  Select
-} from '@material-ui/core'
-import * as yup from 'yup'
-import StateModal from './_state-block-model'
-import SuccessIcon from '@/images/svg/success'
-import { listOfStates, shirtSizes, languagePreferences } from '../register/_form'
+import FirebaseContext from '@/context/firebase'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#ff9999'
@@ -83,10 +85,10 @@ const StyledTextField = styled(TextField)`
   color: var(--color-white);
   margin: 1.2rem 0 !important;
 
-  > label {
+  > label 
     font-size: 2rem;
     color: var(--color-white);
-    top: -6px;
+    left: -12px;
 
     @media (max-width: 480px) {
       font-size: 1.6rem;
@@ -97,6 +99,7 @@ const StyledTextField = styled(TextField)`
     background-color: var(--color-white);
     border-radius: 8px;
     font-size: 1.4rem;
+    margin-top: 16px;
 
     input {
       padding: 0.8rem 1.2rem;
@@ -596,7 +599,7 @@ const ShortRegistrationForm = () => {
                           {size}
                         </MenuItem>
                       ))}
-                    </Field> */}
+                    </Field> */
                     <StyledLabel htmlFor="schoolHasCF">
                       Does your school have a Christian Fellowship?*
                     </StyledLabel>
