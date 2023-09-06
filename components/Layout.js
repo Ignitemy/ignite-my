@@ -48,7 +48,7 @@ const Layout = ({ children, title }) => {
           crossOrigin=""
         />
       </Head>
-      {/* <Header /> */}
+      <Header />
       <StyledMain>{children}</StyledMain>
       <Footer />
     </>
