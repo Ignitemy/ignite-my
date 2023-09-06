@@ -14,7 +14,7 @@ const logo = {
     opacity: 1,
     x: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1.2
     }
   }
@@ -29,7 +29,7 @@ const details = {
     opacity: 1,
     x: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1.2
     }
   }
@@ -135,7 +135,7 @@ const Banner = () => {
               color="white"
               fstyle="italic"
               lh="4rem"
-              ts='3px 1px 0px #000000'
+              ts="3px 1px 0px #000000"
             >
               26TH AUG 2023
             </StyledHeading>
@@ -158,7 +158,7 @@ const Banner = () => {
               fstyle="italic"
               mt="2.4rem"
               lh="4rem"
-              ts='3px 1px 0px #000000'
+              ts="3px 1px 0px #000000"
             >
               10:00AM - 3:30PM
             </Heading>

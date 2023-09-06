@@ -16,7 +16,7 @@ const logo = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1.6
     }
   }
@@ -31,7 +31,7 @@ const logo = {
 //     opacity: 1,
 //     y: 0,
 //     transition: {
-//       ease: [0.6, 0.01, -0.05, 0.95],
+//       ease: "easeOut",
 //       duration: 1.6,
 //       delay: 0.8
 //     }
@@ -60,14 +60,14 @@ const letterAni = {
   animate: {
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 0.6
     }
   }
 }
 
 const BannerContainer = styled.div`
-//   height: 800px;
+  //   height: 800px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -81,14 +81,14 @@ const BannerContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-      min-width: 50vw;
-      padding: 14rem 0;
+    min-width: 50vw;
+    padding: 14rem 0;
   }
 
   @media (min-width: 1024px) {
     min-width: 50vw;
     padding: 20rem 0;
-}
+  }
 `
 
 const BannerContent = styled.div`
@@ -100,7 +100,7 @@ const BannerContent = styled.div`
   &:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
-    cursor:pointer;
+    cursor: pointer;
   }
 `
 
@@ -108,9 +108,7 @@ const StyledImage = styled(Image)`
   z-index: 0;
 `
 
-const LinkTo = styled.a`
-`
-
+const LinkTo = styled.a``
 
 const ContentWrapper = styled.div`
   z-index: 1;
@@ -125,7 +123,7 @@ const ContentWrapper = styled.div`
 
 const ImageWrapper = styled(motion.div)`
   height: 173px;
-  
+
   // @media (max-width: 900px) {
   //   margin: 0 0 2.5rem;
   // }
@@ -187,38 +185,38 @@ const AnimatedLetters = ({ title, variants, disabled }) => (
 const Banner = ({ linkTo, imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => {
   // const user = useAuth()
   return (
-      <BannerContainer>
-        <StyledImage
-          // src="/images/png/homepage-banner.png"
-          src={imgSrc}
-          alt="Fire patterns"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          priority="true"
-        />
-        <BannerContent>
-          <LinkTo href={linkTo}>
-            <ContentWrapper>
-              <ImageWrapper initial="initial" animate="animate" variants={logo}>
-                <Image
-                  src={imgTitle}
-                  alt="Ignite logo"
-                  height={imgHeight}
-                  width={imgWidth}
-                  priority="true"
-                />
-              </ImageWrapper>
-              <Details>
-                <ButtonWrapper>
-                  <AnimatedLetters title={subTitle || "IN-PERSON."} variants={stream} />
-                </ButtonWrapper>
-                {/* <AnimatedLetters title="LIVE" variants={live} /> */}
-              </Details>
-            </ContentWrapper>
-          </LinkTo>
-        </BannerContent>
-      </BannerContainer>
+    <BannerContainer>
+      <StyledImage
+        // src="/images/png/homepage-banner.png"
+        src={imgSrc}
+        alt="Fire patterns"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        priority="true"
+      />
+      <BannerContent>
+        <LinkTo href={linkTo}>
+          <ContentWrapper>
+            <ImageWrapper initial="initial" animate="animate" variants={logo}>
+              <Image
+                src={imgTitle}
+                alt="Ignite logo"
+                height={imgHeight}
+                width={imgWidth}
+                priority="true"
+              />
+            </ImageWrapper>
+            <Details>
+              <ButtonWrapper>
+                <AnimatedLetters title={subTitle || 'IN-PERSON.'} variants={stream} />
+              </ButtonWrapper>
+              {/* <AnimatedLetters title="LIVE" variants={live} /> */}
+            </Details>
+          </ContentWrapper>
+        </LinkTo>
+      </BannerContent>
+    </BannerContainer>
   )
 }
 

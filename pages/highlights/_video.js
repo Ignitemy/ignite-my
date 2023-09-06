@@ -15,7 +15,7 @@ const header = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1
     }
   }
@@ -30,7 +30,7 @@ const video = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
       delay: 0.8
     }
@@ -46,7 +46,7 @@ const caption = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
       delay: 1.6
     }
@@ -123,9 +123,9 @@ const Video = () => {
         height="75%"
         src="https://www.youtube.com/embed/mQWBvqyyZ5w"
         title="IGNITEMY2021 Recap"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
 
       <VideoCaption initial="initial" animate="animate" variants={caption}>
