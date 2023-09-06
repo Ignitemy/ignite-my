@@ -85,7 +85,7 @@ const StyledTextField = styled(TextField)`
   color: var(--color-white);
   margin: 1.2rem 0 !important;
 
-  > label 
+  > label {
     font-size: 2rem;
     color: var(--color-white);
     left: -12px;
@@ -599,7 +599,7 @@ const ShortRegistrationForm = () => {
                           {size}
                         </MenuItem>
                       ))}
-                    </Field> */
+                      </Field> */}
                     <StyledLabel htmlFor="schoolHasCF">
                       Does your school have a Christian Fellowship?*
                     </StyledLabel>
