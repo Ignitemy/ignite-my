@@ -112,7 +112,7 @@ const Blog = (props) => {
 }
 
 export async function getStaticPaths() {
-  const { results } = await Client().query('')
+  const results = await Client().getAllByType('blog_post')
 
   const paths = results.map((post) => ({
     params: {

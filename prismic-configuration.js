@@ -1,5 +1,4 @@
-import Prismic from '@prismicio/client'
-import Link from 'next/link'
+import * as Prismic from '@prismicio/client'
 
 import smConfig from './sm.json'
 
@@ -24,23 +23,5 @@ export const linkResolver = (doc) => {
   return '/'
 }
 
-export const customLink = (type, element, content, children, index) => (
-  <Link key={index} href={linkResolver(element.data)} as={linkResolver(element.data)}>
-    {content}
-  </Link>
-)
-
-export const Router = {
-  routes: [{ type: 'page', path: '/:uid' }],
-  href: (type) => {
-    const route = Router.routes.find((r) => r.type === type)
-    return route && route.href
-  }
-}
-
-// export const Client = (req = null, options = {}) => (
-//   Prismic.client(apiEndpoint, Object.assign({ routes: Router.routes }, options))
-// );
-
 export const Client = (req = null, options = {}) =>
-  Prismic.client(apiEndpoint, { ...req, ...options })
+  Prismic.createClient(apiEndpoint, { ...req, ...options })

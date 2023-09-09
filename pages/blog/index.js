@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-// import { useAuth } from '@/helpers/auth'
 import ReactPaginate from 'react-paginate'
 import Layout from '@/components/Layout'
 import { Button, Heading } from '@/components/index'
@@ -213,10 +211,11 @@ const Blog = ({ data }) => {
 }
 
 export const getStaticProps = async () => {
-  const response = await Client().query('', { orderings: "[my.blog_post.date desc]" })
+  const posts = await Client().getAllByType('blog_post')
+
   return {
     props: {
-      data: response.results
+      data: posts
     }
   }
 }
