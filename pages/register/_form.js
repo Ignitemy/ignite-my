@@ -30,6 +30,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { doesEmailExist } from '@/helpers/firebase'
 import { useAuth } from '@/helpers/auth'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { addDoc, collection } from 'firebase/firestore'
 
 const theme = createTheme({
   palette: {
@@ -366,7 +368,7 @@ const validationSchema = yup.object({
 
 const RegistrationForm = () => {
   const router = useRouter()
-  const { firebase } = useContext(FirebaseContext)
+  const { db, auth } = useContext(FirebaseContext)
 
   const [showModal, setShowModal] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
@@ -425,18 +427,26 @@ const RegistrationForm = () => {
     const emailExists = await doesEmailExist(values.email)
     if (!emailExists) {
       try {
-        const createdUserResult = await firebase
-          .auth()
-          .createUserWithEmailAndPassword(values.email, values.password)
+        // const createdUserResult = await firebase
+        //   .auth()
+        //   .createUserWithEmailAndPassword(values.email, values.password)
+        const createdUserResult = await createUserWithEmailAndPassword(
+          auth,
+          values.email,
+          values.password
+        )
 
         // authentication
         // -> emailAddress & password & fullName (displayName)
-        await createdUserResult.user.updateProfile({
+        // await createdUserResult.user.updateProfile({
+        //   displayName: values.fullName
+        // })
+        await updateProfile(auth.currentuser, {
           displayName: values.fullName
         })
 
         // firebase user collection (create a document)
-        await firebase.firestore().collection('ignitemy23').add({
+        await addDoc(collection(db, 'ignitemy2023'), {
           userId: createdUserResult.user.uid,
           fullName: values.fullName,
           email: values.email,

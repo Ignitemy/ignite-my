@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import Alert from '@mui/material/Alert'
 //firebase
 import FirebaseContext from '@/context/firebase'
+import { addDoc, collection } from 'firebase/firestore'
 
 const Container = styled.div`
   display: flex;
@@ -86,7 +87,7 @@ const StyledInput = styled.input`
 
 const SubmitBlogForm = () => {
   // const router = useRouter()
-  const { firebase } = useContext(FirebaseContext)
+  const { db } = useContext(FirebaseContext)
 
   const [fullName, setFullName] = useState('')
   const [title, setTitle] = useState('')
@@ -102,7 +103,7 @@ const SubmitBlogForm = () => {
     setSubmitting(true)
 
     try {
-      await firebase.firestore().collection('ignitemyblog').add({
+      await addDoc(collection(db, 'igniteblog'), {
         fullName: fullName,
         blogTitle: title,
         blogContent: body

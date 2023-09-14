@@ -13,6 +13,7 @@ import Alert from '@mui/material/Alert'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 //firebase
 import FirebaseContext from '@/context/firebase'
+import { sendPasswordResetEmail } from 'firebase/auth'
 
 const theme = createTheme({
   palette: {
@@ -131,7 +132,7 @@ const validationSchema = yup.object({
 })
 
 const ResetPassword = () => {
-  const { firebase } = useContext(FirebaseContext)
+  const { auth } = useContext(FirebaseContext)
 
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
@@ -140,7 +141,8 @@ const ResetPassword = () => {
   const handleReset = async (values, actions) => {
     try {
       setLoading(true)
-      await firebase.auth().sendPasswordResetEmail(values.email)
+      // await firebase.auth().sendPasswordResetEmail(values.email)
+      await sendPasswordResetEmail(auth, values.email)
       setSuccess(true)
     } catch (error) {
       setError(error.message)

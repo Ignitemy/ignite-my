@@ -21,6 +21,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { useAuth } from '@/helpers/auth'
 import { getUserByUserId } from '@/helpers/firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const theme = createTheme({
   palette: {
@@ -159,7 +160,7 @@ const LoginForm = () => {
   const [error, setError] = useState('')
 
   const router = useRouter()
-  const { firebase } = useContext(FirebaseContext)
+  const { auth } = useContext(FirebaseContext)
   const user = useAuth()
 
   const { query } = router
@@ -206,14 +207,14 @@ const LoginForm = () => {
 
   const handleLogin = async (values, actions) => {
     try {
-      await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-      const currentUser = firebase.auth().currentUser
+      // await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
+      await signInWithEmailAndPassword(auth, values.email, values.password)
+      const currentUser = auth.currentUser
       if (currentUser) {
         const uid = currentUser.uid
         let userDocument = await getUserByUserId(uid)
         // if (userDocument[0].ignite2022 === null || userDocument[0].ignite2022 === undefined)
         //   router.push('/ext-register')
-        console.log(userDocument)
         if (userDocument.length === 0) router.push('/ext-register')
         else router.push(`/${redirect}`)
       }

@@ -22,6 +22,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 // import { getUserByUserId } from '@/helpers/firebase'
 import { useAuth } from '@/helpers/auth'
 import FirebaseContext from '@/context/firebase'
+import { collection, onSnapshot } from 'firebase/firestore'
 
 const theme = createTheme({
   palette: {
@@ -343,7 +344,7 @@ const validationSchema = yup.object({
 })
 
 const ShortRegistrationForm = () => {
-  const { firebase } = useContext(FirebaseContext)
+  const { db } = useContext(FirebaseContext)
   // const [userData, setUserData] = useState({})
   const [displayName, setDisplayName] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -353,7 +354,7 @@ const ShortRegistrationForm = () => {
   const [registered, setRegistered] = useState(false)
 
   const user = useAuth()
-  const db = firebase.firestore()
+  // const db = firebase.firestore()
 
   useEffect(() => {
     if (user) {
@@ -367,9 +368,20 @@ const ShortRegistrationForm = () => {
       //   })
       //   setIsLoading(false)
       // })
+      const unsub = onSnapshot(collection(db, 'ignitemy23'), (querySnapShot) => {
+        querySnapShot.forEach((doc) => {
+          const data = doc.data()
+          if (data.email === user.email) {
+            setUserData(data)
+            return
+          }
+          setIsLoading(false)
+        })
+      })
       setDisplayName(user.displayName)
       setIsLoading(false)
 
+      return () => unsub()
       // return () => subscriber()
     }
   }, [user])

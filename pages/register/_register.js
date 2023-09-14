@@ -7,7 +7,7 @@ import { Text, Heading, HeadingShadow } from '../../components'
 const SectionContainer = styled.section`
   /* background-color: var(--color-black); */
   // background: url("/images/jpg/registration-bg.jpg");
-  background: url("/images/png/IGNITEMY2023/chain 2.png");
+  background: url('/images/png/IGNITEMY2023/chain 2.png');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -37,7 +37,6 @@ const BannerContainer = styled.div`
   justify-content: center;
   /* padding: 6.4rem 8rem; */
   padding: 2.5rem 8rem;
-
 
   @media (max-width: 1200px) {
     /* padding: 4rem 6rem; */
@@ -84,7 +83,7 @@ const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  
+
   @media (max-width: 900px) {
     align-items: center;
   }
@@ -126,7 +125,7 @@ const FlexCenter = styled.div`
   align-items: center;
   margin: 7rem 0;
   @media (max-width: 900px) {
-    display:none;
+    display: none;
   }
 `
 
@@ -189,14 +188,19 @@ const Register = () => {
                 <a href="mailto:hello.ignitemy@gmail.com">hello.ignitemy@gmail.com</a>
                 <br />
                 <br />
-                Participants who register from <span id='date'>25th June 2023</span> onwards are still invited
-                to join the Summit. However, you WILL NOT receive the Summit kit.
+                Participants who register from <span id="date">25th June 2023</span> onwards are
+                still invited to join the Summit. However, you WILL NOT receive the Summit kit.
                 <br />
                 <br />
                 An exclusive access to the Summit will be sent to you via email closer to the date!
               </InfoText>
               <FlexCenter>
-                <Image src='/images/png/registration-step.png' width={343} height={224} />
+                <Image
+                  src="/images/png/registration-step.png"
+                  alt="registration step"
+                  width={343}
+                  height={224}
+                />
               </FlexCenter>
             </ContentWrapper>
           </BannerContent>
