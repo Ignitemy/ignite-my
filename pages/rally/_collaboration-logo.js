@@ -74,7 +74,18 @@ const CollaborationSection = () => {
       <ImagesContainer>
         {collaborationLogos.map((image) => (
           <StyledImageContainer>
-            <Image src={image.imgUrl} alt={image.alt} width={image.width} height={image.height} />
+            <Image
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+                width: '100%',
+                height: 'auto'
+              }}
+              src={image.imgUrl}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+            />
           </StyledImageContainer>
         ))}
       </ImagesContainer>
