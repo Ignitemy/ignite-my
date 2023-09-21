@@ -30,7 +30,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import FirebaseContext from '@/context/firebase'
 import { doesEmailExist } from '@/helpers/firebase'
 import { useAuth } from '@/helpers/auth'
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth'
 import { addDoc, collection } from 'firebase/firestore'
 
 const theme = createTheme({
@@ -441,12 +441,12 @@ const RegistrationForm = () => {
         // await createdUserResult.user.updateProfile({
         //   displayName: values.fullName
         // })
-        await updateProfile(auth.currentuser, {
+        await updateProfile(getAuth().currentUser, {
           displayName: values.fullName
         })
 
         // firebase user collection (create a document)
-        await addDoc(collection(db, 'ignitemy2023'), {
+        await addDoc(collection(db, 'ignitemy23'), {
           userId: createdUserResult.user.uid,
           fullName: values.fullName,
           email: values.email,

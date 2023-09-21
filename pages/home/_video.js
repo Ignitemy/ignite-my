@@ -31,6 +31,8 @@ const BannerContainer = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ImageWrapper = styled.div`
@@ -110,9 +112,9 @@ const Video = () => {
       {/* <StyledImage
         src="/images/png/video-bg.png"
         alt="Fire patterns"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill={true}
+        
+        
       /> */}
       <ImageWrapper>
         <Image

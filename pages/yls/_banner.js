@@ -66,6 +66,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ContentWrapper = styled.div`
@@ -111,9 +113,7 @@ const Banner = () => {
       <StyledImage
         src="/images/png/IGNITEMY2023/chain 4.png"
         alt="mountains"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill={true}
         priority="true"
       />
       <BannerContent>

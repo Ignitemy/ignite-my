@@ -30,6 +30,8 @@ const BannerContainer = styled.div`
 `
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const StyledHeading = styled(Heading)`
@@ -148,14 +150,7 @@ const Blog = ({ data }) => {
         <Grid>
           <LeftPanel>
             <BannerContainer>
-              <StyledImage
-                src="/images/png/blog-bg.png"
-                alt="Sunset"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                priority="true"
-              />
+              <StyledImage src="/images/png/blog-bg.png" alt="Sunset" fill={true} priority="true" />
               <StyledHeading
                 as="h1"
                 color="orange"

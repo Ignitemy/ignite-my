@@ -140,9 +140,9 @@ const Register = () => {
           {/* <StyledImage
             src="/images/png/form-banner.png"
             alt="Sunset"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill={true}
+            
+            
             priority="true"
           /> */}
           <SemiTranparentBackground />

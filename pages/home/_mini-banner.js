@@ -106,6 +106,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const LinkTo = styled.a``
@@ -190,9 +192,7 @@ const Banner = ({ linkTo, imgSrc, imgTitle, imgHeight, imgWidth, subTitle }) => 
         // src="/images/png/homepage-banner.png"
         src={imgSrc}
         alt="Fire patterns"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill={true}
         priority="true"
       />
       <BannerContent>
