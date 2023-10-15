@@ -57,6 +57,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ContentWrapper = styled.div`
@@ -96,14 +98,7 @@ const ResetPasswordSection = () => {
     <SectionContainer>
       <RegisterSection>
         <BannerContainer>
-          <StyledImage
-            src="/images/png/form-banner.png"
-            alt="Sunset"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            priority="true"
-          />
+          <StyledImage src="/images/png/form-banner.png" alt="Sunset" fill={true} priority="true" />
           <BannerContent>
             <ContentWrapper>
               <LogoWrapper>

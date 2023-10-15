@@ -294,23 +294,23 @@ const SideMenu = () => {
             <ul>
               <li>
                 <StyledLink href="/">
-                  <a>Home</a>
+                  Home
                 </StyledLink>
               </li>
               <li>
                 <StyledLink href="/yls">
-                  <a>
+                  
                     <WhiteSpan>IGNITE</WhiteSpan>
                     <OrangeSpan>YLS</OrangeSpan>
-                  </a>
+                 
                 </StyledLink>
               </li>
               <li>
                 <StyledLink href="/rally">
-                  <a>
+                 
                     <WhiteSpan>IGNITE</WhiteSpan>
                     <OrangeSpan>RALLY</OrangeSpan>
-                  </a>
+                  
                 </StyledLink>
               </li>
               <li>
@@ -325,12 +325,12 @@ const SideMenu = () => {
 
               <li>
                 <StyledLink href="/blog">
-                  <a>Blog</a>
+                 Blog
                 </StyledLink>
               </li>
               <li>
                     <StyledLink href="/resources">
-                      <a>Resource</a>
+                     Resource
                     </StyledLink>
               </li>
               {/* <li>
@@ -342,12 +342,12 @@ const SideMenu = () => {
                 <>
                   <li>
                     <StyledLink href="/login">
-                      <a>Login</a>
+                    Login
                     </StyledLink>
                   </li>
                   {/* <li>
                     <StyledLink href="/register">
-                      <a>Register</a>
+                    Register
                     </StyledLink>
                   </li> */}
                 </>

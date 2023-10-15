@@ -34,23 +34,24 @@ const BannerContent = styled.div`
 
   @media (min-width: 1280px) {
     gap: 9rem;
-
   }
 `
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const DateTimeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
   gap: 1rem;
-  margin-bottom:5rem;
+  margin-bottom: 5rem;
   @media (min-width: 1280px) {
-    flex-direction:row;
+    flex-direction: row;
     gap: 10rem;
   }
   /* margin: auto; */
@@ -72,24 +73,24 @@ const OrangeHeader = styled.h3`
   font-style: italic;
   color: var(--color-orange);
   margin-top: 0.5rem;
-  text-align:center;
+  text-align: center;
   @media (min-width: 1280px) {
     font-size: 24px;
     margin-top: 2rem;
   }
 `
 
-const EventBanner = ({ bgImgSrc, logoImgDetails, programDate, programTime, subheading, subheading2 }) => {
+const EventBanner = ({
+  bgImgSrc,
+  logoImgDetails,
+  programDate,
+  programTime,
+  subheading,
+  subheading2
+}) => {
   return (
     <BannerContainer>
-      <StyledImage
-        src={bgImgSrc}
-        alt="Fire patterns"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority="true"
-      />
+      <StyledImage src={bgImgSrc} alt="Fire patterns" fill={true} priority="true" />
       <BannerContent>
         <Image
           src={logoImgDetails.imgUrl}

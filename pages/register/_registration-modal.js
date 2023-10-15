@@ -102,10 +102,16 @@ const RegistrationModal = ({ showModal, closeModal }) => {
         <StyledModalHeader>
           <span onClick={closeModal}>x</span>
         </StyledModalHeader>
-        <StyledText mb="2.4rem" color="white">
-          <HeadingShadow size="2rem" mb="2.4rem">For existing accounts</HeadingShadow>
-          Please <StyledLink href="/login" as="a">log in</StyledLink> to confirm your registration for IGNITEMY2023.
-        </StyledText>
+        <div style={{ marginBottom: '2.4rem', color: 'white', fontSize: 'var(--text-size-xs)' }}>
+          <HeadingShadow size="2rem" mb="2.4rem">
+            For existing accounts
+          </HeadingShadow>
+          Please{' '}
+          <StyledLink href="/login" as="a">
+            log in
+          </StyledLink>{' '}
+          to confirm your registration for IGNITEMY2023.
+        </div>
       </ModalCard>
     </ModalWrapper>
   ) : null

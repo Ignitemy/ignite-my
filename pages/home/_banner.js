@@ -16,7 +16,7 @@ const logo = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1.6
     }
   }
@@ -31,7 +31,7 @@ const date = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1.6,
       delay: 0.8
     }
@@ -60,7 +60,7 @@ const letterAni = {
   animate: {
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 0.6
     }
   }
@@ -72,7 +72,7 @@ const iframeAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
       delay: 1
     }
@@ -115,6 +115,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ContentWrapper = styled.div`
@@ -156,9 +158,9 @@ const Details = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-  margin-top: 2rem;  
+  margin-top: 2rem;
   @media (max-width: 900px) {
-    margin-top: 6rem;  
+    margin-top: 6rem;
   }
 `
 
@@ -234,17 +236,17 @@ const OrangeSpan = styled.span`
 `
 
 const bannerInfo = {
-  bgImgSrc: "/images/jpg/worship_hands.jpg",
-  eventDate1: "26 ",
-  eventDate2: "& ",
-  eventDate3: "27 AUG 2023",
-  subHeadingA1: "TWO ",
-  subHeadingA2: "DAY EVENT",
-  subHeadingB1: "FREE ",
-  subHeadingB2: "FREE",
+  bgImgSrc: '/images/jpg/worship_hands.jpg',
+  eventDate1: '26 ',
+  eventDate2: '& ',
+  eventDate3: '27 AUG 2023',
+  subHeadingA1: 'TWO ',
+  subHeadingA2: 'DAY EVENT',
+  subHeadingB1: 'FREE ',
+  subHeadingB2: 'FREE',
   // lineOneText: "DAY SUMMIT.",
   // lineTwoText: "NIGHT RALLY.",
-  videoUrl: "https://www.youtube.com/embed/mho994i7LG0"
+  videoUrl: 'https://www.youtube.com/embed/mho994i7LG0'
 }
 
 const Banner = () => {
@@ -255,9 +257,7 @@ const Banner = () => {
         // src="/images/png/homepage-banner.png"
         src={bannerInfo.bgImgSrc}
         alt="Fire patterns"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill={true}
         priority="true"
       />
       <BannerContent>
@@ -272,17 +272,22 @@ const Banner = () => {
               priority="true"
             />
           </ImageWrapper>
-          <Details> 
-          <WhiteHeader initial="initial" animate="animate" variants={date}>
-              {bannerInfo.eventDate1}<OrangeSpan>{bannerInfo.eventDate2}</OrangeSpan>{bannerInfo.eventDate3}
-          </WhiteHeader>
-          
-          <WhiteHeader initial="initial" animate="animate" variants={date}>
-              <OrangeSpan>{bannerInfo.subHeadingA1}</OrangeSpan>{bannerInfo.subHeadingA2}
-          </WhiteHeader>
-          <WhiteHeader initial="initial" animate="animate" variants={date}>
-              {bannerInfo.subHeadingB1}<OrangeSpan>{bannerInfo.subHeadingB1}</OrangeSpan>{bannerInfo.subHeadingB2}
-          </WhiteHeader>
+          <Details>
+            <WhiteHeader initial="initial" animate="animate" variants={date}>
+              {bannerInfo.eventDate1}
+              <OrangeSpan>{bannerInfo.eventDate2}</OrangeSpan>
+              {bannerInfo.eventDate3}
+            </WhiteHeader>
+
+            <WhiteHeader initial="initial" animate="animate" variants={date}>
+              <OrangeSpan>{bannerInfo.subHeadingA1}</OrangeSpan>
+              {bannerInfo.subHeadingA2}
+            </WhiteHeader>
+            <WhiteHeader initial="initial" animate="animate" variants={date}>
+              {bannerInfo.subHeadingB1}
+              <OrangeSpan>{bannerInfo.subHeadingB1}</OrangeSpan>
+              {bannerInfo.subHeadingB2}
+            </WhiteHeader>
             {/* <ShortDetailWrapper>
               <WhiteHeader initial="initial" animate="animate" variants={date}>
                 {bannerInfo.lineOneText} &nbsp;
@@ -315,9 +320,9 @@ const Banner = () => {
         height="100%"
         src={bannerInfo.videoUrl}
         title="IGNITEMY2021 Promo Video"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
         initial="initial"
         animate="animate"
         variants={iframeAnimation}

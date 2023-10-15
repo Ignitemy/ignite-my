@@ -24,6 +24,8 @@ const BannerContainer = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const FormContainer = styled.div`
@@ -74,9 +76,7 @@ const Blog = () => {
         <StyledImage
           src="/images/png/submit-banner.png"
           alt="Fire patterns"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill={true}
           priority="true"
         />
         {/* <LinkWrapper>

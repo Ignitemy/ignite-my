@@ -57,6 +57,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ContentWrapper = styled.div`
@@ -98,9 +100,8 @@ const LoginSection = () => {
         <BannerContainer>
           <StyledImage
             src="/images/png/IGNITEMY2023/chain 5.png"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            alt="chain"
+            fill={true}
             priority="true"
           />
           <BannerContent>
@@ -115,23 +116,23 @@ const LoginSection = () => {
               </LogoWrapper>
               <EventDetails>
                 <Row>
-                    <CalendarIcon />
-                    <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                      26TH AUG 2023
-                    </Text>
-                  </Row>
-                  {/* <Row>
+                  <CalendarIcon />
+                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                    26TH AUG 2023
+                  </Text>
+                </Row>
+                {/* <Row>
                     <TimeIcon />
                     <Text size="3rem" color="white" ml="1.5rem" weight="bold">
                       10.00AM - 3.30PM
                     </Text>
                   </Row> */}
-                  <Row>
-                    <LocationIcon />
-                    <Text size="3rem" color="white" ml="1.5rem" weight="bold">
-                      IN-PERSON / ONLINE
-                    </Text>
-                  </Row>
+                <Row>
+                  <LocationIcon />
+                  <Text size="3rem" color="white" ml="1.5rem" weight="bold">
+                    IN-PERSON / ONLINE
+                  </Text>
+                </Row>
               </EventDetails>
             </ContentWrapper>
           </BannerContent>

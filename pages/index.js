@@ -1,20 +1,22 @@
 // import { useGetStaticProps } from 'next-slicezone/hooks'
-
+import dynamic from 'next/dynamic'
 // import SliceZone from "next-slicezone";
 // import resolver from "../sm-resolver.js";
 import Layout from './../components/Layout'
 import Banner from './home/_banner'
 // import WhatIsIgnite from './home/_what-is-ignite'
 // import Events from './home/_events'
-import Countdown from './home/_countdown'
+// import Countdown from './home/_countdown'
 // import Video from './home/_video'
 // import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
 import Faq from './home/_faq'
 import EventBanner from '@/components/EventBanner'
-import CollaborationSection from './rally/_collaboration-logo'
-import JoinUs from './home/_join-us'
+// import CollaborationSection from './rally/_collaboration-logo'
+// import JoinUs from './home/_join-us'
+
+const Countdown = dynamic(() => import("./home/_countdown"), {ssr: false})
 
 const MiniBannerContainer = styled.div`
   height: auto;
