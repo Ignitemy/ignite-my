@@ -11,6 +11,9 @@ import EventHighlights from './_event-highlights'
 // import CommsTeam from './_comms-team'
 
 const ImageWrapper = styled.div`
+  display: flex;
+  align-items: center; 
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
   max-width: 383px;
@@ -38,8 +41,8 @@ const Highlights = () => {
       <ImageWrapper>
         <Image
           src='/images/jpg/ignite-comm-2023.jpg'
-          width={880}
-          height={550}
+          width={784}
+          height={522}
           alt="group photo"
           loading='lazy'
         />
