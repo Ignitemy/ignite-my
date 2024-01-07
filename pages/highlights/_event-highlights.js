@@ -75,7 +75,7 @@ const highlightPrograms = [
     subheading: 'Sarath Kumar',
     vidlink: 'https://www.youtube.com/embed/yWo2l_3p5m0?si=OPzrEqY_U_zFEHxd',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
+      'Walking together away from the pain, shame, and fear. Walking together through the events of life. Walking towards the good life.'
   },
   {
     flexDirection: 'row-reverse',
@@ -83,7 +83,8 @@ const highlightPrograms = [
     subheading: 'Alarice Hong',
     vidlink: 'https://www.youtube.com/embed/RJMFfsOqeH8?si=qvkpnHFRiuv8xbZ7',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
+      'You can either listen to a person who doesn\'t even know you and you don\'t know them, or you can listen to Me and who I say you are in Me.'
+      
   }, 
   {
     flexDirection: 'row',
@@ -91,7 +92,7 @@ const highlightPrograms = [
     subheading: 'Pr Daniel Kuilan',
     vidlink: 'https://www.youtube.com/embed/zTQ1kwAPU1o?si=fZb-pbP15LcrXdMC',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
+      'You don\'t have to try to be bold, the day you say Jesus I follow you boldness is part of you, for God has not given you a spirit of fear but of power, love and sound mind'
   }
 ]
 
