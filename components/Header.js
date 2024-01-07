@@ -197,14 +197,12 @@ const Header = () => {
             <li>
               <StyledLink href="/blog">Blog</StyledLink>
             </li>
-            <li>
-              <StyledLink href="/resources">Resource</StyledLink>
-            </li>
             {/* <li>
-              <StyledLink href="/highlights">
-                <a>Highlights</a>
-              </StyledLink>
+              <StyledLink href="/resources">Resource</StyledLink>
             </li> */}
+            <li>
+              <StyledLink href="/highlights">Highlights</StyledLink>
+            </li>
           </ul>
         </LeftWrapper>
         <SideMenu />
@@ -216,16 +214,16 @@ const Header = () => {
                   Log In
                 </Button>
               </StyledLink>
-              {/* <StyledLink href="/register">
+              <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink> */}
-              <StyledExtLink
+              </StyledLink>
+              {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
             </>
           ) : (
             <>
