@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import Video from './_video'
 // import Gallery from './_gallery'
 import EventHighlights from './_event-highlights'
-import CommsTeam from './_comms-team'
+// import CommsTeam from './_comms-team'
 
 const ImageWrapper = styled.div`
   margin: 0 auto;
@@ -37,14 +37,14 @@ const Highlights = () => {
       <EventHighlights />
       <ImageWrapper>
         <Image
-          src='/images/jpg/demo_rally.jpg'
-          width={2400}
-          height={1602}
+          src='/images/jpg/ignite-comm-2023.jpg'
+          width={880}
+          height={550}
           alt="group photo"
           loading='lazy'
         />
       </ImageWrapper>
-      <CommsTeam />
+      {/* <CommsTeam /> */}
       {/* <Gallery /> */}
     </Layout>
   )

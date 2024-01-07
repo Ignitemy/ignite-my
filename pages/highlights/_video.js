@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { useAuth } from '@/helpers/auth'
-import { Text } from '../../components'
+import { HeadingShadow, Text } from '../../components'
 import { motion } from 'framer-motion'
 
 // Variants
@@ -100,39 +100,40 @@ const Video = () => {
   const user = useAuth()
   return (
     <BannerContainer>
-      <VideoHeader initial="initial" animate="animate" variants={header}>
+      {/* <VideoHeader initial="initial" animate="animate" variants={header}>
         <ImageWrapper>
           <Image
-            src="/images/png/ignite-logo-v2.png"
+            src="/images/png/IGNITEMY_2023_logo.png"
             width={670}
             height={118}
-            alt="IGNITEMY 2022"
+            alt="IGNITEMY2023"
             priority={true}
           />
         </ImageWrapper>
         <Text color="white" align="center" size="18px">
-          Year 2022
+          Year 2023
         </Text>
-      </VideoHeader>
+      </VideoHeader> */}
 
+      <HeadingShadow size='5rem' mb ='2rem' >Recap of IGNITEMY2023</HeadingShadow>
       <StyledIFrame
         initial="initial"
         animate="animate"
         variants={video}
-        width="60%"
+        width="90%"
         height="75%"
-        src="https://www.youtube.com/embed/mQWBvqyyZ5w"
-        title="IGNITEMY2021 Recap"
+        src="https://www.youtube.com/embed/b0c45v6A6RA?si=pfG7L21hnZQ9eZnl"
+        title="IGNITEMY2023 Recap"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
 
       <VideoCaption initial="initial" animate="animate" variants={caption}>
-        <Text color="white" weight="700" size="36px" align="center">
-          Recap of IGNITEMY{' '}
-          <span style={{ color: 'var(--color-orange)', textDecoration: 'none' }}>2022</span>
-        </Text>
+
+        {/* <Text color="white" weight="700" size="36px" align="center">
+          Recap of IGNITEMY<span style={{ color: 'var(--color-orange)', textDecoration: 'none' }}>2023</span>
+        </Text> */}
       </VideoCaption>
     </BannerContainer>
   )
