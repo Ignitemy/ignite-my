@@ -562,7 +562,7 @@ const RegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY2023
+              See you at IGNITEMY2024
             </Text>
           )}
           <FollowButton orange="true">
@@ -585,7 +585,7 @@ const RegistrationForm = () => {
           <FormHeading>
             {/* <Image src="/images/png/register.png" height={45} width={230} /> */}
             <HeadingShadow>Register</HeadingShadow>
-            <p>Submit the form to join IGNITEMY2023!</p>
+            <p>Submit the form to join IGNITEMY2024!</p>
           </FormHeading>
           <Formik
             initialValues={{
@@ -804,7 +804,7 @@ const RegistrationForm = () => {
                     as={Checkbox}
                   />
                   <label htmlFor="registerChecked" style={{ color: 'var(--color-white)' }}>
-                    I am registering for IGNITEMY2023
+                    I am registering for IGNITEMY2024
                   </label>
                 </CheckboxGroup>
                 <StyledErrorMessage name="registerChecked" component="div" />

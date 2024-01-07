@@ -152,7 +152,7 @@ const Register = () => {
                 <HeadingShadow>Hello!</HeadingShadow>
               </Heading>
               <Text color="white" size="1.8rem" mt="2.4rem">
-                Welcome to IGNITEMY2023! This two-day Summit, organised by DUMC NextGen Teens in
+                Welcome to IGNITEMY2024! This two-day Summit, organised by DUMC NextGen Teens in
                 collaboration with Scripture Union, seeks to inspire Christian students to be
                 catalysts of change in their schools.
                 <br />

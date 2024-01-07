@@ -30,7 +30,7 @@ const Profile = () => {
   }, [user])
 
   return (
-    <Layout title="IGNITEMY2023 | Profile">
+    <Layout title="IGNITEMY2024 | Profile">
       <Container>
         <FormContainer>
           <Form />

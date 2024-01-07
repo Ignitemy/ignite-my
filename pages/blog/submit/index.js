@@ -71,7 +71,7 @@ const Blog = () => {
   // }, [user])
 
   return (
-    <Layout title="IGNITEMY2023 | Submit A Blog Post">
+    <Layout title="IGNITEMY2024 | Submit A Blog Post">
       <BannerContainer>
         <StyledImage
           src="/images/png/submit-banner.png"

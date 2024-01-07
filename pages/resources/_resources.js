@@ -44,7 +44,7 @@ const ResourceComponent = () => {
       >
         <Button bgcolor="linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);">
         {/* <Button bgcolor="linear-gradient(90deg, #FC6176 0%, #FFFFFF 100%);"> */}
-          IGNITEMY2023 Participant's Booklet PDF
+        IGNITEMY2024 Participant's Booklet PDF
           <DownloadIcon />
         </Button>
       </ButtonContainer>
@@ -55,7 +55,7 @@ const ResourceComponent = () => {
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #C163E2 0%, #FFFFFF 100%);">
-          IGNITEMY2023 Participant's Booklet Link
+          IGNITEMY2024 Participant's Booklet Link
           <LinkIcon />
         </Button>
       </ButtonContainer> */}
@@ -66,7 +66,7 @@ const ResourceComponent = () => {
         style={{ textDecoration: 'none' }}
       >
         <Button bgcolor="linear-gradient(90deg, #545DDE 0%, #FFFFFF 100%);">
-          IGNITEMY2023 Zoom Background
+          IGNITEMY2024 Zoom Background
           <VideoIcon />
         </Button>
       </ButtonContainer> */}

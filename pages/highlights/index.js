@@ -28,7 +28,7 @@ const ImageWrapper = styled.div`
 
 const Highlights = () => {
   return (
-    <Layout title="IGNITEMY2023 | Highlights">
+    <Layout title="IGNITEMY2024 | Highlights">
       {/* <HeaderButtons /> */}
       {/* <Stats /> */}
       {/* <Logo /> */}

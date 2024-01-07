@@ -3,7 +3,7 @@ import LoginSection from './_login'
 
 const Login = () => {
   return (
-    <Layout title="IGNITEMY2023 | Login">
+    <Layout title="IGNITEMY2024 | Login">
       <LoginSection />
     </Layout>
   )

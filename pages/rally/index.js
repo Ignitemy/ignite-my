@@ -7,7 +7,7 @@ import CollaborationSection from './_collaboration-logo'
 
 const Rally = () => {
   return (
-    <Layout title="IGNITEMY2023 | Rally">
+    <Layout title="IGNITEMY2024 | Rally">
       <Banner />
       <SpeakerSection />
       <Schedule />

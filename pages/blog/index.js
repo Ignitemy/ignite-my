@@ -144,7 +144,7 @@ const Blog = ({ data }) => {
   }
 
   return (
-    <Layout title="IGNITEMY2023 | Blog">
+    <Layout title="IGNITEMY2024 | Blog">
       {/* TODO: Enable when blog page is ready for release */}
       <Container>
         <Grid>

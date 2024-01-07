@@ -110,7 +110,7 @@ const RegistrationModal = ({ showModal, closeModal }) => {
           <StyledLink href="/login" as="a">
             log in
           </StyledLink>{' '}
-          to confirm your registration for IGNITEMY2023.
+          to confirm your registration for IGNITEMY2024.
         </div>
       </ModalCard>
     </ModalWrapper>

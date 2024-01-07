@@ -42,7 +42,7 @@ const igniteCarnivalRalleyLogo = {
 
 const Page = () => {
   return (
-    <Layout title="IGNITEMY2023 | Home">
+    <Layout title="IGNITEMY2024 | Home">
       <Banner />
       <EventBanner
         bgImgSrc="/images/png/IGNITEMY2023/chain1.png"

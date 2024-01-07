@@ -461,7 +461,7 @@ const ShortRegistrationForm = () => {
               <br />
               Your registration is complete.
               <br />
-              See you at IGNITEMY2023
+              See you at IGNITEMY2024
             </Text>
             <Text color="white" size="2rem" align="center" m="4.5rem 0">
               Redirecting you back to the homepage...

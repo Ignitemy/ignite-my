@@ -6,7 +6,7 @@ import SpeakerSection from './_speaker-section'
 
 const YLS = () => {
   return (
-    <Layout title="IGNITEMY2023 | Youth Leadership Summit">
+    <Layout title="IGNITEMY2024 | Youth Leadership Summit">
       <Banner />
       <SpeakerSection />
       <Schedule />

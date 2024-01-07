@@ -71,10 +71,10 @@ const Faq = () => {
     {
       question: 'Q: Can I still register after 25th June 2023?',
       answer:
-        'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2023 booklet). So register now!'
+        'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2024 booklet). So register now!'
     },
     {
-      question: 'Q: I stay in Singapore. Can I attend IGNITEMY2023 in-person? ',
+      question: 'Q: I stay in Singapore. Can I attend IGNITEMY2024 in-person? ',
       answer:
         'A: Unfortunately, the option to attend in-person is only available to attendees from the Klang Valley. You can still join us online! We are excited to have you! :D'
     },
