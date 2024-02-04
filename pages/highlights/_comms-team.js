@@ -47,7 +47,7 @@ const StyledImage = styled(Image)`
 const highlightPrograms = [
   {
     image: {
-      src: '/images/jpg/ignite-comm-2023.jpg',
+      src: '/images/jpg/comm-2023.jpg',
       width: 705,
       height: 470,
       alt: 'group photo'
