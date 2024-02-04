@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useAuth } from '@/helpers/auth'
-import { Button } from '../../components'
+import { Text, Heading, Button } from '../../components'
 
 // Variants
 const logo = {
@@ -33,7 +33,22 @@ const date = {
     transition: {
       ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1.6,
-      delay: 0.8
+      delay: 0.6
+    }
+  }
+}
+const soon = {
+  initial: {
+    opacity: 0,
+    x: 200
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, 0.05, 0.95],
+      duration: 1.6,
+      delay: 0.9
     }
   }
 }
@@ -106,8 +121,7 @@ const BannerContainer = styled.div`
 const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-
+  align-items: center; 
   @media (max-width: 900px) {
     align-items: center;
   }
@@ -131,7 +145,6 @@ const ContentWrapper = styled.div`
 
 const ImageWrapper = styled(motion.div)`
   height: 59px;
-
   @media (max-width: 900px) {
     margin: 0 0 2.5rem;
   }
@@ -142,15 +155,15 @@ const ImageWrapper = styled(motion.div)`
 `
 
 const Details = styled.div`
-  margin-top: 5rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-size: 30px;
   line-height: 40px;
   font-style: italic;
   color: var(--color-white);
-
   @media (max-width: 900px) {
     margin: 0;
     align-items: center;
@@ -169,14 +182,14 @@ const Row = styled(motion.div)`
   overflow: hidden;
 `
 
-const ShortDetailWrapper = styled.div`
-  display: block;
-
+const ShortDetailWrapper = styled(motion.div)`
+  margin-top: 6rem;
+  display: flex;
+  align-items: center;
   @media (min-width: 500px) {
     display: flex;
   }
 `
-
 const WhiteHeader = styled(motion.h3)`
   font-size: 30px;
   line-height: 40px;
@@ -190,11 +203,7 @@ const OrangeHeader = styled(motion.h3)`
   font-style: italic;
   color: var(--color-orange);
 `
-// const StyledExtLink = styled.a`
-//   color: var(--color-white);
-//   text-decoration: none;
-//   position: relative;
-// `
+
 
 const StyledIframe = styled(motion.iframe)`
   z-index: 2;
@@ -236,10 +245,11 @@ const OrangeSpan = styled.span`
 `
 
 const bannerInfo = {
-  bgImgSrc: '/images/jpg/worship_hands.jpg',
-  eventDate1: '26 ',
-  eventDate2: '& ',
-  eventDate3: '27 AUG 2023',
+  bgImgSrc: '/images/jpg/2024-bg.jpg',
+  eventDate1: '14 SEPT 2024 ',
+  eventType1: 'SUMMIT',
+  eventDate2: '15 SEPT 2024 ',
+  eventType2: 'RALLY',
   subHeadingA1: 'TWO ',
   subHeadingA2: 'DAY EVENT',
   subHeadingB1: 'FREE ',
@@ -264,42 +274,38 @@ const Banner = () => {
         <ContentWrapper>
           <ImageWrapper initial="initial" animate="animate" variants={logo}>
             <Image
-              src="/images/png/IGNITEMY_2023_logo.png"
+              src="/images/png/ignite-logo.png"
               alt="Ignite logo"
-              height={59}
-              width={480}
-              // height={59} width={383} // original logo dimension
+              // height={59}
+              // width={480}
+              height={59} width={383} // original logo dimension
               priority="true"
             />
           </ImageWrapper>
+
           <Details>
-            <WhiteHeader initial="initial" animate="animate" variants={date}>
+          <WhiteHeader initial="initial" animate="animate" variants={date}>
               {bannerInfo.eventDate1}
-              <OrangeSpan>{bannerInfo.eventDate2}</OrangeSpan>
-              {bannerInfo.eventDate3}
+              <OrangeSpan>{bannerInfo.eventType1}</OrangeSpan>
+            </WhiteHeader>
+            <WhiteHeader initial="initial" animate="animate" variants={date}>
+            <OrangeSpan>+</OrangeSpan>
             </WhiteHeader>
 
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-              <OrangeSpan>{bannerInfo.subHeadingA1}</OrangeSpan>
-              {bannerInfo.subHeadingA2}
+              {bannerInfo.eventDate2}
+              <OrangeSpan>{bannerInfo.eventType2}</OrangeSpan>
             </WhiteHeader>
-            <WhiteHeader initial="initial" animate="animate" variants={date}>
-              {bannerInfo.subHeadingB1}
-              <OrangeSpan>{bannerInfo.subHeadingB1}</OrangeSpan>
-              {bannerInfo.subHeadingB2}
-            </WhiteHeader>
-            {/* <ShortDetailWrapper>
-              <WhiteHeader initial="initial" animate="animate" variants={date}>
-                {bannerInfo.lineOneText} &nbsp;
-              </WhiteHeader>
-              <WhiteHeader initial="initial" animate="animate" variants={date}>
-                {bannerInfo.liShortDetailWrapperneTwoText}
-              </WhiteHeader>
-            </ShortDetailWrapper> */}
             {/* <ButtonWrapper>
               <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
             </ButtonWrapper> */}
-            {/* <AnimatedLetters title="LIVE" variants={live} /> */}
+
+            <ShortDetailWrapper initial="initial" animate="animate"  variants={soon}>
+              <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
+              <Heading color="white" mr="2rem" ml="2rem" size='4rem'>COMING SOON.</Heading>
+              <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
+            </ShortDetailWrapper>
+            
           </Details>
         </ContentWrapper>
         {/* <ButtonWrapper>
@@ -315,7 +321,7 @@ const Banner = () => {
           </ButtonWrapper>
         )} */}
       </BannerContent>
-      <StyledIframe
+      {/* <StyledIframe
         width="100%"
         height="100%"
         src={bannerInfo.videoUrl}
@@ -326,7 +332,7 @@ const Banner = () => {
         initial="initial"
         animate="animate"
         variants={iframeAnimation}
-      />
+      /> */}
     </BannerContainer>
   )
 }

@@ -182,7 +182,7 @@ const Header = () => {
             <li>
               <StyledLink href="/">Home</StyledLink>
             </li>
-            <li>
+            {/* <li>
               <StyledLink href="/yls">
                 <WhiteSpan>IGNITE</WhiteSpan>
                 <OrangeSpan>YLS</OrangeSpan>
@@ -193,7 +193,7 @@ const Header = () => {
                 <WhiteSpan>IGNITE</WhiteSpan>
                 <OrangeSpan>RALLY</OrangeSpan>
               </StyledLink>
-            </li>
+            </li> */}
             <li>
               <StyledLink href="/blog">Blog</StyledLink>
             </li>
@@ -209,14 +209,14 @@ const Header = () => {
         <RightWrapper>
           {!user ? (
             <>
-              <StyledLink href="/login">
+              {/* <StyledLink href="/login">
                 <Button white="true" style={{ marginRight: '2rem' }}>
                   Log In
                 </Button>
               </StyledLink>
               <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledLink>
+              </StyledLink> */}
               {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"

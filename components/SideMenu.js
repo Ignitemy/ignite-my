@@ -292,7 +292,7 @@ const SideMenu = () => {
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <StyledNav ref={navRef}>
             <ul>
-              <li>
+              {/* <li>
                 <StyledLink href="/">
                   Home
                 </StyledLink>
@@ -321,30 +321,29 @@ const SideMenu = () => {
                 >
                   Streaming Live
                 </StyledExtLink>
-              </li>
-
+              </li> */}
               <li>
                 <StyledLink href="/blog">
                  Blog
                 </StyledLink>
               </li>
-              <li>
+              {/* <li>
                     <StyledLink href="/resources">
                      Resource
                     </StyledLink>
-              </li>
-              {/* <li>
-                <StyledLink href="/highlights">
-                  <a>Highlights</a>
-                </StyledLink>
               </li> */}
+              <li>
+                <StyledLink href="/highlights">
+                  Highlights
+                </StyledLink>
+              </li>
               {!user && (
                 <>
-                  <li>
+                  {/* <li>
                     <StyledLink href="/login">
                     Login
                     </StyledLink>
-                  </li>
+                  </li> */}
                   {/* <li>
                     <StyledLink href="/register">
                     Register
