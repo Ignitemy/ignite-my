@@ -113,7 +113,7 @@ const BannerContainer = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 5rem;
-    height: auto;
+    // height: auto;
     padding: 5rem 0 7rem 0;
   }
 `
@@ -137,19 +137,20 @@ const ContentWrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-
   @media (max-width: 500px) {
     align-items: center;
   }
 `
 
 const ImageWrapper = styled(motion.div)`
+  display: flex;
+  justify-content: center;
   height: 59px;
   @media (max-width: 900px) {
     margin: 0 0 2.5rem;
   }
   @media (max-width: 500px) {
-    height: 75%;
+    height: 75%; this makes the phone side screen  
     width: 75%;
   }
 `
@@ -250,10 +251,10 @@ const bannerInfo = {
   eventType1: 'SUMMIT',
   eventDate2: '15 SEPT 2024 ',
   eventType2: 'RALLY',
-  subHeadingA1: 'TWO ',
-  subHeadingA2: 'DAY EVENT',
-  subHeadingB1: 'FREE ',
-  subHeadingB2: 'FREE',
+  // subHeadingA1: 'TWO ',
+  // subHeadingA2: 'DAY EVENT',
+  // subHeadingB1: 'FREE ',
+  // subHeadingB2: 'FREE',
   // lineOneText: "DAY SUMMIT.",
   // lineTwoText: "NIGHT RALLY.",
   videoUrl: 'https://www.youtube.com/embed/mho994i7LG0'
@@ -278,7 +279,7 @@ const Banner = () => {
               alt="Ignite logo"
               // height={59}
               // width={480}
-              height={59} width={383} // original logo dimension
+              height={51} width={332} // original logo dimension
               priority="true"
             />
           </ImageWrapper>
@@ -302,7 +303,7 @@ const Banner = () => {
 
             <ShortDetailWrapper initial="initial" animate="animate"  variants={soon}>
               <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
-              <Heading color="white" mr="2rem" ml="2rem" size='4rem'>COMING SOON.</Heading>
+              <Heading color="white" mr="2rem" ml="2rem" size='3.1rem'>COMING SOON</Heading>
               <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
             </ShortDetailWrapper>
             
