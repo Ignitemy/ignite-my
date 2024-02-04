@@ -292,12 +292,12 @@ const SideMenu = () => {
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <StyledNav ref={navRef}>
             <ul>
-              {/* <li>
+              <li>
                 <StyledLink href="/">
                   Home
                 </StyledLink>
               </li>
-              <li>
+              {/* <li>
                 <StyledLink href="/yls">
                   
                     <WhiteSpan>IGNITE</WhiteSpan>
