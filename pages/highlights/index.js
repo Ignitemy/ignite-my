@@ -8,24 +8,24 @@ import Layout from '../../components/Layout'
 import Video from './_video'
 // import Gallery from './_gallery'
 import EventHighlights from './_event-highlights'
-// import CommsTeam from './_comms-team'
+import CommsTeam from './_comms-team'
 
 const ImageWrapper = styled.div`
   display: flex;
   align-items: center; 
   justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 383px;
-  padding: 0 0 7rem;
+  // margin: 0 auto;
+  // width: 100%;
+  // max-width: 383px;
+  // padding: 0 0 7rem;
 
   @media (min-width: 768px) {
-    padding: 5rem 0 7rem;
-    max-width: 750px;
+    // padding: 5rem 0 7rem;
+    // max-width: 750px;
   }
 
   @media (min-width: 1024px) {
-    max-width: 920px;
+    // max-width: 920px;
   }
 `
 
@@ -38,16 +38,7 @@ const Highlights = () => {
       {/* <Quotes /> */}
       <Video />
       <EventHighlights />
-      <ImageWrapper>
-        <Image
-          src='/images/jpg/ignite-comm-2023.jpg'
-          width={784}
-          height={522}
-          alt="group photo"
-          loading='lazy'
-        />
-      </ImageWrapper>
-      {/* <CommsTeam /> */}
+      <CommsTeam />
       {/* <Gallery /> */}
     </Layout>
   )

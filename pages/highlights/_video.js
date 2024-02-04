@@ -100,8 +100,9 @@ const Video = () => {
   const user = useAuth()
   return (
     <BannerContainer>
-      {/* <VideoHeader initial="initial" animate="animate" variants={header}>
-        <ImageWrapper>
+      <VideoHeader initial="initial" animate="animate" variants={header}>
+      <HeadingShadow mb ='2rem' align='center'>Recap of IGNITEMY2023</HeadingShadow>
+        {/* <ImageWrapper>
           <Image
             src="/images/png/IGNITEMY_2023_logo.png"
             width={670}
@@ -112,10 +113,10 @@ const Video = () => {
         </ImageWrapper>
         <Text color="white" align="center" size="18px">
           Year 2023
-        </Text>
-      </VideoHeader> */}
+        </Text> */}
+      </VideoHeader>
 
-      <HeadingShadow size='5rem' mb ='2rem' >Recap of IGNITEMY2023</HeadingShadow>
+      
       <StyledIFrame
         initial="initial"
         animate="animate"

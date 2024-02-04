@@ -21,7 +21,8 @@ const SectionContainer = styled.section`
 const SessionDetails = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 7rem;
 
@@ -35,44 +36,22 @@ const SessionDetails = styled.div`
   }
 `
 
-const ImageWrapper = styled.div`
-  width: 100%;
 
-  @media (min-width: 768px) {
-    width: 325px;
-  }
-
-  @media (min-width: 1024px) {
-    width: 400px;
-  }
-`
-
-const SessionDesscriptions = styled.div`
-  width: 90%;
-  margin: 2rem auto;
-
-  @media (min-width: 768px) {
-    width: 325px;
-    margin: 0;
-  }
-
-  @media (min-width: 1024px) {
-    width: 400px;
+const StyledImage = styled(Image)`
+  @media (max-width: 450px) {
+    width: 375px;
+    height: 250px;
   }
 `
 
 const highlightPrograms = [
   {
-    flexDirection: 'row',
     image: {
-      src: '/images/jpg/demo_rally.jpg',
-      width: 2400,
-      height: 1602,
-      alt: 'something'
-    },
-    heading: 'Session 1',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
+      src: '/images/jpg/ignite-comm-2023.jpg',
+      width: 705,
+      height: 470,
+      alt: 'group photo'
+    }
   }
 ]
 
@@ -81,20 +60,14 @@ function CommsTeam() {
     <SectionContainer>
       <div>
         {highlightPrograms.map((program) => (
-          <SessionDetails key={program.heading} flexDirection={program.flexDirection}>
-            <ImageWrapper>
-              <Image
-                src={program.image.src}
-                width={program.image.width}
-                height={program.image.height}
-                alt={program.image.alt}
-                priority={true}
-              />
-            </ImageWrapper>
-            <SessionDesscriptions>
-              <HeadingShadow mb="1rem">{program.heading}</HeadingShadow>
-              <Text color="white">{program.description}</Text>
-            </SessionDesscriptions>
+          <SessionDetails key={program.heading}>
+            <StyledImage
+              src={program.image.src}
+              width={program.image.width}
+              height={program.image.height}
+              alt={program.image.alt}
+              priority={true}
+            />
           </SessionDetails>
         ))}
       </div>
