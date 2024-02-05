@@ -185,8 +185,6 @@ const Row = styled(motion.div)`
 
 const ShortDetailWrapper = styled(motion.div)`
   margin-top: 6rem;
-  display: flex;
-  align-items: center;
   @media (min-width: 500px) {
     display: flex;
   }
@@ -203,6 +201,12 @@ const OrangeHeader = styled(motion.h3)`
   line-height: 40px;
   font-style: italic;
   color: var(--color-orange);
+`
+
+const StyledLink = styled(Link)`
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
 `
 
 
@@ -285,12 +289,12 @@ const Banner = () => {
           </ImageWrapper>
 
           <Details>
-          <WhiteHeader initial="initial" animate="animate" variants={date}>
+            <WhiteHeader initial="initial" animate="animate" variants={date}>
               {bannerInfo.eventDate1}
               <OrangeSpan>{bannerInfo.eventType1}</OrangeSpan>
             </WhiteHeader>
             <WhiteHeader initial="initial" animate="animate" variants={date}>
-            <OrangeSpan>+</OrangeSpan>
+              <OrangeSpan>+</OrangeSpan>
             </WhiteHeader>
 
             <WhiteHeader initial="initial" animate="animate" variants={date}>
@@ -301,12 +305,20 @@ const Banner = () => {
               <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
             </ButtonWrapper> */}
 
-            <ShortDetailWrapper initial="initial" animate="animate"  variants={soon}>
-              <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
+            <ShortDetailWrapper initial="initial" animate="animate" variants={soon}>
+              <StyledLink href="https://docs.google.com/forms/d/e/1FAIpQLSc5dY8MC9b8aK8FD5Gj--o8ne8wHJdzb6EQUEzfDMQdStVEDw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button white="true">
+                  <Heading color="white" size='2.5rem'>COMING SOON</Heading>
+                </Button>
+              </StyledLink>
+              {/* <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
               <Heading color="white" mr="2rem" ml="2rem" size='3.1rem'>COMING SOON</Heading>
-              <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
+              <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" /> */}
             </ShortDetailWrapper>
-            
+
           </Details>
         </ContentWrapper>
         {/* <ButtonWrapper>
