@@ -311,7 +311,7 @@ const Banner = () => {
                 rel="noopener noreferrer"
               >
                 <Button white="true">
-                  <Heading color="white" size='2.5rem'>COMING SOON</Heading>
+                  <Heading color="white" size='2.5rem'>Pre-Register now</Heading>
                 </Button>
               </StyledLink>
               {/* <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
