@@ -24,6 +24,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ContentWrapper = styled.div`
@@ -68,14 +70,7 @@ const StreamingLive = styled.div`
 const Banner = () => {
   return (
     <BannerContainer>
-      <StyledImage
-        src="/images/png/rally-banner.png"
-        alt="Campfire"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority="true"
-      />
+      <StyledImage src="/images/png/rally-banner.png" alt="Campfire" fill={true} priority="true" />
       <BannerContent>
         <ContentWrapper>
           <LogoWrapper>

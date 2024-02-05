@@ -79,13 +79,7 @@ const SpecialItemHeading = styled(Heading)`
 const Speakers = () => {
   return (
     <SectionContainer bgcolor="var(--color-black)">
-      <StyledImage
-        src="/images/png/speakers-bg.png"
-        alt="Fire patterns"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-      />
+      <StyledImage src="/images/png/speakers-bg.png" alt="Fire patterns" fill={true} />
       <Container>
         <StyledHeading color="white" size="4.8rem" align="center" ls="8px">
           INTRODUCING

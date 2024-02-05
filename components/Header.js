@@ -8,6 +8,7 @@ import { useAuth } from '../helpers/auth'
 import FirebaseContext from '../context/firebase'
 import ProfileIcon from '../images/svg/profile'
 import router from 'next/router'
+import { signOut } from 'firebase/auth'
 
 const StyledLink = styled(Link)`
   color: var(--color-white);
@@ -163,7 +164,7 @@ const ProfileMenu = styled.div`
 
 const Header = () => {
   const user = useAuth()
-  const { firebase } = useContext(FirebaseContext)
+  const { auth } = useContext(FirebaseContext)
   const [showMenu, setShowMenu] = React.useState(false)
 
   const toggleMenu = () => {
@@ -179,62 +180,50 @@ const Header = () => {
         <LeftWrapper>
           <ul>
             <li>
-              <StyledLink href="/">
-                <a>Home</a>
-              </StyledLink>
+              <StyledLink href="/">Home</StyledLink>
             </li>
-            <li>
+            {/* <li>
               <StyledLink href="/yls">
-                <a>
-                  <WhiteSpan>IGNITE</WhiteSpan>
-                  <OrangeSpan>YLS</OrangeSpan>
-                </a>
+                <WhiteSpan>IGNITE</WhiteSpan>
+                <OrangeSpan>YLS</OrangeSpan>
               </StyledLink>
             </li>
             <li>
               <StyledLink href="/rally">
-                <a>
-                  <WhiteSpan>IGNITE</WhiteSpan>
-                  <OrangeSpan>RALLY</OrangeSpan>
-                </a>
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink href="/blog">
-                <a>Blog</a>
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink href="/resources">
-                <a>Resource</a>
-              </StyledLink>
-            </li>
-            {/* <li>
-              <StyledLink href="/highlights">
-                <a>Highlights</a>
+                <WhiteSpan>IGNITE</WhiteSpan>
+                <OrangeSpan>RALLY</OrangeSpan>
               </StyledLink>
             </li> */}
+            <li>
+              <StyledLink href="/blog">Blog</StyledLink>
+            </li>
+            {/* <li>
+              <StyledLink href="/resources">Resource</StyledLink>
+            </li> */}
+            <li>
+              <StyledLink href="/highlights">Highlights</StyledLink>
+            </li>
           </ul>
         </LeftWrapper>
         <SideMenu />
         <RightWrapper>
           {!user ? (
             <>
-              <StyledLink href="/login">
+              {/* <StyledLink href="/login">
                 <Button white="true" style={{ marginRight: '2rem' }}>
                   Log In
                 </Button>
               </StyledLink>
-              {/* <StyledLink href="/register">
+              <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
               </StyledLink> */}
-              <StyledExtLink
+              {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
             </>
           ) : (
             <>
@@ -263,20 +252,18 @@ const Header = () => {
                 <ProfileIcon />
                 {showMenu && (
                   <ProfileMenu ref={wrapperRef}>
-                    <StyledLink href="/profile">
-                      <a>My Profile</a>
-                    </StyledLink>
-                    <StyledLink href="#">
-                      <a
-                        onClick={() => {
-                          setTimeout(() => {
-                            firebase.auth().signOut()
-                            router.push('/')
-                          }, 500)
-                        }}
-                      >
-                        Log Out
-                      </a>
+                    <StyledLink href="/profile">My Profile</StyledLink>
+                    <StyledLink
+                      href="#"
+                      onClick={() => {
+                        setTimeout(() => {
+                          // firebase.auth().signOut()
+                          signOut(auth)
+                          router.push('/')
+                        }, 500)
+                      }}
+                    >
+                      Log Out
                     </StyledLink>
                   </ProfileMenu>
                 )}

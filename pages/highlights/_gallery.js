@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import styled from 'styled-components'
-import { SRLWrapper } from 'simple-react-lightbox'
+// import { SRLWrapper } from 'simple-react-lightbox'
 import useDraggableScroll from 'use-draggable-scroll'
 import { Heading } from '@/components/Typography'
 
@@ -175,7 +175,7 @@ const Gallery = () => {
         PHOTO GALLERY
       </StyledHeading> */}
       <ImageContainer ref={dragToScrollRef} onMouseDown={onMouseDown}>
-        <SRLWrapper>
+        {/* <SRLWrapper>
           <ImageRow>
             {ROW1.map((image) => {
               return <img key={image.src} src={image.src} alt={image.caption} height={200} draggable="false" />
@@ -186,7 +186,7 @@ const Gallery = () => {
               return <img key={image.src} src={image.src} alt={image.caption} height={200} draggable="false" />
             })}
           </ImageRow>
-        </SRLWrapper>
+        </SRLWrapper> */}
       </ImageContainer>
     </FlexCenter>
   )

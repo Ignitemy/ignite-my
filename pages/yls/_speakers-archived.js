@@ -94,13 +94,7 @@ const Speakers = () => {
       <SectionContainer bgcolor="var(--color-black)">
         <Container>
           <SpeakerWrapper>
-            <StyledImage
-              src="/images/jpg/john.jpg"
-              height={400}
-              width={328}
-              objectFit="cover"
-              objectPosition="center"
-            />
+            <StyledImage src="/images/jpg/john.jpg" height={400} width={328} />
             <SpeakerContent ml="10rem">
               <Heading as="h3" size="2.4rem" color="white">
                 Eddryll Teo
@@ -120,13 +114,7 @@ const Speakers = () => {
       <SectionContainer background="linear-gradient(90deg, #FC6076 0%, #FF9A44 100%)">
         <Container>
           <SpeakerWrapper fd="row-reverse">
-            <StyledImage
-              src="/images/jpg/john.jpg"
-              height={400}
-              width={328}
-              objectFit="cover"
-              objectPosition="center"
-            />
+            <StyledImage src="/images/jpg/john.jpg" height={400} width={328} />
             <SpeakerContent align="flex-end" mr="10rem">
               <Heading as="h3" size="2.4rem" align="right" color="white">
                 John Oommen
@@ -147,13 +135,7 @@ const Speakers = () => {
       <SectionContainer bgcolor="var(--color-white)">
         <Container>
           <SpeakerWrapper>
-            <StyledImage
-              src="/images/jpg/john.jpg"
-              height={400}
-              width={328}
-              objectFit="cover"
-              objectPosition="center"
-            />
+            <StyledImage src="/images/jpg/john.jpg" height={400} width={328} />
             <SpeakerContent ml="10rem">
               <Heading as="h3" size="2.4rem" color="black">
                 Agnel Raj
@@ -168,13 +150,7 @@ const Speakers = () => {
         </Container>
       </SectionContainer>
       <SpecialItemContainer>
-        <BgImage
-          src="/images/png/special-bg.png"
-          alt="Flame pattern"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
+        <BgImage src="/images/png/special-bg.png" alt="Flame pattern" fill={true} />
         <Container>
           <SpecialItemContent>
             <Heading color="white" size="6.4rem" align="center">

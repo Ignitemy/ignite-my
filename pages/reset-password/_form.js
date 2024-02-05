@@ -1,15 +1,21 @@
 import React, { useContext, useState } from 'react'
-import styled from 'styled-components'
 import Link from 'next/link'
+//component
+import { Button, Text, Heading } from '@/components/index'
+//styled component
+import styled from 'styled-components'
+//formik
 import { Formik, Form, Field, useField } from 'formik'
 import * as yup from 'yup'
-import { TextField } from '@material-ui/core'
-import { Alert } from '@material-ui/lab'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+//mui
+import TextField from '@mui/material/TextField'
+import Alert from '@mui/material/Alert'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+//firebase
 import FirebaseContext from '@/context/firebase'
-import { Button, Text, Heading } from '@/components/index'
+import { sendPasswordResetEmail } from 'firebase/auth'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#ff9999'
@@ -53,7 +59,7 @@ const StyledTextField = styled(TextField)`
   > label {
     font-size: 2rem;
     color: var(--color-white);
-    top: -6px;
+    left: -12px;
 
     @media (max-width: 480px) {
       font-size: 1.6rem;
@@ -64,6 +70,7 @@ const StyledTextField = styled(TextField)`
     background-color: var(--color-white);
     border-radius: 8px;
     font-size: 1.4rem;
+    margin-top: 16px;
 
     input {
       padding: 0.8rem 1.2rem;
@@ -125,7 +132,7 @@ const validationSchema = yup.object({
 })
 
 const ResetPassword = () => {
-  const { firebase } = useContext(FirebaseContext)
+  const { auth } = useContext(FirebaseContext)
 
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
@@ -134,7 +141,8 @@ const ResetPassword = () => {
   const handleReset = async (values, actions) => {
     try {
       setLoading(true)
-      await firebase.auth().sendPasswordResetEmail(values.email)
+      // await firebase.auth().sendPasswordResetEmail(values.email)
+      await sendPasswordResetEmail(auth, values.email)
       setSuccess(true)
     } catch (error) {
       setError(error.message)
@@ -191,9 +199,7 @@ const ResetPassword = () => {
                 </Button>
               </ButtonWrapper>
               <FlexStart>
-                <Link href="/login">
-                  <a>&larr; Back to login</a>
-                </Link>
+                <Link href="/login">&larr; Back to login</Link>
               </FlexStart>
             </StyledForm>
           )}

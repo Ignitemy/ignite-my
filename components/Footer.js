@@ -126,7 +126,7 @@ const Footer = () => {
         </SocialWrapper>
         <HashTags>
           <Text size="1.8rem" color="white">
-            #IGNITEMY2023
+            #IGNITEMY2024
           </Text>
           <Text size="1.8rem" color="white" ml="0.6rem">
             #dumcnxg

@@ -51,6 +51,8 @@ const ButtonWrapper = styled.div`
 
 const StyledImage = styled(Image)`
   border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
 `
 
 const Events = () => {
@@ -64,8 +66,6 @@ const Events = () => {
               height={380}
               width={642}
               alt="Lit match stick"
-              objectFit="cover"
-              objectPosition="center"
             />
             <EventContent ml="4.8rem">
               <Heading as="h3" size="2.4rem" color="orange">
@@ -95,8 +95,6 @@ const Events = () => {
               height={382}
               width={642}
               alt="Praise and worship session with a large crowd"
-              objectFit="cover"
-              objectPosition="center"
             />
             <EventContent align="flex-end" mr="4.8rem">
               <Heading as="h3" size="2.4rem" align="right" color="orange">

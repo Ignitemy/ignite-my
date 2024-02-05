@@ -24,6 +24,8 @@ const BannerContent = styled.div`
 
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ContentWrapper = styled.div`
@@ -73,9 +75,7 @@ const WhatIsIgnite = () => {
       <StyledImage
         src="/images/png/paper-bg.png"
         alt="Paper background"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill={true}
         priority="true"
       />
       <BannerContent>

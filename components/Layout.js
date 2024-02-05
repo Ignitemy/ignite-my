@@ -13,7 +13,7 @@ const Layout = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>{title || 'IGNITEMY2023'}</title>
+        <title>{title || 'IGNITEMY2024'}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"

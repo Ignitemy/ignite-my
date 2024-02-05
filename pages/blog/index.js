@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-// import { useAuth } from '@/helpers/auth'
 import ReactPaginate from 'react-paginate'
 import Layout from '@/components/Layout'
 import { Button, Heading } from '@/components/index'
@@ -32,6 +30,8 @@ const BannerContainer = styled.div`
 `
 const StyledImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const StyledHeading = styled(Heading)`
@@ -144,20 +144,13 @@ const Blog = ({ data }) => {
   }
 
   return (
-    <Layout title="IGNITEMY2023 | Blog">
+    <Layout title="IGNITEMY2024 | Blog">
       {/* TODO: Enable when blog page is ready for release */}
       <Container>
         <Grid>
           <LeftPanel>
             <BannerContainer>
-              <StyledImage
-                src="/images/png/blog-bg.png"
-                alt="Sunset"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                priority="true"
-              />
+              <StyledImage src="/images/png/blog-bg.png" alt="Sunset" fill={true} priority="true" />
               <StyledHeading
                 as="h1"
                 color="orange"
@@ -213,10 +206,11 @@ const Blog = ({ data }) => {
 }
 
 export const getStaticProps = async () => {
-  const response = await Client().query('', { orderings: "[my.blog_post.date desc]" })
+  const posts = await Client().getAllByType('blog_post')
+
   return {
     props: {
-      data: response.results
+      data: posts
     }
   }
 }

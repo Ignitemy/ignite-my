@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { useAuth } from '@/helpers/auth'
-import { Text } from '../../components'
+import { HeadingShadow, Text } from '../../components'
 import { motion } from 'framer-motion'
 
 // Variants
@@ -15,7 +15,7 @@ const header = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1
     }
   }
@@ -30,7 +30,7 @@ const video = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
       delay: 0.8
     }
@@ -46,7 +46,7 @@ const caption = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.6, 0.01, -0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
       delay: 1.6
     }
@@ -101,38 +101,40 @@ const Video = () => {
   return (
     <BannerContainer>
       <VideoHeader initial="initial" animate="animate" variants={header}>
-        <ImageWrapper>
+      <HeadingShadow mb ='2rem' align='center'>Recap of IGNITEMY2023</HeadingShadow>
+        {/* <ImageWrapper>
           <Image
-            src="/images/png/ignite-logo-v2.png"
+            src="/images/png/IGNITEMY_2023_logo.png"
             width={670}
             height={118}
-            alt="IGNITEMY 2022"
+            alt="IGNITEMY2023"
             priority={true}
           />
         </ImageWrapper>
         <Text color="white" align="center" size="18px">
-          Year 2022
-        </Text>
+          Year 2023
+        </Text> */}
       </VideoHeader>
 
+      
       <StyledIFrame
         initial="initial"
         animate="animate"
         variants={video}
-        width="60%"
+        width="90%"
         height="75%"
-        src="https://www.youtube.com/embed/mQWBvqyyZ5w"
-        title="IGNITEMY2021 Recap"
-        frameborder="0"
+        src="https://www.youtube.com/embed/b0c45v6A6RA?si=pfG7L21hnZQ9eZnl"
+        title="IGNITEMY2023 Recap"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
 
       <VideoCaption initial="initial" animate="animate" variants={caption}>
-        <Text color="white" weight="700" size="36px" align="center">
-          Recap of IGNITEMY{' '}
-          <span style={{ color: 'var(--color-orange)', textDecoration: 'none' }}>2022</span>
-        </Text>
+
+        {/* <Text color="white" weight="700" size="36px" align="center">
+          Recap of IGNITEMY<span style={{ color: 'var(--color-orange)', textDecoration: 'none' }}>2023</span>
+        </Text> */}
       </VideoCaption>
     </BannerContainer>
   )

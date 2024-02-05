@@ -2,12 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { HeadingShadow, Text } from '../../components'
+import { motion } from 'framer-motion'
 
 const SectionContainer = styled.section`
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
-  padding: 10rem 0 0;
+  padding: 6rem 0 0;
 `
 
 const SessionDetails = styled.div`
@@ -38,6 +39,20 @@ const ImageWrapper = styled.div`
     width: 400px;
   }
 `
+const StyledIFrame = styled(motion.iframe)`
+  z-index: 2;
+  max-width: 70rem;
+  border: solid 2px white;
+  border-radius: 10px;
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 400px;
+  }
+  @media (max-width: 560px) {
+    width: 95%;
+    height: 300px;
+  }
+`
 
 const SessionDesscriptions = styled.div`
   width: 90%;
@@ -56,63 +71,28 @@ const SessionDesscriptions = styled.div`
 const highlightPrograms = [
   {
     flexDirection: 'row',
-    image: {
-      src: '/images/jpg/demo_rally.jpg',
-      width: 2400,
-      height: 1602,
-      alt: 'something'
-    },
     heading: 'Session 1',
+    subheading: 'Sarath Kumar',
+    vidlink: 'https://www.youtube.com/embed/yWo2l_3p5m0?si=OPzrEqY_U_zFEHxd',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
+      'Walking together away from the pain, shame, and fear. Walking together through the events of life. Walking towards the good life.'
   },
   {
     flexDirection: 'row-reverse',
-    image: {
-      src: '/images/jpg/demo_rally.jpg',
-      width: 2400,
-      height: 1602,
-      alt: 'something'
-    },
-    heading: 'Session 1',
+    heading: 'Session 2',
+    subheading: 'Alarice Hong',
+    vidlink: 'https://www.youtube.com/embed/RJMFfsOqeH8?si=qvkpnHFRiuv8xbZ7',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
-  },
+      'You can either listen to a person who doesn\'t even know you and you don\'t know them, or you can listen to Me and who I say you are in Me.'
+      
+  }, 
   {
     flexDirection: 'row',
-    image: {
-      src: '/images/jpg/demo_rally.jpg',
-      width: 2400,
-      height: 1602,
-      alt: 'something'
-    },
-    heading: 'Session 1',
+    heading: 'Rally',
+    subheading: 'Pr Daniel Kuilan',
+    vidlink: 'https://www.youtube.com/embed/zTQ1kwAPU1o?si=fZb-pbP15LcrXdMC',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
-  },
-  {
-    flexDirection: 'row-reverse',
-    image: {
-      src: '/images/jpg/demo_rally.jpg',
-      width: 2400,
-      height: 1602,
-      alt: 'something'
-    },
-    heading: 'Session 1',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
-  },
-  {
-    flexDirection: 'row',
-    image: {
-      src: '/images/jpg/demo_rally.jpg',
-      width: 2400,
-      height: 1602,
-      alt: 'something'
-    },
-    heading: 'Session 1',
-    description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nam dolores minima quidem iusto, aut iste qui beatae est quod fugiat quas repellendus inventore rem debitis odit. Eaque, harum excepturi?'
+      'You don\'t have to try to be bold, the day you say Jesus I follow you boldness is part of you, for God has not given you a spirit of fear but of power, love and sound mind'
   }
 ]
 
@@ -123,16 +103,26 @@ function EventHighlights() {
         {highlightPrograms.map((program) => (
           <SessionDetails key={program.heading} flexDirection={program.flexDirection}>
             <ImageWrapper>
-              <Image
+              {/* <Image
                 src={program.image.src}
                 width={program.image.width}
                 height={program.image.height}
                 alt={program.image.alt}
                 priority={true}
+              /> */}
+              <StyledIFrame
+              width="100%"
+              height="100%"
+              src={program.vidlink}
+              title="IGNITEMY2023"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
               />
             </ImageWrapper>
             <SessionDesscriptions>
-              <HeadingShadow mb="1rem">{program.heading}</HeadingShadow>
+            <HeadingShadow>{program.heading}</HeadingShadow>
+            <Text color="orange" mb="1.5rem" size='2rem' weight='bold'>{program.subheading}</Text>
               <Text color="white">{program.description}</Text>
             </SessionDesscriptions>
           </SessionDetails>

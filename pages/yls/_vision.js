@@ -80,6 +80,8 @@ const TagColumn = styled.div`
 
 const BgImage = styled(Image)`
   z-index: 0;
+  object-fit: cover;
+  object-position: center;
 `
 
 const ShadowHeadings = styled(Heading)`
@@ -90,13 +92,7 @@ const Vision = () => {
   return (
     <>
       <SectionContainer>
-        <BgImage
-          src="/images/png/vision-bg.png"
-          alt="Flame pattern"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
+        <BgImage src="/images/png/vision-bg.png" alt="Flame pattern" fill={true} />
         <Container>
           <QuoteContent>
             <Heading size="12rem" weight="200" as="h4" color="purple" mt="-5rem">

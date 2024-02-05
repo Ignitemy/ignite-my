@@ -1,20 +1,22 @@
 // import { useGetStaticProps } from 'next-slicezone/hooks'
-
+import dynamic from 'next/dynamic'
 // import SliceZone from "next-slicezone";
 // import resolver from "../sm-resolver.js";
 import Layout from './../components/Layout'
 import Banner from './home/_banner'
 // import WhatIsIgnite from './home/_what-is-ignite'
 // import Events from './home/_events'
-import Countdown from './home/_countdown'
+// import Countdown from './home/_countdown'
 // import Video from './home/_video'
 // import MiniBanner from './home/_mini-banner'
 import styled from 'styled-components'
 import Location from './home/_location'
 import Faq from './home/_faq'
 import EventBanner from '@/components/EventBanner'
-import CollaborationSection from './rally/_collaboration-logo'
-import JoinUs from './home/_join-us'
+// import CollaborationSection from './rally/_collaboration-logo'
+// import JoinUs from './home/_join-us'
+
+const Countdown = dynamic(() => import("./home/_countdown"), {ssr: false})
 
 const MiniBannerContainer = styled.div`
   height: auto;
@@ -40,24 +42,24 @@ const igniteCarnivalRalleyLogo = {
 
 const Page = () => {
   return (
-    <Layout title="IGNITEMY2023 | Home">
+    <Layout title="IGNITEMY2024 | Home">
       <Banner />
-      <EventBanner
+      {/* <EventBanner
         bgImgSrc="/images/png/IGNITEMY2023/chain1.png"
         logoImgDetails={igniteYlsLogo}
         programDate="26 AUG 2023"
         programTime="10:00AM - 3:30PM"
         subheading="Join us online or in-person"
         subheading2="Requires registration!"
-      />
-      <EventBanner
+      /> */}
+      {/* <EventBanner
         bgImgSrc="/images/png/IGNITEMY2023/chain 1.2.png"
         logoImgDetails={igniteCarnivalRalleyLogo}
         programDate="27 AUG 2023"
         programTime="4:30PM - 9:30PM"
         subheading="Invite your friends & family"
         subheading2="No registration needed!"
-      />
+      /> */}
       {/* <JoinUs /> */}
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
@@ -79,10 +81,10 @@ const Page = () => {
           subTitle="IN-PERSON.    ONLINE."
         />
       </MiniBannerContainer> */}
-      <Countdown />
+      {/* <Countdown /> */}
       {/* <Video /> */}
-      <Location />
-      <Faq />
+      {/* <Location /> */}
+      {/* <Faq /> */}
     </Layout>
   )
 }

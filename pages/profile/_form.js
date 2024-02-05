@@ -1,15 +1,24 @@
 import React, { useContext, useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { Formik, Form, Field, useField } from 'formik'
-import { TextField, Select, MenuItem, InputLabel } from '@material-ui/core'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import FirebaseContext from '@/context/firebase'
-import { useAuth } from '@/helpers/auth'
+//component
 import RadioButton from '@/components/RadioButton'
 import { Heading } from '@/components/Typography'
 import { shirtSizes, listOfStates, languagePreferences } from '../register/_form'
+//styled component
+import styled from 'styled-components'
+//formik
+import { Formik, Form, Field, useField } from 'formik'
+//mui
+import TextField from '@mui/material/TextField'
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+//firebase
+import FirebaseContext from '@/context/firebase'
+import { useAuth } from '@/helpers/auth'
+import { collection, onSnapshot } from 'firebase/firestore'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#ff9999'
@@ -63,7 +72,7 @@ const StyledTextField = styled(TextField)`
   > label {
     font-size: 2rem;
     color: var(--color-white);
-    top: -6px;
+    left: -12px;
 
     @media (max-width: 480px) {
       font-size: 1.6rem;
@@ -74,6 +83,7 @@ const StyledTextField = styled(TextField)`
     background-color: var(--color-white);
     border-radius: 8px;
     font-size: 1.4rem;
+    margin-top: 16px;
 
     input {
       padding: 0.8rem 1.2rem;
@@ -225,26 +235,37 @@ const secondRadioButtonQuestion = {
 }
 
 const Profile = () => {
-  const { firebase } = useContext(FirebaseContext)
+  const { db } = useContext(FirebaseContext)
   const [userData, setUserData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
   const user = useAuth()
-  const db = firebase.firestore()
+  // const db = firebase.firestore()
 
   useEffect(() => {
     if (user) {
-      const subscriber = db.collection('ignitemy23').onSnapshot((snapshot) => {
-        snapshot.forEach((doc) => {
+      // const subscriber = db.collection('ignitemy23').onSnapshot((snapshot) => {
+      //   snapshot.forEach((doc) => {
+      //     const data = doc.data()
+      //     if (data.email === user.email) {
+      //       setUserData(data)
+      //       return
+      //     }
+      //   })
+      //   setIsLoading(false)
+      // })
+      // return () => subscriber()
+      const unsub = onSnapshot(collection(db, 'ignitemy23'), (querySnapShot) => {
+        querySnapShot.forEach((doc) => {
           const data = doc.data()
           if (data.email === user.email) {
             setUserData(data)
             return
           }
+          setIsLoading(false)
         })
-        setIsLoading(false)
       })
-      return () => subscriber()
+      return () => unsub()
     }
   }, [user])
 
@@ -397,7 +418,7 @@ const Profile = () => {
                     {language}
                   </MenuItem>
                 ))}
-              </Field> 
+              </Field>
 
               <Field
                 name="remarks"

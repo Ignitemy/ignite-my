@@ -1,21 +1,29 @@
 import React, { useContext, useState, useEffect } from 'react'
-import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
+//component
+import { Button, Text, Heading, HeadingShadow } from '@/components/index'
+//styled component
+import styled from 'styled-components'
+//formik
 import { Formik, Form, Field, useField } from 'formik'
 import * as yup from 'yup'
-import Image from 'next/image'
-import { TextField, InputAdornment, IconButton } from '@material-ui/core'
-import { Alert } from '@material-ui/lab'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import Visibility from '@material-ui/icons/Visibility'
-import VisibilityOff from '@material-ui/icons/VisibilityOff'
+//mui
+import TextField from '@mui/material/TextField'
+import InputAdornment from '@mui/material/InputAdornment'
+import IconButton from '@mui/material/IconButton'
+import Alert from '@mui/material/Alert'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Visibility from '@mui/icons-material/Visibility'
+import VisibilityOff from '@mui/icons-material/VisibilityOff'
+//firebase
 import FirebaseContext from '@/context/firebase'
-import { Button, Text, Heading, HeadingShadow } from '@/components/index'
 import { useAuth } from '@/helpers/auth'
 import { getUserByUserId } from '@/helpers/firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#ff9999'
@@ -63,7 +71,7 @@ const StyledTextField = styled(TextField)`
   > label {
     font-size: 2rem;
     color: var(--color-white);
-    top: -6px;
+    left: -12px;
 
     @media (max-width: 480px) {
       font-size: 1.6rem;
@@ -74,6 +82,7 @@ const StyledTextField = styled(TextField)`
     background-color: var(--color-white);
     border-radius: 8px;
     font-size: 1.4rem;
+    margin-top: 16px;
 
     input {
       padding: 0.8rem 1.2rem;
@@ -151,7 +160,7 @@ const LoginForm = () => {
   const [error, setError] = useState('')
 
   const router = useRouter()
-  const { firebase } = useContext(FirebaseContext)
+  const { auth } = useContext(FirebaseContext)
   const user = useAuth()
 
   const { query } = router
@@ -198,16 +207,15 @@ const LoginForm = () => {
 
   const handleLogin = async (values, actions) => {
     try {
-      await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-      const currentUser = firebase.auth().currentUser
+      // await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
+      await signInWithEmailAndPassword(auth, values.email, values.password)
+      const currentUser = auth.currentUser
       if (currentUser) {
         const uid = currentUser.uid
         let userDocument = await getUserByUserId(uid)
         // if (userDocument[0].ignite2022 === null || userDocument[0].ignite2022 === undefined)
         //   router.push('/ext-register')
-        console.log(userDocument);
-        if (userDocument.length === 0)
-          router.push('/ext-register')
+        if (userDocument.length === 0) router.push('/ext-register')
         else router.push(`/${redirect}`)
       }
     } catch (error) {
@@ -220,7 +228,7 @@ const LoginForm = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <FlexCenter fd='column'>
+        <FlexCenter fd="column">
           {!action ? (
             <>
               <HeadingShadow>LOG IN FOR</HeadingShadow>
@@ -231,7 +239,6 @@ const LoginForm = () => {
             //   PLEASE LOG IN TO VIEW PAGE
             // </Heading>
             <HeadingShadow size="3.2rem">PLEASE LOG IN TO VIEW PAGE</HeadingShadow>
-
           )}
         </FlexCenter>
         <Formik
@@ -265,9 +272,7 @@ const LoginForm = () => {
                 as={CustomPasswordField}
               />
               <FlexEnd>
-                <Link href="/reset-password">
-                  <a>Forgot password?</a>
-                </Link>
+                <Link href="/reset-password">Forgot password?</Link>
               </FlexEnd>
               <ButtonWrapper>
                 <Button
@@ -282,7 +287,7 @@ const LoginForm = () => {
               <StyledText color="white" mt="2rem">
                 Not registered?{' '}
                 <Link href="/register" as="a">
-                  <a>Register for an account</a>
+                  Register for an account
                 </Link>
               </StyledText>
             </StyledForm>
