@@ -251,9 +251,9 @@ const OrangeSpan = styled.span`
 
 const bannerInfo = {
   bgImgSrc: '/images/jpg/2024-bg.jpg',
-  eventDate1: '14 SEPT 2024 ',
+  eventDate1: '07 SEPT 2024 ',
   eventType1: 'SUMMIT',
-  eventDate2: '15 SEPT 2024 ',
+  eventDate2: '08 SEPT 2024 ',
   eventType2: 'RALLY',
   // subHeadingA1: 'TWO ',
   // subHeadingA2: 'DAY EVENT',
