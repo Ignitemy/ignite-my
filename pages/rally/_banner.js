@@ -135,7 +135,7 @@ const Banner = () => {
               lh="4rem"
               ts="3px 1px 0px #000000"
             >
-              27TH AUG 2023
+              8TH SEP 2024
             </StyledHeading>
             <Heading
               as="h3"

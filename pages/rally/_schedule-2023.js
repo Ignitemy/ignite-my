@@ -146,7 +146,7 @@ const Schedule = () => {
               </tbody>
             </StyledTable>
           </div>
-          <AbosoluteDate>27 August 2023, Sunday</AbosoluteDate>
+          <AbosoluteDate>8 September 2024, Sunday</AbosoluteDate>
         </TableSectionContainer>
       </SectionContentWrapper>
     </SectionContainer>

@@ -182,7 +182,7 @@ const Header = () => {
             <li>
               <StyledLink href="/">Home</StyledLink>
             </li>
-            {/* <li>
+            <li>
               <StyledLink href="/yls">
                 <WhiteSpan>IGNITE</WhiteSpan>
                 <OrangeSpan>YLS</OrangeSpan>
@@ -193,7 +193,7 @@ const Header = () => {
                 <WhiteSpan>IGNITE</WhiteSpan>
                 <OrangeSpan>RALLY</OrangeSpan>
               </StyledLink>
-            </li> */}
+            </li>
             <li>
               <StyledLink href="/blog">Blog</StyledLink>
             </li>
@@ -216,7 +216,18 @@ const Header = () => {
               </StyledLink>
               <StyledLink href="/register">
                 <RegisterButton orange="true">Register</RegisterButton>
+
               </StyledLink> */}
+
+              <StyledExtLink
+                href="https://bit.ly/IGNITEMY2024summit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <RegisterButton orange="true">Register</RegisterButton>
+              </StyledExtLink>
+
+
               {/* <StyledExtLink
                 href="https://ignitemy.online.church/"
                 target="_blank"

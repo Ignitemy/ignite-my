@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
-import { Button,HeadingBold } from '../../components'
+import { Button, HeadingBold } from '../../components'
 
 
 const SectionContainer = styled.section`
@@ -188,7 +188,7 @@ const Countdown = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
     // Date format MM/DD/YYYY
-    let difference = new Date(`9/14/${year} 10:00`) - new Date()
+    let difference = new Date(`9/7/${year} 10:00`) - new Date()
     let timeLeft = {}
 
     if (difference > 0) {
@@ -279,11 +279,11 @@ const Countdown = () => {
 
   const eventStart = [
     <>
-    <GifWrapper>
+      <GifWrapper>
         <Image src="/images/gif/ignite-loading.gif" height={80} width={80} alt="Ignite loading" />
       </GifWrapper>
-    <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} alt="Ignite logo" />
-    <GifWrapper>
+      <Image src="/images/png/ignite-logo-v2.png" height={65} width={375} alt="Ignite logo" />
+      <GifWrapper>
         <Image src="/images/gif/ignite-loading.gif" height={80} width={80} alt="Ignite loading" />
       </GifWrapper>
       {/* [<span>Time's up!</span>] */}
@@ -304,19 +304,19 @@ const Countdown = () => {
 
   return (
     <>
-    {/* previously bg gradient used is linear-gradient(90deg, #FC6076 0%, #FF9A44 100%); */}
+      {/* previously bg gradient used is linear-gradient(90deg, #FC6076 0%, #FF9A44 100%); */}
       <SectionContainer background="linear-gradient(28deg, #000000 0%, #FF6600 100%)">
         <CountdownContainer>
           {isEventStart ? blankText : <HeadingBold align='center'>ARE YOU READY?</HeadingBold>}
 
           <StyledContainer>{isEventStart ? eventStart : timerComponents}</StyledContainer>
-          
+
           {isEventStart ? blankText : <StyledContainer>FOR</StyledContainer>}
-          
+
           <StyledContainer>
             {isEventStart
               ? btnStart
-              : <Image src="/images/png/IGNITEMY_2023_logo.png" 
+              : <Image src="/images/png/IGNITEMY_2023_logo.png"
                 height={59}
                 width={480}
                 // height={59} width={383} // original logo dimension
