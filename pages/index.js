@@ -45,7 +45,7 @@ const Page = () => {
     <Layout title="IGNITEMY2024 | Home">
       <Banner />
       <EventBanner
-        bgImgSrc="/images/png/IGNITEMY2023/chain1.png"
+        bgImgSrc="/images/jpg/countdown-2022-banner.jpg"
         logoImgDetails={igniteYlsLogo}
         programDate="07 SEP 2024"
         programTime="10:00AM - 3:30PM"
@@ -53,7 +53,7 @@ const Page = () => {
         subheading2="Requires registration!"
       />
       <EventBanner
-        bgImgSrc="/images/png/IGNITEMY2023/chain 1.2.png"
+        bgImgSrc="/images/jpg/yls-banner.jpg"
         logoImgDetails={igniteCarnivalRalleyLogo}
         programDate="08 SEP 2024"
         programTime="4:30PM - 9:30PM"

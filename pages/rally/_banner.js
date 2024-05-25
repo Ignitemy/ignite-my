@@ -100,12 +100,12 @@ const StyledHeading = styled(Heading)`
 const Banner = () => {
   return (
     <BannerContainer>
-      <StyledImage
+      {/* <StyledImage
         src="/images/png/IGNITEMY2023/chain 7.png"
         alt="Flame pattern"
         fill={true}
         priority="true"
-      />
+      /> */}
       <BannerContent>
         <ContentWrapper>
           <ImageWrapper initial="initial" animate="animate" variants={logo}>

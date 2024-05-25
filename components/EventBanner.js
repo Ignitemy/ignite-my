@@ -90,7 +90,7 @@ const EventBanner = ({
 }) => {
   return (
     <BannerContainer>
-      <StyledImage src={bgImgSrc} alt="Fire patterns" fill={true} priority="true" />
+      <StyledImage src={bgImgSrc} alt={logoImgDetails} fill={true} priority="true" />
       <BannerContent>
         <Image
           src={logoImgDetails.imgUrl}
