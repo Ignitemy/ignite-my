@@ -69,7 +69,7 @@ const Faq = () => {
       answer: 'A: For all high school students who aspire to be a change in their schools!'
     },
     {
-      question: 'Q: Can I still register after 25th June 2023?',
+      question: 'Q: Can I still register after 29th August 2024?',
       answer:
         'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2024 booklet). So register now!'
     },
