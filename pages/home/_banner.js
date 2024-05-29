@@ -251,9 +251,9 @@ const OrangeSpan = styled.span`
 
 const bannerInfo = {
   bgImgSrc: '/images/jpg/2024-bg.jpg',
-  eventDate1: '07 SEPT 2024 ',
+  eventDate1: '07 SEP 2024 ',
   eventType1: 'SUMMIT',
-  eventDate2: '08 SEPT 2024 ',
+  eventDate2: '08 SEP 2024 ',
   eventType2: 'RALLY',
   // subHeadingA1: 'TWO ',
   // subHeadingA2: 'DAY EVENT',
@@ -306,12 +306,12 @@ const Banner = () => {
             </ButtonWrapper> */}
 
             <ShortDetailWrapper initial="initial" animate="animate" variants={soon}>
-              <StyledLink href="https://docs.google.com/forms/d/e/1FAIpQLSc5dY8MC9b8aK8FD5Gj--o8ne8wHJdzb6EQUEzfDMQdStVEDw/viewform"
+              <StyledLink href="https://bit.ly/IGNITEMY2024summit"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button white="true">
-                  <Heading color="white" size='2.5rem'>Pre-Register now</Heading>
+                  <Heading color="white" size='2.5rem'>Register now</Heading>
                 </Button>
               </StyledLink>
               {/* <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />

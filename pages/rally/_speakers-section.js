@@ -28,13 +28,13 @@ const SectionContainer = styled.section`
 const specialItemBy = {
   imgSrc: '/images/jpg/daniel-kuilan-1.jpg',
   imgSrcHover: '/images/jpg/daniel-kuilan-2.jpg',
-  alt: 'Pr Daniel Kuilan',
-  name: 'Pr Daniel Kuilan',
+  alt: 'Pr Andy Yeoh',
+  name: 'Pr Andy Yeoh',
   separator: 'of',
-  founder: 'Soul Malaysia',
+  founder: 'Generations Church',
   founderLink: 'https://www.instagram.com/soulmalaysia',
   details:
-    'Meet Daniel Kuilan - a pastor, motivational speaker, and storyteller who wants to inspire people to live their best lives. He and his wife Caroline started a church in Alor Setar, Malaysia called SOUL that\'s all about bringing young people together and sharing the message of Jesus. He is also the host of SOULFOOD, a podcast that dives into conversations that enlighten listeners on certain habits and behaviours that influences our culture, relationships, and mental health. Daniel and Caroline are passionate about Jesus and the life-changing influence of His word on people and the future. As a father to Isla and Kyle, Daniel is committed to spreading the life-changing message of Jesus to the next generation!'
+    '...'
 }
 
 const SpeakerSection = () => {

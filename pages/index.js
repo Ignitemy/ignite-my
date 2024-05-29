@@ -44,22 +44,22 @@ const Page = () => {
   return (
     <Layout title="IGNITEMY2024 | Home">
       <Banner />
-      {/* <EventBanner
-        bgImgSrc="/images/png/IGNITEMY2023/chain1.png"
+      <EventBanner
+        bgImgSrc="/images/jpg/countdown-2022-banner.jpg"
         logoImgDetails={igniteYlsLogo}
-        programDate="26 AUG 2023"
+        programDate="07 SEP 2024"
         programTime="10:00AM - 3:30PM"
         subheading="Join us online or in-person"
         subheading2="Requires registration!"
-      /> */}
-      {/* <EventBanner
-        bgImgSrc="/images/png/IGNITEMY2023/chain 1.2.png"
+      />
+      <EventBanner
+        bgImgSrc="/images/jpg/yls-banner.jpg"
         logoImgDetails={igniteCarnivalRalleyLogo}
-        programDate="27 AUG 2023"
+        programDate="08 SEP 2024"
         programTime="4:30PM - 9:30PM"
         subheading="Invite your friends & family"
         subheading2="No registration needed!"
-      /> */}
+      />
       {/* <JoinUs /> */}
       {/* <WhatIsIgnite /> */}
       {/* <Events /> */}
@@ -81,10 +81,10 @@ const Page = () => {
           subTitle="IN-PERSON.    ONLINE."
         />
       </MiniBannerContainer> */}
-      {/* <Countdown /> */}
+      <Countdown />
       {/* <Video /> */}
-      {/* <Location /> */}
-      {/* <Faq /> */}
+      <Location />
+      <Faq />
     </Layout>
   )
 }

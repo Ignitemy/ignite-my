@@ -8,7 +8,7 @@ const YLS = () => {
   return (
     <Layout title="IGNITEMY2024 | Youth Leadership Summit">
       <Banner />
-      <SpeakerSection />
+      {/* <SpeakerSection /> */}
       <Schedule />
       {/* <JoinUs /> */}
     </Layout>

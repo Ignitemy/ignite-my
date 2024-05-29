@@ -110,12 +110,12 @@ const StyledHeading = styled(Heading)`
 const Banner = () => {
   return (
     <BannerContainer>
-      <StyledImage
+      {/* <StyledImage
         src="/images/png/IGNITEMY2023/chain 4.png"
         alt="mountains"
         fill={true}
         priority="true"
-      />
+      /> */}
       <BannerContent>
         <ContentWrapper>
           <ImageWrapper initial="initial" animate="animate" variants={logo}>
@@ -137,7 +137,7 @@ const Banner = () => {
               lh="4rem"
               ts="3px 1px 0px #000000"
             >
-              26TH AUG 2023
+              7TH SEP 2024
             </StyledHeading>
             {/* <StyledHeading
               as="h3"

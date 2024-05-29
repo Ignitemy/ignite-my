@@ -88,42 +88,42 @@ const AbosoluteDate = styled.p`
 const rallyTimetable = [
   {
     color: 'var(--color-orange)',
-    time: '16:30',
+    time: '1630',
     activity: 'IGNITE Bazaar'
   },
   {
     color: 'var(--color-white)',
-    time: '19:00',
+    time: '1900',
     activity: 'Doors Open'
   },
   {
     color: 'var(--color-orange)',
-    time: '19:30',
+    time: '1930',
     activity: 'Welcome'
   },
   {
     color: 'var(--color-white)',
-    time: '19:40',
+    time: '1940',
     activity: 'Activities'
   },
   {
     color: 'var(--color-white)',
-    time: '20:00',
+    time: '2000',
     activity: 'Worship'
   },
   {
     color: 'var(--color-white)',
-    time: '20:35',
+    time: '2035',
     activity: 'Word'
   },
   {
     color: 'var(--color-white)',
-    time: '21:05',
+    time: '2105',
     activity: 'Ministry + Worship '
   },
   {
     color: 'var(--color-white)',
-    time: '21:30',
+    time: '2130',
     activity: 'End'
   }
 ]
@@ -146,7 +146,7 @@ const Schedule = () => {
               </tbody>
             </StyledTable>
           </div>
-          <AbosoluteDate>27 August 2023, Sunday</AbosoluteDate>
+          <AbosoluteDate>8 September 2024, Sunday</AbosoluteDate>
         </TableSectionContainer>
       </SectionContentWrapper>
     </SectionContainer>

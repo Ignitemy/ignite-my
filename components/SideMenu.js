@@ -297,7 +297,7 @@ const SideMenu = () => {
                   Home
                 </StyledLink>
               </li>
-              {/* <li>
+              <li>
                 <StyledLink href="/yls">
                   
                     <WhiteSpan>IGNITE</WhiteSpan>
@@ -313,7 +313,7 @@ const SideMenu = () => {
                   
                 </StyledLink>
               </li>
-              <li>
+              {/* <li>
                 <StyledExtLink
                   href="https://ignitemy.online.church/"
                   target="_blank"
@@ -344,11 +344,11 @@ const SideMenu = () => {
                     Login
                     </StyledLink>
                   </li> */}
-                  {/* <li>
-                    <StyledLink href="/register">
+                  <li>
+                    <StyledLink href="https://bit.ly/IGNITEMY2024summit">
                     Register
                     </StyledLink>
-                  </li> */}
+                  </li>
                 </>
               )}
             </ul>
