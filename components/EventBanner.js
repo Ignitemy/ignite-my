@@ -40,7 +40,7 @@ const BannerContent = styled.div`
 const StyledImage = styled(Image)`
   z-index: 0;
   object-fit: cover;
-  object-position: center;
+  object-position: bottom;
 `
 
 const DateTimeContainer = styled.div`
@@ -98,6 +98,7 @@ const EventBanner = ({
           width={logoImgDetails.width}
           height={logoImgDetails.height}
           priority="true"
+          style={{ width: '100%', height: 'auto' }}
         />
         <div>
           <DateTimeContainer>
