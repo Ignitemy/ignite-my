@@ -88,62 +88,62 @@ const AbosoluteDate = styled.p`
 const summitTimetable = [
   {
     color: 'var(--color-white)',
-    time: '9:00',
+    time: '0900',
     activity: 'Registration'
   },
   {
     color: 'var(--color-white)',
-    time: '9:30',
+    time: '0930',
     activity: 'Doors Open'
   },
   {
     color: 'var(--color-white)',
-    time: '10:00',
+    time: '1000',
     activity: 'Welcome'
   },
   {
     color: 'var(--color-white)',
-    time: '10:10',
+    time: '1010',
     activity: 'Worship'
   },
   {
     color: 'var(--color-orange)',
-    time: '10:35',
+    time: '1035',
     activity: 'Session 1'
   },
   {
     color: 'var(--color-white)',
-    time: '11:00',
+    time: '1100',
     activity: 'Discussion 1'
   },
   {
     color: 'var(--color-orange)',
-    time: '11:25',
+    time: '1125',
     activity: 'Session 2'
   },
   {
     color: 'var(--color-white)',
-    time: '11:50',
+    time: '1150',
     activity: 'Discussion 2'
   },
   {
     color: 'var(--color-white)',
-    time: '12:15',
+    time: '1215',
     activity: 'Lunch (on your own)'
   },
   {
     color: 'var(--color-orange)',
-    time: '13:45',
+    time: '1345',
     activity: 'Special Item'
   },
   {
     color: 'var(--color-orange)',
-    time: '13:55',
+    time: '1355',
     activity: 'SUMMIT UP'
   },
   {
     color: 'var(--color-white)',
-    time: '15:30',
+    time: '1530',
     activity: 'Closing'
   }
 ]

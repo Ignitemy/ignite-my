@@ -269,7 +269,7 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/png/homepage-banner.png"
+        // src="/images/png/homepage-banner.png"
         src={bannerInfo.bgImgSrc}
         alt="Fire patterns"
         fill={true}
