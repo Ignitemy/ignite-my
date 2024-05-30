@@ -130,7 +130,7 @@ const BannerContent = styled.div`
 const StyledImage = styled(Image)`
   z-index: 0;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
 `
 
 const ContentWrapper = styled.div`
@@ -250,7 +250,8 @@ const OrangeSpan = styled.span`
 `
 
 const bannerInfo = {
-  bgImgSrc: '/images/jpg/2024-bg.jpg',
+  // bgImgSrc: '/images/jpg/2024-bg.jpg',
+  bgImgSrc: '/images/png/ignite2024_banner.png',
   eventDate1: '07 SEP 2024 ',
   eventType1: 'SUMMIT',
   eventDate2: '08 SEP 2024 ',
@@ -311,7 +312,7 @@ const Banner = () => {
                 rel="noopener noreferrer"
               >
                 <Button white="true">
-                  <Heading color="white" size='2.5rem'>Register now</Heading>
+                  <Heading color="white">Register</Heading>
                 </Button>
               </StyledLink>
               {/* <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
