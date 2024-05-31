@@ -91,39 +91,40 @@ const rallyTimetable = [
     time: '1630',
     activity: 'IGNITE Bazaar'
   },
+  
   {
     color: 'var(--color-white)',
-    time: '1900',
+    time: '1930',
     activity: 'Doors Open'
   },
   {
     color: 'var(--color-orange)',
-    time: '1930',
+    time: '2000',
     activity: 'Welcome'
   },
   {
     color: 'var(--color-white)',
-    time: '1940',
+    time: '2010',
     activity: 'Activities'
   },
   {
     color: 'var(--color-white)',
-    time: '2000',
+    time: '2030',
     activity: 'Worship'
   },
   {
     color: 'var(--color-white)',
-    time: '2035',
+    time: '2105',
     activity: 'Word'
   },
   {
     color: 'var(--color-white)',
-    time: '2105',
+    time: '2135',
     activity: 'Ministry + Worship '
   },
   {
     color: 'var(--color-white)',
-    time: '2130',
+    time: '2200',
     activity: 'End'
   }
 ]
