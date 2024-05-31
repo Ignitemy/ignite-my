@@ -56,7 +56,7 @@ const Page = () => {
         bgImgSrc="/images/png/bg-1.png"
         logoImgDetails={igniteCarnivalRalleyLogo}
         programDate="08 SEP 2024"
-        programTime="4:30PM - 9:30PM"
+        programTime="4:30PM - 10:00PM"
         subheading="Invite your friends & family"
         subheading2="No registration needed!"
       />
