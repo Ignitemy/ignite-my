@@ -320,12 +320,12 @@ const Countdown = () => {
               btnStart
             ) : (
               <Image
-                src="/images/png/IGNITEMY_2023_logo.png"
-                height={59}
-                width={480}
-                // height={59} width={383} // original logo dimension
+                src="/images/png/ignite-logo.png"
+                // height={59}
+                // width={480}
+                height={51} width={332} // original logo dimension
                 alt="Ignite logo"
-                style={{ width: '100%', height: 'auto', maxWidth: '480px' }}
+                style={{ width: '100%', height: 'auto', maxWidth: '360px' }}
               />
             )}
           </StyledContainer>
