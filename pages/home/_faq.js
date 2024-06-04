@@ -69,9 +69,19 @@ const Faq = () => {
       answer: 'A: For all high school students who aspire to be a change in their schools!'
     },
     {
-      question: 'Q: Can I still register after 29th August 2024?',
+      question: 'Q: I want the summit kit! When’s the last day to register?',
       answer:
-        'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2024 booklet). So register now!'
+        'A: Registration that includes summit kit and group allocation will be from 25 May to 14 July 2024!'
+    },
+    {
+      question: 'Q: Can I still register after 14 July 2024?',
+      answer:
+        'A: Yes, of course! But you would not receive a summit kit (filled with goodies and IGNITEMY2024 booklet). So register now! Do note that registration closes 29 August 2024.'
+    },
+    {
+      question: 'Q: Aiya.. it’s 30 August 2024 and I didn’t get to register for the Summit! Can I still come?',
+      answer:
+        'A: Unfortunately, walk-ins are NOT allowed for the Summit. BUT you can still join us for the Bazaar and Rally on 8 September for free!'
     },
     {
       question: 'Q: I stay in Singapore. Can I attend IGNITEMY2024 in-person? ',
