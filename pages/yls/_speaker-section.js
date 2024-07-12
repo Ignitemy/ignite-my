@@ -27,7 +27,7 @@ const SectionContainer = styled.section`
 `
 const DetailsWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   @media (max-width: 1024px) {
     flex-direction: column;
     gap: 8rem;
@@ -41,6 +41,7 @@ const SectionSeperator = styled.div`
 
 const speakerSectionDetails = [
   {
+    flexDirection : 'row',
     imgSrc: '/images/jpg/Daniel-1.jpg',
     imgSrcHover: '/images/jpg/Daniel-2.jpg',
     alt: 'Pr Daniel Lau',
@@ -53,6 +54,7 @@ const speakerSectionDetails = [
   },
   
   {
+    flexDirection : 'row-reverse',
     imgSrc: '/images/jpg/Brandon-1.jpg',
     imgSrcHover: '/images/jpg/Brandon-2.jpg',
     alt: 'Brandon Ho',

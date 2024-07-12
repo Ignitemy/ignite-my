@@ -12,7 +12,8 @@ const SpeakerProfileContainer = styled.div`
   @media (min-width: 1024px) {
     margin-top: 3rem;
     margin-bottom: 3rem;
-    flex-direction: column;
+    flex-direction: ${(props) => props.flexDirection || 'row'};
+    // flex-direction: row-reverse;
     justify-content: start;
     align-items: center;
     gap: 8rem;
@@ -32,13 +33,15 @@ const StyledImage = styled.div`
 
 const DetailsWrapper = styled.div`
   color: var(--color-white);
+  display: flex;
+  flex-direction: column;
   @media (min-width: 1024px) {
     width: 70%;
   }
 `
 
 const SpeakerName = styled.p`
-  text-align: center;
+  // text-align: center;
   font-size: 2rem;
   line-height: 40px;
   margin-bottom: 0.5rem;
@@ -49,7 +52,7 @@ const OrangeSpan = styled.span`
 `
 
 const SpeakerDetails = styled.p`
-  text-align: center;
+  // text-align: center;
   font-size: 1.6rem;
   line-height: 30px;
 `
@@ -106,7 +109,7 @@ const SpeakerProfile = ({ speaker }) => {
   const [hover, setHover] = React.useState(false)
 
   return (
-    <SpeakerProfileContainer>
+    <SpeakerProfileContainer flexDirection={speaker.flexDirection} >
       <StyledImage onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <SpeakerImage
           src={speaker.imgSrc}
