@@ -35,6 +35,10 @@ const DetailsWrapper = styled.div`
   }
 `
 
+const SectionSeperator = styled.div`
+  height: 7rem;
+`
+
 const speakerSectionDetails = [
   {
     imgSrc: '/images/jpg/Daniel-1.jpg',
@@ -46,17 +50,6 @@ const speakerSectionDetails = [
     founderLink: 'https://www.instagram.com/citylightpg?igsh=MWhncnA4YmR5anpueg=',
     details:
     'Pastor Daniel Lau is the founder and lead pastor of City Light Church Penang. He graduated with a Bachelor’s Degree in Engineering from The University of Leeds and attended the School of Theology in Singapore. In 2010, God led him and his wife, Charis to Penang to plant a church with a vision to reach out and raise up the next generation. In 2016, City Light collaborated with churches in the region and started Firez. It is a youth movement that passionately engages and involves students to share the good news of Jesus. It has since impacted hundreds of young people every year. Today, God has blessed them with three children, Jethro, Maya and Tsiyon.'
-  },
-  {
-    imgSrc: '/images/jpg/Sulyn-1.jpg',
-    imgSrcHover: '/images/jpg/Sulyn-2.jpg',
-    alt: 'Sulyn Ooi',
-    name: 'Sulyn Ooi',
-    separator: 'of',
-    founder: 'Wondersigns',
-    founderLink: 'https://www.instagram.com/wondersigns.official/',
-    details:
-      'Sulyn is a seasoned worship leader, coach, singer, and songwriter with a deep passion for worship in all its forms—writing, leading, and mentoring. With diverse experience in both performing and teaching, she thrives on guiding others in their worship journeys. Currently she is actively working with worship singers and serves as a key songwriter and worship leader for Wondersigns, the worship ministry of Every Nation Petaling Jaya.'
   },
   
   {
@@ -72,6 +65,19 @@ const speakerSectionDetails = [
   }
 ]
 
+const specialItemBy =   
+  {
+    imgSrc: '/images/jpg/Sulyn-1.jpg',
+    imgSrcHover: '/images/jpg/Sulyn-2.jpg',
+    alt: 'Sulyn Ooi',
+    name: 'Sulyn Ooi',
+    separator: 'of',
+    founder: 'Wondersigns',
+    founderLink: 'https://www.instagram.com/wondersigns.official/',
+    details:
+      'Sulyn is a seasoned worship leader, coach, singer, and songwriter with a deep passion for worship in all its forms—writing, leading, and mentoring. With diverse experience in both performing and teaching, she thrives on guiding others in their worship journeys. Currently she is actively working with worship singers and serves as a key songwriter and worship leader for Wondersigns, the worship ministry of Every Nation Petaling Jaya.'
+  }
+  
 const SpeakerSection = () => {
   return (
     <SectionContainer>
@@ -81,6 +87,10 @@ const SpeakerSection = () => {
           <SpeakerProfile key={speaker.name} speaker={speaker} />
         ))}
       </DetailsWrapper>
+
+      <SectionSeperator />
+      <HeadingShadow align="center">Special Item by</HeadingShadow>
+      <SpeakerProfile speaker={specialItemBy} />
     </SectionContainer>
   )
 }
