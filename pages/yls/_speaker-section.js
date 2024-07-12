@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
   padding: 7rem 3rem;
   // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   // background: ${(props) => props.background};
-  background: url('/images/png/IGNITEMY2023/chain 1 flip.png');
+  background: url('/images/jpg/bg-5.jpg');
   background-size: cover;
   background-position: center;
 
@@ -37,26 +37,38 @@ const DetailsWrapper = styled.div`
 
 const speakerSectionDetails = [
   {
-    imgSrc: '/images/jpg/Alarice-2.jpg',
-    imgSrcHover: '/images/jpg/Alarice-2.jpg',
+    imgSrc: '/images/jpg/Daniel-1.jpg',
+    imgSrcHover: '/images/jpg/Daniel-2.jpg',
     alt: 'Pr Daniel Lau',
     name: 'Pr Daniel Lau',
     separator: 'of',
     founder: 'CityLight Penang',
-    founderLink: 'https://clcpg.org/',
+    founderLink: 'https://www.instagram.com/citylightpg?igsh=MWhncnA4YmR5anpueg=',
     details:
-      '...'
+    'Pastor Daniel Lau is the founder and lead pastor of City Light Church Penang. He graduated with a Bachelor’s Degree in Engineering from The University of Leeds and attended the School of Theology in Singapore. In 2010, God led him and his wife, Charis to Penang to plant a church with a vision to reach out and raise up the next generation. In 2016, City Light collaborated with churches in the region and started Firez. It is a youth movement that passionately engages and involves students to share the good news of Jesus. It has since impacted hundreds of young people every year. Today, God has blessed them with three children, Jethro, Maya and Tsiyon.'
   },
   {
-    imgSrc: '/images/jpg/sarath-kumar-1.jpg',
-    imgSrcHover: '/images/jpg/sarath-kumar-2.jpg',
-    alt: '...',
-    name: 'Sarath Kumar',
+    imgSrc: '/images/jpg/Sulyn-1.jpg',
+    imgSrcHover: '/images/jpg/Sulyn-2.jpg',
+    alt: 'Sulyn Ooi',
+    name: 'Sulyn Ooi',
     separator: 'of',
-    founder: 'Alpha Malaysia',
-    founderLink: 'https://malaysia.alpha.org/',
+    founder: 'Wondersigns',
+    founderLink: 'https://www.instagram.com/wondersigns.official/',
     details:
-    '...'
+      'Sulyn is a seasoned worship leader, coach, singer, and songwriter with a deep passion for worship in all its forms—writing, leading, and mentoring. With diverse experience in both performing and teaching, she thrives on guiding others in their worship journeys. Currently she is actively working with worship singers and serves as a key songwriter and worship leader for Wondersigns, the worship ministry of Every Nation Petaling Jaya.'
+  },
+  
+  {
+    imgSrc: '/images/jpg/Brandon-1.jpg',
+    imgSrcHover: '/images/jpg/Brandon-2.jpg',
+    alt: 'Brandon Ho',
+    name: 'Brandon Ho',
+    separator: 'of',
+    founder: 'Let’s Get Real',
+    founderLink: 'https://www.instagram.com/letsgetreal.my/',
+    details:
+    'Brandon started life in the entertainment industry when he was just 20 years old as a TV host on the national show called The 8TV Quickie. Since then, he has worked as a Radio DJ, a host for other TV programs, and acted in movies and short films. Today, most of his time is taken up with content creation on social media and serving his local church. In 2020, he started the first Christian podcast show in Malaysia called Let’s Get Real Malaysia. It has since multiplied into 3 shows (Let’s Get Real, Listen Up, Uncover). Brandon is often invited to share his testimony and to speak at various Christian conferences and churches. Brandon is married to Phoebe and together, they serve at their local church in Bandar Sunway'
   }
 ]
 

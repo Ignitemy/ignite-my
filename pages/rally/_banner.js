@@ -101,7 +101,7 @@ const Banner = () => {
   return (
     <BannerContainer>
       <StyledImage
-        src="/images/jpg/2024-bg.jpg"
+        src="/images/png/bg-4.png"
         alt="Flame pattern"
         fill={true}
         priority="true"
