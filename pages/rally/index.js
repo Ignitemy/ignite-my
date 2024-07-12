@@ -9,7 +9,7 @@ const Rally = () => {
   return (
     <Layout title="IGNITEMY2024 | Rally">
       <Banner />
-      {/* <SpeakerSection /> */}
+      <SpeakerSection />
       <Schedule />
       {/* <JoinUs /> */}
       <CollaborationSection />

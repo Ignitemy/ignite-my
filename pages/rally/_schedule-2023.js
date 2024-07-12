@@ -8,6 +8,9 @@ const SectionContainer = styled.section`
   padding: 4rem 1.5rem 9rem;
   background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   background: ${(props) => props.background};
+  background:linear-gradient(40deg, #000000 46%, #545dde 100%);
+
+
 
   @media (min-width: 768px) {
     padding: 4rem 6rem;

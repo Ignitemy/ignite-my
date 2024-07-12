@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
   padding: 7rem 3rem;
   // background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
   // background: ${(props) => props.background};
-  background: url("/images/png/IGNITEMY2023/chain 3.png");
+  background: url('/images/jpg/bg-5.jpg');
   background-size: cover;
   background-position: bottom;
 
@@ -26,15 +26,15 @@ const SectionContainer = styled.section`
   }
 `
 const specialItemBy = {
-  imgSrc: '/images/jpg/daniel-kuilan-1.jpg',
-  imgSrcHover: '/images/jpg/daniel-kuilan-2.jpg',
+  imgSrc: '/images/jpg/Andy-2.jpg',
+  imgSrcHover: '/images/jpg/Andy-1.jpg',
   alt: 'Pr Andy Yeoh',
   name: 'Pr Andy Yeoh',
   separator: 'of',
   founder: 'Generations Church',
-  founderLink: 'https://www.instagram.com/soulmalaysia',
+  founderLink: 'https://www.instagram.com/generationsmy/',
   details:
-    '...'
+    'Pastor Andy Yeoh, is an energetic, enthusiastic and engaging speaker, minister, singer, songwriter, worship leader, and certified Solution-Focused Coach – whose passion for the youths is as fired up as his passion for Christ. And he might add, Liverpool FC! He’s constantly on the go inspiring people to live a life of purpose, and is passionate about helping people make progress and make a difference with their lives. He is currently the Pastor of Generations Church, which he planted with his wife, Jay, in January 2023. Together, they have 2 beautiful children — Zyon and Zyra.'
 }
 
 const SpeakerSection = () => {

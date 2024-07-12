@@ -7,7 +7,10 @@ const SectionContainer = styled.section`
   width: 100%;
   padding: 4rem 1.5rem 9rem;
   background-color: ${(props) => props.bgcolor || 'var(--color-black)'};
-  background: ${(props) => props.background};
+  background: url('/images/png/bg-2.png');
+  background-size: cover;
+  background-position: center;
+
 
   @media (min-width: 768px) {
     padding: 4rem 6rem;
