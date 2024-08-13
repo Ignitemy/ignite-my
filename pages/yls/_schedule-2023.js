@@ -137,16 +137,21 @@ const summitTimetable = [
   {
     color: 'var(--color-orange)',
     time: '1345',
-    activity: 'Special Item'
+    activity: 'Head to Workshops'
   },
   {
     color: 'var(--color-orange)',
-    time: '1355',
+    time: '1400',
     activity: 'SUMMIT UP'
   },
   {
+    color: 'var(--color-orange)',
+    time: '1515',
+    activity: 'Special Item'
+  },
+  {
     color: 'var(--color-white)',
-    time: '1530',
+    time: '1525',
     activity: 'Closing'
   }
 ]
