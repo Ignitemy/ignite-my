@@ -19,9 +19,9 @@ const Resources = () => {
   const user = useAuth()
   const router = useRouter()
 
-  useEffect(() => {
-    if (user === null) router.push('/login?action=login&redirect=resources')
-  }, [user])
+  // useEffect(() => {
+  //   if (user === null) router.push('/login?action=login&redirect=resources')
+  // }, [user])
 
   return (
     <Layout title="IGNITEMY2024 | Resources">
