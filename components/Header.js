@@ -219,13 +219,13 @@ const Header = () => {
 
               </StyledLink> */}
 
-              <StyledExtLink
+              {/* <StyledExtLink
                 href="https://bit.ly/IGNITEMY2024summit"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
 
 
               {/* <StyledExtLink
