@@ -306,7 +306,7 @@ const Banner = () => {
               <AnimatedLetters title="IN-PERSON.    ONLINE." variants={stream} />
             </ButtonWrapper> */}
 
-            <ShortDetailWrapper initial="initial" animate="animate" variants={soon}>
+            {/* <ShortDetailWrapper initial="initial" animate="animate" variants={soon}>
               <StyledLink href="https://bit.ly/IGNITEMY2024summit"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -314,11 +314,11 @@ const Banner = () => {
                 <Button white="true">
                   <Heading color="white">Register</Heading>
                 </Button>
-              </StyledLink>
+              </StyledLink> */}
               {/* <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" />
               <Heading color="white" mr="2rem" ml="2rem" size='3.1rem'>COMING SOON</Heading>
               <Image src="/images/gif/ignite-loading.gif" height={50} width={50} alt="Ignite loading" /> */}
-            </ShortDetailWrapper>
+            {/* </ShortDetailWrapper> */}
 
           </Details>
         </ContentWrapper>

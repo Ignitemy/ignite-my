@@ -38,7 +38,7 @@ const ResourceComponent = () => {
       </ImageContainer>
       <ButtonContainer
         target="_blank"
-        href="https://drive.google.com/file/d/1F0t6rEo6GeEJgc0Lv4O15tWPEXXPMIk7/view?usp=sharing"
+        href="https://drive.google.com/file/d/1ojcdaEde9GRQL0y8oLCoGXaWoDsiKqPe/view"
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
       >
@@ -58,7 +58,7 @@ const ResourceComponent = () => {
           IGNITEMY2024 Participant's Booklet Link
           <LinkIcon />
         </Button>
-      </ButtonContainer> */}
+      </ButtonContainer>
       {/* <ButtonContainer
         target="_blank"
         href="https://drive.google.com/file/d/1NTkRxwAbM2V53ATb2B60hEdB707JVGIS/view?usp=sharing"
@@ -70,14 +70,14 @@ const ResourceComponent = () => {
           <VideoIcon />
         </Button>
       </ButtonContainer> */}
-      <ButtonContainer>
+      {/* <ButtonContainer>
         <Link href="/resources/groupings">
           <Button bgcolor="linear-gradient(90deg, #FF6600 0%, #FFFFFF 100%);">
             View Groupings
             <PeopleIcon />
           </Button>
         </Link>
-      </ButtonContainer>
+      </ButtonContainer> */}
     </>
   )
 }

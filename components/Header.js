@@ -197,9 +197,9 @@ const Header = () => {
             <li>
               <StyledLink href="/blog">Blog</StyledLink>
             </li>
-            {/* <li>
+            <li>
               <StyledLink href="/resources">Resource</StyledLink>
-            </li> */}
+            </li>
             <li>
               <StyledLink href="/highlights">Highlights</StyledLink>
             </li>
@@ -219,13 +219,13 @@ const Header = () => {
 
               </StyledLink> */}
 
-              <StyledExtLink
+              {/* <StyledExtLink
                 href="https://bit.ly/IGNITEMY2024summit"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Register</RegisterButton>
-              </StyledExtLink>
+              </StyledExtLink> */}
 
 
               {/* <StyledExtLink

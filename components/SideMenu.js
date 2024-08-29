@@ -327,11 +327,11 @@ const SideMenu = () => {
                  Blog
                 </StyledLink>
               </li>
-              {/* <li>
-                    <StyledLink href="/resources">
-                     Resource
-                    </StyledLink>
-              </li> */}
+              <li>
+                <StyledLink href="/resources">
+                  Resource
+                </StyledLink>
+              </li>
               <li>
                 <StyledLink href="/highlights">
                   Highlights
@@ -344,11 +344,11 @@ const SideMenu = () => {
                     Login
                     </StyledLink>
                   </li> */}
-                  <li>
+                  {/* <li>
                     <StyledLink href="https://bit.ly/IGNITEMY2024summit">
                     Register
                     </StyledLink>
-                  </li>
+                  </li> */}
                 </>
               )}
             </ul>
