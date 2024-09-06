@@ -315,7 +315,7 @@ const SideMenu = () => {
               </li>
               <li>
                 <StyledExtLink
-                  href="https://youtube.com/live/aP-qOx6rdvY?feature=share"
+                  href="https://youtube.com/live/Bu65qMokGMY?feature=share"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
