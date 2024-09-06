@@ -186,7 +186,7 @@ const Countdown = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
     // Date format MM/DD/YYYY
-    let difference = new Date(`9/7/${year} 10:00`) - new Date()
+    let difference = new Date(`9/7/${year} 9:30`) - new Date()
     let timeLeft = {}
 
     if (difference > 0) {
@@ -292,7 +292,7 @@ const Countdown = () => {
     <>
       <ButtonWrapper>
         <StyledExtLink
-          href="https://ignitemy.online.church/"
+          href="https://youtube.com/live/aP-qOx6rdvY?feature=share"
           target="_blank"
           rel="noopener noreferrer"
         >

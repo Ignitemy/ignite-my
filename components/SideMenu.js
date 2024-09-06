@@ -313,15 +313,15 @@ const SideMenu = () => {
                   
                 </StyledLink>
               </li>
-              {/* <li>
+              <li>
                 <StyledExtLink
-                  href="https://ignitemy.online.church/"
+                  href="https://youtube.com/live/aP-qOx6rdvY?feature=share"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Streaming Live
                 </StyledExtLink>
-              </li> */}
+              </li>
               <li>
                 <StyledLink href="/blog">
                  Blog
