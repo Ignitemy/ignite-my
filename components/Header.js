@@ -228,13 +228,13 @@ const Header = () => {
               </StyledExtLink> */}
 
 
-              {/* <StyledExtLink
-                href="https://ignitemy.online.church/"
+              <StyledExtLink
+                href="https://youtube.com/live/Bu65qMokGMY?feature=share"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RegisterButton orange="true">Streaming Live</RegisterButton>
-              </StyledExtLink> */}
+              </StyledExtLink>
             </>
           ) : (
             <>
