@@ -290,7 +290,7 @@ const Countdown = () => {
 
   const btnStart = [
     <>
-      <ButtonWrapper>
+      {/* <ButtonWrapper>
         <StyledExtLink
           href="https://youtube.com/live/mmiEGmEn4y8?feature=share"
           target="_blank"
@@ -298,7 +298,7 @@ const Countdown = () => {
         >
           <Button orange="true">Streaming Live</Button>
         </StyledExtLink>
-      </ButtonWrapper>
+      </ButtonWrapper> */}
     </>
   ]
 
